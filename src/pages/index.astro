@@ -12,7 +12,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: 'Personal Homepage Demo',
+  title: 'Jaime Villegas - Personal Web',
 };
 ---
 
@@ -24,9 +24,9 @@ const metadata = {
         { text: 'Home', href: '#' },
         { text: 'About', href: '#about' },
         { text: 'Resume', href: '#resume' },
-        { text: 'Porfolio', href: '#porfolio' },
+        { text: 'Portfolio', href: '#porfolio' },
         { text: 'Blog', href: '#blog' },
-        { text: 'Github', href: 'https://github.com/jaimevillegas'},
+        { text: 'Github', href: 'https://github.com/jaimevillegas' },
       ]}
       actions={[
         {
@@ -43,14 +43,17 @@ const metadata = {
 
   <Hero
     id="hero"
-    title="Sarah Johnson"
-    tagline="Personal Web Demo"
+    title="Jaime Villegas"
+    tagline="Personal Web"
     actions={[{ variant: 'primary', text: 'Hire me', href: getPermalink('/contact#form') }]}
   >
     <Fragment slot="subtitle">
-      I'm a Graphic Designer passionate about crafting visual stories. <br /> With 5 years of experience and a degree from
-      New York University's School of Design. I infuse vitality into brands and designs, transforming concepts into captivating
-      realities.
+      Full-Stack Web developer and Mechatronic Engineer, with a deep passion for building solutions that integrate
+      hardware and software like Robots, Machinery Design and Apps for companies and individuals. Proficient in multiple
+      programming languages, frameworks, software and technologies. Skilled at quickly adapting and learning new tools
+      efficiently. With over 7 years of experience in designing machinery and creating industrial ready-to-build models
+      using CAD software. With over 1 year of experience in Web Development, where I specialize in building web
+      applications utilizing cutting-edge technologies.
     </Fragment>
   </Hero>
 
@@ -58,35 +61,44 @@ const metadata = {
 
   <Content
     id="about"
-    columns={3}
+    columns={4}
     items={[
       {
-        icon: 'tabler:brand-dribbble',
+        icon: 'tabler:brand-fiverr',
         callToAction: {
           target: '_blank',
-          text: 'Dribbble',
-          href: '#',
+          text: 'Fiverr',
+          href: 'https://es.fiverr.com/villegas296',
         },
       },
       {
-        icon: 'tabler:brand-behance',
+        icon: 'tabler:brand-github',
         callToAction: {
           target: '_blank',
-          text: 'Behance',
-          href: '#',
+          text: 'GitHub',
+          href: 'https://github.com/jaimevillegas',
         },
       },
       {
-        icon: 'tabler:brand-pinterest',
+        icon: 'tabler:brand-linkedin',
         callToAction: {
           target: '_blank',
-          text: 'Pinterest',
-          href: '#',
+          text: 'LinkedIn',
+          href: 'https://www.linkedin.com/in/villegas0296/',
+        },
+      },
+      {
+        icon: 'tabler:brand-x',
+        callToAction: {
+          target: '_blank',
+          text: 'X',
+          href: 'https://x.com/JaimeVillegazz',
         },
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      // src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      src:'~/assets/images/me.png',
       alt: 'Colorful Image',
       loading: 'eager',
     }}
@@ -119,13 +131,25 @@ const metadata = {
     items={[
       {
         title:
-          'Graphic Designer <br /> <span class="font-normal">ABC Design Studio, New York, NY</span> <br /> <span class="text-sm font-normal">2021 - Present</span>',
+          'Frontend Software Engineer <br /> <span class="font-normal">ABC Design Studio, New York, NY</span> <br /> <span class="text-sm font-normal">2021 - Present</span>',
         description: `Collaborate with clients to understand design requirements and objectives. <br /> Develop branding solutions, including logos, color palettes, and brand guidelines. <br /> Design marketing materials such as brochures, posters, and digital assets. <br /> Create visually appealing user interfaces for websites and applications.`,
         icon: 'tabler:briefcase',
       },
       {
         title:
-          'Junior Graphic Designer <br /> <span class="font-normal">XYZ Creative Agency, Los Angeles, CA</span> <br /> <span class="text-sm font-normal">2018 - 2021</span>',
+          'Professional Freelancer Engineer <br /> <span class="font-normal">XYZ Creative Agency, Los Angeles, CA</span> <br /> <span class="text-sm font-normal">2018 - 2021</span>',
+        description: `Assisted senior designers in creating design concepts and visual assets. <br /> Contributed to the development of brand identities and marketing collateral. <br /> Collaborated with the marketing team to ensure consistent design across campaigns. <br /> Gained hands-on experience in various design software and tools.`,
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'Applications Engineer <br /> <span class="font-normal">XYZ Creative Agency, Los Angeles, CA</span> <br /> <span class="text-sm font-normal">2018 - 2021</span>',
+        description: `Assisted senior designers in creating design concepts and visual assets. <br /> Contributed to the development of brand identities and marketing collateral. <br /> Collaborated with the marketing team to ensure consistent design across campaigns. <br /> Gained hands-on experience in various design software and tools.`,
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'Mechanical CAD Designer (all) <br /> <span class="font-normal">XYZ Creative Agency, Los Angeles, CA</span> <br /> <span class="text-sm font-normal">2018 - 2021</span>',
         description: `Assisted senior designers in creating design concepts and visual assets. <br /> Contributed to the development of brand identities and marketing collateral. <br /> Collaborated with the marketing team to ensure consistent design across campaigns. <br /> Gained hands-on experience in various design software and tools.`,
         icon: 'tabler:briefcase',
       },
@@ -201,7 +225,7 @@ const metadata = {
   <!-- Content Widget **************** -->
 
   <Content
-    id="porfolio"
+    id="portfolio"
     title="Elevating visual narratives"
     subtitle="Embark on a design journey that surpasses pixels, entering a realm of imagination. Explore my portfolio, where passion and creativity converge to shape enthralling visual narratives."
     isReversed

@@ -1,5 +1,5 @@
 site:
-  name: Jaime Blog
+  name: Jaime Villegas
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false
@@ -9,7 +9,7 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Jaime Blog
+    default: Jaime Villegas
     template: '%s — AstroWind'
   description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
   robots:
