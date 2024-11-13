@@ -24,7 +24,7 @@ const metadata = {
         { text: 'Home', href: '#' },
         { text: 'About', href: '#about' },
         { text: 'Resume', href: '#resume' },
-        { text: 'Portfolio', href: '#porfolio' },
+        { text: 'Portfolio', href: '#portfolio' },
         { text: 'Blog', href: '#blog' },
         { text: 'Github', href: 'https://github.com/jaimevillegas' },
       ]}
@@ -118,101 +118,19 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Steps Widget ****************** -->
+  <!-- BlogLatestPost Widget **************** -->
 
-  <Steps
-    id="resume"
-    title="Work experience"
-    items={[
-      {
-        title:
-          'Frontend Software Engineer <br /> <span class="font-normal">Unydos Consulting S.A.S, COL</span> <br /> <span class="text-sm font-normal">2024 - Present</span>',
-        description: "As the lead developer in a legacy modernization project, I’m responsible for transforming an existing software application into a modern, scalable solution using React. My role involves translating client requirements into actionable technical tasks, which I delegate across the development team to ensure efficient, precise execution. By overseeing the project’s technical direction and aligning development efforts with client needs, I help drive the evolution of this application into a responsive, user-focused product that meets today’s industry standards.",
-        icon: 'tabler:code',
-      },
-      {
-        title:
-          'Professional Freelancer Engineer <br />  <span class="text-sm font-normal">2022 - PRESENT</span>',
-        // description: `Assisted senior designers in creating design concepts and visual assets. <br /> Contributed to the development of brand identities and marketing collateral. <br /> Collaborated with the marketing team to ensure consistent design across campaigns. <br /> Gained hands-on experience in various design software and tools.`,
-        description: 'Professional Freelancer Engineer with extensive experience delivering high-quality projects on platforms like Fiverr. I have completed numerous projects spanning web development, electronic schematic and PCB design, CAD modeling and simulation, and web design. With a commitment to precision and innovation, I tailor each project to meet client specifications, leveraging my interdisciplinary expertise to provide effective solutions across both software and hardware domains.',
-        icon: 'tabler:briefcase',
-      },
-      {
-        title:
-          'Mechanical CAD Engineer <br /> <span class="font-normal">Industrial Sector (Multiple Employers)</span> <br /> <span class="text-sm font-normal">2016 - 2022</span>',
-          description: "As a Mechanical Designer specializing in industrial solutions, I collaborated directly with clients—primarily within various industries—to analyze their requirements and provide tailored engineering solutions. My role involved on-site assessments to gather precise measurements and understand the unique needs of each project. Through conceptual, basic, and detailed engineering, I designed solutions such as tanks, pipelines, conveyor systems, elevators, and platforms, each aimed at enhancing and optimizing industrial processes. My expertise lies in creating functional, efficient designs that improve production lines and align with the client’s operational goals.",
-        icon: 'tabler:settings',
-      },
-    ]}
-    classes={{ container: 'max-w-3xl' }}
-  />
+  <BlogLatestPosts
+    id="blog"
+    title="Explore my insightful articles on my blog"
+    information={`Dive into a realm of design wisdom and creative inspiration, where you'll find invaluable insights, practical tips, and captivating narratives that elevate and enrich your creative journey.`}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
 
-  <!-- Steps Widget ****************** -->
-
-  <!-- <Steps
-    id="resume"
-    title="Education"
-    items={[
-      {
-        title: `Master of Fine Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2018 - 2020</span>`,
-        icon: 'tabler:school',
-      },
-      {
-        title: `Bachelor of Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2014 - 2018</span>`,
-        icon: 'tabler:school',
-      },
-    ]}
-    classes={{ container: 'max-w-3xl' }}
-  /> -->
-
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    title="Skills"
-    subtitle="Discover the proficiencies that allow me to bring imagination to life through design."
-    columns={3}
-    defaultIcon="tabler:point-filled"
-    items={[
-      {
-        title: 'Frontend Web Development',
-        description: 'Specialized in building dynamic, responsive user interfaces with React, HTML, CSS, and JavaScript, focusing on creating seamless and interactive user experiences.',
-      },
-      {
-        title: 'CAD Modelling & Simulation',
-        description: 'Proficient in using CAD software for 3D modeling and simulation of mechanical components, from conceptual design to detailed engineering analysis.',
-      },
-      {
-        title: 'PCB Design & Electronics',
-        description: 'Designing and simulating electronic circuits and PCBs, ensuring optimal performance and integration for a variety of hardware projects.',
-      },
-      {
-        title: 'Embedded Systems & Microcontrollers',
-        description: 'Programming and integrating Arduino, ESP32, and other microcontrollers to develop efficient, reliable hardware solutions.',
-      },
-      {
-        title: 'Robotics & Control Systems',
-        description: 'Developing and simulating robotic systems using MATLAB and LabVIEW for precise control, automation, and data analysis.',
-      },
-      {
-        title: 'HMI Interface Development',
-        description: 'Creating intuitive graphical interfaces for HMI devices, including Raspberry Pi touchscreens and microcontroller displays, to enhance user interaction and control.',
-      },
-      {
-        title: 'Problem-Solving & Optimization',
-        description: 'Skilled in analyzing complex problems and developing creative, effective solutions that improve performance, reduce costs, and increase productivity.',
-      },
-      {
-        title: 'Project Leadership & Team Collaboration',
-        description: 'Leading projects from conception to execution, coordinating teams, delegating tasks, and ensuring alignment with client requirements and deadlines.',
-      },
-      {
-        title: 'Technical Communication & Client Relations',
-        description: 'Strong communication skills for translating technical requirements into actionable tasks, maintaining clear and efficient dialogue with clients to ensure project success.',
-      },
-    ]}
-  />
-
-  <!-- Content Widget **************** -->
+    <!-- Content Widget **************** -->
 
   <Content
     id="portfolio"
@@ -327,6 +245,102 @@ const metadata = {
     </Fragment>
   </Content>
 
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="resume"
+    title="Work experience"
+    items={[
+      {
+        title:
+          'Frontend Software Engineer <br /> <span class="font-normal">Unydos Consulting S.A.S, COL</span> <br /> <span class="text-sm font-normal">2024 - Present</span>',
+        description: "As the lead developer in a legacy modernization project, I’m responsible for transforming an existing software application into a modern, scalable solution using React. My role involves translating client requirements into actionable technical tasks, which I delegate across the development team to ensure efficient, precise execution. By overseeing the project’s technical direction and aligning development efforts with client needs, I help drive the evolution of this application into a responsive, user-focused product that meets today’s industry standards.",
+        icon: 'tabler:code',
+      },
+      {
+        title:
+          'Professional Freelancer Engineer <br />  <span class="text-sm font-normal">2022 - PRESENT</span>',
+        // description: `Assisted senior designers in creating design concepts and visual assets. <br /> Contributed to the development of brand identities and marketing collateral. <br /> Collaborated with the marketing team to ensure consistent design across campaigns. <br /> Gained hands-on experience in various design software and tools.`,
+        description: 'Professional Freelancer Engineer with extensive experience delivering high-quality projects on platforms like Fiverr. I have completed numerous projects spanning web development, electronic schematic and PCB design, CAD modeling and simulation, and web design. With a commitment to precision and innovation, I tailor each project to meet client specifications, leveraging my interdisciplinary expertise to provide effective solutions across both software and hardware domains.',
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'Mechanical CAD Engineer <br /> <span class="font-normal">Industrial Sector (Multiple Employers)</span> <br /> <span class="text-sm font-normal">2016 - 2022</span>',
+          description: "As a Mechanical Designer specializing in industrial solutions, I collaborated directly with clients—primarily within various industries—to analyze their requirements and provide tailored engineering solutions. My role involved on-site assessments to gather precise measurements and understand the unique needs of each project. Through conceptual, basic, and detailed engineering, I designed solutions such as tanks, pipelines, conveyor systems, elevators, and platforms, each aimed at enhancing and optimizing industrial processes. My expertise lies in creating functional, efficient designs that improve production lines and align with the client’s operational goals.",
+        icon: 'tabler:settings',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <!-- <Steps
+    id="resume"
+    title="Education"
+    items={[
+      {
+        title: `Master of Fine Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2018 - 2020</span>`,
+        icon: 'tabler:school',
+      },
+      {
+        title: `Bachelor of Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2014 - 2018</span>`,
+        icon: 'tabler:school',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  /> -->
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="Skills"
+    subtitle="Discover the proficiencies that allow me to bring imagination to life through design."
+    columns={3}
+    defaultIcon="tabler:point-filled"
+    items={[
+      {
+        title: 'Frontend Web Development',
+        description: 'Specialized in building dynamic, responsive user interfaces with React, HTML, CSS, and JavaScript, focusing on creating seamless and interactive user experiences.',
+      },
+      {
+        title: 'CAD Modelling & Simulation',
+        description: 'Proficient in using CAD software for 3D modeling and simulation of mechanical components, from conceptual design to detailed engineering analysis.',
+      },
+      {
+        title: 'PCB Design & Electronics',
+        description: 'Designing and simulating electronic circuits and PCBs, ensuring optimal performance and integration for a variety of hardware projects.',
+      },
+      {
+        title: 'Embedded Systems & Microcontrollers',
+        description: 'Programming and integrating Arduino, ESP32, and other microcontrollers to develop efficient, reliable hardware solutions.',
+      },
+      {
+        title: 'Robotics & Control Systems',
+        description: 'Developing and simulating robotic systems using MATLAB and LabVIEW for precise control, automation, and data analysis.',
+      },
+      {
+        title: 'HMI Interface Development',
+        description: 'Creating intuitive graphical interfaces for HMI devices, including Raspberry Pi touchscreens and microcontroller displays, to enhance user interaction and control.',
+      },
+      {
+        title: 'Problem-Solving & Optimization',
+        description: 'Skilled in analyzing complex problems and developing creative, effective solutions that improve performance, reduce costs, and increase productivity.',
+      },
+      {
+        title: 'Project Leadership & Team Collaboration',
+        description: 'Leading projects from conception to execution, coordinating teams, delegating tasks, and ensuring alignment with client requirements and deadlines.',
+      },
+      {
+        title: 'Technical Communication & Client Relations',
+        description: 'Strong communication skills for translating technical requirements into actionable tasks, maintaining clear and efficient dialogue with clients to ensure project success.',
+      },
+    ]}
+  />
+
+
   <!-- Testimonials Widget *********** -->
 
   <Testimonials
@@ -404,15 +418,4 @@ const metadata = {
     ]}
   />
 
-  <!-- BlogLatestPost Widget **************** -->
-
-  <BlogLatestPosts
-    id="blog"
-    title="Explore my insightful articles on my blog"
-    information={`Dive into a realm of design wisdom and creative inspiration, where you'll find invaluable insights, practical tips, and captivating narratives that elevate and enrich your creative journey.`}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </BlogLatestPosts>
 </Layout>
