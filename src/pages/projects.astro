@@ -18,39 +18,17 @@ import cadImage6 from '../assets/images/cad/cad6.png';
 import mech1 from '../assets/images/cad/mech1.png';
 import pll_squareline from '../assets/images/cad/pll_squareline.png';
 import pcb1 from '../assets/images/cad/pcb1.png';
+
+import rocketTales from '../assets/images/web/rocket-tales.png';
 import { Image } from 'astro:assets';
 
 const webProjects = [
   {
-    title: 'Project 1',
+    title: 'Rocket Tales',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, vestibulum mi nec, ultricies metus. Donec in ultricies nunc.',
-    image: cadImage1,
-    view: '#',
-    github: '#',
-  },
-  {
-    title: 'Project 2',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, vestibulum mi nec, ultricies metus. Donec in ultricies nunc.',
-    image: cadImage2,
-    view: '#',
-    github: '#',
-  },
-  {
-    title: 'Project 3',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, vestibulum mi nec, ultricies metus. Donec in ultricies nunc.',
-    image: cadImage3,
-    view: '#',
-    github: '#',
-  },
-  {
-    title: 'Project 4',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, vestibulum mi nec, ultricies metus. Donec in ultricies nunc.',
-    image: cadImage4,
-    view: '#',
+    image: rocketTales,
+    view: 'https://rockettales.netlify.app/',
     github: '#',
   },
 ];
@@ -180,7 +158,7 @@ const engProjects = [
           <h3 class="text-xl font-bold mt-4">{project.title}</h3>
           <p class="text-gray-500 mt-2">{project.description}</p>
           <div class="mt-4 flex justify-between">
-            <a href={project.view} class="text-orange-500 hover:underline flex gap-1">
+            <a href={project.view} target='_blank' class="text-orange-500 hover:underline flex gap-1">
               <Icon name="tabler:eye" class="w-6 h-6" />
               View
             </a>
