@@ -25,7 +25,7 @@ import naturePhoto from '../assets/images/web/nature-photo.png';
 import cosmosPhoto from '../assets/images/web/cosmos-photo.png';
 import mimiPhoto from '../assets/images/web/mimi.jpg';
 import ruizPhoto from '../assets/images/web/ruiz.jpg';
-import harmonicStatsPhoto from '../assets/images/web/harmonic-stats.webp';
+import harmonicStatsPhoto from '../assets/images/web/harmonic-stats.png';
 import { Image } from 'astro:assets';
 import Personal from './homes/personal.astro';
 
@@ -33,20 +33,29 @@ const webProjects = [
   {
     title: 'Rocket Tales',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, vestibulum mi nec, ultricies metus. Donec in ultricies nunc.',
+      'Embark on a journey through space and time. Discover the wonders of space exploration, from the brave astronauts who venture beyond our atmosphere to the magnificent machines that make it all possible.',
     image: rocketTales,
     view: 'https://rockettales.netlify.app/',
     github: '#',
-    technologies: ['React', 'TailwindCSS', 'Node.js', 'Express', 'MongoDB']
+    technologies: ['React', 'TailwindCSS', 'Axios']
   },
   {
     title: 'Nature Photo',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, vestibulum mi nec, ultricies metus. Donec in ultricies nunc.',
+      'Through my lens, I capture the raw beauty and untamed spirit of the natural world.',
     image: naturePhoto,
     view: 'https://naturephoto.netlify.app/',
     github: '#',
-    technologies: ['Next.js', 'TailwindCSS', 'Supabase', 'Vercel']
+    technologies: ['Astro', 'TailwindCSS']
+  },
+  {
+    title: "Harmonic Stats",
+    description:
+      'Explore the world of music through data visualization. Get insights about your favorite artists, track global trends, and discover new music based on real-time statistics.',
+    image: harmonicStatsPhoto,
+    view: 'https://harmonicstats.netlify.app/',
+    github: '#',
+    technologies: ['Astro', 'TailwindCSS', 'Axios', 'Chart.js']
   },
   {
     title: 'Cosmos Photo',
@@ -55,7 +64,7 @@ const webProjects = [
     image: cosmosPhoto,
     view: 'https://naturephoto.netlify.app/',
     github: '#',
-    technologies: ['Astro', 'React', 'TailwindCSS', 'Firebase']
+    technologies: []
   },
   {
     title: "Mimi's Personal Website",
@@ -64,7 +73,7 @@ const webProjects = [
     image: mimiPhoto,
     view: 'https://naturephoto.netlify.app/',
     github: '#',
-    technologies: ['Astro', 'React', 'TailwindCSS', 'Firebase']
+    technologies: []
   },
   {
     title: "Volcano Hub",
@@ -73,100 +82,89 @@ const webProjects = [
     image: ruizPhoto,
     view: 'https://naturephoto.netlify.app/',
     github: '#',
-    technologies: ['Astro', 'React', 'TailwindCSS', 'Firebase']
-  },
-  {
-    title: "Harmonic Stats",
-    description:
-      'Coming soon...',
-    image: harmonicStatsPhoto,
-    view: 'https://naturephoto.netlify.app/',
-    github: '#',
-    technologies: ['Astro', 'React', 'TailwindCSS', 'Firebase']
+    technologies: []
   },
 ];
 
 const engProjects = [
   {
-    title: 'Project 1',
+    title: 'Pipeline Design for Food Industry Tanks',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, vestibulum mi nec, ultricies metus. Donec in ultricies nunc.',
+      'Developed a comprehensive CAD design in SolidWorks for a pipeline system tailored to food industry tanks. The design includes accurately calculated fittings and accessories, ensuring optimal flow conditions for the product. This project focused on meeting industry standards and enhancing efficiency in fluid transport processes.',
     image: cadImage1,
-    view: '#',
-    github: '#',
-    technologies: ['SolidWorks', 'AutoCAD', '3D Printing']
+    technologies: ['SolidWorks', 'CAD Design']
   },
   {
-    title: 'Project 2',
+    title: 'Photobooth Product Design',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, vestibulum mi nec, ultricies metus. Donec in ultricies nunc.',
+      'Designed a photobooth structure using sheet metal in SolidWorks, emphasizing functionality and aesthetic appeal. The project included generating detailed manufacturing and cutting plans, providing all necessary information to transition seamlessly from design to final production. This design optimized material usage and ensured ease of assembly for a high-quality finished product.',
     image: cadImage2,
     view: '#',
     github: '#',
-    technologies: ['Fusion 360', 'CNC Machining', 'G-code']
+    technologies: ['SolidWorks', 'CAD Design']
   },
   {
-    title: 'Project 3',
+    title: 'Automated Transmission System for Textile Factory',
     description:
-      'Lorem ipsum dolor sit amet, consecteitur adipiscing elit. Nulla nec purus feugiat, vestibulum mi nec, ultricies metus. Donec in ultricies nunc.',
+      'Designed and implemented a mechanical transmission system to optimize the operational flow of a textile factory. Using SolidWorks, the system was engineered with gears, chains, sprockets, and pneumatic cylinders, and integrated with automatic controls to adjust variables such as speed, material flow, and torque. The project encompassed the formulation, design, and commissioning phases, ensuring the system met all client requirements for efficiency and reliability.',
     image: cadImage3,
     view: '#',
     github: '#',
-    technologies: ['Arduino', 'C++', 'PCB Design', 'KiCad']
+    technologies: ['SolidWorks', 'CAD Design']
   },
   {
-    title: 'Project 4',
+    title: 'Granular Material Silos with Automated Dosage System',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, vestibulum mi nec, ultricies metus. Donec in ultricies nunc.',
+      'Designed heavy-duty silos in SolidWorks to withstand several tons of granular material, incorporating a lower dosing system with screw conveyors. The system measures material weight using load-cell-equipped hoppers, automatically opening lower gates to release the product into a larger screw conveyor that collects material from all silos. The project included structural calculations to ensure load-bearing capacity, screw conveyor design for efficient material flow at a specified speed, and the integration of an automated control system. This control system monitors variables, ensures accuracy, and operates gates upon reaching the required weight, providing a seamless and reliable dosing process.',
     image: cadImage4,
     view: '#',
     github: '#',
-    technologies: ['Raspberry Pi', 'Python', 'IoT', 'MQTT']
+    technologies: ['SolidWorks', 'CAD Design', 'FEA Analysis']
   },
   {
-    title: 'Project 5',
+    title: 'P&ID Diagram for Industrial Pipeline Systems',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, vestibulum mi nec, ultricies metus. Donec in ultricies nunc.',
+      'Created a detailed Piping and Instrumentation Diagram (P&ID) using AutoCAD, mapping the complete flow of various services such as compressed air, hot water, product lines, and steam. The diagram includes all equipment, inlets, outlets, and essential accessories, along with specifications like pipe diameters and flow directions. Each line was meticulously planned based on calculations to determine its components and layout, ensuring an optimal and efficient operational flow for the industrial system.',
     image: cadImage5,
     view: '#',
     github: '#',
-    technologies: ['SolidWorks', '3D Printing', 'FEA Analysis']
+    technologies: ['AutoCAD', 'CAD Design']
   },
   {
-    title: 'Project 6',
+    title: 'FM Transmitter PCB with Digital Monitoring System',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, vestibulum mi nec, ultricies metus. Donec in ultricies nunc.',
+      'Designed a PCB for an FM transmitter, incorporating multiple stages for audio signal processing. The board features a digital monitoring system powered by an ESP32 and a TFT display, providing real-time information on key variables such as operating power, transmission frequency, left/right audio VU meters, temperature, and antenna status. The PCB was designed in KiCAD, ensuring precision in layout and functionality to meet the specific requirements of signal integrity and performance monitoring.',
     image: mech1,
     view: '#',
     github: '#',
-    technologies: ['AutoCAD', 'Mechanical Design', 'Sheet Metal']
+    technologies: ['KiCAD', 'PCB Design']
   },
   {
-    title: 'Project 7',
+    title: 'HMI Interface Design for FM Transmitter',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, vestibulum mi nec, ultricies metus. Donec in ultricies nunc.',
+      'Developed a Human-Machine Interface (HMI) for the FM transmitter project, displaying critical system variables on a TFT screen. The interface includes graphical elements such as VU meters for R, L, and MPX modulation, direct and reflected power readings, system temperature, transmission frequency, and an alarm system to notify users of specific parameter behaviors. Additionally, a touchscreen configuration panel was implemented for easy user adjustments. The interface was designed using LittleVGL and enhanced with Squareline Studio for a polished and user-friendly experience.',
     image: pll_squareline,
     view: '#',
     github: '#',
-    technologies: ['SolidWorks', '3D Printing', 'FEA Analysis']
+    technologies: ['ESP32', 'LittleVGL', 'Squareline Studio']
   },
   {
-    title: 'Project 8',
+    title: 'Custom PCB Design for ATmega32u4-Based System',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, vestibulum mi nec, ultricies metus. Donec in ultricies nunc.',
+      'Designed a custom PCB featuring the ATmega32u4 microcontroller, commonly found in Arduino Mega boards. The PCB includes a microSD card reader, two multiplexers for expanding analog and digital I/O capabilities, and a USB hub to enable cascading connections for additional devices. The board was carefully designed in KiCAD, ensuring optimal performance and adaptability for a variety of applications.',
     image: pcb1,
     view: '#',
     github: '#',
-    technologies: ['KiCad', 'PCB Design', 'Soldering']
+    technologies: ['KiCad', 'PCB Design']
   },
   {
-    title: 'Project 9',
+    title: 'Roller Converyor Design for Compressed Scrap Bins',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, vestibulum mi nec, ultricies metus. Donec in ultricies nunc.',
+      "Designed a roller conveyor system for compressed scrap bins, featuring two geared motors, load-cell integration for weight measurement, and a stopping mechanism to check the weight of the bins before they are moved to the next stage. Special attention was given to material selection and calculations to ensure durability in the harsh conditions of a metallurgical environment. The design was completed using SolidWorks, ensuring the system's functionality and resilience under demanding operational conditions.",
     image: cadImage6,
     view: '#',
     github: '#',
-    technologies: ['SolidWorks', '3D Printing', 'FEA Analysis']
+    technologies: ['SolidWorks', 'CAD Design', 'FEA Analysis']
   },
 ];
 ---
