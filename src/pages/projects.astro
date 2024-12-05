@@ -4,6 +4,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import { Icon } from 'astro-icon/components';
+import ProjectModal from '~/components/ProjectModal.astro';
 
 const metadata = {
   title: 'Jaime Villegas - Personal Web',
@@ -20,6 +21,8 @@ import pll_squareline from '../assets/images/cad/pll_squareline.png';
 import pcb1 from '../assets/images/cad/pcb1.png';
 
 import rocketTales from '../assets/images/web/rocket-tales.png';
+import naturePhoto from '../assets/images/web/nature-photo.png';
+import cosmosPhoto from '../assets/images/web/cosmos-photo.png';
 import { Image } from 'astro:assets';
 
 const webProjects = [
@@ -30,6 +33,25 @@ const webProjects = [
     image: rocketTales,
     view: 'https://rockettales.netlify.app/',
     github: '#',
+    technologies: ['React', 'TailwindCSS', 'Node.js', 'Express', 'MongoDB']
+  },
+  {
+    title: 'Nature Photo',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, vestibulum mi nec, ultricies metus. Donec in ultricies nunc.',
+    image: naturePhoto,
+    view: 'https://naturephoto.netlify.app/',
+    github: '#',
+    technologies: ['Next.js', 'TailwindCSS', 'Supabase', 'Vercel']
+  },
+  {
+    title: 'Cosmos Photo',
+    description:
+      'Coming soon...',
+    image: cosmosPhoto,
+    view: 'https://naturephoto.netlify.app/',
+    github: '#',
+    technologies: ['Astro', 'React', 'TailwindCSS', 'Firebase']
   },
 ];
 
@@ -41,6 +63,7 @@ const engProjects = [
     image: cadImage1,
     view: '#',
     github: '#',
+    technologies: ['SolidWorks', 'AutoCAD', '3D Printing']
   },
   {
     title: 'Project 2',
@@ -49,6 +72,7 @@ const engProjects = [
     image: cadImage2,
     view: '#',
     github: '#',
+    technologies: ['Fusion 360', 'CNC Machining', 'G-code']
   },
   {
     title: 'Project 3',
@@ -57,6 +81,7 @@ const engProjects = [
     image: cadImage3,
     view: '#',
     github: '#',
+    technologies: ['Arduino', 'C++', 'PCB Design', 'KiCad']
   },
   {
     title: 'Project 4',
@@ -65,6 +90,7 @@ const engProjects = [
     image: cadImage4,
     view: '#',
     github: '#',
+    technologies: ['Raspberry Pi', 'Python', 'IoT', 'MQTT']
   },
   {
     title: 'Project 5',
@@ -73,6 +99,7 @@ const engProjects = [
     image: cadImage5,
     view: '#',
     github: '#',
+    technologies: ['SolidWorks', '3D Printing', 'FEA Analysis']
   },
   {
     title: 'Project 6',
@@ -81,6 +108,7 @@ const engProjects = [
     image: mech1,
     view: '#',
     github: '#',
+    technologies: ['AutoCAD', 'Mechanical Design', 'Sheet Metal']
   },
   {
     title: 'Project 7',
@@ -89,6 +117,7 @@ const engProjects = [
     image: pll_squareline,
     view: '#',
     github: '#',
+    technologies: ['SolidWorks', '3D Printing', 'FEA Analysis']
   },
   {
     title: 'Project 8',
@@ -97,6 +126,7 @@ const engProjects = [
     image: pcb1,
     view: '#',
     github: '#',
+    technologies: ['KiCad', 'PCB Design', 'Soldering']
   },
   {
     title: 'Project 9',
@@ -105,6 +135,7 @@ const engProjects = [
     image: cadImage6,
     view: '#',
     github: '#',
+    technologies: ['SolidWorks', '3D Printing', 'FEA Analysis']
   },
 ];
 ---
@@ -141,31 +172,67 @@ const engProjects = [
   </div>
 
   <!-- cards showing each project with image, description and buttons -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 m-12">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 m-12">
     {
       webProjects.map((project) => (
-        <div class="border rounded-lg shadow-md p-4">
-          {/* <img src={project.image} alt={project.title} class="w-full h-48 object-cover rounded-lg" /> */}
-          <Image
-            src={project.image}
-            alt={project.title}
-            class:list="w-full object-cover rounded-lg"
-            height={400}
-            width={300}
-            widths={[400, 768]}
-            sizes="(max-width: 768px) 100vw, 432px"
-          />
-          <h3 class="text-xl font-bold mt-4">{project.title}</h3>
-          <p class="text-gray-500 mt-2">{project.description}</p>
-          <div class="mt-4 flex justify-between">
-            <a href={project.view} target='_blank' class="text-orange-500 hover:underline flex gap-1">
-              <Icon name="tabler:eye" class="w-6 h-6" />
-              View
-            </a>
-            <a href={project.github} class="text-orange-500 hover:underline flex gap-1">
-              <Icon name="tabler:brand-github" class="w-6 h-6" />
-              Github
-            </a>
+        <div 
+          class="project-card bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 
+                 rounded-xl shadow-lg p-5 flex flex-col h-[550px] cursor-pointer 
+                 transition-all duration-300 ease-in-out
+                 hover:shadow-xl hover:scale-[1.02] hover:border-orange-500
+                 dark:hover:border-orange-400 relative group"
+          data-title={project.title}
+          data-description={project.description}
+          data-image={project.image.src}
+          data-view={project.view}
+          data-github={project.github}
+          data-technologies={JSON.stringify(project.technologies)}
+        >
+          <div class="h-[250px] w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
+            <Image
+              src={project.image}
+              alt={project.title}
+              class:list="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-110"
+              height={400}
+              width={300}
+              widths={[400, 768]}
+              sizes="(max-width: 768px) 100vw, 432px"
+            />
+          </div>
+          <div class="flex flex-col flex-grow pt-4">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">{project.title}</h3>
+            <p class="text-gray-500 dark:text-gray-400 mt-2 flex-grow line-clamp-3">{project.description}</p>
+            <div class="flex flex-wrap gap-2 my-3">
+              {project.technologies.slice(0, 3).map((tech) => (
+                <span class="px-2 py-1 text-xs font-medium text-orange-700 bg-orange-100 rounded-full dark:bg-orange-900 dark:text-orange-300">
+                  {tech}
+                </span>
+              ))}
+              {project.technologies.length > 3 && (
+                <span class="px-2 py-1 text-xs font-medium text-orange-700 bg-orange-100 rounded-full dark:bg-orange-900 dark:text-orange-300">
+                  +{project.technologies.length - 3}
+                </span>
+              )}
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <a 
+                href={project.view} 
+                target='_blank' 
+                class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 text-sm font-medium transition-colors"
+                onclick="event.stopPropagation()"
+              >
+                <Icon name="tabler:eye" class="w-4 h-4" />
+                View
+              </a>
+              <a 
+                href={project.github} 
+                class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 text-sm font-medium transition-colors"
+                onclick="event.stopPropagation()"
+              >
+                <Icon name="tabler:brand-github" class="w-4 h-4" />
+                Github
+              </a>
+            </div>
           </div>
         </div>
       ))
@@ -180,36 +247,73 @@ const engProjects = [
   </div>
 
   <!-- cards showing each project with image, description and buttons -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 m-12">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 m-12">
     {
       engProjects.map((project) => (
-        <div class="border rounded-lg shadow-md p-4">
-          <Image
-            src={project.image}
-            alt={project.title}
-            class:list="w-full object-cover rounded-lg"
-            height={400}
-            width={300}
-            widths={[400, 768]}
-            sizes="(max-width: 768px) 100vw, 432px"
-          />
-          <h3 class="text-xl font-bold mt-4">{project.title}</h3>
-          <p class="text-gray-500 mt-2">{project.description}</p>
-          <div class="mt-4 flex justify-between">
-            <a href={project.view} class="text-orange-500 hover:underline flex gap-1">
-              <Icon name="tabler:eye" class="w-6 h-6" />
-              View
-            </a>
-            <a href={project.github} class="text-orange-500 hover:underline flex gap-1">
-              <Icon name="tabler:brand-github" class="w-6 h-6" />
-              Github
-            </a>
+        <div 
+          class="project-card bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 
+                 rounded-xl shadow-lg p-5 flex flex-col h-[550px] cursor-pointer 
+                 transition-all duration-300 ease-in-out
+                 hover:shadow-xl hover:scale-[1.02] hover:border-orange-500
+                 dark:hover:border-orange-400 relative group"
+          data-title={project.title}
+          data-description={project.description}
+          data-image={project.image.src}
+          data-view={project.view}
+          data-github={project.github}
+          data-technologies={JSON.stringify(project.technologies)}
+        >
+          <div class="h-[250px] w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
+            <Image
+              src={project.image}
+              alt={project.title}
+              class:list="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-110"
+              height={400}
+              width={300}
+              widths={[400, 768]}
+              sizes="(max-width: 768px) 100vw, 432px"
+            />
+          </div>
+          <div class="flex flex-col flex-grow pt-4">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">{project.title}</h3>
+            <p class="text-gray-500 dark:text-gray-400 mt-2 flex-grow line-clamp-3">{project.description}</p>
+            <div class="flex flex-wrap gap-2 my-3">
+              {project.technologies.slice(0, 3).map((tech) => (
+                <span class="px-2 py-1 text-xs font-medium text-orange-700 bg-orange-100 rounded-full dark:bg-orange-900 dark:text-orange-300">
+                  {tech}
+                </span>
+              ))}
+              {project.technologies.length > 3 && (
+                <span class="px-2 py-1 text-xs font-medium text-orange-700 bg-orange-100 rounded-full dark:bg-orange-900 dark:text-orange-300">
+                  +{project.technologies.length - 3}
+                </span>
+              )}
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <a 
+                href={project.view} 
+                class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 text-sm font-medium transition-colors"
+                onclick="event.stopPropagation()"
+              >
+                <Icon name="tabler:eye" class="w-4 h-4" />
+                View
+              </a>
+              <a 
+                href={project.github} 
+                class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 text-sm font-medium transition-colors"
+                onclick="event.stopPropagation()"
+              >
+                <Icon name="tabler:brand-github" class="w-4 h-4" />
+                Github
+              </a>
+            </div>
           </div>
         </div>
       ))
     }
   </div>
 
+  <ProjectModal />
   <CallToAction
     title="Ready to get started?"
     subtitle="I'm available for hire. Contact me now to get started."
