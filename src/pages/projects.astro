@@ -62,7 +62,7 @@ const webProjects = [
     description:
       'Coming soon...',
     image: cosmosPhoto,
-    view: 'https://naturephoto.netlify.app/',
+    view: '#',
     github: '#',
     technologies: []
   },
@@ -71,7 +71,7 @@ const webProjects = [
     description:
       'Coming soon...',
     image: mimiPhoto,
-    view: 'https://naturephoto.netlify.app/',
+    view: '#',
     github: '#',
     technologies: []
   },
@@ -80,7 +80,7 @@ const webProjects = [
     description:
       'Coming soon...',
     image: ruizPhoto,
-    view: 'https://naturephoto.netlify.app/',
+    view: '#',
     github: '#',
     technologies: []
   },
@@ -244,23 +244,27 @@ const engProjects = [
               )}
             </div>
             <div class="flex justify-between items-center mt-4">
-              <a 
-                href={project.view} 
-                target='_blank' 
-                class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 text-sm font-medium transition-colors"
-                onclick="event.stopPropagation()"
-              >
-                <Icon name="tabler:eye" class="w-4 h-4" />
-                View
-              </a>
-              <a 
-                href={project.github} 
-                class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 text-sm font-medium transition-colors"
-                onclick="event.stopPropagation()"
-              >
-                <Icon name="tabler:brand-github" class="w-4 h-4" />
-                Github
-              </a>
+              {project.view && project.view !== '#' && (
+                <a 
+                  href={project.view} 
+                  target='_blank' 
+                  class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 text-sm font-medium transition-colors"
+                  onclick="event.stopPropagation()"
+                >
+                  <Icon name="tabler:eye" class="w-4 h-4" />
+                  View
+                </a>
+              )}
+              {project.github && project.github !== '#' && (
+                <a 
+                  href={project.github} 
+                  class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 text-sm font-medium transition-colors"
+                  onclick="event.stopPropagation()"
+                >
+                  <Icon name="tabler:brand-github" class="w-4 h-4" />
+                  Github
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -319,22 +323,26 @@ const engProjects = [
               )}
             </div>
             <div class="flex justify-between items-center mt-4">
-              <a 
-                href={project.view} 
-                class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 text-sm font-medium transition-colors"
-                onclick="event.stopPropagation()"
-              >
-                <Icon name="tabler:eye" class="w-4 h-4" />
-                View
-              </a>
-              <a 
-                href={project.github} 
-                class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 text-sm font-medium transition-colors"
-                onclick="event.stopPropagation()"
-              >
-                <Icon name="tabler:brand-github" class="w-4 h-4" />
-                Github
-              </a>
+              {project.view && project.view !== '#' && (
+                <a 
+                  href={project.view} 
+                  class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 text-sm font-medium transition-colors"
+                  onclick="event.stopPropagation()"
+                >
+                  <Icon name="tabler:eye" class="w-4 h-4" />
+                  View
+                </a>
+              )}
+              {project.github && project.github !== '#' && (
+                <a 
+                  href={project.github} 
+                  class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 text-sm font-medium transition-colors"
+                  onclick="event.stopPropagation()"
+                >
+                  <Icon name="tabler:brand-github" class="w-4 h-4" />
+                  Github
+                </a>
+              )}
             </div>
           </div>
         </div>

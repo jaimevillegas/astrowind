@@ -59,14 +59,16 @@ const techIcons = {
       <p id="modal-description" class="text-gray-600 dark:text-gray-300 text-lg mb-4"></p>
       
       <div class="flex justify-between">
-        <a id="modal-view" target="_blank" class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 hover:underline flex gap-2 items-center text-lg font-medium transition-colors">
-          <Icon name="tabler:eye" class="w-6 h-6" />
-          View Project
-        </a>
-        <a id="modal-github" class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 hover:underline flex gap-2 items-center text-lg font-medium transition-colors">
-          <Icon name="tabler:brand-github" class="w-6 h-6" />
-          Github
-        </a>
+        <div id="modal-buttons" class="flex gap-4">
+          <a id="modal-view" target="_blank" class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 hover:underline flex gap-2 items-center text-lg font-medium transition-colors hidden">
+            <Icon name="tabler:eye" class="w-6 h-6" />
+            View Project
+          </a>
+          <a id="modal-github" class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 hover:underline flex gap-2 items-center text-lg font-medium transition-colors hidden">
+            <Icon name="tabler:brand-github" class="w-6 h-6" />
+            Github
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -153,8 +155,22 @@ const techIcons = {
 
         if (modalTitle) modalTitle.textContent = project.title;
         if (modalDescription) modalDescription.textContent = project.description;
-        if (modalView) modalView.href = project.view;
-        if (modalGithub) modalGithub.href = project.github;
+        if (modalView) {
+          if (project.view && project.view !== '#') {
+            modalView.href = project.view;
+            modalView.classList.remove('hidden');
+          } else {
+            modalView.classList.add('hidden');
+          }
+        }
+        if (modalGithub) {
+          if (project.github && project.github !== '#') {
+            modalGithub.href = project.github;
+            modalGithub.classList.remove('hidden');
+          } else {
+            modalGithub.classList.add('hidden');
+          }
+        }
         
         // Create and set the image
         if (modalImage) {
