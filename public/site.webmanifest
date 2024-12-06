@@ -1,0 +1,14 @@
+{
+  "name": "Jaime Villegas - Engineering & Web Development",
+  "short_name": "JV Portfolio",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#2563eb",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
