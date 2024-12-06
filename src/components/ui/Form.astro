@@ -1,20 +1,26 @@
 ---
 import type { Form as Props } from '~/types';
 import Button from '~/components/ui/Button.astro';
+import { Icon } from 'astro-icon/components';
 
-const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
+const { inputs, textarea, button = 'Contact us', description = '' } = Astro.props;
+
+// Get environment variables
+const PUBLIC_KEY = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY;
+const SERVICE_ID = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
 ---
 
-<form>
+<form id="contact-form" class="needs-validation" novalidate>
   {
     inputs &&
       inputs.map(
-        ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '' }) =>
+        ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '', required = false }) =>
           name && (
             <div class="mb-6">
               {label && (
                 <label for={name} class="block text-sm font-medium">
-                  {label}
+                  {label} {required && <span class="text-red-600">*</span>}
                 </label>
               )}
               <input
@@ -23,8 +29,10 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
                 id={name}
                 autocomplete={autocomplete}
                 placeholder={placeholder}
-                class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+                required={required}
+                class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 focus:border-primary-600 focus:ring-primary-600 invalid:border-red-500"
               />
+              <div class="invalid-feedback text-red-500 text-sm mt-1 hidden"></div>
             </div>
           )
       )
@@ -34,43 +42,29 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
     textarea && (
       <div>
         <label for="textarea" class="block text-sm font-medium">
-          {textarea.label}
+          {textarea.label} {textarea.required && <span class="text-red-600">*</span>}
         </label>
         <textarea
           id="textarea"
           name={textarea.name ? textarea.name : 'message'}
           rows={textarea.rows ? textarea.rows : 4}
           placeholder={textarea.placeholder}
-          class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+          required={textarea.required}
+          class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 focus:border-primary-600 focus:ring-primary-600 invalid:border-red-500"
         />
+        <div class="invalid-feedback text-red-500 text-sm mt-1 hidden"></div>
       </div>
     )
   }
 
-  {
-    disclaimer && (
-      <div class="mt-3 flex items-start">
-        <div class="flex mt-0.5">
-          <input
-            id="disclaimer"
-            name="disclaimer"
-            type="checkbox"
-            class="cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
-          />
-        </div>
-        <div class="ml-3">
-          <label for="disclaimer" class="cursor-pointer select-none text-sm text-gray-600 dark:text-gray-400">
-            {disclaimer.label}
-          </label>
-        </div>
-      </div>
-    )
-  }
+  <div id="form-alert" class="mt-6 hidden" role="alert">
+    <div class="flex p-4 rounded-lg items-center gap-3"></div>
+  </div>
 
   {
     button && (
       <div class="mt-10 grid">
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" id="submit-button" class="w-full">
           {button}
         </Button>
       </div>
@@ -85,3 +79,156 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
     )
   }
 </form>
+
+<script>
+  // Import EmailJS
+  import emailjs from '@emailjs/browser';
+  
+  // Get form elements
+  const form = document.getElementById('contact-form');
+  const submitButton = document.getElementById('submit-button');
+  const formAlert = document.getElementById('form-alert');
+  const alertContent = formAlert?.querySelector('div');
+
+  // Get EmailJS credentials from environment variables
+  const PUBLIC_KEY = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY;
+  const SERVICE_ID = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID;
+  const TEMPLATE_ID = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
+
+  // Initialize EmailJS
+  if (PUBLIC_KEY) {
+    emailjs.init(PUBLIC_KEY);
+  }
+
+  function showAlert(message, type) {
+    if (formAlert && alertContent) {
+      formAlert.classList.remove('hidden');
+      
+      // Clear previous content
+      alertContent.innerHTML = '';
+      
+      // Set background and border colors
+      alertContent.className = 'flex p-4 rounded-lg items-center gap-3 ' + 
+        (type === 'success' 
+          ? 'bg-green-50 dark:bg-green-900/30 border-green-500 text-green-700 dark:text-green-400' 
+          : 'bg-red-50 dark:bg-red-900/30 border-red-500 text-red-700 dark:text-red-400');
+
+      // Add icon
+      const icon = document.createElement('div');
+      icon.innerHTML = type === 'success' 
+        ? '<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>'
+        : '<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>';
+      
+      // Add message
+      const text = document.createElement('div');
+      text.className = 'flex-1 text-sm font-medium';
+      text.textContent = message;
+      
+      // Add close button
+      const closeBtn = document.createElement('button');
+      closeBtn.innerHTML = '<svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>';
+      closeBtn.className = 'ml-auto';
+      closeBtn.onclick = hideAlert;
+      
+      // Append all elements
+      alertContent.appendChild(icon);
+      alertContent.appendChild(text);
+      alertContent.appendChild(closeBtn);
+
+      // Auto-hide success message after 5 seconds
+      if (type === 'success') {
+        setTimeout(hideAlert, 5000);
+      }
+    }
+  }
+
+  function hideAlert() {
+    if (formAlert) {
+      formAlert.classList.add('hidden');
+    }
+  }
+
+  function setLoading(isLoading) {
+    if (submitButton) {
+      submitButton.disabled = isLoading;
+      submitButton.innerHTML = isLoading 
+        ? '<div class="flex items-center gap-2 justify-center"><svg class="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>Sending...</div>'
+        : 'Send Message';
+    }
+  }
+
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      hideAlert();
+
+      // Reset custom validity
+      const inputs = form.querySelectorAll('input, textarea');
+      inputs.forEach(input => {
+        input.setCustomValidity('');
+        const feedback = input.parentElement?.querySelector('.invalid-feedback');
+        if (feedback) feedback.classList.add('hidden');
+      });
+
+      // Check form validity
+      if (!form.checkValidity()) {
+        inputs.forEach(input => {
+          if (!input.validity.valid) {
+            const feedback = input.parentElement?.querySelector('.invalid-feedback');
+            if (feedback) {
+              feedback.textContent = input.validationMessage;
+              feedback.classList.remove('hidden');
+            }
+          }
+        });
+        return;
+      }
+
+      setLoading(true);
+
+      try {
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+          throw new Error('Missing EmailJS configuration');
+        }
+
+        // Send email using EmailJS
+        await emailjs.send(
+          SERVICE_ID,
+          TEMPLATE_ID,
+          {
+            from_name: data.name,
+            from_email: data.email,
+            message: data.message,
+            to_name: "Jaime",
+            reply_to: data.email,
+          }
+        );
+
+        showAlert('Thank you! Your message has been sent successfully. I will get back to you soon.', 'success');
+        form.reset();
+      } catch (error) {
+        showAlert('Oops! There was a problem sending your message. Please try again or contact me directly at jaimevillegas296@gmail.com', 'error');
+      } finally {
+        setLoading(false);
+      }
+    });
+
+    // Real-time validation
+    form.querySelectorAll('input, textarea').forEach(input => {
+      input.addEventListener('input', () => {
+        const feedback = input.parentElement?.querySelector('.invalid-feedback');
+        if (feedback) {
+          if (!input.validity.valid) {
+            feedback.textContent = input.validationMessage;
+            feedback.classList.remove('hidden');
+          } else {
+            feedback.classList.add('hidden');
+          }
+        }
+      });
+    });
+  }
+</script>

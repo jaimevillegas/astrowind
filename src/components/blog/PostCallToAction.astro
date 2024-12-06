@@ -1,0 +1,37 @@
+---
+import Button from '~/components/ui/Button.astro';
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  callToAction?: {
+    text: string;
+    href: string;
+  };
+}
+
+const {
+  title = "Let's Work Together",
+  subtitle = "Looking for a skilled developer to bring your ideas to life? I'm here to help!",
+  callToAction = {
+    text: 'Hire me',
+    href: '/contact#form',
+  },
+} = Astro.props;
+---
+
+<div class="mx-auto px-6 sm:px-6 max-w-3xl mt-12 pt-8 pb-8 bg-blue-50 dark:bg-slate-800 rounded-lg">
+  <div class="text-center">
+    <h3 class="text-2xl md:text-3xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+      {title}
+    </h3>
+    <p class="text-muted dark:text-slate-400 text-lg mb-6">
+      {subtitle}
+    </p>
+    <div class="max-w-xs mx-auto">
+      <Button href={callToAction.href} variant="primary" class="w-full sm:w-auto">
+        {callToAction.text}
+      </Button>
+    </div>
+  </div>
+</div>
