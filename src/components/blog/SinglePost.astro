@@ -5,6 +5,7 @@ import Image from '~/components/common/Image.astro';
 import PostTags from '~/components/blog/Tags.astro';
 import SocialShare from '~/components/common/SocialShare.astro';
 import PostCallToAction from '~/components/blog/PostCallToAction.astro';
+import Comments from '~/components/blog/Comments.astro';
 
 import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate } from '~/utils/utils';
@@ -94,5 +95,10 @@ const { post, url } = Astro.props;
     </div>
 
     <PostCallToAction />
+    
+    <!-- Add comments section -->
+    <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 pt-8 border-t dark:border-slate-800">
+      <Comments />
+    </div>
   </article>
 </section>
