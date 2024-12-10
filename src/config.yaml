@@ -10,13 +10,13 @@ site:
 metadata:
   title:
     default: Jaime Villegas
-    template: '%s — AstroWind'
+    template: '%s - Jaime Villegas'
   description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Jaime Villegas 
     images:
       - url: '~/assets/images/default.png'
         width: 1200

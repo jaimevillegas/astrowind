@@ -36,15 +36,11 @@ export const footerData = {
     {
       title: 'Latest Posts',
       links: [
-        { text: 'React App Optimization', href: '/blog/react-app-optimization-better-content-loading' },
-        { text: 'Using Vim in VSCode', href: '/blog/using-vim-in-vscode-improve-coding' },
-        { text: 'TailwindCSS Animated Loader', href: '/blog/using-tailwindcss-to-create-animated-loader' },
+        { text: 'How to Fetch API Data Using Axios in React - A Step-by-Step Guide (Part 1 - GET Requests)', href: '/how-to-get-api-data-using-axios-on-react' },
       ],
     },
   ],
   secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
     { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/jaimevillegas/' },
