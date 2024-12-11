@@ -1,6 +1,6 @@
 site:
   name: Jaime Villegas
-  site: 'https://astrowind.vercel.app'
+  site: 'https://jvdevsolutions.com'
   base: '/'
   trailingSlash: false
 
@@ -11,7 +11,7 @@ metadata:
   title:
     default: Jaime Villegas
     template: '%s - Jaime Villegas'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: "\U0001F680 Blending technical expertise in engineering with a passion for modern web development, I design impactful solutions that enhance user experience and solve complex problems."
   robots:
     index: true
     follow: true

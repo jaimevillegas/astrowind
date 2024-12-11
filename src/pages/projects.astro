@@ -26,10 +26,31 @@ import cosmosPhoto from '../assets/images/web/cosmos-photo.png';
 import mimiPhoto from '../assets/images/web/mimi.jpg';
 import ruizPhoto from '../assets/images/web/ruiz.jpg';
 import harmonicStatsPhoto from '../assets/images/web/harmonic-stats.png';
+import stargrowPhoto from '../assets/images/web/stargrow.png';
+import geoingenieriaPhoto from '../assets/images/web/geoingenieria.png';
+import galleryArtPhoto from '../assets/images/web/art-gallery.png';
 import { Image } from 'astro:assets';
 import Personal from './homes/personal.astro';
 
 const webProjects = [
+  {
+    title: 'Nature Photo',
+    description:
+    'Through my lens, I capture the raw beauty and untamed spirit of the natural world.',
+    image: naturePhoto,
+    view: 'https://naturephoto.netlify.app/',
+    github: '#',
+    technologies: ['Astro', 'TailwindCSS']
+  },
+  {
+    title: 'StarGrow Academy',
+    description:
+    'English Language Learning Platform made on Moodle',
+    image: stargrowPhoto,
+    view: 'http://course.stargrowacademy.com/',
+    github: '#',
+    technologies: ['Moodle']
+  },
   {
     title: 'Rocket Tales',
     description:
@@ -40,15 +61,6 @@ const webProjects = [
     technologies: ['React', 'TailwindCSS', 'Axios']
   },
   {
-    title: 'Nature Photo',
-    description:
-      'Through my lens, I capture the raw beauty and untamed spirit of the natural world.',
-    image: naturePhoto,
-    view: 'https://naturephoto.netlify.app/',
-    github: '#',
-    technologies: ['Astro', 'TailwindCSS']
-  },
-  {
     title: "Harmonic Stats",
     description:
       'Explore the world of music through data visualization. Get insights about your favorite artists, track global trends, and discover new music based on real-time statistics.',
@@ -56,6 +68,24 @@ const webProjects = [
     view: 'https://harmonicstats.netlify.app/',
     github: '#',
     technologies: ['Astro', 'TailwindCSS', 'Axios', 'Chart.js']
+  },
+  {
+    title: 'Geoingeniería M&M',
+    description:
+      'Enterprise website for Geoingeniería M&M - Solutions in the Engineering, Consulting and Hydrocarbons sector',
+    image: geoingenieriaPhoto,
+    view: 'https://geoingenieriamm.com/',
+    github: '#',
+    technologies: ['React', 'TailwindCSS']
+  },
+  {
+    title: 'Gallery Art',
+    description:
+      'Completed project for the Blog tutorials of Axios',
+    image: galleryArtPhoto,
+    view: 'https://axios-react-guide.netlify.app/',
+    github: '#',
+    technologies: ['React', 'TailwindCSS', 'Axios']
   },
   {
     title: 'Cosmos Photo',
@@ -357,7 +387,7 @@ const engProjects = [
     actions={[
       {
         text: 'Contact me',
-        href: '#',
+        href: '/contact#form',
       },
     ]}
   />
