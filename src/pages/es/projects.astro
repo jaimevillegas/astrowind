@@ -1,0 +1,394 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { Icon } from 'astro-icon/components';
+import ProjectModal from '~/components/ProjectModal.astro';
+
+const metadata = {
+  title: 'Jaime Villegas - Personal Web',
+};
+
+import cadImage1 from '../../assets/images/cad/cad1.png';
+import cadImage2 from '../../assets/images/cad/cad2.png';
+import cadImage3 from '../../assets/images/cad/cad3.png';
+import cadImage4 from '../../assets/images/cad/cad4.png';
+import cadImage5 from '../../assets/images/cad/cad5.png';
+import cadImage6 from '../../assets/images/cad/cad6.png';
+import mech1 from '../../assets/images/cad/mech1.png';
+import pll_squareline from '../../assets/images/cad/pll_squareline.png';
+import pcb1 from '../../assets/images/cad/pcb1.png';
+
+import rocketTales from '../../assets/images/web/rocket-tales.png';
+import naturePhoto from '../../assets/images/web/nature-photo.png';
+import cosmosPhoto from '../../assets/images/web/cosmos-photo.png';
+import mimiPhoto from '../../assets/images/web/mimi.jpg';
+import ruizPhoto from '../../assets/images/web/ruiz.jpg';
+import harmonicStatsPhoto from '../../assets/images/web/harmonic-stats.png';
+import stargrowPhoto from '../../assets/images/web/stargrow.png';
+import geoingenieriaPhoto from '../../assets/images/web/geoingenieria.png';
+import galleryArtPhoto from '../../assets/images/web/art-gallery.png';
+import { Image } from 'astro:assets';
+import Personal from './homes/personal.astro';
+
+const webProjects = [
+  {
+    title: 'Nature Photo',
+    description:
+    'Through my lens, I capture the raw beauty and untamed spirit of the natural world.',
+    image: naturePhoto,
+    view: 'https://naturephoto.netlify.app/',
+    github: '#',
+    technologies: ['Astro', 'TailwindCSS']
+  },
+  {
+    title: 'StarGrow Academy',
+    description:
+    'English Language Learning Platform made on Moodle',
+    image: stargrowPhoto,
+    view: 'http://course.stargrowacademy.com/',
+    github: '#',
+    technologies: ['Moodle']
+  },
+  {
+    title: 'Rocket Tales',
+    description:
+      'Embark on a journey through space and time. Discover the wonders of space exploration, from the brave astronauts who venture beyond our atmosphere to the magnificent machines that make it all possible.',
+    image: rocketTales,
+    view: 'https://rockettales.netlify.app/',
+    github: '#',
+    technologies: ['React', 'TailwindCSS', 'Axios']
+  },
+  {
+    title: "Harmonic Stats",
+    description:
+      'Explore the world of music through data visualization. Get insights about your favorite artists, track global trends, and discover new music based on real-time statistics.',
+    image: harmonicStatsPhoto,
+    view: 'https://harmonicstats.netlify.app/',
+    github: '#',
+    technologies: ['Astro', 'TailwindCSS', 'Axios', 'Chart.js']
+  },
+  {
+    title: 'Geoingeniería M&M',
+    description:
+      'Enterprise website for Geoingeniería M&M - Solutions in the Engineering, Consulting and Hydrocarbons sector',
+    image: geoingenieriaPhoto,
+    view: 'https://geoingenieriamm.com/',
+    github: '#',
+    technologies: ['React', 'TailwindCSS']
+  },
+  {
+    title: 'Gallery Art',
+    description:
+      'Completed project for the Blog tutorials of Axios',
+    image: galleryArtPhoto,
+    view: 'https://axios-react-guide.netlify.app/',
+    github: '#',
+    technologies: ['React', 'TailwindCSS', 'Axios']
+  },
+  {
+    title: 'Cosmos Photo',
+    description:
+      'Coming soon...',
+    image: cosmosPhoto,
+    view: '#',
+    github: '#',
+    technologies: []
+  },
+  {
+    title: "Mimi's Personal Website",
+    description:
+      'Coming soon...',
+    image: mimiPhoto,
+    view: '#',
+    github: '#',
+    technologies: []
+  },
+  {
+    title: "Volcano Hub",
+    description:
+      'Coming soon...',
+    image: ruizPhoto,
+    view: '#',
+    github: '#',
+    technologies: []
+  },
+];
+
+const engProjects = [
+  {
+    title: 'Pipeline Design for Food Industry Tanks',
+    description:
+      'Developed a comprehensive CAD design in SolidWorks for a pipeline system tailored to food industry tanks. The design includes accurately calculated fittings and accessories, ensuring optimal flow conditions for the product. This project focused on meeting industry standards and enhancing efficiency in fluid transport processes.',
+    image: cadImage1,
+    technologies: ['SolidWorks', 'CAD Design']
+  },
+  {
+    title: 'Photobooth Product Design',
+    description:
+      'Designed a photobooth structure using sheet metal in SolidWorks, emphasizing functionality and aesthetic appeal. The project included generating detailed manufacturing and cutting plans, providing all necessary information to transition seamlessly from design to final production. This design optimized material usage and ensured ease of assembly for a high-quality finished product.',
+    image: cadImage2,
+    view: '#',
+    github: '#',
+    technologies: ['SolidWorks', 'CAD Design']
+  },
+  {
+    title: 'Automated Transmission System for Textile Factory',
+    description:
+      'Designed and implemented a mechanical transmission system to optimize the operational flow of a textile factory. Using SolidWorks, the system was engineered with gears, chains, sprockets, and pneumatic cylinders, and integrated with automatic controls to adjust variables such as speed, material flow, and torque. The project encompassed the formulation, design, and commissioning phases, ensuring the system met all client requirements for efficiency and reliability.',
+    image: cadImage3,
+    view: '#',
+    github: '#',
+    technologies: ['SolidWorks', 'CAD Design']
+  },
+  {
+    title: 'Granular Material Silos with Automated Dosage System',
+    description:
+      'Designed heavy-duty silos in SolidWorks to withstand several tons of granular material, incorporating a lower dosing system with screw conveyors. The system measures material weight using load-cell-equipped hoppers, automatically opening lower gates to release the product into a larger screw conveyor that collects material from all silos. The project included structural calculations to ensure load-bearing capacity, screw conveyor design for efficient material flow at a specified speed, and the integration of an automated control system. This control system monitors variables, ensures accuracy, and operates gates upon reaching the required weight, providing a seamless and reliable dosing process.',
+    image: cadImage4,
+    view: '#',
+    github: '#',
+    technologies: ['SolidWorks', 'CAD Design', 'FEA Analysis']
+  },
+  {
+    title: 'P&ID Diagram for Industrial Pipeline Systems',
+    description:
+      'Created a detailed Piping and Instrumentation Diagram (P&ID) using AutoCAD, mapping the complete flow of various services such as compressed air, hot water, product lines, and steam. The diagram includes all equipment, inlets, outlets, and essential accessories, along with specifications like pipe diameters and flow directions. Each line was meticulously planned based on calculations to determine its components and layout, ensuring an optimal and efficient operational flow for the industrial system.',
+    image: cadImage5,
+    view: '#',
+    github: '#',
+    technologies: ['AutoCAD', 'CAD Design']
+  },
+  {
+    title: 'FM Transmitter PCB with Digital Monitoring System',
+    description:
+      'Designed a PCB for an FM transmitter, incorporating multiple stages for audio signal processing. The board features a digital monitoring system powered by an ESP32 and a TFT display, providing real-time information on key variables such as operating power, transmission frequency, left/right audio VU meters, temperature, and antenna status. The PCB was designed in KiCAD, ensuring precision in layout and functionality to meet the specific requirements of signal integrity and performance monitoring.',
+    image: mech1,
+    view: '#',
+    github: '#',
+    technologies: ['KiCAD', 'PCB Design']
+  },
+  {
+    title: 'HMI Interface Design for FM Transmitter',
+    description:
+      'Developed a Human-Machine Interface (HMI) for the FM transmitter project, displaying critical system variables on a TFT screen. The interface includes graphical elements such as VU meters for R, L, and MPX modulation, direct and reflected power readings, system temperature, transmission frequency, and an alarm system to notify users of specific parameter behaviors. Additionally, a touchscreen configuration panel was implemented for easy user adjustments. The interface was designed using LittleVGL and enhanced with Squareline Studio for a polished and user-friendly experience.',
+    image: pll_squareline,
+    view: '#',
+    github: '#',
+    technologies: ['ESP32', 'LittleVGL', 'Squareline Studio']
+  },
+  {
+    title: 'Custom PCB Design for ATmega32u4-Based System',
+    description:
+      'Designed a custom PCB featuring the ATmega32u4 microcontroller, commonly found in Arduino Mega boards. The PCB includes a microSD card reader, two multiplexers for expanding analog and digital I/O capabilities, and a USB hub to enable cascading connections for additional devices. The board was carefully designed in KiCAD, ensuring optimal performance and adaptability for a variety of applications.',
+    image: pcb1,
+    view: '#',
+    github: '#',
+    technologies: ['KiCad', 'PCB Design']
+  },
+  {
+    title: 'Roller Converyor Design for Compressed Scrap Bins',
+    description:
+      "Designed a roller conveyor system for compressed scrap bins, featuring two geared motors, load-cell integration for weight measurement, and a stopping mechanism to check the weight of the bins before they are moved to the next stage. Special attention was given to material selection and calculations to ensure durability in the harsh conditions of a metallurgical environment. The design was completed using SolidWorks, ensuring the system's functionality and resilience under demanding operational conditions.",
+    image: cadImage6,
+    view: '#',
+    github: '#',
+    technologies: ['SolidWorks', 'CAD Design', 'FEA Analysis']
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="announcement"></Fragment>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Home', href: '/' },
+        { text: 'Projects', href: '/projects' },
+        { text: 'Blog', href: '/blog' },
+        { text: 'Github', href: 'https://github.com/jaimevillegas' },
+      ]}
+      actions={[
+        {
+          text: 'Hire me',
+          href: '/contact#form',
+        },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+  <h1 class="text-6xl font-bold text-center mt-0">Projects</h1>
+
+  <div class="w-full mt-16 overflow-hidden" id="web">
+    <div class="inset-0 flex flex-col items-center justify-center text-white">
+      <h2 class="text-4xl font-bold">Web Develpment</h2>
+      <p class="text-lg text-center">
+        En español! Explore my Web development projects showcasing modern frontend and backend technologies
+      </p>
+    </div>
+  </div>
+
+  <!-- cards showing each project with image, description and buttons -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 m-12">
+    {
+      webProjects.map((project) => (
+        <div 
+          class="project-card bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 
+                 rounded-xl shadow-lg p-5 flex flex-col h-[550px] cursor-pointer 
+                 transition-all duration-300 ease-in-out
+                 hover:shadow-xl hover:scale-[1.02] hover:border-orange-500
+                 dark:hover:border-orange-400 relative group"
+          data-title={project.title}
+          data-description={project.description}
+          data-image={project.image.src}
+          data-view={project.view}
+          data-github={project.github}
+          data-technologies={JSON.stringify(project.technologies)}
+        >
+          <div class="h-[250px] w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
+            <Image
+              src={project.image}
+              alt={project.title}
+              class:list="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-110"
+              height={400}
+              width={300}
+              widths={[400, 768]}
+              sizes="(max-width: 768px) 100vw, 432px"
+            />
+          </div>
+          <div class="flex flex-col flex-grow pt-4">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">{project.title}</h3>
+            <p class="text-gray-500 dark:text-gray-400 mt-2 flex-grow line-clamp-3">{project.description}</p>
+            <div class="flex flex-wrap gap-2 my-3">
+              {project.technologies.slice(0, 3).map((tech) => (
+                <span class="px-2 py-1 text-xs font-medium text-orange-700 bg-orange-100 rounded-full dark:bg-orange-900 dark:text-orange-300">
+                  {tech}
+                </span>
+              ))}
+              {project.technologies.length > 3 && (
+                <span class="px-2 py-1 text-xs font-medium text-orange-700 bg-orange-100 rounded-full dark:bg-orange-900 dark:text-orange-300">
+                  +{project.technologies.length - 3}
+                </span>
+              )}
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              {project.view && project.view !== '#' && (
+                <a 
+                  href={project.view} 
+                  target='_blank' 
+                  class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 text-sm font-medium transition-colors"
+                  onclick="event.stopPropagation()"
+                >
+                  <Icon name="tabler:eye" class="w-4 h-4" />
+                  View
+                </a>
+              )}
+              {project.github && project.github !== '#' && (
+                <a 
+                  href={project.github} 
+                  class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 text-sm font-medium transition-colors"
+                  onclick="event.stopPropagation()"
+                >
+                  <Icon name="tabler:brand-github" class="w-4 h-4" />
+                  Github
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="w-full mt-16 overflow-hidden" id="engineering">
+    <div class="inset-0 flex flex-col items-center justify-center text-white">
+      <h2 class="text-4xl font-bold">Engineering</h2>
+      <p class="text-lg text-center">Discover my engineering projects involving hardware, IoT, and embedded systems</p>
+    </div>
+  </div>
+
+  <!-- cards showing each project with image, description and buttons -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 m-12">
+    {
+      engProjects.map((project) => (
+        <div 
+          class="project-card bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 
+                 rounded-xl shadow-lg p-5 flex flex-col h-[550px] cursor-pointer 
+                 transition-all duration-300 ease-in-out
+                 hover:shadow-xl hover:scale-[1.02] hover:border-orange-500
+                 dark:hover:border-orange-400 relative group"
+          data-title={project.title}
+          data-description={project.description}
+          data-image={project.image.src}
+          data-view={project.view}
+          data-github={project.github}
+          data-technologies={JSON.stringify(project.technologies)}
+        >
+          <div class="h-[250px] w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
+            <Image
+              src={project.image}
+              alt={project.title}
+              class:list="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-110"
+              height={400}
+              width={300}
+              widths={[400, 768]}
+              sizes="(max-width: 768px) 100vw, 432px"
+            />
+          </div>
+          <div class="flex flex-col flex-grow pt-4">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">{project.title}</h3>
+            <p class="text-gray-500 dark:text-gray-400 mt-2 flex-grow line-clamp-3">{project.description}</p>
+            <div class="flex flex-wrap gap-2 my-3">
+              {project.technologies.slice(0, 3).map((tech) => (
+                <span class="px-2 py-1 text-xs font-medium text-orange-700 bg-orange-100 rounded-full dark:bg-orange-900 dark:text-orange-300">
+                  {tech}
+                </span>
+              ))}
+              {project.technologies.length > 3 && (
+                <span class="px-2 py-1 text-xs font-medium text-orange-700 bg-orange-100 rounded-full dark:bg-orange-900 dark:text-orange-300">
+                  +{project.technologies.length - 3}
+                </span>
+              )}
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              {project.view && project.view !== '#' && (
+                <a 
+                  href={project.view} 
+                  class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 text-sm font-medium transition-colors"
+                  onclick="event.stopPropagation()"
+                >
+                  <Icon name="tabler:eye" class="w-4 h-4" />
+                  View
+                </a>
+              )}
+              {project.github && project.github !== '#' && (
+                <a 
+                  href={project.github} 
+                  class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 text-sm font-medium transition-colors"
+                  onclick="event.stopPropagation()"
+                >
+                  <Icon name="tabler:brand-github" class="w-4 h-4" />
+                  Github
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <ProjectModal />
+  <CallToAction
+    title="Ready to get started?"
+    subtitle="I'm available for hire. Contact me now to get started."
+    actions={[
+      {
+        text: 'Contact me',
+        href: '/contact#form',
+      },
+    ]}
+  />
+</Layout>
