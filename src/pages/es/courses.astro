@@ -1,0 +1,120 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Jaime Villegas - Offered Courses',
+};
+
+import courseImage1 from '../../assets/images/courses/course1.png';
+import courseImage2 from '../../assets/images/courses/course1.png';
+import courseImage3 from '../../assets/images/courses/course1.png';
+import courseImage4 from '../../assets/images/courses/course1.png';
+import courseImage5 from '../../assets/images/courses/course1.png';
+import courseImage6 from '../../assets/images/courses/course1.png';
+
+const courses = [
+  {
+    title: 'Curso de Desarrollo Web',
+    description: 'Aprende a crear sitios web modernos y responsivos utilizando HTML, CSS y JavaScript.',
+    image: courseImage1,
+  },
+  {
+    title: 'Curso de Programación en Python',
+    description:
+      'Domina los conceptos básicos y avanzados de Python, uno de los lenguajes de programación más populares.',
+    image: courseImage2,
+  },
+  {
+    title: 'Curso de Diseño Gráfico',
+    description: 'Explora las herramientas y técnicas para crear diseños gráficos impactantes y profesionales.',
+    image: courseImage3,
+  },
+  {
+    title: 'Curso de Marketing Digital',
+    description: 'Descubre las estrategias y herramientas para llevar a cabo campañas de marketing digital efectivas.',
+    image: courseImage4,
+  },
+  {
+    title: 'Curso de Inteligencia Artificial',
+    description:
+      'Adéntrate en el mundo de la inteligencia artificial y aprende a desarrollar modelos de aprendizaje automático.',
+    image: courseImage5,
+  },
+  {
+    title: 'Curso de Ciberseguridad',
+    description: 'Conoce las mejores prácticas y técnicas para proteger sistemas y redes de posibles amenazas.',
+    image: courseImage6,
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="announcement"></Fragment>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Inicio', href: '/es' },
+        { text: 'Proyectos', href: '/es/projects' },
+        { text: 'Cursos', href: '/es/courses' },
+        { text: 'Blog', href: '/es/blog' },
+        { text: 'Github', href: 'https://github.com/jaimevillegas' },
+      ]}
+      actions={[
+        {
+          text: 'Contáctame',
+          href: '/es/contact#form',
+        },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+  <h1 class="text-6xl font-bold text-center mt-0">Cursos Ofrecidos</h1>
+
+  <div class="flex flex-col gap-8 mt-8 m-12">
+    {
+      courses.map((course) => (
+        <div class="flex bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg p-5 transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-[1.02] hover:border-orange-500 dark:hover:border-orange-400">
+          <div class="w-1/3">
+            <Image
+              src={course.image}
+              alt={course.title}
+              class:list="w-full h-full object-cover rounded-lg"
+              height={200}
+              width={200}
+              sizes="(max-width: 768px) 100vw, 200px"
+            />
+          </div>
+          <div class="w-2/3 pl-5">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">{course.title}</h3>
+            <p class="text-gray-500 dark:text-gray-400 mt-2">{course.description}</p>
+            <a
+              href="#"
+              target="_blank"
+              class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 text-xl mt-4 font-medium transition-colors"
+              onclick="event.stopPropagation()"
+            >
+              <Icon name="tabler:eye" class="w-4 h-4 text-xl" />
+              Ver
+            </a>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <CallToAction
+    title="¿Listo para comenzar tu próximo curso?"
+    subtitle="¡Hablemos sobre cómo podemos trabajar juntos para hacerlo realidad!"
+    actions={[
+      {
+        text: 'Contáctame',
+        href: '/contact#form',
+      },
+    ]}
+  />
+</Layout>

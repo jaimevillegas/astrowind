@@ -1,7 +1,7 @@
 ---
 publishDate: 2024-01-14T00:00:00Z
 author: Jaime Villegas
-title: How to Fetch API Data Using Axios in React - A Step-by-Step Guide (Part 1 - GET Requests)
+title: ES-How to Fetch API Data Using Axios in React - A Step-by-Step Guide (Part 1 - GET Requests)
 excerpt: Learn how to efficiently fetch and handle API data in your React applications using Axios. 
 image: https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80
 category: Tutorials
@@ -57,7 +57,7 @@ To follow along, clone the project repository from GitHub and switch to the `ini
 
 You should see a URL in the terminal to access the project in your browser. The current app only displays basic components without functionality, which we will add.
 
-![Project preview](../../assets/images/posts/axios-api-data/1.png)
+![Project preview](../../../assets/images/posts/axios-api-data/1.png)
 
 If you try entering a number in the text field, you’ll notice that nothing happens. The existing code in the project only renders the components. Our goal will be to implement the necessary functions to fetch data from the Metropolitan Museum of Art.
 
@@ -65,7 +65,7 @@ If you try entering a number in the text field, you’ll notice that nothing hap
 
 ## Understanding the Project Structure
 
-![Project structure](../../assets/images/posts/axios-api-data/2.png) 
+![Project structure](../../../assets/images/posts/axios-api-data/2.png) 
 
 The project includes several files, but for this tutorial, we’ll focus on `artService.js`. This file will contain the functions required to fetch data from the Metropolitan Museum of Art API.
 
@@ -110,7 +110,7 @@ This basic Axios implementation allows us to make a GET request to an API, retri
 
 With this method ready, we can test the application to verify that we can fetch an object. By entering a number between 1 and 10,000 in the input field, the app will display a card with the retrieved data.
 
-![Single object](../../assets/images/posts/axios-api-data/3.png)
+![Single object](../../../assets/images/posts/axios-api-data/3.png)
 
 
 ---
@@ -126,7 +126,7 @@ return response.data;
 
 Console logging is an essential tool in a typical workflow as it helps debug and inspect API responses before integrating them into your application.
 
-![Console logging](../../assets/images/posts/axios-api-data/4.png)
+![Console logging](../../../assets/images/posts/axios-api-data/4.png)
 
 If you want to see how this data is rendered in the web app, take a look at the `SinglePage.jsx` component:
 
@@ -189,7 +189,7 @@ async fetchMultipleArtworks(numberOfObjects) {
 
 This method takes a numeric parameter, `numberOfObjects`. It initializes variables to store fetched artworks, defines the range for random numbers, and ensures uniqueness with a `Set`. Each random number is used to fetch data, populating the `artworks` array, which is then returned for rendering in the app.
 
-![Multiple objects](../../assets/images/posts/axios-api-data/5.png)
+![Multiple objects](../../../assets/images/posts/axios-api-data/5.png)
 
 Here’s how the objects are displayed in the `RangePage.jsx` component:
 
