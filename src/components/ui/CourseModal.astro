@@ -1,0 +1,138 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import Modal from '~/components/ui/Modal.astro';
+
+export interface CourseModalProps {
+  course: {
+    title: string;
+    description: string;
+    image: any;
+    link: string;
+    gallery?: any[];
+    videoUrl?: string;
+    highlights?: string[];
+    duration?: string;
+    level?: string;
+    students?: string;
+  };
+  modalId: string;
+}
+
+const { course, modalId } = Astro.props as CourseModalProps;
+---
+
+<Modal id={modalId}>
+  <div class="p-6">
+    <!-- Encabezado del curso -->
+    <div class="mb-6">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{course.title}</h2>
+      
+      <!-- Información del curso -->
+      <div class="flex flex-wrap gap-4 mb-4 text-sm">
+        {course.duration && (
+          <div class="flex items-center gap-1 text-gray-600 dark:text-gray-400">
+            <Icon name="tabler:clock" class="w-4 h-4" />
+            <span>{course.duration}</span>
+          </div>
+        )}
+        {course.level && (
+          <div class="flex items-center gap-1 text-gray-600 dark:text-gray-400">
+            <Icon name="tabler:chart-line" class="w-4 h-4" />
+            <span>{course.level}</span>
+          </div>
+        )}
+        {course.students && (
+          <div class="flex items-center gap-1 text-gray-600 dark:text-gray-400">
+            <Icon name="tabler:users" class="w-4 h-4" />
+            <span>{course.students}</span>
+          </div>
+        )}
+      </div>
+    </div>
+    
+    <!-- Imagen principal o video -->
+    <div class="mb-6">
+      {course.videoUrl ? (
+        <div class="relative aspect-video rounded-lg overflow-hidden">
+          <iframe
+            src={course.videoUrl}
+            class="w-full h-full"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      ) : (
+        <div class="relative rounded-lg overflow-hidden">
+          <Image
+            src={course.image}
+            alt={course.title}
+            class="w-full h-64 object-cover"
+            width={800}
+            height={400}
+          />
+        </div>
+      )}
+    </div>
+    
+    <!-- Descripción detallada -->
+    <div class="mb-6">
+      <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Descripción del curso</h3>
+      <p class="text-gray-600 dark:text-gray-400 leading-relaxed">{course.description}</p>
+    </div>
+    
+    <!-- Puntos destacados -->
+    {course.highlights && course.highlights.length > 0 && (
+      <div class="mb-6">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Lo que aprenderás</h3>
+        <ul class="space-y-2">
+          {course.highlights.map((highlight) => (
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-400">
+              <Icon name="tabler:check" class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+              <span>{highlight}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+    
+    <!-- Galería de imágenes -->
+    {course.gallery && course.gallery.length > 0 && (
+      <div class="mb-6">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Vista previa del contenido</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {course.gallery.map((image, index) => (
+            <div class="relative rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity">
+              <Image
+                src={image}
+                alt={`Vista previa ${index + 1}`}
+                class="w-full h-32 object-cover"
+                width={300}
+                height={200}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+    
+    <!-- Botones de acción -->
+    <div class="flex flex-col sm:flex-row gap-3 pt-4 border-t border-gray-200 dark:border-gray-700">
+      <a
+        href={course.link}
+        target="_blank"
+        class="flex-1 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition-colors text-center flex items-center justify-center gap-2"
+      >
+        <Icon name="tabler:external-link" class="w-5 h-5" />
+        Ver en Udemy
+      </a>
+      <button
+        data-modal-close
+        class="flex-1 sm:flex-none bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white px-6 py-3 rounded-lg font-medium transition-colors"
+      >
+        Cerrar
+      </button>
+    </div>
+  </div>
+</Modal>

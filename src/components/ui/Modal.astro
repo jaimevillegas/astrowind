@@ -1,0 +1,107 @@
+---
+export interface Props {
+  id: string;
+  class?: string;
+}
+
+const { id, class: className = '' } = Astro.props;
+---
+
+<div
+  id={id}
+  class={`fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 opacity-0 invisible transition-all duration-300 ${className}`}
+  data-modal
+>
+  <div
+    class="bg-white dark:bg-gray-900 rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden transform scale-95 transition-transform duration-300"
+    data-modal-content
+  >
+    <div class="flex justify-between items-center p-6 border-b border-gray-200 dark:border-gray-700">
+      <h3 class="text-xl font-semibold text-gray-900 dark:text-white" data-modal-title>
+        <!-- Título del modal -->
+      </h3>
+      <button
+        type="button"
+        class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+        data-modal-close
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="overflow-y-auto max-h-[calc(90vh-120px)]" data-modal-body>
+      <!-- Contenido del modal -->
+      <slot />
+    </div>
+  </div>
+</div>
+
+<script>
+  function initModal() {
+    const modals = document.querySelectorAll('[data-modal]');
+    
+    modals.forEach((modal) => {
+      const modalContent = modal.querySelector('[data-modal-content]');
+      const closeButtons = modal.querySelectorAll('[data-modal-close]');
+      
+      // Cerrar modal al hacer clic en el overlay
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal(modal);
+        }
+      });
+      
+      // Cerrar modal con botones de cierre
+      closeButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          closeModal(modal);
+        });
+      });
+      
+      // Cerrar modal con Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('opacity-100')) {
+          closeModal(modal);
+        }
+      });
+    });
+  }
+  
+  function openModal(modalId: string) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.remove('invisible', 'opacity-0');
+      modal.classList.add('opacity-100');
+      
+      const modalContent = modal.querySelector('[data-modal-content]');
+      if (modalContent) {
+        modalContent.classList.remove('scale-95');
+        modalContent.classList.add('scale-100');
+      }
+      
+      document.body.style.overflow = 'hidden';
+    }
+  }
+  
+  function closeModal(modal: Element) {
+    modal.classList.remove('opacity-100');
+    modal.classList.add('opacity-0', 'invisible');
+    
+    const modalContent = modal.querySelector('[data-modal-content]');
+    if (modalContent) {
+      modalContent.classList.remove('scale-100');
+      modalContent.classList.add('scale-95');
+    }
+    
+    document.body.style.overflow = 'auto';
+  }
+  
+  // Inicializar modales cuando se carga la página
+  document.addEventListener('DOMContentLoaded', initModal);
+  
+  // Hacer las funciones disponibles globalmente
+  (window as any).openModal = openModal;
+  (window as any).closeModal = closeModal;
+</script>
