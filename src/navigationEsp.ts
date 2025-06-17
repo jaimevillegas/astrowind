@@ -4,16 +4,16 @@ export const headerData = {
   links: [
     {
       text: 'Inicio',
-      href: getPermalink('/es'),
+      href: getPermalink('/'),
     },
     {
       text: 'Proyectos',
-      href: '/es/projects'
+      href: '/projects'
     },
-            { text: 'Cursos', href: '/es/courses' },
+            { text: 'Cursos', href: '/courses' },
     {
       text: 'Blog',
-      href: '/es/blog',
+      href: '/blog',
     },
     {
       text: 'Github',
@@ -28,11 +28,11 @@ export const footerData = {
     {
       title: 'Navigation',
       links: [
-        { text: 'Inicio', href: '/es' },
-        { text: 'Proyectos', href: '/es/projects' },
-        { text: 'Cursos', href: '/es/courses' },
-        { text: 'Blog', href: '/es/blog' },
-        { text: 'Contact', href: '/es/contact' },
+        { text: 'Inicio', href: '/' },
+        { text: 'Proyectos', href: '/projects' },
+        { text: 'Cursos', href: '/courses' },
+        { text: 'Blog', href: '/blog' },
+        { text: 'Contact', href: '/contact' },
       ],
     },
     {

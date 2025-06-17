@@ -6,7 +6,7 @@ import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 
 const metadata = {
-  title: 'Jaime Villegas - Offered Courses',
+  title: 'JV Dev Solutions - Cursos Ofrecidos',
 };
 
 import cursoChapa from '../assets/images/courses/chapa.png';
@@ -63,16 +63,16 @@ const courses = [
   <Fragment slot="header">
     <Header
       links={[
-        { text: 'Inicio', href: '/es' },
-        { text: 'Proyectos', href: '/es/projects' },
-        { text: 'Cursos', href: '/es/courses' },
-        { text: 'Blog', href: '/es/blog' },
+        { text: 'Inicio', href: '/' },
+        { text: 'Proyectos', href: '/projects' },
+        { text: 'Cursos', href: '/courses' },
+        { text: 'Blog', href: '/blog' },
         { text: 'Github', href: 'https://github.com/jaimevillegas' },
       ]}
       actions={[
         {
           text: 'Contáctame',
-          href: '/es/contact#form',
+          href: '/contact#form',
         },
       ]}
       isSticky
