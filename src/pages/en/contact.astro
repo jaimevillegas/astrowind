@@ -1,46 +1,46 @@
 ---
-import Layout from '~/layouts/PageLayoutEsp.astro';
+import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'Contacto',
+  title: 'Contact',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
-  <HeroText tagline="Contacto" title="Vamos a conectarnos!" />
+  <HeroText tagline="Contact" title="Let's Connect!" />
 
   <ContactUs
     id="form"
-    title="Déjame un mensaje"
-    subtitle="¿Tienes alguna pregunta o comentario? ¡Déjame un mensaje!"
+    title="Drop me a message"
+    subtitle="I'd love to hear from you! Whether you have a project in mind, a question about my work, or just want to say hello."
     inputs={[
       {
         type: 'text',
         name: 'name',
-        label: 'Nombre',
-        placeholder: 'Tu nombre',
+        label: 'Name',
+        placeholder: 'Your name',
         required: true,
       },
       {
         type: 'email',
         name: 'email',
         label: 'Email',
-        placeholder: 'Tu email',
+        placeholder: 'Your email address',
         required: true,
       },
     ]}
     textarea={{
-      label: 'Mensaje',
-      placeholder: 'Escribe tu mensaje aquí...',
+      label: 'Message',
+      placeholder: 'Your message here...',
       required: true,
       rows: 6,
     }}
-    description="¡Gracias por tu interés! Responderé a tu mensaje lo antes posible."
-    button="Enviar"
+    description="I typically respond within 24-48 hours."
+    button="Send Message"
   />
 
 </Layout>
