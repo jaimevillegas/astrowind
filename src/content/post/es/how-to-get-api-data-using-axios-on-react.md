@@ -1,7 +1,7 @@
 ---
 publishDate: 2024-01-14T00:00:00Z
 author: Jaime Villegas
-title: ES-How to Fetch API Data Using Axios in React - A Step-by-Step Guide (Part 1 - GET Requests)
+title: How to Fetch API Data Using Axios in React - A Step-by-Step Guide (Part 1 - GET Requests)
 excerpt: Learn how to efficiently fetch and handle API data in your React applications using Axios. 
 image: https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80
 category: Tutorials

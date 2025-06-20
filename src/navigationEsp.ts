@@ -35,12 +35,12 @@ export const footerData = {
         { text: 'Contact', href: '/contact' },
       ],
     },
-    {
-      title: 'Últimas Publicaciones',
-      links: [
-        { text: 'esp - How to Fetch API Data Using Axios in React - A Step-by-Step Guide (Part 1 - GET Requests)', href: '/how-to-get-api-data-using-axios-on-react' },
-      ],
-    },
+    // {
+    //   title: 'Últimas Publicaciones',
+    //   links: [
+    //     { text: 'esp - How to Fetch API Data Using Axios in React - A Step-by-Step Guide (Part 1 - GET Requests)', href: '/how-to-get-api-data-using-axios-on-react' },
+    //   ],
+    // },
   ],
   secondaryLinks: [
   ],
