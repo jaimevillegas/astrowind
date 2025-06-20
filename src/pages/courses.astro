@@ -23,10 +23,9 @@ const courses = [
     description: 'Descubre los fundamentos de la programación con PSeInt, una herramienta diseñada para principiantes. Aprende a desarrollar algoritmos y resolver problemas de manera lógica y estructurada, sentando las bases para tu futuro en el mundo de la programación.',
     image: cursoPseint,
     link: 'https://www.udemy.com/course/programacion-pseint/?referralCode=990BDFA6D7C1347AD6FC',
-    duration: '8 horas',
+    duration: '5 horas',
     level: 'Principiante',
-    students: '500+ estudiantes',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    students: '5000+ estudiantes',
     highlights: [
       'Conceptos básicos de programación',
       'Desarrollo de algoritmos paso a paso',
@@ -41,9 +40,9 @@ const courses = [
     description: 'Domina el diseño de engranajes utilizando SolidWorks. Este curso te guiará a través de los conceptos esenciales y las técnicas prácticas para crear modelos precisos y funcionales de engranajes, mejorando tus habilidades en diseño mecánico y CAD.',
     image: cursoEDM,
     link: 'https://www.udemy.com/course/elementos-de-maquinas-con-solidworks-engranajes/?referralCode=E9DFDAB65D067A6AD222',
-    duration: '12 horas',
+    duration: '9,5 horas',
     level: 'Intermedio',
-    students: '300+ estudiantes',
+    students: '3000+ estudiantes',
     highlights: [
       'Teoría de engranajes y transmisiones',
       'Modelado 3D de engranajes rectos y helicoidales',
@@ -58,9 +57,9 @@ const courses = [
     description: 'Conviértete en un experto en modelado de superficies con SOLIDWORKS. Aprende a crear diseños complejos y detallados utilizando técnicas avanzadas de modelado de superficies, perfeccionando tus habilidades para proyectos de ingeniería y diseño industrial.',
     image: cursoSuperficies,
     link: 'https://www.udemy.com/course/experto-en-modelado-de-superficies-con-solidworks/?referralCode=CAE5C627EB9801A09B8F',
-    duration: '15 horas',
+    duration: '4,5 horas',
     level: 'Avanzado',
-    students: '200+ estudiantes',
+    students: '150+ estudiantes',
     highlights: [
       'Técnicas avanzadas de superficies',
       'Modelado orgánico y formas complejas',
@@ -75,9 +74,9 @@ const courses = [
     description: 'Empieza tu viaje en el mundo de la programación con MATLAB desde cero. Aprende a utilizar esta poderosa herramienta para resolver problemas matemáticos, analizar datos y desarrollar algoritmos, sin necesidad de experiencia previa.',
     image: cursoMatlab,
     link: 'https://www.udemy.com/course/matlab-desde-cero-practico/?referralCode=E312D377982F89738C36',
-    duration: '10 horas',
+    duration: '7,5 horas',
     level: 'Principiante',
-    students: '400+ estudiantes',
+    students: '12300+ estudiantes',
     highlights: [
       'Fundamentos de MATLAB y su entorno',
       'Operaciones con matrices y vectores',
@@ -92,9 +91,9 @@ const courses = [
     description: 'Aprende a diseñar con chapa metálica en SOLIDWORKS y lleva tus habilidades de modelado al siguiente nivel. Este curso te enseñará a crear piezas precisas y eficientes, desde el concepto hasta la fabricación, utilizando las herramientas especializadas de SOLIDWORKS.',
     image: cursoChapa,
     link: 'https://www.udemy.com/course/diseno-con-chapa-metalica-en-solidworks/?referralCode=EBE7ED729D71DDCCD8AA',
-    duration: '8 horas',
+    duration: '3 horas',
     level: 'Intermedio',
-    students: '250+ estudiantes',
+    students: '500+ estudiantes',
     highlights: [
       'Herramientas específicas de chapa metálica',
       'Técnicas de doblado y conformado',
@@ -109,9 +108,9 @@ const courses = [
     description: 'Domina el diseño de estructuras con SOLIDWORKS, desde los conceptos básicos hasta técnicas avanzadas. Aprende a crear y analizar estructuras complejas, mejorando tus habilidades en ingeniería y diseño estructural con este completo curso.',
     image: cursoEstructuras,
     link: 'https://www.udemy.com/course/estructuras-con-solidworks/?referralCode=172F393B69540502B581',
-    duration: '14 horas',
+    duration: '3,5 horas',
     level: 'Intermedio a Avanzado',
-    students: '180+ estudiantes',
+    students: '4300+ estudiantes',
     highlights: [
       'Diseño de estructuras metálicas',
       'Weldments y perfiles estructurales',
@@ -224,3 +223,98 @@ const courses = [
     ]}
   />
 </Layout>
+
+<script>
+  // Declarar tipos para las funciones globales
+  declare global {
+    interface Window {
+      openModal: (modalId: string) => void;
+      closeModal: (modal: string | Element) => void;
+      modalsInitialized?: boolean;
+    }
+  }
+
+  // Asegurar que las funciones de modal estén disponibles
+  function ensureModalFunctions() {
+    // Si las funciones ya se inicializaron, no hacer nada
+    if (window.modalsInitialized) {
+      return;
+    }
+
+    // Definir las funciones
+    window.openModal = function(modalId: string) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('invisible', 'opacity-0');
+        modal.classList.add('opacity-100');
+        
+        const modalContent = modal.querySelector('[data-modal-content]');
+        if (modalContent) {
+          modalContent.classList.remove('scale-95');
+          modalContent.classList.add('scale-100');
+        }
+        
+        document.body.style.overflow = 'hidden';
+      }
+    };
+
+    window.closeModal = function(modal: string | Element) {
+      let modalElement: Element | null;
+      if (typeof modal === 'string') {
+        modalElement = document.getElementById(modal);
+      } else {
+        modalElement = modal;
+      }
+      
+      if (modalElement) {
+        modalElement.classList.remove('opacity-100');
+        modalElement.classList.add('opacity-0', 'invisible');
+        
+        const modalContent = modalElement.querySelector('[data-modal-content]');
+        if (modalContent) {
+          modalContent.classList.remove('scale-100');
+          modalContent.classList.add('scale-95');
+        }
+        
+        document.body.style.overflow = 'auto';
+      }
+    };
+
+    // Inicializar eventos de los modales
+    document.querySelectorAll('[data-modal]').forEach((modal) => {
+      // Cerrar modal al hacer clic en el overlay
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          window.closeModal(modal);
+        }
+      });
+      
+      // Cerrar modal con botones de cierre
+      modal.querySelectorAll('[data-modal-close]').forEach((button) => {
+        button.addEventListener('click', () => {
+          window.closeModal(modal);
+        });
+      });
+    });
+
+    // Cerrar modal con Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const openModal = document.querySelector('[data-modal].opacity-100');
+        if (openModal) {
+          window.closeModal(openModal);
+        }
+      }
+    });
+
+    // Marcar como inicializado
+    window.modalsInitialized = true;
+  }
+
+  // Ejecutar cuando el DOM esté listo
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', ensureModalFunctions);
+  } else {
+    ensureModalFunctions();
+  }
+</script>

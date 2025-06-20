@@ -2,14 +2,15 @@
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 import Modal from '~/components/ui/Modal.astro';
+import type { ImageMetadata } from 'astro';
 
 export interface CourseModalProps {
   course: {
     title: string;
     description: string;
-    image: any;
+    image: ImageMetadata;
     link: string;
-    gallery?: any[];
+    gallery?: ImageMetadata[];
     videoUrl?: string;
     highlights?: string[];
     duration?: string;
