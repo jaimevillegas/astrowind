@@ -4,11 +4,11 @@ author: Jaime Villegas
 title: Domina el Diseño en CSS - Tu Arsenal de Herramientas para Colores, Degradados y Patrones (Parte 1)
 excerpt: La inspiración y las herramientas que buscabas.
 image: ~/assets/images/posts/herramientas-css-1/cover.jpg
-category: Programación
+category: Web
 tags:
-  - VSCode
-  - extensiones
-  - productividad
+  - web
+  - CSS
+  - herramientas
   - programación
 ---
 
