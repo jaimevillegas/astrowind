@@ -1,29 +1,300 @@
 ---
-const { className = "mt-8" } = Astro.props;
+import { DISQUS_CONFIG } from '~/config/disqus';
+
+export interface Props {
+  className?: string;
+  language?: 'en' | 'es';
+}
+
+const { className = "mt-12", language = 'es' } = Astro.props;
 ---
 
-<div class={className}>
-  <script
-    src="https://giscus.app/client.js"
-    data-repo="jaimevillegas/astrowind"
-    data-repo-id="R_kgDONN1QLQ"
-    data-category="General"
-    data-category-id="DIC_kwDONN1QLc4ClCyV"
-    data-mapping="pathname"
-    data-strict="0"
-    data-reactions-enabled="1"
-    data-emit-metadata="0"
-    data-input-position="bottom"
-    data-theme="preferred_color_scheme"
-    data-lang="en"
-    data-loading="lazy"
-    crossorigin="anonymous"
-    async
-  ></script>
-</div>
+<section class={`comments-section ${className}`}>
+  <!-- Comments Section Header -->
+  <div class="comments-header">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-1 h-8 bg-gradient-to-b from-primary to-secondary rounded-full"></div>
+      <h3 class="comments-title">
+        Comentarios
+      </h3>
+    </div>
+    <p class="comments-description">
+      Comparte tu opinión sobre este artículo. Puedes comentar sin necesidad de registrarte.
+    </p>
+  </div>
+
+  <!-- Disqus Container with improved styling -->
+  <div class="disqus-container">
+    <div id="disqus_thread" class="disqus-thread"></div>
+    
+    <!-- Loading placeholder -->
+    <div id="disqus-loading" class="disqus-loading">
+      <div class="loading-spinner"></div>
+      <p class="loading-text">
+        Cargando comentarios...
+      </p>
+    </div>
+  </div>
+  
+  <script is:inline define:vars={{ shortname: DISQUS_CONFIG.shortname, lang: language }}>
+    // Disqus configuration
+    window.disqus_config = function () {
+      this.page.url = window.location.href;
+      this.page.identifier = window.location.pathname;
+      this.language = lang;
+    };
+    
+    // Hide loading spinner when Disqus loads
+    window.addEventListener('message', function(event) {
+      if (event.origin !== 'https://disqus.com') return;
+      if (event.data.type === 'resize' || event.data.type === 'rendered') {
+        const loading = document.getElementById('disqus-loading');
+        if (loading) loading.style.display = 'none';
+      }
+    });
+    
+    (function() {
+      const d = document;
+      const s = d.createElement('script');
+      s.src = `https://${shortname}.disqus.com/embed.js`;
+      s.setAttribute('data-timestamp', String(Date.now()));
+      (d.head || d.body).appendChild(s);
+      
+      // Hide loading after timeout
+      setTimeout(() => {
+        const loading = document.getElementById('disqus-loading');
+        if (loading) loading.style.display = 'none';
+      }, 5000);
+    })();
+  </script>
+  
+  <noscript>
+    <div class="noscript-message">
+      <div class="noscript-content">
+        <svg class="noscript-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <p>
+          Por favor, habilita JavaScript para ver los 
+          <a href="https://disqus.com/?ref_noscript" class="noscript-link">
+            comentarios powered by Disqus
+          </a>.
+        </p>
+      </div>
+    </div>
+  </noscript>
+</section>
 
 <style>
-  :global(.giscus) {
+  .comments-section {
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.1) 0%, 
+      rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(229, 231, 235, 0.3);
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+
+  .comments-section:hover {
+    border-color: rgba(229, 231, 235, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .comments-header {
+    margin-bottom: 2rem;
+  }
+
+  .comments-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(17, 24, 39);
+    margin: 0;
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .comments-description {
+    font-size: 0.875rem;
+    color: rgb(107, 114, 128);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .disqus-container {
+    position: relative;
+    min-height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(229, 231, 235, 0.4);
+  }
+
+  .disqus-thread {
     width: 100%;
+    min-height: 200px;
+  }
+
+  .disqus-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 1;
+  }
+
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(59, 130, 246, 0.2);
+    border-top: 3px solid rgb(59, 130, 246);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+  }
+
+  .loading-text {
+    color: rgb(107, 114, 128);
+    font-size: 0.875rem;
+    margin: 0;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .noscript-message {
+    padding: 2rem;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 1px solid #f59e0b;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .noscript-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .noscript-icon {
+    width: 48px;
+    height: 48px;
+    color: #f59e0b;
+  }
+
+  .noscript-link {
+    color: #1d4ed8;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+
+  .noscript-link:hover {
+    color: #1e40af;
+  }
+
+  /* Dark mode styles */
+  :global(.dark) .comments-section {
+    background: linear-gradient(135deg, 
+      rgba(31, 41, 55, 0.8) 0%, 
+      rgba(17, 24, 39, 0.9) 100%);
+    border-color: rgba(75, 85, 99, 0.3);
+  }
+
+  :global(.dark) .comments-section:hover {
+    border-color: rgba(75, 85, 99, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  :global(.dark) .comments-title {
+    color: rgb(243, 244, 246);
+    background: linear-gradient(135deg, #f9fafb 0%, #d1d5db 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  :global(.dark) .comments-description {
+    color: rgb(156, 163, 175);
+  }
+
+  :global(.dark) .disqus-container {
+    background: rgba(31, 41, 55, 0.8);
+    border-color: rgba(75, 85, 99, 0.4);
+  }
+
+  :global(.dark) .disqus-loading {
+    background: rgba(31, 41, 55, 0.95);
+  }
+
+  :global(.dark) .loading-text {
+    color: rgb(156, 163, 175);
+  }
+
+  :global(.dark) .noscript-message {
+    background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+    border-color: #6b7280;
+  }
+
+  :global(.dark) .noscript-link {
+    color: #60a5fa;
+  }
+
+  :global(.dark) .noscript-link:hover {
+    color: #93c5fd;
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .comments-section {
+      padding: 1.5rem;
+      border-radius: 12px;
+    }
+
+    .comments-title {
+      font-size: 1.25rem;
+    }
+
+    .disqus-container {
+      min-height: 180px;
+    }
+
+    .loading-spinner {
+      width: 32px;
+      height: 32px;
+      border-width: 2px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .comments-section {
+      padding: 1rem;
+    }
+
+    .comments-header {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  /* Integration with Disqus iframe */
+  :global(#disqus_thread iframe) {
+    border-radius: 8px !important;
+  }
+
+  /* Ensure proper spacing in blog layout */
+  .comments-section + * {
+    margin-top: 3rem;
   }
 </style>
