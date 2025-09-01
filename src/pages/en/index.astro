@@ -1,0 +1,342 @@
+
+
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Jaime Villegas - Web Personal',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="announcement"></Fragment>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Home', href: '/en' },
+        // { text: 'About', href: '#about' },
+        // { text: 'Resume', href: '#resume' },
+        // { text: 'Portfolio', href: '#portfolio' },
+        { text: 'Projects', href: '/en/projects' },
+        { text: 'Courses', href: '/en/courses' },
+        { text: 'Blog', href: '/en/blog' },
+        { text: 'Github', href: 'https://github.com/jaimevillegas' },
+      ]}
+      actions={[
+        {
+          text: 'Get in Touch',
+          href: '/en/contact#form',
+        },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
+  <Hero
+    id="hero"
+    title="Jaime Villegas"
+    tagline="Hello! I'm"
+    actions={[{ variant: 'primary', text: 'Contáctame', href: getPermalink('/contact#form') }]}
+  >
+    <Fragment slot="subtitle">
+     I combine technical expertise in <span class="text-orange-600 font-bold">engineering</span> with a passion for<span
+        class="text-orange-600 font-bold"
+        > modern web development.
+    </span>I design impactful solutions that improve user experience and solve complex problems.
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+  <Content
+    id="about"
+    columns={4}
+    items={[
+      {
+        icon: 'tabler:brand-fiverr',
+        callToAction: {
+          target: '_blank',
+          text: 'Fiverr',
+          href: 'https://fiverr.com/villegas296',
+        },
+      },
+      {
+        icon: 'tabler:brand-github',
+        callToAction: {
+          target: '_blank',
+          text: 'GitHub',
+          href: 'https://github.com/jaimevillegas',
+        },
+      },
+      {
+        icon: 'tabler:brand-linkedin',
+        callToAction: {
+          target: '_blank',
+          text: 'LinkedIn',
+          href: 'https://www.linkedin.com/in/villegas0296/',
+        },
+      },
+      {
+        icon: 'tabler:brand-x',
+        callToAction: {
+          target: '_blank',
+          text: 'X',
+          href: 'https://x.com/JaimeVillegazz',
+        },
+      },
+    ]}
+    image={{
+      src: '~/assets/images/profile.jpg',
+      alt: 'Colorful Image',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
+      <p>
+        As a Front-End Developer and Mechatronics Engineer, I specialize in bridging the gap between hardware and software, developing solutions that improve user experiences and boost efficiency. With a strong background in robotics and CAD design, combined with experience in modern web development, I am passionate about building scalable and responsive applications.
+      </p>
+      <br />
+      <p>If you're curious to learn more about my work, you can follow me:</p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- BlogLatestPost Widget **************** -->
+  <BlogLatestPosts
+    id="blog"
+    title="Technical Explorations and Engineering Solutions"
+    information={`Explore my latest articles on web development, engineering practices, and technical solutions that drive innovation and efficiency in the digital landscape.`}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
+
+    <!-- Content Widget **************** -->
+  <Content
+    id="portfolio"
+    title="Portfolio"
+    isReversed
+    items={[
+      {
+        description:
+          'Showcasing modern web solutions, this collection features dynamic, responsive applications built with technologies like React, Node.js, and Tailwind CSS. From intuitive user interface design to full-stack implementations, explore projects focused on delivering seamless user experiences and robust functionality.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80',
+      alt: 'Web Development Projects',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'See Projects',
+      icon: 'tabler:chevron-right',
+      href: '/projects#web',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Web Development</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+  <Content
+    isReversed
+    isAfterContent={true}
+    items={[
+      {
+        // title: 'Description:',
+        description:
+          'A selection of engineering projects that combine mechanical design, electronics, and automation to solve real-world challenges. Featuring CAD models, embedded systems, and custom hardware solutions, each project demonstrates a commitment to precision and innovation in the industrial field.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Proyectos de Ingeniería',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'See Projects',
+      icon: 'tabler:chevron-right',
+      href: '/projects#engineering',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Engineering
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+  <Steps
+    id="resume"
+    title="Work experience"
+    items={[
+  {
+    title:
+    'Freelance Professional Engineer<br />  <span class="text-sm font-normal">2022 - PRESENT</span>',
+    // description: `Asistió a diseñadores senior en la creación de conceptos de diseño y activos visuales. <br /> Contribuyó al desarrollo de identidades de marca y material de marketing. <br /> Colaboró con el equipo de marketing para asegurar un diseño consistente en las campañas. <br /> Adquirió experiencia práctica en varios programas y herramientas de diseño.`,
+    description: 'Professional freelance engineer with extensive experience delivering high-quality projects on platforms like Fiverr. I have completed numerous projects spanning web development, electronic schematic and PCB design, CAD modeling and simulation, and web design. With a commitment to precision and innovation, I tailor each project to meet client specifications, leveraging my interdisciplinary expertise to provide effective solutions across both software and hardware domains.',
+    icon: 'tabler:briefcase',
+  },
+  {
+    title:
+      'Frontend Software Engineer <br /> <span class="font-normal">Unydos Consulting S.A.S, COL</span> <br /> <span class="text-sm font-normal">2024</span>',
+    description: "As a lead developer on a legacy software modernization project, I was responsible for transforming an existing software application into a modern, scalable solution using React. My role involved translating client requirements into actionable technical tasks, which I delegated to the development team to ensure efficient and accurate execution. By overseeing the technical direction of the project and aligning development efforts with the client's needs, I helped drive the evolution of this application into a responsive, user-centric product that meets current industry standards.",
+    icon: 'tabler:code',
+  },
+  {
+    title:
+      'CAD Mechanical Engineer <br /> <span class="font-normal">Industrial Sector (Multiple Employers)</span> <br /> <span class="text-sm font-normal">2016 - 2022</span>',
+    description: "As a Mechanical Designer specializing in industrial solutions, I collaborated directly with clients—primarily within diverse industries—to analyze their requirements and provide customized engineering solutions. My role involved on-site assessments to obtain accurate measurements and understand the unique needs of each project. Through conceptual, basic, and detailed engineering, I designed solutions such as tanks, pipes, conveyor systems, elevators, and platforms, each intended to improve and optimize industrial processes. My expertise lies in creating functional and efficient designs that enhance production lines and align with the client's operational objectives.",
+    icon: 'tabler:settings',
+  }
+]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <Features3
+    title="Skills"
+    subtitle="Discover the skills that allow me to bring imagination to life through design."
+    columns={3}
+    defaultIcon="tabler:point-filled"
+    items={[
+  {
+    title: 'Frontend Web Development',
+    description: 'Specializing in building dynamic and responsive user interfaces with React, HTML, CSS, and JavaScript, focusing on creating fluid and interactive user experiences.',
+  },
+  {
+    title: 'CAD Modeling and Simulation',
+    description: 'Proficient in the use of CAD software for 3D modeling and simulation of mechanical components, from conceptual design to detailed engineering analysis.',
+  },
+  {
+    title: 'PCB and Electronics Design',
+    description: 'Design and simulation of electronic circuits and PCBs, ensuring optimal performance and integration for a variety of hardware projects.',
+  },
+  {
+    title: 'Embedded Systems and Microcontrollers',
+    description: 'Programming and integrating Arduino, ESP32, and other microcontrollers to develop efficient and reliable hardware solutions.',
+  },
+  {
+    title: 'Robotics and Control Systems',
+    description: 'Development and simulation of robotic systems using MATLAB and LabVIEW for precise control, automation, and data analysis.',
+  },
+  {
+    title: 'HMI Interface Development',
+    description: 'Creating intuitive graphical interfaces for HMI devices, including Raspberry Pi touchscreens and microcontroller displays, to improve user interaction and control.',
+  },
+  {
+    title: 'Problem Solving and Optimization',
+    description: 'Ability to analyze complex problems and develop creative and effective solutions that improve performance, reduce costs, and increase productivity.',
+  },
+  {
+    title: 'Project Leadership and Team Collaboration',
+    description: 'Leading projects from conception to execution, coordinating teams, delegating tasks, and ensuring alignment with client requirements and deadlines.',
+  },
+  {
+    title: 'Technical Communication and Customer Relations',
+    description: 'Strong communication skills to translate technical requirements into actionable tasks, maintaining clear and efficient dialogue with clients to ensure project success.',
+  },
+]}
+  />
+
+
+  <!-- Testimonials Widget *********** -->
+  <!-- <Testimonials
+    title="Client testimonials"
+    subtitle="Discover what clients have to say about their experiences working with me."
+    testimonials={[
+      {
+        testimonial: `She took our vague concept and turned it into a visual masterpiece that perfectly aligned with our goals. Her attention to detail and ability to translate ideas into compelling visuals exceeded our expectations.`,
+        name: 'Mark Thompson',
+        job: 'Creative director',
+        image: {
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Mark Thompson Image',
+        },
+      },
+      {
+        testimonial: `She transformed our brand identity with her creative finesse, capturing our essence in every element. Her dedication and talent truly shine through her work.`,
+        name: 'Emily Martinez',
+        job: 'CEO',
+        image: {
+          src: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=772&q=80',
+          alt: 'Emily Martinez Image',
+        },
+      },
+      {
+        testimonial: `She has an uncanny ability to communicate emotions and stories. She crafted a logo for our NGO that not only represents our cause but also evokes empathy. Her professionalism and commitment make her a designer of exceptional caliber.`,
+        name: 'Laura Simmons',
+        job: 'Founder of an NGO',
+        image: {
+          src: 'https://images.unsplash.com/photo-1554727242-741c14fa561c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Laura Simmons Image',
+        },
+      },
+      {
+        testimonial: `We entrusted Sarah with revamping our website's user interface, and the results were astounding. Her intuitive design sense enhanced user experience, leading to a significant increase in engagement. She's a designer who truly understands the synergy of aesthetics and functionality.`,
+        name: 'Alex Foster',
+        job: 'Director of web services',
+        image: {
+          src: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Alex Foster Image',
+        },
+      },
+      {
+        testimonial: `She took our vision and elevated it beyond imagination. Her ability to capture brand essence and translate it into design is nothing short of remarkable. Working with her has been an inspiring journey.`,
+        name: 'Jessica Collins',
+        job: 'Product Manager',
+        image: {
+          src: 'https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=778&q=80',
+          alt: 'Jessica Collins Image',
+        },
+      },
+      {
+        testimonial: `Her ability to transform concepts into captivating visuals is nothing short of extraordinary. She took our event poster idea and turned it into a visual masterpiece that perfectly captured the essence of our festival. Sarah's dedication, creativity, and knack for delivering beyond expectations make her an invaluable asset to any project.`,
+        name: 'Michael Carter',
+        job: 'Event Coordinator',
+        image: {
+          src: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Michael Carter Image',
+        },
+      },
+    ]}
+  /> -->
+  <!-- CallToAction Widget *********** -->
+  <CallToAction
+    title="Let's create something together"
+    subtitle="Are you ready to transform your vision into captivating designs?"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get in Tocuh',
+    href: '/en/contact#form',
+      },
+    ]}
+  />
+
+</Layout>
