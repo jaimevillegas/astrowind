@@ -6,13 +6,13 @@ import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features3 from '~/components/widgets/Features3.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: 'Jaime Villegas - Web Personal',
+  title: 'JV Dev Solutions',
 };
 ---
 
@@ -21,19 +21,16 @@ const metadata = {
   <Fragment slot="header">
     <Header
       links={[
-        { text: 'Inicio', href: '/es' },
-        // { text: 'About', href: '#about' },
-        // { text: 'Resume', href: '#resume' },
-        // { text: 'Portfolio', href: '#portfolio' },
-        { text: 'Proyectos', href: '/es/projects' },
-        { text: 'Cursos', href: '/es/courses' },
-        { text: 'Blog', href: '/es/blog' },
+        { text: 'Inicio', href: '/' },
+        { text: 'Proyectos', href: '/projects' },
+        { text: 'Cursos', href: '/courses' },
+        { text: 'Blog', href: '/blog' },
         { text: 'Github', href: 'https://github.com/jaimevillegas' },
       ]}
       actions={[
         {
           text: 'Contáctame',
-          href: '/es/contact#form',
+          href: '/contact#form',
         },
       ]}
       isSticky
@@ -49,10 +46,10 @@ const metadata = {
     actions={[{ variant: 'primary', text: 'Contáctame', href: getPermalink('/contact#form') }]}
   >
     <Fragment slot="subtitle">
-      Combino experiencia técnica en <span class="text-orange-600 font-bold">ingeniería</span> con pasión por el <span
+      Fusiono mi background en <span class="text-orange-600 font-bold">ingeniería</span> con el<span
         class="text-orange-600 font-bold"
-        >desarrollo web moderno
-    </span>. Diseño soluciones impactantes que mejoran la experiencia del usuario y resuelven problemas complejos.
+        > desarrollo web moderno
+      </span> para crear productos digitales de alto rendimiento. Diseño y construyo aplicaciones que no solo son funcionales, sino también lógicas y fáciles de mantener.
     </Fragment>
   </Hero>
 
@@ -85,14 +82,6 @@ const metadata = {
           href: 'https://www.linkedin.com/in/villegas0296/',
         },
       },
-      {
-        icon: 'tabler:brand-x',
-        callToAction: {
-          target: '_blank',
-          text: 'X',
-          href: 'https://x.com/JaimeVillegazz',
-        },
-      },
     ]}
     image={{
       src: '~/assets/images/profile.jpg',
@@ -103,12 +92,12 @@ const metadata = {
     <Fragment slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Acerca de mí</h2>
       <p>
-        Como Desarrollador Frontend e Ingeniero Mecatrónico, me especializo en cerrar la brecha entre el hardware y el
-software, desarrollando soluciones que mejoran las experiencias de los usuarios e impulsan la eficiencia. Con una sólida formación en robótica
-y diseño CAD, combinada con experiencia en desarrollo web moderno, me apasiona crear aplicaciones escalables y con capacidad de respuesta.
+        Como ingeniero, aprendí a construir cosas que funcionan. Como desarrollador, aprendí a construir cosas que la gente ama usar.
+
+        Mi doble perfil me permite abordar cada proyecto desde dos ángulos: la solidez técnica de la ingeniería y la empatía del diseño centrado en el usuario. El resultado son aplicaciones web eficientes, escalables y con una experiencia de usuario impecable.
       </p>
       <br />
-      <p>Si tienes curiosidad por profundizar en mi trabajo, puedes seguirme:</p>
+      <p>¿Interesado en colaborar? Contáctame aquí:</p>
     </Fragment>
 
     <Fragment slot="bg">
@@ -119,8 +108,9 @@ y diseño CAD, combinada con experiencia en desarrollo web moderno, me apasiona 
   <!-- BlogLatestPost Widget **************** -->
   <BlogLatestPosts
     id="blog"
-    title="Exploraciones Técnicas y Soluciones de Ingeniería"
-    information={`Explore mis últimos artículos sobre desarrollo web, prácticas de ingeniería y soluciones técnicas que impulsan la innovación y la eficiencia en el panorama digital.`}
+    title="Del Código al Engranaje"
+    linkText="Ver todas las publicaciones"
+    information={`Un espacio para analizar problemas, experimentar con tecnología y compartir guías prácticas sobre desarrollo, ingeniería y la magia que ocurre al combinarlos.`}
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -134,16 +124,16 @@ y diseño CAD, combinada con experiencia en desarrollo web moderno, me apasiona 
     isReversed
     items={[
       {
-        // title: 'Description:',
         description:
-          'Mostrando soluciones web modernas, esta colección presenta aplicaciones dinámicas y responsivas creadas con tecnologías como React, Node.js y Tailwind CSS. Desde el diseño intuitivo de interfaces de usuario hasta implementaciones full-stack, explora proyectos enfocados en ofrecer experiencias de usuario fluidas y una funcionalidad robusta.',
+    'Aquí es donde las ideas se convierten en código. Creo productos digitales funcionales y escalables. En esta sección encontrarás aplicaciones web full-stack, diseñadas con tecnologías como React y Tailwind CSS para ser visualmente atractivas y ofrecer una funcionalidad sólida que resuelve problemas reales.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80',
+      src: '~/assets/images/web-development.jpg',
       alt: 'Web Development Projects',
     }}
     callToAction={{
+      variant: 'secondary',
       target: '_blank',
       text: 'Ver Proyectos',
       icon: 'tabler:chevron-right',
@@ -152,7 +142,7 @@ y diseño CAD, combinada con experiencia en desarrollo web moderno, me apasiona 
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Desarrollo Web
+        Soluciones de Software
       </h3>
     </Fragment>
 
@@ -167,16 +157,16 @@ y diseño CAD, combinada con experiencia en desarrollo web moderno, me apasiona 
     isAfterContent={true}
     items={[
       {
-        // title: 'Description:',
         description:
-          'Una selección de proyectos de ingeniería que combinan diseño mecánico, electrónica y automatización para resolver desafíos del mundo real. Con modelos CAD, sistemas embebidos y soluciones de hardware personalizadas, cada proyecto demuestra un compromiso con la precisión y la innovación en el ámbito industrial.',
+      'La base de mi pensamiento lógico. Aquí muestro mi trabajo en diseño mecánico (CAD), electrónica y automatización, donde la precisión es clave para resolver desafíos industriales. Esta mentalidad de ingeniero es la que aplico hoy para construir software sólido y bien estructurado.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      src: '~/assets/images/engineering.jpg',
       alt: 'Proyectos de Ingeniería',
     }}
     callToAction={{
+      variant: 'secondary',
       target: '_blank',
       text: 'Ver Proyectos',
       icon: 'tabler:chevron-right',
@@ -185,7 +175,7 @@ y diseño CAD, combinada con experiencia en desarrollo web moderno, me apasiona 
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Ingeniería
+        Ingeniería y Diseño de Hardware
       </h3>
     </Fragment>
 
@@ -201,159 +191,187 @@ y diseño CAD, combinada con experiencia en desarrollo web moderno, me apasiona 
     items={[
   {
     title:
-    'Ingeniero Freelance Profesional <br />  <span class="text-sm font-normal">2022 - PRESENTE</span>',
-    // description: `Asistió a diseñadores senior en la creación de conceptos de diseño y activos visuales. <br /> Contribuyó al desarrollo de identidades de marca y material de marketing. <br /> Colaboró con el equipo de marketing para asegurar un diseño consistente en las campañas. <br /> Adquirió experiencia práctica en varios programas y herramientas de diseño.`,
-    description: 'Ingeniero Freelance Profesional con amplia experiencia en la entrega de proyectos de alta calidad en plataformas como Fiverr. He completado numerosos proyectos que abarcan desarrollo web, diseño de esquemas electrónicos y PCB, modelado y simulación CAD, y diseño web. Con un compromiso con la precisión y la innovación, adapto cada proyecto para cumplir con las especificaciones del cliente, aprovechando mi experiencia interdisciplinaria para proporcionar soluciones efectivas en los dominios de software y hardware.',
+    'Ingeniero Freelance Profesional <br />  <span class="font-normal">Fiverr</span> <br /> <span class="text-sm font-normal"> 2022 - PRESENTE</span>',
+    description: 'Como profesional independiente, gestiono proyectos de ciclo completo para clientes internacionales, especializándome en desarrollo web y soluciones de ingeniería a medida. <br /> <span className="font-normal text-white">- Desarrollo Full-Stack:</span> He construido y desplegado aplicaciones web completas utilizando React, Node.js y bases de datos SQL/NoSQL, entregando productos robustos y escalables.<br /><span className="font-bold">- Diseño de componentes y UI:</span> He creado interfaces de usuario interactivas y sistemas de componentes reutilizables con Tailwind CSS, enfocándome en la usabilidad y la experiencia del usuario. <br /> - Soluciones Integrales: He integrado mis habilidades de software y hardware para proyectos únicos, incluyendo el diseño de PCBs y la simulación CAD, demostrando una capacidad única para resolver problemas en la intersección de ambos mundos.',
     icon: 'tabler:briefcase',
   },
   {
     title:
       'Ingeniero de Software Frontend <br /> <span class="font-normal">Unydos Consulting S.A.S, COL</span> <br /> <span class="text-sm font-normal">2024</span>',
-    description: "Como desarrollador principal en un proyecto de modernización de software heredado, fui responsable de transformar una aplicación de software existente en una solución moderna y escalable utilizando React. Mi rol implicó traducir los requisitos del cliente en tareas técnicas accionables, que delegué en el equipo de desarrollo para asegurar una ejecución eficiente y precisa. Al supervisar la dirección técnica del proyecto y alinear los esfuerzos de desarrollo con las necesidades del cliente, ayudé a impulsar la evolución de esta aplicación hacia un producto receptivo y centrado en el usuario que cumpla con los estándares de la industria actuales.",
+                                                                                                                        description: "Lideré la modernización de una aplicación de software heredada, transformándola en una solución web escalable y de alto rendimiento con React. <br /> - Liderazgo Técnico: Dirigí la arquitectura frontend del proyecto, migrando la base de código a un sistema moderno basado en componentes que mejoró la mantenibilidad y la velocidad de desarrollo. <br /> - Gestión de Proyecto y Equipo: Traduje los requisitos del cliente en un backlog técnico accionable y coordiné al equipo de desarrollo, asegurando entregas de alta calidad alineadas con los objetivos del negocio. <br /> - Impacto y Resultados: La nueva aplicación ofreció una experiencia de usuario significativamente más fluida y responsiva, estableciendo una base técnica sólida para la implementación de futuras funcionalidades.",
     icon: 'tabler:code',
   },
   {
     title:
-      'Ingeniero CAD Mecánico <br /> <span class="font-normal">Sector Industrial (Múltiples Empleadores)</span> <br /> <span class="text-sm font-normal">2016 - 2022</span>',
-    description: "Como Diseñador Mecánico especializado en soluciones industriales, colaboré directamente con clientes—principalmente dentro de diversas industrias—para analizar sus requisitos y proporcionar soluciones de ingeniería a medida. Mi rol involucró evaluaciones in situ para obtener mediciones precisas y comprender las necesidades únicas de cada proyecto. A través de la ingeniería conceptual, básica y detallada, diseñé soluciones como tanques, tuberías, sistemas de transporte, elevadores y plataformas, cada una destinada a mejorar y optimizar los procesos industriales. Mi experiencia radica en crear diseños funcionales y eficientes que mejoren las líneas de producción y se alineen con los objetivos operativos del cliente.",
+    'Ingeniero CAD Mecánico & Ingeniero de Proyectos <br /> <span class="font-normal">Sector Industrial (Múltiples Empleadores)</span> <br /> <span class="text-sm font-normal">2016 - 2022</span>',
+    description: "Diseñé soluciones de ingeniería a medida para optimizar procesos industriales, trabajando directamente con clientes desde el concepto hasta la implementación. <br /> - Análisis y Especificaciones: Analicé requerimientos complejos de clientes y los traduje en especificaciones técnicas detalladas, una habilidad que ahora aplico para definir el alcance de proyectos de software. <br /> - Diseño de Sistemas Complejos: Utilicé herramientas CAD para modelar y diseñar sistemas mecánicos (tuberías, transportadores, etc.), desarrollando un enfoque metódico para la creación de sistemas lógicos y eficientes. <br /> - La base de mi Carrera en Software: Esta experiencia sentó las bases de mi capacidad para la resolución de problemas y el pensamiento estructurado, permitiéndome construir software bien diseñado y robusto.",
     icon: 'tabler:settings',
   }
 ]}
     classes={{ container: 'max-w-3xl' }}
   />
 
-  <!-- Steps Widget ****************** -->
-  <!-- <Steps
-    id="resume"
-    title="Education"
-    items={[
-      {
-        title: `Master of Fine Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2018 - 2020</span>`,
-        icon: 'tabler:school',
-      },
-      {
-        title: `Bachelor of Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2014 - 2018</span>`,
-        icon: 'tabler:school',
-      },
-    ]}
-    classes={{ container: 'max-w-3xl' }}
-  /> -->
-  <!-- Features3 Widget ************** -->
-  <Features3
-    title="Habilidades"
-    subtitle="Descubre las competencias que me permiten dar vida a la imaginación a través del diseño."
-    columns={3}
-    defaultIcon="tabler:point-filled"
-    items={[
-  {
-    title: 'Desarrollo Web Frontend',
-    description: 'Especializado en construir interfaces de usuario dinámicas y responsivas con React, HTML, CSS y JavaScript, enfocándome en crear experiencias de usuario fluidas e interactivas.',
-  },
-  {
-    title: 'Modelado y Simulación CAD',
-    description: 'Competente en el uso de software CAD para modelado 3D y simulación de componentes mecánicos, desde el diseño conceptual hasta el análisis de ingeniería detallado.',
-  },
-  {
-    title: 'Diseño de PCB y Electrónica',
-    description: 'Diseño y simulación de circuitos electrónicos y PCBs, asegurando un rendimiento óptimo e integración para una variedad de proyectos de hardware.',
-  },
-  {
-    title: 'Sistemas Embebidos y Microcontroladores',
-    description: 'Programación e integración de Arduino, ESP32 y otros microcontroladores para desarrollar soluciones de hardware eficientes y confiables.',
-  },
-  {
-    title: 'Robótica y Sistemas de Control',
-    description: 'Desarrollo y simulación de sistemas robóticos utilizando MATLAB y LabVIEW para un control preciso, automatización y análisis de datos.',
-  },
-  {
-    title: 'Desarrollo de Interfaces HMI',
-    description: 'Creación de interfaces gráficas intuitivas para dispositivos HMI, incluyendo pantallas táctiles Raspberry Pi y displays de microcontroladores, para mejorar la interacción y control del usuario.',
-  },
-  {
-    title: 'Resolución de Problemas y Optimización',
-    description: 'Habilidad para analizar problemas complejos y desarrollar soluciones creativas y efectivas que mejoren el rendimiento, reduzcan costos y aumenten la productividad.',
-  },
-  {
-    title: 'Liderazgo de Proyectos y Colaboración en Equipo',
-    description: 'Liderazgo de proyectos desde la concepción hasta la ejecución, coordinando equipos, delegando tareas y asegurando la alineación con los requisitos y plazos del cliente.',
-  },
-  {
-    title: 'Comunicación Técnica y Relaciones con Clientes',
-    description: 'Fuertes habilidades de comunicación para traducir requisitos técnicos en tareas accionables, manteniendo un diálogo claro y eficiente con los clientes para asegurar el éxito del proyecto.',
-  },
-]}
-  />
-
+<Features3
+  title="Habilidades"
+  subtitle="La combinación de desarrollo de software y precisión de ingeniería que aplico para construir soluciones robustas y eficientes."
+  columns={3}
+  defaultIcon="tabler:point-filled"
+  items={[
+    // Categoría: Desarrollo de Software y Web
+    {
+      title: 'Desarrollo Frontend',
+      description: 'Construcción de interfaces de usuario interactivas y de alto rendimiento con React, JavaScript (ES6+), HTML5 y CSS3, creando experiencias de usuario memorables.',
+    },
+    {
+      title: 'Desarrollo Backend',
+      description: 'Creación de APIs RESTful robustas y servidores eficientes con Node.js y Express. Experiencia en la gestión de la lógica de negocio del lado del servidor.',
+    },
+    {
+      title: 'Bases de Datos',
+      description: 'Diseño y gestión de bases de datos relacionales (SQL - PostgreSQL) y no relacionales (NoSQL - MongoDB) para asegurar la persistencia y la integridad de los datos.',
+    },
+    {
+      title: 'Control de Versiones y Herramientas',
+      description: 'Dominio de Git y GitHub para el control de versiones y colaboración en equipo. Experiencia con herramientas de empaquetado como NPM/Yarn.',
+    },
+    {
+      title: 'Pruebas y Calidad de Código',
+      description: 'Implementación de pruebas unitarias y de integración para garantizar la fiabilidad del software. Foco en escribir código limpio, mantenible y escalable.',
+    },
+    // Categoría: Ingeniería y Hardware
+    {
+      title: 'Modelado y Simulación CAD',
+      description: 'Experiencia en modelado 3D y simulación de sistemas mecánicos con software CAD, desde el concepto hasta el análisis de ingeniería detallado.',
+    },
+    {
+      title: 'Diseño de PCB y Electrónica',
+      description: 'Diseño y simulación de circuitos electrónicos y PCBs para proyectos de hardware, asegurando la integración y el rendimiento óptimo del sistema.',
+    },
+    {
+      title: 'Sistemas Embebidos y Microcontroladores',
+      description: 'Programación de Arduino, ESP32 y otros microcontroladores para desarrollar soluciones de hardware eficientes para la automatización y la captura de datos.',
+    },
+    {
+      title: 'Robótica y Sistemas de Control',
+      description: 'Desarrollo de sistemas robóticos y algoritmos de control utilizando MATLAB y LabVIEW para la automatización de procesos y el análisis de datos.',
+    },
+    // Categoría: Habilidades Profesionales y Metodologías
+    {
+      title: 'Resolución de Problemas Complejos',
+      description: 'Capacidad analítica para descomponer desafíos complejos y desarrollar soluciones creativas que optimizan el rendimiento, los costos y la eficiencia.',
+    },
+    {
+      title: 'Gestión de Proyectos y Liderazgo',
+      description: 'Liderazgo de proyectos técnicos desde la concepción hasta el despliegue, coordinando equipos y asegurando la alineación con los objetivos del cliente.',
+    },
+    {
+      title: 'Metodologías Ágiles',
+      description: 'Experiencia trabajando con flujos de trabajo ágiles como Scrum y Kanban, participando en ceremonias de planificación, sprints y retrospectivas.',
+    },
+    {
+      title: 'Comunicación Técnica y de Cliente',
+      description: 'Habilidad para comunicar conceptos técnicos complejos de forma clara a audiencias diversas y para mantener una relación fluida y productiva con los clientes.',
+    },
+  ]}
+/>
 
   <!-- Testimonials Widget *********** -->
-  <!-- <Testimonials
-    title="Client testimonials"
-    subtitle="Discover what clients have to say about their experiences working with me."
+  <Testimonials
+    id="testimonials"
+    title="Lo que dicen mis clientes"
+    subtitle="Resultados y colaboración que generan confianza."
     testimonials={[
       {
-        testimonial: `She took our vague concept and turned it into a visual masterpiece that perfectly aligned with our goals. Her attention to detail and ability to translate ideas into compelling visuals exceeded our expectations.`,
-        name: 'Mark Thompson',
-        job: 'Creative director',
+        testimonial:
+          'Jaime no solo entregó un producto de alta calidad, sino que su enfoque de ingeniería aseguró que fuera escalable y robusto. Su comunicación fue excelente durante todo el proceso.',
+        name: 'Cliente Satisfecho',
+        job: 'CEO de Startup',
         image: {
-          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Mark Thompson Image',
+          src: '~/assets/images/profile2.jpg',
+          alt: 'Avatar de Cliente Satisfecho',
         },
       },
       {
-        testimonial: `She transformed our brand identity with her creative finesse, capturing our essence in every element. Her dedication and talent truly shine through her work.`,
-        name: 'Emily Martinez',
-        job: 'CEO',
+        testimonial:
+          'La capacidad de Jaime para entender requisitos complejos y traducirlos en una solución funcional es impresionante. Lo recomiendo totalmente.',
+        name: 'Gerente de Proyecto',
+        job: 'Empresa de Tecnología',
         image: {
-          src: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=772&q=80',
-          alt: 'Emily Martinez Image',
+          src: '~/assets/images/profile3.jpg',
+          alt: 'Avatar de Gerente de Proyecto',
         },
       },
       {
-        testimonial: `She has an uncanny ability to communicate emotions and stories. She crafted a logo for our NGO that not only represents our cause but also evokes empathy. Her professionalism and commitment make her a designer of exceptional caliber.`,
-        name: 'Laura Simmons',
-        job: 'Founder of an NGO',
+        testimonial:
+          'Un profesional increíble. Entendió nuestra visión y la ejecutó a la perfección, prestando atención a cada detalle.',
+        name: 'Directora de Marketing',
+        job: 'Agencia Creativa',
         image: {
-          src: 'https://images.unsplash.com/photo-1554727242-741c14fa561c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Laura Simmons Image',
+          src: '~/assets/images/profile.jpg',
+          alt: 'Avatar de Directora de Marketing',
         },
       },
       {
-        testimonial: `We entrusted Sarah with revamping our website's user interface, and the results were astounding. Her intuitive design sense enhanced user experience, leading to a significant increase in engagement. She's a designer who truly understands the synergy of aesthetics and functionality.`,
-        name: 'Alex Foster',
-        job: 'Director of web services',
+        testimonial:
+          'El código es limpio, bien documentado y funciona sin problemas. Un placer trabajar con alguien que valora las buenas prácticas.',
+        name: 'Desarrollador Senior',
+        job: 'Consultora de Software',
         image: {
-          src: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Alex Foster Image',
+          src: '~/assets/images/profile2.jpg',
+          alt: 'Avatar de Desarrollador Senior',
         },
       },
       {
-        testimonial: `She took our vision and elevated it beyond imagination. Her ability to capture brand essence and translate it into design is nothing short of remarkable. Working with her has been an inspiring journey.`,
-        name: 'Jessica Collins',
-        job: 'Product Manager',
+        testimonial:
+          'Resolvió un problema de ingeniería que nos tenía atascados durante meses. Su doble perfil es una ventaja competitiva innegable.',
+        name: 'Jefe de Operaciones',
+        job: 'Planta de Manufactura',
         image: {
-          src: 'https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=778&q=80',
-          alt: 'Jessica Collins Image',
+          src: '~/assets/images/profile3.jpg',
+          alt: 'Avatar de Jefe de Operaciones',
         },
       },
       {
-        testimonial: `Her ability to transform concepts into captivating visuals is nothing short of extraordinary. She took our event poster idea and turned it into a visual masterpiece that perfectly captured the essence of our festival. Sarah's dedication, creativity, and knack for delivering beyond expectations make her an invaluable asset to any project.`,
-        name: 'Michael Carter',
-        job: 'Event Coordinator',
+        testimonial:
+          'Rápido, eficiente y con una gran atención al detalle. El resultado final superó nuestras expectativas y fue entregado antes de lo previsto.',
+        name: 'Fundador de E-commerce',
+        job: 'Tienda Online',
         image: {
-          src: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Michael Carter Image',
+          src: '~/assets/images/profile.jpg',
+          alt: 'Avatar de Fundador de E-commerce',
+        },
+      },
+      {
+        testimonial:
+          'La nueva interfaz de usuario que diseñó es intuitiva y ha mejorado la productividad de nuestro equipo drásticamente. Muy recomendado.',
+        name: 'Líder de Producto',
+        job: 'SaaS B2B',
+        image: {
+          src: '~/assets/images/profile2.jpg',
+          alt: 'Avatar de Líder de Producto',
+        },
+      },
+      {
+        testimonial:
+          'Un excelente colaborador. Siempre dispuesto a explicar conceptos técnicos de forma sencilla y a encontrar la mejor solución en equipo.',
+        name: 'Colega de Proyecto',
+        job: 'Unydos Consulting',
+        image: {
+          src: '~/assets/images/profile3.jpg',
+          alt: 'Avatar de Colega de Proyecto',
         },
       },
     ]}
-  /> -->
+  />
+
   <!-- CallToAction Widget *********** -->
   <CallToAction
-    title="Vamos a crear juntos"
-    subtitle="¿Estás listo para transformar tu visión en diseños cautivadores?"
+      title="Construyamos algo increíble, juntos."
+      subtitle="Mi pasión es transformar ideas en productos digitales de alto rendimiento. Si buscas un desarrollador con la precisión de un ingeniero, hablemos."
     actions={[
       {
         variant: 'primary',
-        text: 'Contáctame',
+        text: 'Hablemos',
         href: '/contact#form',
       },
     ]}
