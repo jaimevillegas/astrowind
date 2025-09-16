@@ -8,6 +8,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
@@ -108,6 +109,7 @@ const metadata = {
   <BlogLatestPosts
     id="blog"
     title="Del Código al Engranaje"
+    linkText="Ver todas las publicaciones"
     information={`Un espacio para analizar problemas, experimentar con tecnología y compartir guías prácticas sobre desarrollo, ingeniería y la magia que ocurre al combinarlos.`}
   >
     <Fragment slot="bg">
@@ -270,6 +272,95 @@ const metadata = {
     },
   ]}
 />
+
+  <!-- Testimonials Widget *********** -->
+  <Testimonials
+    id="testimonials"
+    title="Lo que dicen mis clientes"
+    subtitle="Resultados y colaboración que generan confianza."
+    testimonials={[
+      {
+        testimonial:
+          'Jaime no solo entregó un producto de alta calidad, sino que su enfoque de ingeniería aseguró que fuera escalable y robusto. Su comunicación fue excelente durante todo el proceso.',
+        name: 'Cliente Satisfecho',
+        job: 'CEO de Startup',
+        image: {
+          src: '~/assets/images/profile2.jpg',
+          alt: 'Avatar de Cliente Satisfecho',
+        },
+      },
+      {
+        testimonial:
+          'La capacidad de Jaime para entender requisitos complejos y traducirlos en una solución funcional es impresionante. Lo recomiendo totalmente.',
+        name: 'Gerente de Proyecto',
+        job: 'Empresa de Tecnología',
+        image: {
+          src: '~/assets/images/profile3.jpg',
+          alt: 'Avatar de Gerente de Proyecto',
+        },
+      },
+      {
+        testimonial:
+          'Un profesional increíble. Entendió nuestra visión y la ejecutó a la perfección, prestando atención a cada detalle.',
+        name: 'Directora de Marketing',
+        job: 'Agencia Creativa',
+        image: {
+          src: '~/assets/images/profile.jpg',
+          alt: 'Avatar de Directora de Marketing',
+        },
+      },
+      {
+        testimonial:
+          'El código es limpio, bien documentado y funciona sin problemas. Un placer trabajar con alguien que valora las buenas prácticas.',
+        name: 'Desarrollador Senior',
+        job: 'Consultora de Software',
+        image: {
+          src: '~/assets/images/profile2.jpg',
+          alt: 'Avatar de Desarrollador Senior',
+        },
+      },
+      {
+        testimonial:
+          'Resolvió un problema de ingeniería que nos tenía atascados durante meses. Su doble perfil es una ventaja competitiva innegable.',
+        name: 'Jefe de Operaciones',
+        job: 'Planta de Manufactura',
+        image: {
+          src: '~/assets/images/profile3.jpg',
+          alt: 'Avatar de Jefe de Operaciones',
+        },
+      },
+      {
+        testimonial:
+          'Rápido, eficiente y con una gran atención al detalle. El resultado final superó nuestras expectativas y fue entregado antes de lo previsto.',
+        name: 'Fundador de E-commerce',
+        job: 'Tienda Online',
+        image: {
+          src: '~/assets/images/profile.jpg',
+          alt: 'Avatar de Fundador de E-commerce',
+        },
+      },
+      {
+        testimonial:
+          'La nueva interfaz de usuario que diseñó es intuitiva y ha mejorado la productividad de nuestro equipo drásticamente. Muy recomendado.',
+        name: 'Líder de Producto',
+        job: 'SaaS B2B',
+        image: {
+          src: '~/assets/images/profile2.jpg',
+          alt: 'Avatar de Líder de Producto',
+        },
+      },
+      {
+        testimonial:
+          'Un excelente colaborador. Siempre dispuesto a explicar conceptos técnicos de forma sencilla y a encontrar la mejor solución en equipo.',
+        name: 'Colega de Proyecto',
+        job: 'Unydos Consulting',
+        image: {
+          src: '~/assets/images/profile3.jpg',
+          alt: 'Avatar de Colega de Proyecto',
+        },
+      },
+    ]}
+  />
 
   <!-- CallToAction Widget *********** -->
   <CallToAction

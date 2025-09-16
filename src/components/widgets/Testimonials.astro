@@ -1,7 +1,6 @@
 ---
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
-import Button from '~/components/ui/Button.astro';
 import Image from '~/components/common/Image.astro';
 import type { Testimonials as Props } from '~/types';
 
@@ -10,8 +9,6 @@ const {
   subtitle = '',
   tagline = '',
   testimonials = [],
-  callToAction,
-
   id,
   isDark = false,
   classes = {},
@@ -22,54 +19,86 @@ const {
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} />
 
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    {
-      testimonials &&
-        testimonials.map(({ title, testimonial, name, job, image }) => (
-          <div class="flex h-auto intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
-            <div class="flex flex-col p-4 md:p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600">
-              {title && <h2 class="text-lg font-medium leading-6 pb-4">{title}</h2>}
-              {testimonial && (
-                <blockquote class="flex-auto">
-                  <p class="text-muted">" {testimonial} "</p>
-                </blockquote>
-              )}
-
-              <hr class="border-slate-200 dark:border-slate-600 my-4" />
-
-              <div class="flex items-center">
-                {image && (
-                  <div class="h-10 w-10 rounded-full border border-slate-200 dark:border-slate-600">
-                    {typeof image === 'string' ? (
-                      <Fragment set:html={image} />
-                    ) : (
+  <div class="swiper-container !overflow-hidden relative md:px-12">
+    <div class="swiper-wrapper">
+      {
+        testimonials &&
+          testimonials.map(({ testimonial, name, job, image }) => (
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-4 md:p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600 h-full">
+                {testimonial && (
+                  <blockquote class="flex-auto">
+                    <p class="text-muted">" {testimonial} "</p>
+                  </blockquote>
+                )}
+                <hr class="border-slate-200 dark:border-slate-600 my-4" />
+                <div class="flex items-center">
+                  {image && (
+                    <div class="h-10 w-10 rounded-full border border-slate-200 dark:border-slate-600 flex-shrink-0 flex items-center justify-center">
                       <Image
-                        class="h-10 w-10 rounded-full border border-slate-200 dark:border-slate-600 min-w-full min-h-full"
+                        class="h-10 w-10 rounded-full object-cover"
                         width={40}
                         height={40}
-                        widths={[400, 768]}
-                        layout="fixed"
                         {...image}
                       />
-                    )}
+                    </div>
+                  )}
+                  <div class="grow ml-3 rtl:ml-0 rtl:mr-3">
+                    {name && <p class="text-base font-semibold">{name}</p>}
+                    {job && <p class="text-xs text-muted">{job}</p>}
                   </div>
-                )}
-
-                <div class="grow ml-3 rtl:ml-0 rtl:mr-3">
-                  {name && <p class="text-base font-semibold">{name}</p>}
-                  {job && <p class="text-xs text-muted">{job}</p>}
                 </div>
               </div>
             </div>
-          </div>
-        ))
-    }
+          ))
+      }
+    </div>
+    <!-- Add Navigation -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
   </div>
-  {
-    callToAction && (
-      <div class="flex justify-center mx-auto w-fit mt-8 md:mt-12 font-medium">
-        <Button {...callToAction} />
-      </div>
-    )
-  }
 </WidgetWrapper>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+
+  const swiper = new Swiper('.swiper-container', {
+    modules: [Navigation],
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    },
+  });
+</script>
+
+<style>
+  .swiper-button-next,
+  .swiper-button-prev {
+    @apply text-primary;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .swiper-button-prev {
+    left: 0rem;
+  }
+  .swiper-button-next {
+    right: 0rem;
+  }
+</style>
