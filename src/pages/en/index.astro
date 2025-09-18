@@ -1,4 +1,3 @@
-<!-- TODO: Translate this page to English -->
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
@@ -22,16 +21,16 @@ const metadata = {
   <Fragment slot="header">
     <Header
       links={[
-        { text: 'Inicio', href: '/' },
-        { text: 'Proyectos', href: '/projects' },
-        { text: 'Cursos', href: '/courses' },
-        { text: 'Blog', href: '/blog' },
+        { text: 'Home', href: '/en' },
+        { text: 'Projects', href: '/en/projects' },
+        { text: 'Courses', href: '/en/courses' },
+        { text: 'Blog', href: '/en/blog' },
         { text: 'Github', href: 'https://github.com/jaimevillegas' },
       ]}
       actions={[
         {
-          text: 'Contáctame',
-          href: '/contact#form',
+          text: 'Contact me',
+          href: '/en/contact#form',
         },
       ]}
       isSticky
@@ -43,14 +42,14 @@ const metadata = {
   <Hero
     id="hero"
     title="Jaime Villegas"
-    tagline="Hola! Yo soy"
-    actions={[{ variant: 'primary', text: 'Contáctame', href: getPermalink('/contact#form') }]}
+    tagline="Hello! I am"
+    actions={[{ variant: 'primary', text: 'Contact me', href: getPermalink('/en/contact#form') }]}
   >
     <Fragment slot="subtitle">
-      Fusiono mi background en <span class="text-orange-600 font-bold">ingeniería</span> con el<span
+      I merge my background in <span class="text-orange-600 font-bold">engineering</span> with <span
         class="text-orange-600 font-bold"
-        > desarrollo web moderno
-      </span> para crear productos digitales de alto rendimiento. Diseño y construyo aplicaciones que no solo son funcionales, sino también lógicas y fáciles de mantener.
+        > modern web development
+      </span> to create high-performance digital products. I design and build applications that are not only functional, but also logical and easy to maintain.
     </Fragment>
   </Hero>
 
@@ -91,14 +90,14 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Acerca de mí</h2>
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
       <p>
-        Como ingeniero, aprendí a construir cosas que funcionan. Como desarrollador, aprendí a construir cosas que la gente ama usar.
+        As an engineer, I learned to build things that work. As a developer, I learned to build things that people love to use.
 
-        Mi doble perfil me permite abordar cada proyecto desde dos ángulos: la solidez técnica de la ingeniería y la empatía del diseño centrado en el usuario. El resultado son aplicaciones web eficientes, escalables y con una experiencia de usuario impecable.
+        My dual profile allows me to approach each project from two angles: the technical soundness of engineering and the empathy of user-centered design. The result is efficient, scalable web applications with a flawless user experience.
       </p>
       <br />
-      <p>¿Interesado en colaborar? Contáctame aquí:</p>
+      <p>Interested in collaborating? Contact me here:</p>
     </Fragment>
 
     <Fragment slot="bg">
@@ -109,9 +108,9 @@ const metadata = {
   <!-- BlogLatestPost Widget **************** -->
   <BlogLatestPosts
     id="blog"
-    title="Del Código al Engranaje"
-    linkText="Ver todas las publicaciones"
-    information={`Un espacio para analizar problemas, experimentar con tecnología y compartir guías prácticas sobre desarrollo, ingeniería y la magia que ocurre al combinarlos.`}
+    title="From Code to Gear"
+    linkText="View all posts"
+    information={`A space to analyze problems, experiment with technology, and share practical guides on development, engineering, and the magic that happens when you combine them.`}
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -121,12 +120,12 @@ const metadata = {
     <!-- Content Widget **************** -->
   <Content
     id="portfolio"
-    title="Portafolio"
+    title="Portfolio"
     isReversed
     items={[
       {
         description:
-    'Aquí es donde las ideas se convierten en código. Creo productos digitales funcionales y escalables. En esta sección encontrarás aplicaciones web full-stack, diseñadas con tecnologías como React y Tailwind CSS para ser visualmente atractivas y ofrecer una funcionalidad sólida que resuelve problemas reales.',
+    'This is where ideas become code. I create functional and scalable digital products. In this section, you will find full-stack web applications, designed with technologies like React and Tailwind CSS to be visually appealing and offer solid functionality that solves real problems.',
       },
     ]}
     image={{
@@ -136,14 +135,14 @@ const metadata = {
     callToAction={{
       variant: 'secondary',
       target: '_blank',
-      text: 'Ver Proyectos',
+      text: 'View Projects',
       icon: 'tabler:chevron-right',
-      href: '/projects#web',
+      href: '/en/projects#web',
     }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Soluciones de Software
+        Software Solutions
       </h3>
     </Fragment>
 
@@ -159,24 +158,24 @@ const metadata = {
     items={[
       {
         description:
-      'La base de mi pensamiento lógico. Aquí muestro mi trabajo en diseño mecánico (CAD), electrónica y automatización, donde la precisión es clave para resolver desafíos industriales. Esta mentalidad de ingeniero es la que aplico hoy para construir software sólido y bien estructurado.',
+      'The foundation of my logical thinking. Here I show my work in mechanical design (CAD), electronics, and automation, where precision is key to solving industrial challenges. This engineering mindset is what I apply today to build solid and well-structured software.',
       },
     ]}
     image={{
       src: '~/assets/images/engineering.jpg',
-      alt: 'Proyectos de Ingeniería',
+      alt: 'Engineering Projects',
     }}
     callToAction={{
       variant: 'secondary',
       target: '_blank',
-      text: 'Ver Proyectos',
+      text: 'View Projects',
       icon: 'tabler:chevron-right',
-      href: '/projects#engineering',
+      href: '/en/projects#engineering',
     }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Ingeniería y Diseño de Hardware
+        Engineering and Hardware Design
       </h3>
     </Fragment>
 
@@ -189,23 +188,23 @@ const metadata = {
   <Steps
     id="resume"
     title="Work experience"
-    items={[
+    items={[ 
   {
     title:
-    'Ingeniero Freelance Profesional <br />  <span class="font-normal">Fiverr</span> <br /> <span class="text-sm font-normal"> 2022 - PRESENTE</span>',
-    description: 'Como profesional independiente, gestiono proyectos de ciclo completo para clientes internacionales, especializándome en desarrollo web y soluciones de ingeniería a medida. <br /> <span className="font-normal text-white">- Desarrollo Full-Stack:</span> He construido y desplegado aplicaciones web completas utilizando React, Node.js y bases de datos SQL/NoSQL, entregando productos robustos y escalables.<br /><span className="font-bold">- Diseño de componentes y UI:</span> He creado interfaces de usuario interactivas y sistemas de componentes reutilizables con Tailwind CSS, enfocándome en la usabilidad y la experiencia del usuario. <br /> - Soluciones Integrales: He integrado mis habilidades de software y hardware para proyectos únicos, incluyendo el diseño de PCBs y la simulación CAD, demostrando una capacidad única para resolver problemas en la intersección de ambos mundos.',
+    'Professional Freelance Engineer <br />  <span class="font-normal">Fiverr</span> <br /> <span class="text-sm font-normal"> 2022 - PRESENT</span>',
+    description: 'As a freelancer, I manage full-cycle projects for international clients, specializing in web development and custom engineering solutions. <br /> <span class="font-bold">- Full-Stack Development:</span> I have built and deployed complete web applications using React, Node.js, and SQL/NoSQL databases, delivering robust and scalable products.<br /><span class="font-bold">- UI and Component Design:</span> I have created interactive user interfaces and reusable component systems with Tailwind CSS, focusing on usability and user experience. <br /> - Comprehensive Solutions: I have integrated my software and hardware skills for unique projects, including PCB design and CAD simulation, demonstrating a unique ability to solve problems at the intersection of both worlds.',
     icon: 'tabler:briefcase',
   },
   {
     title:
-      'Ingeniero de Software Frontend <br /> <span class="font-normal">Unydos Consulting S.A.S, COL</span> <br /> <span class="text-sm font-normal">2024</span>',
-                                                                                                                        description: "Lideré la modernización de una aplicación de software heredada, transformándola en una solución web escalable y de alto rendimiento con React. <br /> - Liderazgo Técnico: Dirigí la arquitectura frontend del proyecto, migrando la base de código a un sistema moderno basado en componentes que mejoró la mantenibilidad y la velocidad de desarrollo. <br /> - Gestión de Proyecto y Equipo: Traduje los requisitos del cliente en un backlog técnico accionable y coordiné al equipo de desarrollo, asegurando entregas de alta calidad alineadas con los objetivos del negocio. <br /> - Impacto y Resultados: La nueva aplicación ofreció una experiencia de usuario significativamente más fluida y responsiva, estableciendo una base técnica sólida para la implementación de futuras funcionalidades.",
+      'Frontend Software Engineer <br /> <span class="font-normal">Unydos Consulting S.A.S, COL</span> <br /> <span class="text-sm font-normal">2024</span>',
+    description: "I led the modernization of a legacy software application, transforming it into a scalable, high-performance web solution with React. <br /> - Technical Leadership: I directed the project's frontend architecture, migrating the codebase to a modern component-based system that improved maintainability and development speed. <br /> - Project and Team Management: I translated client requirements into an actionable technical backlog and coordinated the development team, ensuring high-quality deliveries aligned with business goals. <br /> - Impact and Results: The new application offered a significantly smoother and more responsive user experience, establishing a solid technical foundation for implementing future features.",
     icon: 'tabler:code',
   },
   {
     title:
-    'Ingeniero CAD Mecánico & Ingeniero de Proyectos <br /> <span class="font-normal">Sector Industrial (Múltiples Empleadores)</span> <br /> <span class="text-sm font-normal">2016 - 2022</span>',
-    description: "Diseñé soluciones de ingeniería a medida para optimizar procesos industriales, trabajando directamente con clientes desde el concepto hasta la implementación. <br /> - Análisis y Especificaciones: Analicé requerimientos complejos de clientes y los traduje en especificaciones técnicas detalladas, una habilidad que ahora aplico para definir el alcance de proyectos de software. <br /> - Diseño de Sistemas Complejos: Utilicé herramientas CAD para modelar y diseñar sistemas mecánicos (tuberías, transportadores, etc.), desarrollando un enfoque metódico para la creación de sistemas lógicos y eficientes. <br /> - La base de mi Carrera en Software: Esta experiencia sentó las bases de mi capacidad para la resolución de problemas y el pensamiento estructurado, permitiéndome construir software bien diseñado y robusto.",
+    'Mechanical CAD Engineer & Project Engineer <br /> <span class="font-normal">Industrial Sector (Multiple Employers)</span> <br /> <span class="text-sm font-normal">2016 - 2022</span>',
+    description: "I designed custom engineering solutions to optimize industrial processes, working directly with clients from concept to implementation. <br /> - Analysis and Specifications: I analyzed complex client requirements and translated them into detailed technical specifications, a skill I now apply to define the scope of software projects. <br /> - Complex Systems Design: I used CAD tools to model and design mechanical systems (piping, conveyors, etc.), developing a methodical approach to creating logical and efficient systems. <br /> - The Foundation of my Software Career: This experience laid the groundwork for my problem-solving and structured thinking abilities, allowing me to build well-designed and robust software.",
     icon: 'tabler:settings',
   }
 ]}
@@ -213,65 +212,65 @@ const metadata = {
   />
 
 <Features3
-  title="Habilidades"
-  subtitle="La combinación de desarrollo de software y precisión de ingeniería que aplico para construir soluciones robustas y eficientes."
+  title="Skills"
+  subtitle="The combination of software development and engineering precision that I apply to build robust and efficient solutions."
   columns={3}
   defaultIcon="tabler:point-filled"
-  items={[
-    // Categoría: Desarrollo de Software y Web
+  items={[ 
+    // Category: Software and Web Development
     {
-      title: 'Desarrollo Frontend',
-      description: 'Construcción de interfaces de usuario interactivas y de alto rendimiento con React, JavaScript (ES6+), HTML5 y CSS3, creando experiencias de usuario memorables.',
+      title: 'Frontend Development',
+      description: 'Building interactive and high-performance user interfaces with React, JavaScript (ES6+), HTML5, and CSS3, creating memorable user experiences.',
     },
     {
-      title: 'Desarrollo Backend',
-      description: 'Creación de APIs RESTful robustas y servidores eficientes con Node.js y Express. Experiencia en la gestión de la lógica de negocio del lado del servidor.',
+      title: 'Backend Development',
+      description: 'Creating robust RESTful APIs and efficient servers with Node.js and Express. Experience in managing server-side business logic.',
     },
     {
-      title: 'Bases de Datos',
-      description: 'Diseño y gestión de bases de datos relacionales (SQL - PostgreSQL) y no relacionales (NoSQL - MongoDB) para asegurar la persistencia y la integridad de los datos.',
+      title: 'Databases',
+      description: 'Design and management of relational (SQL - PostgreSQL) and non-relational (NoSQL - MongoDB) databases to ensure data persistence and integrity.',
     },
     {
-      title: 'Control de Versiones y Herramientas',
-      description: 'Dominio de Git y GitHub para el control de versiones y colaboración en equipo. Experiencia con herramientas de empaquetado como NPM/Yarn.',
+      title: 'Version Control and Tools',
+      description: 'Mastery of Git and GitHub for version control and team collaboration. Experience with packaging tools like NPM/Yarn.',
     },
     {
-      title: 'Pruebas y Calidad de Código',
-      description: 'Implementación de pruebas unitarias y de integración para garantizar la fiabilidad del software. Foco en escribir código limpio, mantenible y escalable.',
+      title: 'Testing and Code Quality',
+      description: 'Implementation of unit and integration tests to ensure software reliability. Focus on writing clean, maintainable, and scalable code.',
     },
-    // Categoría: Ingeniería y Hardware
+    // Category: Engineering and Hardware
     {
-      title: 'Modelado y Simulación CAD',
-      description: 'Experiencia en modelado 3D y simulación de sistemas mecánicos con software CAD, desde el concepto hasta el análisis de ingeniería detallado.',
-    },
-    {
-      title: 'Diseño de PCB y Electrónica',
-      description: 'Diseño y simulación de circuitos electrónicos y PCBs para proyectos de hardware, asegurando la integración y el rendimiento óptimo del sistema.',
+      title: 'CAD Modeling and Simulation',
+      description: 'Experience in 3D modeling and simulation of mechanical systems with CAD software, from concept to detailed engineering analysis.',
     },
     {
-      title: 'Sistemas Embebidos y Microcontroladores',
-      description: 'Programación de Arduino, ESP32 y otros microcontroladores para desarrollar soluciones de hardware eficientes para la automatización y la captura de datos.',
+      title: 'PCB and Electronics Design',
+      description: 'Design and simulation of electronic circuits and PCBs for hardware projects, ensuring system integration and optimal performance.',
     },
     {
-      title: 'Robótica y Sistemas de Control',
-      description: 'Desarrollo de sistemas robóticos y algoritmos de control utilizando MATLAB y LabVIEW para la automatización de procesos y el análisis de datos.',
-    },
-    // Categoría: Habilidades Profesionales y Metodologías
-    {
-      title: 'Resolución de Problemas Complejos',
-      description: 'Capacidad analítica para descomponer desafíos complejos y desarrollar soluciones creativas que optimizan el rendimiento, los costos y la eficiencia.',
+      title: 'Embedded Systems and Microcontrollers',
+      description: 'Programming of Arduino, ESP32, and other microcontrollers to develop efficient hardware solutions for automation and data acquisition.',
     },
     {
-      title: 'Gestión de Proyectos y Liderazgo',
-      description: 'Liderazgo de proyectos técnicos desde la concepción hasta el despliegue, coordinando equipos y asegurando la alineación con los objetivos del cliente.',
+      title: 'Robotics and Control Systems',
+      description: 'Development of robotic systems and control algorithms using MATLAB and LabVIEW for process automation and data analysis.',
+    },
+    // Category: Professional Skills and Methodologies
+    {
+      title: 'Complex Problem Solving',
+      description: 'Analytical ability to break down complex challenges and develop creative solutions that optimize performance, costs, and efficiency.',
     },
     {
-      title: 'Metodologías Ágiles',
-      description: 'Experiencia trabajando con flujos de trabajo ágiles como Scrum y Kanban, participando en ceremonias de planificación, sprints y retrospectivas.',
+      title: 'Project Management and Leadership',
+      description: 'Leadership of technical projects from conception to deployment, coordinating teams and ensuring alignment with client objectives.',
     },
     {
-      title: 'Comunicación Técnica y de Cliente',
-      description: 'Habilidad para comunicar conceptos técnicos complejos de forma clara a audiencias diversas y para mantener una relación fluida y productiva con los clientes.',
+      title: 'Agile Methodologies',
+      description: 'Experience working with agile workflows such as Scrum and Kanban, participating in planning ceremonies, sprints, and retrospectives.',
+    },
+    {
+      title: 'Technical and Client Communication',
+      description: 'Ability to communicate complex technical concepts clearly to diverse audiences and to maintain a fluid and productive relationship with clients.',
     },
   ]}
 />
@@ -279,87 +278,87 @@ const metadata = {
   <!-- Testimonials Widget *********** -->
   <Testimonials
     id="testimonials"
-    title="Lo que dicen mis clientes"
-    subtitle="Resultados y colaboración que generan confianza."
-    testimonials={[
+    title="What my clients say"
+    subtitle="Results and collaboration that build trust."
+    testimonials={[ 
       {
         testimonial:
-          'Jaime no solo entregó un producto de alta calidad, sino que su enfoque de ingeniería aseguró que fuera escalable y robusto. Su comunicación fue excelente durante todo el proceso.',
-        name: 'Cliente Satisfecho',
-        job: 'CEO de Startup',
+          'Jaime not only delivered a high-quality product, but his engineering approach ensured it was scalable and robust. His communication was excellent throughout the process.',
+        name: 'Satisfied Client',
+        job: 'Startup CEO',
         image: {
           src: '~/assets/images/profile2.jpg',
-          alt: 'Avatar de Cliente Satisfecho',
+          alt: 'Avatar of Satisfied Client',
         },
       },
       {
         testimonial:
-          'La capacidad de Jaime para entender requisitos complejos y traducirlos en una solución funcional es impresionante. Lo recomiendo totalmente.',
-        name: 'Gerente de Proyecto',
-        job: 'Empresa de Tecnología',
+          'Jaime\'s ability to understand complex requirements and translate them into a functional solution is impressive. I highly recommend him.',
+        name: 'Project Manager',
+        job: 'Tech Company',
         image: {
           src: '~/assets/images/profile3.jpg',
-          alt: 'Avatar de Gerente de Proyecto',
+          alt: 'Avatar of Project Manager',
         },
       },
       {
         testimonial:
-          'Un profesional increíble. Entendió nuestra visión y la ejecutó a la perfección, prestando atención a cada detalle.',
-        name: 'Directora de Marketing',
-        job: 'Agencia Creativa',
+          'An incredible professional. He understood our vision and executed it perfectly, paying attention to every detail.',
+        name: 'Marketing Director',
+        job: 'Creative Agency',
         image: {
           src: '~/assets/images/profile.jpg',
-          alt: 'Avatar de Directora de Marketing',
+          alt: 'Avatar of Marketing Director',
         },
       },
       {
         testimonial:
-          'El código es limpio, bien documentado y funciona sin problemas. Un placer trabajar con alguien que valora las buenas prácticas.',
-        name: 'Desarrollador Senior',
-        job: 'Consultora de Software',
+          'The code is clean, well-documented, and works smoothly. A pleasure to work with someone who values good practices.',
+        name: 'Senior Developer',
+        job: 'Software Consultancy',
         image: {
           src: '~/assets/images/profile2.jpg',
-          alt: 'Avatar de Desarrollador Senior',
+          alt: 'Avatar of Senior Developer',
         },
       },
       {
         testimonial:
-          'Resolvió un problema de ingeniería que nos tenía atascados durante meses. Su doble perfil es una ventaja competitiva innegable.',
-        name: 'Jefe de Operaciones',
-        job: 'Planta de Manufactura',
+          'He solved an engineering problem that had us stuck for months. His dual profile is an undeniable competitive advantage.',
+        name: 'Head of Operations',
+        job: 'Manufacturing Plant',
         image: {
           src: '~/assets/images/profile3.jpg',
-          alt: 'Avatar de Jefe de Operaciones',
+          alt: 'Avatar of Head of Operations',
         },
       },
       {
         testimonial:
-          'Rápido, eficiente y con una gran atención al detalle. El resultado final superó nuestras expectativas y fue entregado antes de lo previsto.',
-        name: 'Fundador de E-commerce',
-        job: 'Tienda Online',
+          'Fast, efficient, and with great attention to detail. The final result exceeded our expectations and was delivered ahead of schedule.',
+        name: 'E-commerce Founder',
+        job: 'Online Store',
         image: {
           src: '~/assets/images/profile.jpg',
-          alt: 'Avatar de Fundador de E-commerce',
+          alt: 'Avatar of E-commerce Founder',
         },
       },
       {
         testimonial:
-          'La nueva interfaz de usuario que diseñó es intuitiva y ha mejorado la productividad de nuestro equipo drásticamente. Muy recomendado.',
-        name: 'Líder de Producto',
-        job: 'SaaS B2B',
+          'The new user interface he designed is intuitive and has drastically improved our team\'s productivity. Highly recommended.',
+        name: 'Product Lead',
+        job: 'B2B SaaS',
         image: {
           src: '~/assets/images/profile2.jpg',
-          alt: 'Avatar de Líder de Producto',
+          alt: 'Avatar of Product Lead',
         },
       },
       {
         testimonial:
-          'Un excelente colaborador. Siempre dispuesto a explicar conceptos técnicos de forma sencilla y a encontrar la mejor solución en equipo.',
-        name: 'Colega de Proyecto',
+          'An excellent collaborator. Always willing to explain technical concepts simply and to find the best solution as a team.',
+        name: 'Project Colleague',
         job: 'Unydos Consulting',
         image: {
           src: '~/assets/images/profile3.jpg',
-          alt: 'Avatar de Colega de Proyecto',
+          alt: 'Avatar of Project Colleague',
         },
       },
     ]}
@@ -367,13 +366,13 @@ const metadata = {
 
   <!-- CallToAction Widget *********** -->
   <CallToAction
-      title="Construyamos algo increíble, juntos."
-      subtitle="Mi pasión es transformar ideas en productos digitales de alto rendimiento. Si buscas un desarrollador con la precisión de un ingeniero, hablemos."
-    actions={[
+      title="Let's build something incredible, together."
+      subtitle="My passion is to transform ideas into high-performance digital products. If you are looking for a developer with the precision of an engineer, let's talk."
+    actions={[ 
       {
         variant: 'primary',
-        text: 'Hablemos',
-        href: '/contact#form',
+        text: 'Let\'s talk',
+        href: '/en/contact#form',
       },
     ]}
   />
