@@ -9,11 +9,6 @@ import Features3 from '~/components/widgets/Features3.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
-import ItemGrid from '~/components/ui/ItemGrid.astro';
-import Image from '~/components/common/Image.astro';
-import Button from '~/components/ui/Button.astro';
-import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
-import Headline from '~/components/ui/Headline.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
@@ -49,68 +44,66 @@ const metadata = {
     title="Jaime Villegas"
     tagline="Hola! Yo soy"
     actions={[{ variant: 'primary', text: 'Contáctame', href: getPermalink('/es/contact#form') }]}
-    image={{ src: '~/assets/images/profile.jpg', alt: 'Jaime Villegas' }}
   >
     <Fragment slot="subtitle">
-      Fusiono mi background en ingeniería con el desarrollo web moderno para crear productos digitales de alto rendimiento. Diseño y construyo aplicaciones que no solo son funcionales, sino también lógicas y fáciles de mantener.
+      Fusiono mi background en <span class="text-orange-600 font-bold">ingeniería</span> con el<span
+        class="text-orange-600 font-bold"
+        > desarrollo web moderno
+      </span> para crear productos digitales de alto rendimiento. Diseño y construyo aplicaciones que no solo son funcionales, sino también lógicas y fáciles de mantener.
     </Fragment>
   </Hero>
 
   <!-- Content Widget **************** -->
-  <section id="about" class="relative not-prose">
-    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-4xl font-bold tracking-tight dark:text-white sm:text-5xl mb-2">Acerca de mí</h2>
-        <p class="text-lg dark:text-slate-400 text-justify">
-          Como ingeniero, aprendí a construir cosas que funcionan. Como desarrollador, aprendí a construir cosas que la gente ama usar.
-          <br /><br />
-          Mi doble perfil me permite abordar cada proyecto desde dos ángulos: la solidez técnica de la ingeniería y la empatía del diseño centrado en el usuario. El resultado son aplicaciones web eficientes, escalables y con una experiencia de usuario impecable.
-        </p>
-        <br />
-        <p class="text-lg dark:text-slate-400">¿Interesado en colaborar? Contáctame aquí:</p>
-      </div>
-      <div class="mt-8 max-w-3xl mx-auto">
-        <ItemGrid
-          items={[
-            {
-              icon: 'tabler:brand-fiverr',
-              callToAction: {
-                target: '_blank',
-                text: 'Fiverr',
-                href: 'https://es.fiverr.com/villegas296',
-              },
-            },
-            {
-              icon: 'tabler:brand-github',
-              callToAction: {
-                target: '_blank',
-                text: 'GitHub',
-                href: 'https://github.com/jaimevillegas',
-              },
-            },
-            {
-              icon: 'tabler:brand-linkedin',
-              callToAction: {
-                target: '_blank',
-                text: 'LinkedIn',
-                href: 'https://www.linkedin.com/in/villegas0296/',
-              },
-            },
-          ]}
-          columns={3}
-          classes={{
-            container: `gap-y-4 md:gap-y-8`,
-            panel: 'max-w-none',
-            title: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
-            description: 'text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2',
-            icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-orange-600 dark:bg-orange-600 text-gray-50 p-1',
-            action: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
-          }}
-        />
-      </div>
-    </div>
-  </section>
+  <Content
+    id="about"
+    columns={4}
+    items={[
+      {
+        icon: 'tabler:brand-fiverr',
+        callToAction: {
+          target: '_blank',
+          text: 'Fiverr',
+          href: 'https://es.fiverr.com/villegas296',
+        },
+      },
+      {
+        icon: 'tabler:brand-github',
+        callToAction: {
+          target: '_blank',
+          text: 'GitHub',
+          href: 'https://github.com/jaimevillegas',
+        },
+      },
+      {
+        icon: 'tabler:brand-linkedin',
+        callToAction: {
+          target: '_blank',
+          text: 'LinkedIn',
+          href: 'https://www.linkedin.com/in/villegas0296/',
+        },
+      },
+    ]}
+    image={{
+      src: '~/assets/images/profile.jpg',
+      alt: 'Colorful Image',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Acerca de mí</h2>
+      <p>
+        Como ingeniero, aprendí a construir cosas que funcionan. Como desarrollador, aprendí a construir cosas que la gente ama usar.
+
+        Mi doble perfil me permite abordar cada proyecto desde dos ángulos: la solidez técnica de la ingeniería y la empatía del diseño centrado en el usuario. El resultado son aplicaciones web eficientes, escalables y con una experiencia de usuario impecable.
+      </p>
+      <br />
+      <p>¿Interesado en colaborar? Contáctame aquí:</p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
 
   <!-- BlogLatestPost Widget **************** -->
   <BlogLatestPosts
@@ -124,84 +117,72 @@ const metadata = {
     </Fragment>
   </BlogLatestPosts>
 
-    <WidgetWrapper id="portfolio" isDark={false} containerClass="max-w-7xl mx-auto">
-    <Headline
-      title="Portafolio"
-      subtitle="Una muestra de cómo la ingeniería y el desarrollo de software se unen para crear soluciones robustas y eficientes."
-      classes={{
-        container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
-        title: 'text-4xl md:text-5xl font-bold tracking-tighter mb-4 font-heading',
-        subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400',
-      }}
-    />
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 p-4 md:px-8">
-      
-      <!-- Card 1: Software -->
-      <div class="flex flex-col bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
-        <div class="relative">
-          <Image
-            src="~/assets/images/web-development.jpg"
-            alt="Web Development Projects"
-            class="w-full"
-            width={500}
-            height={281}
-            layout="responsive"
-            sizes="(max-width: 768px) 100vw, 432px"
-          />
-        </div>
-        <div class="p-6 flex-grow">
-          <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-            Soluciones de Software
-          </h3>
-          <p class="text-muted dark:text-slate-400">
-            Aplicaciones web full-stack con React y Tailwind CSS, visualmente atractivas y funcionales para resolver problemas reales.
-          </p>
-        </div>
-        <div class="p-6 pt-0">
-          <Button
-            variant="secondary"
-            target="_blank"
-            text="Ver Proyectos"
-            icon="tabler:chevron-right"
-            href="/es/projects#web"
-          />
-        </div>
-      </div>
+    <!-- Content Widget **************** -->
+  <Content
+    id="portfolio"
+    title="Portafolio"
+    isReversed
+    items={[
+      {
+        description:
+    'Aquí es donde las ideas se convierten en código. Creo productos digitales funcionales y escalables. En esta sección encontrarás aplicaciones web full-stack, diseñadas con tecnologías como React y Tailwind CSS para ser visualmente atractivas y ofrecer una funcionalidad sólida que resuelve problemas reales.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/web-development.jpg',
+      alt: 'Web Development Projects',
+    }}
+    callToAction={{
+      variant: 'secondary',
+      target: '_blank',
+      text: 'Ver Proyectos',
+      icon: 'tabler:chevron-right',
+      href: '/es/projects#web',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Soluciones de Software
+      </h3>
+    </Fragment>
 
-      <!-- Card 2: Hardware -->
-      <div class="flex flex-col bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
-        <div class="relative">
-          <Image
-            src="~/assets/images/engineering.jpg"
-            alt="Proyectos de Ingeniería"
-            class="w-full"
-            width={500}
-            height={281}
-            layout="responsive"
-            sizes="(max-width: 768px) 100vw, 432px"
-          />
-        </div>
-        <div class="p-6 flex-grow">
-          <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-            Ingeniería y Diseño de Hardware
-          </h3>
-          <p class="text-muted dark:text-slate-400">
-            Diseño mecánico (CAD), electrónica y automatización. La precisión de la ingeniería aplicada para construir software sólido y bien estructurado.
-          </p>
-        </div>
-        <div class="p-6 pt-0">
-          <Button
-            variant="secondary"
-            target="_blank"
-            text="Ver Proyectos"
-            icon="tabler:chevron-right"
-            href="/es/projects#engineering"
-          />
-        </div>
-      </div>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
 
-    </div>
-  </WidgetWrapper>
+  <!-- Content Widget **************** -->
+  <Content
+    isReversed
+    isAfterContent={true}
+    items={[
+      {
+        description:
+      'La base de mi pensamiento lógico. Aquí muestro mi trabajo en diseño mecánico (CAD), electrónica y automatización, donde la precisión es clave para resolver desafíos industriales. Esta mentalidad de ingeniero es la que aplico hoy para construir software sólido y bien estructurado.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/engineering.jpg',
+      alt: 'Proyectos de Ingeniería',
+    }}
+    callToAction={{
+      variant: 'secondary',
+      target: '_blank',
+      text: 'Ver Proyectos',
+      icon: 'tabler:chevron-right',
+      href: '/es/projects#engineering',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Ingeniería y Diseño de Hardware
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
 
   <!-- Steps Widget ****************** -->
   <Steps
