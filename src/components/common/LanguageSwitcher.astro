@@ -1,0 +1,18 @@
+---
+// src/components/common/LanguageSwitcher.astro
+const { pathname } = Astro.url;
+const currentLang = pathname.startsWith('/es') ? 'es' : 'en';
+const otherLang = currentLang === 'es' ? 'en' : 'es';
+
+// Handle the case for the home page
+let newPath;
+if (pathname === '/en' || pathname === '/es' || pathname === '/en/' || pathname === '/es/') {
+  newPath = `/${otherLang}`;
+} else {
+  newPath = pathname.replace(`/${currentLang}/`, `/${otherLang}/`);
+}
+---
+
+<a href={newPath} class="text-sm font-medium hover:text-primary dark:hover:text-primary transition">
+  {otherLang === 'en' ? 'English' : 'Español'}
+</a>
