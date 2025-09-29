@@ -14,6 +14,7 @@ import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
+import { Icon } from 'astro-icon/components';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
@@ -63,55 +64,61 @@ actions={[{ variant: 'primary', text: 'Contáctame', href: getPermalink('/contac
   <section id="about" class="relative not-prose">
     <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-4xl font-bold tracking-tight dark:text-white sm:text-5xl mb-2">About me</h2>
-        <p class="text-lg dark:text-slate-400 text-justify">
-          As an engineer, I learned to build things that work. As a developer, I learned to build things that people love to use.
-          <br />
-          <br />
-          My dual background allows me to approach each project from two perspectives: the technical rigor of engineering and the empathy of user-centered design. The result is efficient, scalable web applications with a seamless user experience.
-        </p>
-        <br />
-        <p class="text-lg dark:text-slate-400">Interested in collaborating? Contact me here:</p>
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-4xl font-bold tracking-tight dark:text-white sm:text-5xl mb-8">About me</h2>
+        <div class="text-lg dark:text-slate-400 text-left space-y-4">
+          <p>
+            My career began in <span class="text-orange-600 font-bold">engineering</span>, where I learned the discipline of building things that simply work—robustly and predictably. That analytical foundation is my starting point.
+          </p>
+          <p>
+            Later, as a <span class="text-orange-600 font-bold">developer</span>, I discovered my passion: building things that people love to use. I understood that behind every `&lt;div&gt;` there's a person, and that empathy for the end user is as crucial as an efficient algorithm.
+          </p>
+          <p>
+            This duality is my working method. I combine <span class="text-orange-600 font-bold">technical soundness</span> with <span class="text-orange-600 font-bold">user-centered design</span> to not only deliver a product that works, but an intuitive and satisfying digital experience.
+          </p>
+          <p class="italic text-center pt-4">
+            Want to see this approach in action?
+          </p>
+        </div>
       </div>
-      <div class="mt-8 max-w-3xl mx-auto">
-        <ItemGrid
-          items={[
-            {
-              icon: 'tabler:brand-fiverr',
-              callToAction: {
-                target: '_blank',
-                text: 'Fiverr',
-                href: 'https://es.fiverr.com/villegas296',
-              },
-            },
-            {
-              icon: 'tabler:brand-github',
-              callToAction: {
-                target: '_blank',
-                text: 'GitHub',
-                href: 'https://github.com/jaimevillegas',
-              },
-            },
-            {
-              icon: 'tabler:brand-linkedin',
-              callToAction: {
-                target: '_blank',
-                text: 'LinkedIn',
-                href: 'https://www.linkedin.com/in/villegas0296/',
-              },
-            },
-          ]}
-          columns={3}
-          classes={{
-            container: `gap-y-4 md:gap-y-8`,
-            panel: 'max-w-none',
-            title: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
-            description: 'text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2',
-            icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-orange-600 dark:bg-orange-600 text-gray-50 p-1',
-            action: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
-          }}
-        />
+      <div class="mt-8 max-w-2xl mx-auto">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href="https://es.fiverr.com/villegas296"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3 px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-slate-700 hover:border-orange-600 dark:hover:border-orange-600 w-full sm:w-auto justify-center"
+          >
+            <div class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-600 text-white group-hover:bg-orange-700 transition-colors duration-300">
+              <Icon name="tabler:brand-fiverr" class="h-[18px] w-[18px]" />
+            </div>
+            <span class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">Fiverr</span>
+          </a>
+
+          <a
+            href="https://github.com/jaimevillegas"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3 px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-slate-700 hover:border-orange-600 dark:hover:border-orange-600 w-full sm:w-auto justify-center"
+          >
+            <div class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-600 text-white group-hover:bg-orange-700 transition-colors duration-300">
+              <Icon name="tabler:brand-github" class="h-[18px] w-[18px]" />
+            </div>
+            <span class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">GitHub</span>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/villegas0296/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3 px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-slate-700 hover:border-orange-600 dark:hover:border-orange-600 w-full sm:w-auto justify-center"
+          >
+            <div class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-600 text-white group-hover:bg-orange-700 transition-colors duration-300">
+              <Icon name="tabler:brand-linkedin" class="h-3.5 w-3.5" />
+            </div>
+            <span class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">LinkedIn</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
