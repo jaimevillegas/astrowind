@@ -17,7 +17,7 @@ import Headline from '~/components/ui/Headline.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: 'JV Dev Solutions',
+  title: 'Jaime Villegas - Personal Web',
 };
 ---
 
@@ -34,7 +34,7 @@ const metadata = {
       ]}
       actions={[
         {
-          text: 'Contact me',
+          text: 'Get in Touch',
           href: '/en/contact#form',
         },
       ]}
@@ -47,12 +47,15 @@ const metadata = {
   <Hero
     id="hero"
     title="Jaime Villegas"
-    tagline="Hello! I am"
-    actions={[{ variant: 'primary', text: 'Contact me', href: getPermalink('/en/contact#form') }]}
+tagline="Hello! I'm"
+actions={[{ variant: 'primary', text: 'Contáctame', href: getPermalink('/contact#form') }]}
     image={{ src: '~/assets/images/profile.jpg', alt: 'Jaime Villegas' }}
   >
     <Fragment slot="subtitle">
-      I merge my background in engineering with modern web development to create high-performance digital products. I design and build applications that are not only functional, but also logical and easy to maintain.
+     I merge my <span class="text-orange-600 font-bold">engineering</span> background with<span
+        class="text-orange-600 font-bold"
+        > modern web development
+    </span> to create high-performance digital products. I design and build applications that are not only functional but also logical and maintainable.
     </Fragment>
   </Hero>
 
@@ -66,7 +69,7 @@ const metadata = {
           As an engineer, I learned to build things that work. As a developer, I learned to build things that people love to use.
           <br />
           <br />
-          My dual profile allows me to approach each project from two angles: the technical soundness of engineering and the empathy of user-centered design. The result is efficient, scalable web applications with a flawless user experience.
+          My dual background allows me to approach each project from two perspectives: the technical rigor of engineering and the empathy of user-centered design. The result is efficient, scalable web applications with a seamless user experience.
         </p>
         <br />
         <p class="text-lg dark:text-slate-400">Interested in collaborating? Contact me here:</p>
@@ -116,9 +119,9 @@ const metadata = {
   <!-- BlogLatestPost Widget **************** -->
   <BlogLatestPosts
     id="blog"
-    title="From Code to Gear"
+title="From Code to Cogs"
     linkText="View all posts"
-    information={`A space to analyze problems, experiment with technology, and share practical guides on development, engineering, and the magic that happens when you combine them.`}
+information={`A space for analyzing problems, experimenting with technology, and sharing practical guides on development, engineering, and the magic that happens at their intersection.`}
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -155,7 +158,7 @@ const metadata = {
             Software Solutions
           </h3>
           <p class="text-muted dark:text-slate-400">
-            Full-stack web applications with React and Tailwind CSS, visually appealing and functional to solve real problems.
+            This is where ideas become code. I build functional and scalable digital products. In this section, you'll find full-stack web applications built with technologies like React and Tailwind CSS, crafted to be visually appealing while offering robust functionality that solves real-world problems.
           </p>
         </div>
         <div class="p-6 pt-0">
@@ -187,7 +190,7 @@ const metadata = {
             Engineering and Hardware Design
           </h3>
           <p class="text-muted dark:text-slate-400">
-            Mechanical design (CAD), electronics, and automation. The precision of engineering applied to build solid and well-structured software.
+            The foundation of my logical thinking. Here I showcase my work in mechanical design (CAD), electronics, and automation, where precision is key to solving industrial challenges. This engineering mindset is what I apply today to build robust and well-structured software.
           </p>
         </div>
         <div class="p-6 pt-0">
@@ -211,7 +214,7 @@ const metadata = {
     items={[ 
   {
     title:
-    'Professional Freelance Engineer <br />  <span class="font-normal">Fiverr</span> <br /> <span class="text-sm font-normal"> 2022 - PRESENT</span>',
+    'Freelance Professional Engineer<br />  <span class="text-sm font-normal">2022 - PRESENT</span>',
     description: 'As a freelancer, I manage full-cycle projects for international clients, specializing in web development and custom engineering solutions. <br /> <span class="font-bold">- Full-Stack Development:</span> I have built and deployed complete web applications using React, Node.js, and SQL/NoSQL databases, delivering robust and scalable products.<br /><span class="font-bold">- UI and Component Design:</span> I have created interactive user interfaces and reusable component systems with Tailwind CSS, focusing on usability and user experience. <br /> - Comprehensive Solutions: I have integrated my software and hardware skills for unique projects, including PCB design and CAD simulation, demonstrating a unique ability to solve problems at the intersection of both worlds.',
     icon: 'tabler:briefcase',
   },
@@ -298,90 +301,80 @@ const metadata = {
   <!-- Testimonials Widget *********** -->
   <Testimonials
     id="testimonials"
-    title="What my clients say"
+title="What my clients say"
     subtitle="Results and collaboration that build trust."
-    testimonials={[ 
-      {
-        testimonial:
-          'Jaime not only delivered a high-quality product, but his engineering approach ensured it was scalable and robust. His communication was excellent throughout the process.',
-        name: 'Satisfied Client',
-        job: 'Startup CEO',
-        image: {
-          src: '~/assets/images/profile2.jpg',
-          alt: 'Avatar of Satisfied Client',
-        },
+testimonials={[
+    {
+      testimonial:
+        'Jaime is an exceptional software developer. His attention to detail and problem-solving skills are impressive, and he consistently delivers high-quality work. He is dedicated, goes above and beyond to ensure team success, and is always willing to help and share his knowledge.',
+      name: 'Shayan Ali Bakhsh',
+      job: 'Project Colleague',
+      image: {
+        src: '~/assets/images/default-avatar.svg',
+        alt: 'Avatar of Shayan Ali Bakhsh',
       },
-      {
-        testimonial:
-          "Jaime's ability to understand complex requirements and translate them into a functional solution is impressive. I highly recommend him.",
-        name: 'Project Manager',
-        job: 'Tech Company',
-        image: {
-          src: '~/assets/images/profile3.jpg',
-          alt: 'Avatar of Project Manager',
-        },
+    },
+    {
+      testimonial:
+        'I recommend Jaime as a Full Stack developer. He is extremely punctual, respectful, and hardworking. He has solid knowledge of languages and frameworks, and is dedicated to constantly improving. He is a great team player and is always willing to help.',
+      name: 'Nicolas Andres Olaya',
+      job: 'Full Stack Developer',
+      image: {
+        src: '~/assets/images/default-avatar.svg',
+        alt: 'Avatar of Nicolas Andres Olaya',
       },
-      {
-        testimonial:
-          'An incredible professional. He understood our vision and executed it perfectly, paying attention to every detail.',
-        name: 'Marketing Director',
-        job: 'Creative Agency',
-        image: {
-          src: '~/assets/images/profile.jpg',
-          alt: 'Avatar of Marketing Director',
-        },
+    },
+    {
+      testimonial:
+        'James consistently proves to be my go-to developer for his meticulous attention to detail. He not only delivers work on time but does so with an elegance that sets him apart. His thorough documentation ensures we are always on the same page.',
+      name: 'nyonjee',
+      job: 'Returning Client',
+      image: {
+        src: '~/assets/images/default-avatar.svg',
+        alt: 'Avatar of nyonjee',
       },
-      {
-        testimonial:
-          'The code is clean, well-documented, and works smoothly. A pleasure to work with someone who values good practices.',
-        name: 'Senior Developer',
-        job: 'Software Consultancy',
-        image: {
-          src: '~/assets/images/profile2.jpg',
-          alt: 'Avatar of Senior Developer',
-        },
+    },
+    {
+      testimonial:
+        'Working with him was great! Super fast in his responses, the budget was accurate, and his code documentation is like a treasure map. He tackled difficult challenges like a professional and communication was excellent. Totally recommended!',
+      name: 'amirandap',
+      job: 'Fiverr Client',
+      image: {
+        src: '~/assets/images/default-avatar.svg',
+        alt: 'Avatar of amirandap',
       },
-      {
-        testimonial:
-          'He solved an engineering problem that had us stuck for months. His dual profile is an undeniable competitive advantage.',
-        name: 'Head of Operations',
-        job: 'Manufacturing Plant',
-        image: {
-          src: '~/assets/images/profile3.jpg',
-          alt: 'Avatar of Head of Operations',
-        },
+    },
+    {
+      testimonial:
+        'Excellent work, very smooth communication, and all requirements were implemented, plus great attention to questions and changes.',
+      name: 'Andres Osorio',
+      job: 'Satisfied Client',
+      image: {
+        src: '~/assets/images/default-avatar.svg',
+        alt: 'Avatar of Andres Osorio',
       },
-      {
-        testimonial:
-          'Fast, efficient, and with great attention to detail. The final result exceeded our expectations and was delivered ahead of schedule.',
-        name: 'E-commerce Founder',
-        job: 'Online Store',
-        image: {
-          src: '~/assets/images/profile.jpg',
-          alt: 'Avatar of E-commerce Founder',
-        },
+    },
+    {
+      testimonial:
+        'A very nice person, good work, and excellent communication. This is already the second time we work together! He knows what he does, is proactive, and doesn\'t waste your time. I would recommend him and consider him for future projects without hesitation.',
+      name: 'gregvdd',
+      job: 'Fiverr Client',
+      image: {
+        src: '~/assets/images/default-avatar.svg',
+        alt: 'Avatar of gregvdd',
       },
-      {
-        testimonial:
-          'The new user interface he designed is intuitive and has drastically improved our team\'s productivity. Highly recommended.',
-        name: 'Product Lead',
-        job: 'B2B SaaS',
-        image: {
-          src: '~/assets/images/profile2.jpg',
-          alt: 'Avatar of Product Lead',
-        },
+    },
+    {
+      testimonial:
+        'Smooth communication with the backend team and great proactivity throughout the entire project.',
+      name: 'Unydos S.A.S',
+      job: 'Backend Team',
+      image: {
+        src: '~/assets/images/default-avatar.svg',
+        alt: 'Avatar of Unydos S.A.S',
       },
-      {
-        testimonial:
-          'An excellent collaborator. Always willing to explain technical concepts simply and to find the best solution as a team.',
-        name: 'Project Colleague',
-        job: 'Unydos Consulting',
-        image: {
-          src: '~/assets/images/profile3.jpg',
-          alt: 'Avatar of Project Colleague',
-        },
-      },
-    ]}
+    },
+  ]}
   />
 
   <!-- CallToAction Widget *********** -->
