@@ -156,84 +156,88 @@ const metadata = {
     </div>
   </section>
 
-    <WidgetWrapper id="portfolio" isDark={false} containerClass="max-w-7xl mx-auto">
-    <Headline
-      title="Portafolio"
-      subtitle="Una muestra de cómo la ingeniería y el desarrollo de software se unen para crear soluciones robustas y eficientes."
-      classes={{
-        container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
-        title: 'text-4xl md:text-5xl font-bold tracking-tighter mb-4 font-heading',
-        subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400',
-      }}
-    />
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 p-4 md:px-8">
-      
-      <!-- Card 1: Software -->
-      <div class="flex flex-col bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
-        <div class="relative">
-          <Image
-            src="~/assets/images/web-development.jpg"
-            alt="Web Development Projects"
-            class="w-full"
-            width={500}
-            height={281}
-            layout="responsive"
-            sizes="(max-width: 768px) 100vw, 432px"
-          />
-        </div>
-        <div class="p-6 flex-grow">
-          <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-            Soluciones de Software
-          </h3>
-          <p class="text-muted dark:text-slate-400">
-            Aplicaciones web full-stack con React y Tailwind CSS, visualmente atractivas y funcionales para resolver problemas reales.
-          </p>
-        </div>
-        <div class="p-6 pt-0">
-          <Button
-            variant="secondary"
-            target="_blank"
-            text="Ver Proyectos"
-            icon="tabler:chevron-right"
-            href="/es/projects#web"
-          />
-        </div>
+  <!-- Portfolio Section **************** -->
+  <section class="relative not-prose">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <div class="max-w-2xl mx-auto text-center mb-8 md:mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight dark:text-white mb-4">Portfolio</h2>
+        <p class="text-lg text-muted dark:text-slate-400">
+          Cómo la ingeniería y el desarrollo de software se unen para crear soluciones robustas.
+        </p>
       </div>
 
-      <!-- Card 2: Hardware -->
-      <div class="flex flex-col bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
-        <div class="relative">
-          <Image
-            src="~/assets/images/engineering.jpg"
-            alt="Proyectos de Ingeniería"
-            class="w-full"
-            width={500}
-            height={281}
-            layout="responsive"
-            sizes="(max-width: 768px) 100vw, 432px"
-          />
-        </div>
-        <div class="p-6 flex-grow">
-          <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-            Ingeniería y Diseño de Hardware
-          </h3>
-          <p class="text-muted dark:text-slate-400">
-            Diseño mecánico (CAD), electrónica y automatización. La precisión de la ingeniería aplicada para construir software sólido y bien estructurado.
-          </p>
-        </div>
-        <div class="p-6 pt-0">
-          <Button
-            variant="secondary"
-            target="_blank"
-            text="Ver Proyectos"
-            icon="tabler:chevron-right"
-            href="/es/projects#engineering"
-          />
-        </div>
-      </div>
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
 
+        <!-- Card 1: Software -->
+        <div class="flex flex-col bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden h-full">
+          <div class="relative">
+            <Image
+              src="~/assets/images/web-development.jpg"
+              alt="Web Development Projects"
+              class="w-full"
+              width={500}
+              height={281}
+              layout="responsive"
+              sizes="(max-width: 768px) 100vw, 432px"
+            />
+          </div>
+          <div class="p-6 flex-grow">
+            <h3 class="text-xl md:text-2xl font-bold tracking-tight dark:text-white mb-3">
+              Soluciones de Software
+            </h3>
+            <p class="text-muted dark:text-slate-400">
+              Aquí es donde las ideas se convierten en código. Construyo productos digitales funcionales y escalables. En esta sección, encontrarás aplicaciones web full-stack construidas con tecnologías como React y Tailwind CSS, diseñadas para ser visualmente atractivas mientras ofrecen funcionalidad robusta que resuelve problemas del mundo real.
+            </p>
+          </div>
+          <div class="p-6 pt-0">
+            <a
+              href="/es/projects#web"
+              target="_blank"
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-lg transition-colors duration-200 font-medium"
+            >
+              Ver Proyectos
+              <Icon name="tabler:chevron-right" class="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Hardware -->
+        <div class="flex flex-col bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden h-full">
+          <div class="relative">
+            <Image
+              src="~/assets/images/engineering.jpg"
+              alt="Proyectos de Ingeniería"
+              class="w-full"
+              width={500}
+              height={281}
+              layout="responsive"
+              sizes="(max-width: 768px) 100vw, 432px"
+            />
+          </div>
+          <div class="p-6 flex-grow">
+            <h3 class="text-xl md:text-2xl font-bold tracking-tight dark:text-white mb-3">
+              Ingeniería y Diseño de Hardware
+            </h3>
+            <p class="text-muted dark:text-slate-400">
+              La base de mi pensamiento lógico. Aquí muestro mi trabajo en diseño mecánico (CAD), electrónica y automatización, donde la precisión es clave para resolver desafíos industriales. Esta mentalidad de ingeniería es la que aplico hoy para construir software robusto y bien estructurado.
+            </p>
+          </div>
+          <div class="p-6 pt-0">
+            <a
+              href="/es/projects#engineering"
+              target="_blank"
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-lg transition-colors duration-200 font-medium"
+            >
+              Ver Proyectos
+              <Icon name="tabler:chevron-right" class="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </WidgetWrapper>
+  </section>
 
   <!-- Steps Widget ****************** -->
   <Steps
