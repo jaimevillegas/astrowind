@@ -353,69 +353,141 @@ const metadata = {
 
   <!-- Features3 Widget ************** -->
 
-  <Features3
-  title="Habilidades"
-  subtitle="La combinación de desarrollo de software y precisión de ingeniería que aplico para construir soluciones robustas y eficientes."
-  columns={3}
-  defaultIcon="tabler:point-filled"
-  items={[
-    // Categoría: Desarrollo de Software y Web
-    {
-      title: 'Desarrollo Frontend',
-      description: 'Construcción de interfaces de usuario interactivas y de alto rendimiento con React, JavaScript (ES6+), HTML5 y CSS3, creando experiencias de usuario memorables.',
-    },
-    {
-      title: 'Desarrollo Backend',
-      description: 'Creación de APIs RESTful robustas y servidores eficientes con Node.js y Express. Experiencia en la gestión de la lógica de negocio del lado del servidor.',
-    },
-    {
-      title: 'Bases de Datos',
-      description: 'Diseño y gestión de bases de datos relacionales (SQL - PostgreSQL) y no relacionales (NoSQL - MongoDB) para asegurar la persistencia y la integridad de los datos.',
-    },
-    {
-      title: 'Control de Versiones y Herramientas',
-      description: 'Dominio de Git y GitHub para el control de versiones y colaboración en equipo. Experiencia con herramientas de empaquetado como NPM/Yarn.',
-    },
-    {
-      title: 'Pruebas y Calidad de Código',
-      description: 'Implementación de pruebas unitarias y de integración para garantizar la fiabilidad del software. Foco en escribir código limpio, mantenible y escalable.',
-    },
-    // Categoría: Ingeniería y Hardware
-    {
-      title: 'Modelado y Simulación CAD',
-      description: 'Experiencia en modelado 3D y simulación de sistemas mecánicos con software CAD, desde el concepto hasta el análisis de ingeniería detallado.',
-    },
-    {
-      title: 'Diseño de PCB y Electrónica',
-      description: 'Diseño y simulación de circuitos electrónicos y PCBs para proyectos de hardware, asegurando la integración y el rendimiento óptimo del sistema.',
-    },
-    {
-      title: 'Sistemas Embebidos y Microcontroladores',
-      description: 'Programación de Arduino, ESP32 y otros microcontroladores para desarrollar soluciones de hardware eficientes para la automatización y la captura de datos.',
-    },
-    {
-      title: 'Robótica y Sistemas de Control',
-      description: 'Desarrollo de sistemas robóticos y algoritmos de control utilizando MATLAB y LabVIEW para la automatización de procesos y el análisis de datos.',
-    },
-    // Categoría: Habilidades Profesionales y Metodologías
-    {
-      title: 'Resolución de Problemas Complejos',
-      description: 'Capacidad analítica para descomponer desafíos complejos y desarrollar soluciones creativas que optimizan el rendimiento, los costos y la eficiencia.',
-    },
-    {
-      title: 'Gestión de Proyectos y Liderazgo',
-      description: 'Liderazgo de proyectos técnicos desde la concepción hasta el despliegue, coordinando equipos y asegurando la alineación con los objetivos del cliente.',
-    },
-    {
-      title: 'Metodologías Ágiles',
-      description: 'Experiencia trabajando con flujos de trabajo ágiles como Scrum y Kanban, participando en ceremonias de planificación, sprints y retrospectivas.',
-    },
-    {
-      title: 'Comunicación Técnica y de Cliente',
-      description: 'Habilidad para comunicar conceptos técnicos complejos de forma clara a audiencias diversas y para mantener una relación fluida y productiva con los clientes.',
-    },
-  ]}
-/>
+  <!-- Skills Section ****************** -->
+  <section class="relative not-prose">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <div class="max-w-2xl mx-auto text-center mb-8 md:mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+          Habilidades
+        </h2>
+        <p class="text-muted text-xl">
+          La combinación de desarrollo de software y precisión de ingeniería que aplico para construir soluciones robustas y eficientes
+        </p>
+      </div>
+
+      <div class="max-w-6xl mx-auto">
+        <div class="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Desarrollo Frontend -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:brand-react" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Desarrollo Frontend</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Construcción de interfaces de usuario interactivas y de alto rendimiento con <strong class="text-orange-600">React</strong>, JavaScript (ES6+), HTML5 y CSS3, creando experiencias de usuario memorables.
+            </p>
+          </div>
+
+          <!-- Desarrollo Backend -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:brand-nodejs" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Desarrollo Backend</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Creación de APIs RESTful robustas y servidores eficientes con <strong class="text-orange-600">Node.js</strong> y Express. Experiencia en la gestión de la lógica de negocio del lado del servidor.
+            </p>
+          </div>
+
+          <!-- Bases de Datos -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:database" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Bases de Datos</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Diseño y gestión de bases de datos relacionales (<strong class="text-orange-600">SQL - PostgreSQL</strong>) y no relacionales (NoSQL - MongoDB) para asegurar la persistencia y la integridad de los datos.
+            </p>
+          </div>
+
+          <!-- Control de Versiones -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:brand-git" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Control de Versiones</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Dominio de <strong class="text-orange-600">Git y GitHub</strong> para el control de versiones y colaboración en equipo. Experiencia con herramientas de empaquetado como NPM/Yarn.
+            </p>
+          </div>
+
+          <!-- Pruebas y Calidad -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:test-pipe" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Pruebas y Calidad</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Implementación de pruebas unitarias y de integración para garantizar la fiabilidad del software. Foco en escribir código <strong class="text-orange-600">limpio, mantenible y escalable</strong>.
+            </p>
+          </div>
+
+          <!-- Modelado CAD -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:3d-cube-sphere" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Modelado CAD</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Experiencia en <strong class="text-orange-600">modelado 3D</strong> y simulación de sistemas mecánicos con software CAD, desde el concepto hasta el análisis de ingeniería detallado.
+            </p>
+          </div>
+
+          <!-- Diseño de PCB -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:cpu" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Diseño de PCB</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Diseño y simulación de <strong class="text-orange-600">circuitos electrónicos y PCBs</strong> para proyectos de hardware, asegurando la integración y el rendimiento óptimo del sistema.
+            </p>
+          </div>
+
+          <!-- Sistemas Embebidos -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:device-desktop" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Sistemas Embebidos</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Programación de <strong class="text-orange-600">Arduino, ESP32</strong> y otros microcontroladores para desarrollar soluciones de hardware eficientes para la automatización y la captura de datos.
+            </p>
+          </div>
+
+          <!-- Robótica -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:robot" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Robótica y Control</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Desarrollo de sistemas robóticos y algoritmos de control utilizando <strong class="text-orange-600">MATLAB y LabVIEW</strong> para la automatización de procesos y el análisis de datos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Testimonials Widget *********** -->
 <Testimonials

@@ -356,69 +356,141 @@ actions={[{ variant: 'primary', text: 'Get in Touch', href: getPermalink('/conta
 
   <!-- Features3 Widget ************** -->
 
-  <Features3
-  title="Skills"
-  subtitle="The combination of software development and engineering precision that I apply to build robust and efficient solutions."
-  columns={3}
-  defaultIcon="tabler:point-filled"
-  items={[ 
-    // Category: Software and Web Development
-    {
-      title: 'Frontend Development',
-      description: 'Building interactive and high-performance user interfaces with React, JavaScript (ES6+), HTML5, and CSS3, creating memorable user experiences.',
-    },
-    {
-      title: 'Backend Development',
-      description: 'Creating robust RESTful APIs and efficient servers with Node.js and Express. Experience in managing server-side business logic.',
-    },
-    {
-      title: 'Databases',
-      description: 'Design and management of relational (SQL - PostgreSQL) and non-relational (NoSQL - MongoDB) databases to ensure data persistence and integrity.',
-    },
-    {
-      title: 'Version Control and Tools',
-      description: 'Mastery of Git and GitHub for version control and team collaboration. Experience with packaging tools like NPM/Yarn.',
-    },
-    {
-      title: 'Testing and Code Quality',
-      description: 'Implementation of unit and integration tests to ensure software reliability. Focus on writing clean, maintainable, and scalable code.',
-    },
-    // Category: Engineering and Hardware
-    {
-      title: 'CAD Modeling and Simulation',
-      description: 'Experience in 3D modeling and simulation of mechanical systems with CAD software, from concept to detailed engineering analysis.',
-    },
-    {
-      title: 'PCB and Electronics Design',
-      description: 'Design and simulation of electronic circuits and PCBs for hardware projects, ensuring system integration and optimal performance.',
-    },
-    {
-      title: 'Embedded Systems and Microcontrollers',
-      description: 'Programming of Arduino, ESP32, and other microcontrollers to develop efficient hardware solutions for automation and data acquisition.',
-    },
-    {
-      title: 'Robotics and Control Systems',
-      description: 'Development of robotic systems and control algorithms using MATLAB and LabVIEW for process automation and data analysis.',
-    },
-    // Category: Professional Skills and Methodologies
-    {
-      title: 'Complex Problem Solving',
-      description: 'Analytical ability to break down complex challenges and develop creative solutions that optimize performance, costs, and efficiency.',
-    },
-    {
-      title: 'Project Management and Leadership',
-      description: 'Leadership of technical projects from conception to deployment, coordinating teams and ensuring alignment with client objectives.',
-    },
-    {
-      title: 'Agile Methodologies',
-      description: 'Experience working with agile workflows such as Scrum and Kanban, participating in planning ceremonies, sprints, and retrospectives.',
-    },
-    {
-      title: 'Technical and Client Communication',
-      description: 'Ability to communicate complex technical concepts clearly to diverse audiences and to maintain a fluid and productive relationship with clients.',
-    },
-  ]}
-/>
+  <!-- Skills Section ****************** -->
+  <section class="relative not-prose">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <div class="max-w-2xl mx-auto text-center mb-8 md:mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+          Skills
+        </h2>
+        <p class="text-muted text-xl">
+          The combination of software development and engineering precision that I apply to build robust and efficient solutions
+        </p>
+      </div>
+
+      <div class="max-w-6xl mx-auto">
+        <div class="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Frontend Development -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:brand-react" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Frontend Development</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Building interactive and high-performance user interfaces with <strong class="text-orange-600">React</strong>, JavaScript (ES6+), HTML5, and CSS3, creating memorable user experiences.
+            </p>
+          </div>
+
+          <!-- Backend Development -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:brand-nodejs" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Backend Development</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Creating robust RESTful APIs and efficient servers with <strong class="text-orange-600">Node.js</strong> and Express. Experience in managing server-side business logic.
+            </p>
+          </div>
+
+          <!-- Databases -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:database" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Databases</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Design and management of relational (<strong class="text-orange-600">SQL - PostgreSQL</strong>) and non-relational (NoSQL - MongoDB) databases to ensure data persistence and integrity.
+            </p>
+          </div>
+
+          <!-- Version Control -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:brand-git" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Version Control</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Mastery of <strong class="text-orange-600">Git and GitHub</strong> for version control and team collaboration. Experience with packaging tools like NPM/Yarn.
+            </p>
+          </div>
+
+          <!-- Testing and Quality -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:test-pipe" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Testing and Quality</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Implementation of unit and integration tests to ensure software reliability. Focus on writing <strong class="text-orange-600">clean, maintainable, and scalable</strong> code.
+            </p>
+          </div>
+
+          <!-- CAD Modeling -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:3d-cube-sphere" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">CAD Modeling</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Experience in <strong class="text-orange-600">3D modeling</strong> and simulation of mechanical systems with CAD software, from concept to detailed engineering analysis.
+            </p>
+          </div>
+
+          <!-- PCB Design -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:cpu" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">PCB Design</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Design and simulation of <strong class="text-orange-600">electronic circuits and PCBs</strong> for hardware projects, ensuring system integration and optimal performance.
+            </p>
+          </div>
+
+          <!-- Embedded Systems -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:device-desktop" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Embedded Systems</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Programming of <strong class="text-orange-600">Arduino, ESP32</strong>, and other microcontrollers to develop efficient hardware solutions for automation and data acquisition.
+            </p>
+          </div>
+
+          <!-- Robotics -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:robot" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Robotics and Control</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Development of robotic systems and control algorithms using <strong class="text-orange-600">MATLAB and LabVIEW</strong> for process automation and data analysis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Testimonials Widget *********** -->
   <Testimonials
