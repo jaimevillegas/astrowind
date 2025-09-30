@@ -14,10 +14,11 @@ import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
+import { Icon } from 'astro-icon/components';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: 'JV Dev Solutions',
+  title: 'Jaime Villegas - Personal Web',
 };
 ---
 
@@ -34,7 +35,7 @@ const metadata = {
       ]}
       actions={[
         {
-          text: 'Contact me',
+          text: 'Get in Touch',
           href: '/en/contact#form',
         },
       ]}
@@ -47,12 +48,15 @@ const metadata = {
   <Hero
     id="hero"
     title="Jaime Villegas"
-    tagline="Hello! I am"
-    actions={[{ variant: 'primary', text: 'Contact me', href: getPermalink('/en/contact#form') }]}
+tagline="Hello! I'm"
+actions={[{ variant: 'primary', text: 'Get in Touch', href: getPermalink('/contact#form') }]}
     image={{ src: '~/assets/images/profile.jpg', alt: 'Jaime Villegas' }}
   >
     <Fragment slot="subtitle">
-      I merge my background in engineering with modern web development to create high-performance digital products. I design and build applications that are not only functional, but also logical and easy to maintain.
+     I merge my <span class="text-orange-600 font-bold">engineering</span> background with<span
+        class="text-orange-600 font-bold"
+        > modern web development
+    </span> to create high-performance digital products. I design and build applications that are not only functional but also logical and maintainable.
     </Fragment>
   </Hero>
 
@@ -60,341 +64,871 @@ const metadata = {
   <section id="about" class="relative not-prose">
     <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-4xl font-bold tracking-tight dark:text-white sm:text-5xl mb-2">About me</h2>
-        <p class="text-lg dark:text-slate-400 text-justify">
-          As an engineer, I learned to build things that work. As a developer, I learned to build things that people love to use.
-          <br />
-          <br />
-          My dual profile allows me to approach each project from two angles: the technical soundness of engineering and the empathy of user-centered design. The result is efficient, scalable web applications with a flawless user experience.
-        </p>
-        <br />
-        <p class="text-lg dark:text-slate-400">Interested in collaborating? Contact me here:</p>
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-4xl font-bold tracking-tight dark:text-white sm:text-5xl mb-8">About me</h2>
+        <div class="text-lg dark:text-slate-400 text-left space-y-4">
+          <p>
+            My career began in <span class="text-orange-600 font-bold">engineering</span>, where I learned the discipline of building things that simply work—robustly and predictably. That analytical foundation is my starting point.
+          </p>
+          <p>
+            Later, as a <span class="text-orange-600 font-bold">developer</span>, I discovered my passion: building things that people love to use. I understood that behind every <em>div</em> there's a person, and that empathy for the end user is as crucial as an efficient algorithm.
+          </p>
+          <p>
+            This duality is my working method. I combine <span class="text-orange-600 font-bold">technical soundness</span> with <span class="text-orange-600 font-bold">user-centered design</span> to not only deliver a product that works, but an intuitive and satisfying digital experience.
+          </p>
+          <p class="italic text-center pt-4">
+            Want to see this approach in action?
+          </p>
+        </div>
       </div>
-      <div class="mt-8 max-w-3xl mx-auto">
-        <ItemGrid
-          items={[
-            {
-              icon: 'tabler:brand-fiverr',
-              callToAction: {
-                target: '_blank',
-                text: 'Fiverr',
-                href: 'https://es.fiverr.com/villegas296',
-              },
-            },
-            {
-              icon: 'tabler:brand-github',
-              callToAction: {
-                target: '_blank',
-                text: 'GitHub',
-                href: 'https://github.com/jaimevillegas',
-              },
-            },
-            {
-              icon: 'tabler:brand-linkedin',
-              callToAction: {
-                target: '_blank',
-                text: 'LinkedIn',
-                href: 'https://www.linkedin.com/in/villegas0296/',
-              },
-            },
-          ]}
-          columns={3}
-          classes={{
-            container: `gap-y-4 md:gap-y-8`,
-            panel: 'max-w-none',
-            title: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
-            description: 'text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2',
-            icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-orange-600 dark:bg-orange-600 text-gray-50 p-1',
-            action: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
-          }}
-        />
+      <div class="mt-8 max-w-2xl mx-auto">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href="https://es.fiverr.com/villegas296"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3 px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-slate-700 hover:border-orange-600 dark:hover:border-orange-600 w-full sm:w-auto justify-center"
+          >
+            <div class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-600 text-white group-hover:bg-orange-700 transition-colors duration-300">
+              <Icon name="tabler:brand-fiverr" class="h-[18px] w-[18px]" />
+            </div>
+            <span class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">Fiverr</span>
+          </a>
+
+          <a
+            href="https://github.com/jaimevillegas"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3 px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-slate-700 hover:border-orange-600 dark:hover:border-orange-600 w-full sm:w-auto justify-center"
+          >
+            <div class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-600 text-white group-hover:bg-orange-700 transition-colors duration-300">
+              <Icon name="tabler:brand-github" class="h-[18px] w-[18px]" />
+            </div>
+            <span class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">GitHub</span>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/villegas0296/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3 px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-slate-700 hover:border-orange-600 dark:hover:border-orange-600 w-full sm:w-auto justify-center"
+          >
+            <div class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-600 text-white group-hover:bg-orange-700 transition-colors duration-300">
+              <Icon name="tabler:brand-linkedin" class="h-3.5 w-3.5" />
+            </div>
+            <span class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">LinkedIn</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- BlogLatestPost Widget **************** -->
-  <BlogLatestPosts
-    id="blog"
-    title="From Code to Gear"
-    linkText="View all posts"
-    information={`A space to analyze problems, experiment with technology, and share practical guides on development, engineering, and the magic that happens when you combine them.`}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </BlogLatestPosts>
-
-  <WidgetWrapper id="portfolio" isDark={false} containerClass="max-w-7xl mx-auto">
-    <Headline
-      title="Portfolio"
-      subtitle="A showcase of how engineering and software development come together to create robust and efficient solutions."
-      classes={{
-        container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
-        title: 'text-4xl md:text-5xl font-bold tracking-tighter mb-4 font-heading',
-        subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400',
-      }}
-    />
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 p-4 md:px-8">
-      
-      <!-- Card 1: Software -->
-      <div class="flex flex-col bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
-        <div class="relative">
-          <Image
-            src="~/assets/images/web-development.jpg"
-            alt="Web Development Projects"
-            class="w-full"
-            width={500}
-            height={281}
-            layout="responsive"
-            sizes="(max-width: 768px) 100vw, 432px"
-          />
-        </div>
-        <div class="p-6 flex-grow">
-          <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-            Software Solutions
-          </h3>
-          <p class="text-muted dark:text-slate-400">
-            Full-stack web applications with React and Tailwind CSS, visually appealing and functional to solve real problems.
-          </p>
-        </div>
-        <div class="p-6 pt-0">
-          <Button
-            variant="secondary"
-            target="_blank"
-            text="View Projects"
-            icon="tabler:chevron-right"
-            href="/en/projects#web"
-          />
-        </div>
+  <section class="relative not-prose">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <div class="max-w-2xl mx-auto text-center mb-8 md:mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight dark:text-white mb-4">Blog: From Code to Cogs</h2>
+        <p class="text-lg text-muted dark:text-slate-400">
+          A space for analyzing problems, experimenting with technology, and sharing practical guides on development and engineering.
+        </p>
       </div>
-
-      <!-- Card 2: Hardware -->
-      <div class="flex flex-col bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
-        <div class="relative">
-          <Image
-            src="~/assets/images/engineering.jpg"
-            alt="Engineering Projects"
-            class="w-full"
-            width={500}
-            height={281}
-            layout="responsive"
-            sizes="(max-width: 768px) 100vw, 432px"
-          />
-        </div>
-        <div class="p-6 flex-grow">
-          <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-            Engineering and Hardware Design
-          </h3>
-          <p class="text-muted dark:text-slate-400">
-            Mechanical design (CAD), electronics, and automation. The precision of engineering applied to build solid and well-structured software.
-          </p>
-        </div>
-        <div class="p-6 pt-0">
-          <Button
-            variant="secondary"
-            target="_blank"
-            text="View Projects"
-            icon="tabler:chevron-right"
-            href="/en/projects#engineering"
-          />
-        </div>
+      <BlogLatestPosts
+        id="blog"
+        classes={{
+          container: 'max-w-6xl mx-auto',
+          title: 'sr-only',
+          subtitle: 'sr-only',
+          post: {
+            title: 'text-lg md:text-xl font-bold leading-tight dark:text-white hover:text-orange-600 dark:hover:text-orange-400 transition-colors duration-200',
+            excerpt: 'text-sm text-muted dark:text-slate-400 mt-2',
+            category: 'text-xs uppercase tracking-wide text-orange-600 dark:text-orange-600 font-medium',
+            readTime: 'text-xs text-muted dark:text-slate-500',
+          }
+        }}
+      />
+      <div class="text-center mt-8">
+        <a
+          href="/en/blog"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 text-orange-600 hover:text-orange-700 dark:text-orange-600 dark:hover:text-orange-300 transition-colors duration-200 font-medium"
+        >
+          View all posts
+          <Icon name="tabler:chevron-right" class="h-4 w-4" />
+        </a>
       </div>
-
     </div>
-  </WidgetWrapper>
+  </section>
 
-  <!-- Steps Widget ****************** -->
-  <Steps
-    id="resume"
-    title="Work experience"
-    items={[ 
-  {
-    title:
-    'Professional Freelance Engineer <br />  <span class="font-normal">Fiverr</span> <br /> <span class="text-sm font-normal"> 2022 - PRESENT</span>',
-    description: 'As a freelancer, I manage full-cycle projects for international clients, specializing in web development and custom engineering solutions. <br /> <span class="font-bold">- Full-Stack Development:</span> I have built and deployed complete web applications using React, Node.js, and SQL/NoSQL databases, delivering robust and scalable products.<br /><span class="font-bold">- UI and Component Design:</span> I have created interactive user interfaces and reusable component systems with Tailwind CSS, focusing on usability and user experience. <br /> - Comprehensive Solutions: I have integrated my software and hardware skills for unique projects, including PCB design and CAD simulation, demonstrating a unique ability to solve problems at the intersection of both worlds.',
-    icon: 'tabler:briefcase',
-  },
-  {
-    title:
-      'Frontend Software Engineer <br /> <span class="font-normal">Unydos Consulting S.A.S, COL</span> <br /> <span class="text-sm font-normal">2024</span>',
-    description: "I led the modernization of a legacy software application, transforming it into a scalable, high-performance web solution with React. <br /> - Technical Leadership: I directed the project's frontend architecture, migrating the codebase to a modern component-based system that improved maintainability and development speed. <br /> - Project and Team Management: I translated client requirements into an actionable technical backlog and coordinated the development team, ensuring high-quality deliveries aligned with business goals. <br /> - Impact and Results: The new application offered a significantly smoother and more responsive user experience, establishing a solid technical foundation for implementing future features.",
-    icon: 'tabler:code',
-  },
-  {
-    title:
-    'Mechanical CAD Engineer & Project Engineer <br /> <span class="font-normal">Industrial Sector (Multiple Employers)</span> <br /> <span class="text-sm font-normal">2016 - 2022</span>',
-    description: "I designed custom engineering solutions to optimize industrial processes, working directly with clients from concept to implementation. <br /> - Analysis and Specifications: I analyzed complex client requirements and translated them into detailed technical specifications, a skill I now apply to define the scope of software projects. <br /> - Complex Systems Design: I used CAD tools to model and design mechanical systems (piping, conveyors, etc.), developing a methodical approach to creating logical and efficient systems. <br /> - The Foundation of my Software Career: This experience laid the groundwork for my problem-solving and structured thinking abilities, allowing me to build well-designed and robust software.",
-    icon: 'tabler:settings',
-  }
-]}
-    classes={{ container: 'max-w-3xl' }}
-  />
+  <!-- Portfolio Section **************** -->
+  <section class="relative not-prose">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <div class="max-w-2xl mx-auto text-center mb-8 md:mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight dark:text-white mb-4">Portfolio</h2>
+        <p class="text-lg text-muted dark:text-slate-400">
+          How engineering and software development come together to create robust solutions.
+        </p>
+      </div>
 
-<Features3
-  title="Skills"
-  subtitle="The combination of software development and engineering precision that I apply to build robust and efficient solutions."
-  columns={3}
-  defaultIcon="tabler:point-filled"
-  items={[ 
-    // Category: Software and Web Development
-    {
-      title: 'Frontend Development',
-      description: 'Building interactive and high-performance user interfaces with React, JavaScript (ES6+), HTML5, and CSS3, creating memorable user experiences.',
-    },
-    {
-      title: 'Backend Development',
-      description: 'Creating robust RESTful APIs and efficient servers with Node.js and Express. Experience in managing server-side business logic.',
-    },
-    {
-      title: 'Databases',
-      description: 'Design and management of relational (SQL - PostgreSQL) and non-relational (NoSQL - MongoDB) databases to ensure data persistence and integrity.',
-    },
-    {
-      title: 'Version Control and Tools',
-      description: 'Mastery of Git and GitHub for version control and team collaboration. Experience with packaging tools like NPM/Yarn.',
-    },
-    {
-      title: 'Testing and Code Quality',
-      description: 'Implementation of unit and integration tests to ensure software reliability. Focus on writing clean, maintainable, and scalable code.',
-    },
-    // Category: Engineering and Hardware
-    {
-      title: 'CAD Modeling and Simulation',
-      description: 'Experience in 3D modeling and simulation of mechanical systems with CAD software, from concept to detailed engineering analysis.',
-    },
-    {
-      title: 'PCB and Electronics Design',
-      description: 'Design and simulation of electronic circuits and PCBs for hardware projects, ensuring system integration and optimal performance.',
-    },
-    {
-      title: 'Embedded Systems and Microcontrollers',
-      description: 'Programming of Arduino, ESP32, and other microcontrollers to develop efficient hardware solutions for automation and data acquisition.',
-    },
-    {
-      title: 'Robotics and Control Systems',
-      description: 'Development of robotic systems and control algorithms using MATLAB and LabVIEW for process automation and data analysis.',
-    },
-    // Category: Professional Skills and Methodologies
-    {
-      title: 'Complex Problem Solving',
-      description: 'Analytical ability to break down complex challenges and develop creative solutions that optimize performance, costs, and efficiency.',
-    },
-    {
-      title: 'Project Management and Leadership',
-      description: 'Leadership of technical projects from conception to deployment, coordinating teams and ensuring alignment with client objectives.',
-    },
-    {
-      title: 'Agile Methodologies',
-      description: 'Experience working with agile workflows such as Scrum and Kanban, participating in planning ceremonies, sprints, and retrospectives.',
-    },
-    {
-      title: 'Technical and Client Communication',
-      description: 'Ability to communicate complex technical concepts clearly to diverse audiences and to maintain a fluid and productive relationship with clients.',
-    },
-  ]}
-/>
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
 
-  <!-- Testimonials Widget *********** -->
-  <Testimonials
-    id="testimonials"
-    title="What my clients say"
-    subtitle="Results and collaboration that build trust."
-    testimonials={[ 
-      {
-        testimonial:
-          'Jaime not only delivered a high-quality product, but his engineering approach ensured it was scalable and robust. His communication was excellent throughout the process.',
-        name: 'Satisfied Client',
-        job: 'Startup CEO',
-        image: {
-          src: '~/assets/images/profile2.jpg',
-          alt: 'Avatar of Satisfied Client',
-        },
-      },
-      {
-        testimonial:
-          "Jaime's ability to understand complex requirements and translate them into a functional solution is impressive. I highly recommend him.",
-        name: 'Project Manager',
-        job: 'Tech Company',
-        image: {
-          src: '~/assets/images/profile3.jpg',
-          alt: 'Avatar of Project Manager',
-        },
-      },
-      {
-        testimonial:
-          'An incredible professional. He understood our vision and executed it perfectly, paying attention to every detail.',
-        name: 'Marketing Director',
-        job: 'Creative Agency',
-        image: {
-          src: '~/assets/images/profile.jpg',
-          alt: 'Avatar of Marketing Director',
-        },
-      },
-      {
-        testimonial:
-          'The code is clean, well-documented, and works smoothly. A pleasure to work with someone who values good practices.',
-        name: 'Senior Developer',
-        job: 'Software Consultancy',
-        image: {
-          src: '~/assets/images/profile2.jpg',
-          alt: 'Avatar of Senior Developer',
-        },
-      },
-      {
-        testimonial:
-          'He solved an engineering problem that had us stuck for months. His dual profile is an undeniable competitive advantage.',
-        name: 'Head of Operations',
-        job: 'Manufacturing Plant',
-        image: {
-          src: '~/assets/images/profile3.jpg',
-          alt: 'Avatar of Head of Operations',
-        },
-      },
-      {
-        testimonial:
-          'Fast, efficient, and with great attention to detail. The final result exceeded our expectations and was delivered ahead of schedule.',
-        name: 'E-commerce Founder',
-        job: 'Online Store',
-        image: {
-          src: '~/assets/images/profile.jpg',
-          alt: 'Avatar of E-commerce Founder',
-        },
-      },
-      {
-        testimonial:
-          'The new user interface he designed is intuitive and has drastically improved our team\'s productivity. Highly recommended.',
-        name: 'Product Lead',
-        job: 'B2B SaaS',
-        image: {
-          src: '~/assets/images/profile2.jpg',
-          alt: 'Avatar of Product Lead',
-        },
-      },
-      {
-        testimonial:
-          'An excellent collaborator. Always willing to explain technical concepts simply and to find the best solution as a team.',
-        name: 'Project Colleague',
-        job: 'Unydos Consulting',
-        image: {
-          src: '~/assets/images/profile3.jpg',
-          alt: 'Avatar of Project Colleague',
-        },
-      },
-    ]}
-  />
+        <!-- Card 1: Software -->
+        <div class="flex flex-col bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden h-full">
+          <div class="relative">
+            <Image
+              src="~/assets/images/web-development.jpg"
+              alt="Web Development Projects"
+              class="w-full"
+              width={500}
+              height={281}
+              layout="responsive"
+              sizes="(max-width: 768px) 100vw, 432px"
+            />
+          </div>
+          <div class="p-6 flex-grow">
+            <h3 class="text-xl md:text-2xl font-bold tracking-tight dark:text-white mb-3">
+              Software Solutions
+            </h3>
+            <p class="text-muted dark:text-slate-400">
+              This is where ideas become code. I build functional and scalable digital products. In this section, you'll find full-stack web applications built with technologies like React and Tailwind CSS, crafted to be visually appealing while offering robust functionality that solves real-world problems.
+            </p>
+          </div>
+          <div class="p-6 pt-0">
+            <a
+              href="/en/projects#web"
+              target="_blank"
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-lg transition-colors duration-200 font-medium"
+            >
+              View Projects
+              <Icon name="tabler:chevron-right" class="h-4 w-4" />
+            </a>
+          </div>
+        </div>
 
-  <!-- CallToAction Widget *********** -->
-  <CallToAction
-      title="Let's build something incredible, together."
-      subtitle="My passion is to transform ideas into high-performance digital products. If you are looking for a developer with the precision of an engineer, let's talk."
-    actions={[ 
-      {
-        variant: 'primary',
-        text: 'Let\'s talk',
-        href: '/en/contact#form',
-      },
-    ]}
-  />
+        <!-- Card 2: Hardware -->
+        <div class="flex flex-col bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden h-full">
+          <div class="relative">
+            <Image
+              src="~/assets/images/engineering.jpg"
+              alt="Engineering Projects"
+              class="w-full"
+              width={500}
+              height={281}
+              layout="responsive"
+              sizes="(max-width: 768px) 100vw, 432px"
+            />
+          </div>
+          <div class="p-6 flex-grow">
+            <h3 class="text-xl md:text-2xl font-bold tracking-tight dark:text-white mb-3">
+              Engineering & Hardware Design
+            </h3>
+            <p class="text-muted dark:text-slate-400">
+              The foundation of my logical thinking. Here I showcase my work in mechanical design (CAD), electronics, and automation, where precision is key to solving industrial challenges. This engineering mindset is what I apply today to build robust and well-structured software.
+            </p>
+          </div>
+          <div class="p-6 pt-0">
+            <a
+              href="/en/projects#engineering"
+              target="_blank"
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-lg transition-colors duration-200 font-medium"
+            >
+              View Projects
+              <Icon name="tabler:chevron-right" class="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Experience Section ****************** -->
+  <section class="relative not-prose">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <div class="max-w-2xl mx-auto text-center mb-8 md:mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+          Work Experience
+        </h2>
+        <p class="text-muted text-xl">
+          A journey through my most notable professional roles and achievements
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-8 md:space-y-12">
+          <!-- Position 1 -->
+          <div class="flex flex-col md:flex-row gap-6 md:gap-8">
+            <div class="flex-shrink-0 flex items-start justify-center">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
+                <Icon name="tabler:briefcase" class="w-6 h-6 text-orange-600" />
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="mb-4">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  Freelance Professional Engineer
+                </h3>
+                <div class="flex flex-wrap items-center gap-2 text-gray-600 dark:text-gray-300 mb-2">
+                  <span class="font-medium">Fiverr</span>
+                  <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                  <span class="text-sm">2022 - PRESENT</span>
+                </div>
+              </div>
+              <div class="prose prose-gray dark:prose-invert max-w-none">
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                  As a freelancer, I manage full-cycle projects for international clients, specializing in web development and custom engineering solutions.
+                </p>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li><strong class="text-orange-600">Full-Stack Development:</strong> I have built and deployed complete web applications using React, Node.js, and SQL/NoSQL databases, delivering robust and scalable products.</li>
+                  <li><strong class="text-orange-600">UI and Component Design:</strong> I have created interactive user interfaces and reusable component systems with Tailwind CSS, focusing on usability and user experience.</li>
+                  <li><strong class="text-orange-600">Comprehensive Solutions:</strong> I have integrated my software and hardware skills for unique projects, including PCB design and CAD simulation.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Position 2 -->
+          <div class="flex flex-col md:flex-row gap-6 md:gap-8">
+            <div class="flex-shrink-0 flex items-start justify-center">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
+                <Icon name="tabler:code" class="w-6 h-6 text-orange-600" />
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="mb-4">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  Frontend Software Engineer
+                </h3>
+                <div class="flex flex-wrap items-center gap-2 text-gray-600 dark:text-gray-300 mb-2">
+                  <span class="font-medium">Unydos Consulting S.A.S, COL</span>
+                  <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                  <span class="text-sm">2024</span>
+                </div>
+              </div>
+              <div class="prose prose-gray dark:prose-invert max-w-none">
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                  I led the modernization of a legacy software application, transforming it into a scalable, high-performance web solution with React.
+                </p>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li><strong class="text-orange-600">Technical Leadership:</strong> I directed the project's frontend architecture, migrating the codebase to a modern component-based system that improved maintainability and development speed.</li>
+                  <li><strong class="text-orange-600">Project Management:</strong> I translated client requirements into an actionable technical backlog and coordinated the development team, ensuring high-quality deliveries aligned with business goals.</li>
+                  <li><strong class="text-orange-600">Impact and Results:</strong> The new application offered a significantly smoother and more responsive user experience, establishing a solid technical foundation for implementing future features.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Position 3 -->
+          <div class="flex flex-col md:flex-row gap-6 md:gap-8">
+            <div class="flex-shrink-0 flex items-start justify-center">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
+                <Icon name="tabler:settings" class="w-6 h-6 text-orange-600" />
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="mb-4">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  Mechanical CAD Engineer & Project Engineer
+                </h3>
+                <div class="flex flex-wrap items-center gap-2 text-gray-600 dark:text-gray-300 mb-2">
+                  <span class="font-medium">Industrial Sector (Multiple Employers)</span>
+                  <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                  <span class="text-sm">2016 - 2022</span>
+                </div>
+              </div>
+              <div class="prose prose-gray dark:prose-invert max-w-none">
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                  I designed custom engineering solutions to optimize industrial processes, working directly with clients from concept to implementation.
+                </p>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li><strong class="text-orange-600">Analysis and Specifications:</strong> I analyzed complex client requirements and translated them into detailed technical specifications, a skill I now apply to define the scope of software projects.</li>
+                  <li><strong class="text-orange-600">Complex Systems Design:</strong> I used CAD tools to model and design mechanical systems (piping, conveyors, etc.), developing a methodical approach to creating logical and efficient systems.</li>
+                  <li><strong class="text-orange-600">Foundation for Software:</strong> This experience laid the groundwork for my problem-solving and structured thinking abilities, allowing me to build well-designed and robust software.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features3 Widget ************** -->
+
+  <!-- Skills Section ****************** -->
+  <section class="relative not-prose">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <div class="max-w-2xl mx-auto text-center mb-8 md:mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+          Skills
+        </h2>
+        <p class="text-muted text-xl">
+          The combination of software development and engineering precision that I apply to build robust and efficient solutions
+        </p>
+      </div>
+
+      <div class="max-w-6xl mx-auto">
+        <div class="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Frontend Development -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:brand-react" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Frontend Development</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Building interactive and high-performance user interfaces with <strong class="text-orange-600">React</strong>, JavaScript (ES6+), HTML5, and CSS3, creating memorable user experiences.
+            </p>
+          </div>
+
+          <!-- Backend Development -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:brand-nodejs" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Backend Development</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Creating robust RESTful APIs and efficient servers with <strong class="text-orange-600">Node.js</strong> and Express. Experience in managing server-side business logic.
+            </p>
+          </div>
+
+          <!-- Databases -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:database" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Databases</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Design and management of relational (<strong class="text-orange-600">SQL - PostgreSQL</strong>) and non-relational (NoSQL - MongoDB) databases to ensure data persistence and integrity.
+            </p>
+          </div>
+
+          <!-- Version Control -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:brand-git" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Version Control</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Mastery of <strong class="text-orange-600">Git and GitHub</strong> for version control and team collaboration. Experience with packaging tools like NPM/Yarn.
+            </p>
+          </div>
+
+          <!-- Testing and Quality -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:test-pipe" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Testing and Quality</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Implementation of unit and integration tests to ensure software reliability. Focus on writing <strong class="text-orange-600">clean, maintainable, and scalable</strong> code.
+            </p>
+          </div>
+
+          <!-- CAD Modeling -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:3d-cube-sphere" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">CAD Modeling</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Experience in <strong class="text-orange-600">3D modeling</strong> and simulation of mechanical systems with CAD software, from concept to detailed engineering analysis.
+            </p>
+          </div>
+
+          <!-- PCB Design -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:cpu" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">PCB Design</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Design and simulation of <strong class="text-orange-600">electronic circuits and PCBs</strong> for hardware projects, ensuring system integration and optimal performance.
+            </p>
+          </div>
+
+          <!-- Embedded Systems -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:device-desktop" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Embedded Systems</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Programming of <strong class="text-orange-600">Arduino, ESP32</strong>, and other microcontrollers to develop efficient hardware solutions for automation and data acquisition.
+            </p>
+          </div>
+
+          <!-- Robotics -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:robot" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Robotics and Control</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Development of robotic systems and control algorithms using <strong class="text-orange-600">MATLAB and LabVIEW</strong> for process automation and data analysis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section ****************** -->
+  <section class="relative not-prose">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <div class="max-w-2xl mx-auto text-center mb-8 md:mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+          What my clients say
+        </h2>
+        <p class="text-muted text-xl">
+          Results and collaboration that build trust
+        </p>
+      </div>
+
+      <div class="max-w-6xl mx-auto">
+        <div class="swiper-container testimonials-swiper-en !overflow-hidden relative">
+          <div class="swiper-wrapper">
+            <!-- Testimonial 1 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "Jaime is an exceptional software developer. His attention to detail and problem-solving skills are impressive, and he consistently delivers high-quality work. He is dedicated and goes above and beyond to ensure team success."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">Shayan Ali Bakhsh</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Project Colleague</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "I recommend Jaime as a Full Stack developer. He is extremely punctual, respectful, and hardworking. He has solid knowledge of languages and frameworks, and is dedicated to constantly improving."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">Nicolas Andres Olaya</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Full Stack Developer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "James consistently proves to be my go-to developer for his meticulous attention to detail. He not only delivers work on time but does so with an elegance that sets him apart."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">nyonjee</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Returning Client</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "Working with him was great! Super fast in his responses, the budget was accurate, and his code documentation is like a treasure map. He tackled difficult challenges like a professional."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">amirandap</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Fiverr Client</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 5 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "Excellent work, very smooth communication, and all requirements were implemented, plus great attention to questions and changes."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">Andres Osorio</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Satisfied Client</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 6 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "A very nice person, good work, and excellent communication. This is already the second time we work together! He knows what he does, is proactive, and doesn't waste your time."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">gregvdd</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Fiverr Client</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 7 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "Smooth communication with the backend team and great proactivity throughout the entire project."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">Unydos S.A.S</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Backend Team</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation arrows -->
+          <div class="swiper-button-prev testimonials-prev-en !text-orange-600 !font-bold after:!text-xl"></div>
+          <div class="swiper-button-next testimonials-next-en !text-orange-600 !font-bold after:!text-xl"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import Swiper from 'swiper';
+    import { Navigation, Autoplay } from 'swiper/modules';
+    import 'swiper/css';
+    import 'swiper/css/navigation';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const testimonialsSwiperEn = new Swiper('.testimonials-swiper-en', {
+        modules: [Navigation, Autoplay],
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        slidesPerView: 1,
+        spaceBetween: 30,
+        navigation: {
+          nextEl: '.testimonials-next-en',
+          prevEl: '.testimonials-prev-en',
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+      });
+    });
+  </script>
+
+  <style>
+    .testimonials-swiper-en .swiper-button-next,
+    .testimonials-swiper-en .swiper-button-prev {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      margin-top: 0;
+      background: transparent;
+      color: #ea580c;
+      transition: all 0.3s ease;
+    }
+
+    .testimonials-swiper-en .swiper-button-prev {
+      left: 10px;
+    }
+
+    .testimonials-swiper-en .swiper-button-next {
+      right: 10px;
+    }
+
+    .testimonials-swiper-en .swiper-button-next:after,
+    .testimonials-swiper-en .swiper-button-prev:after {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .testimonials-swiper-en .swiper-button-next:hover,
+    .testimonials-swiper-en .swiper-button-prev:hover {
+      color: #c2410c;
+      transform: translateY(-50%) scale(1.2);
+    }
+
+    @media (max-width: 1024px) {
+      .testimonials-swiper-en .swiper-button-next,
+      .testimonials-swiper-en .swiper-button-prev {
+        display: none;
+      }
+    }
+  </style>
+
+  <!-- CTA Section ****************** -->
+  <section class="relative not-prose">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <div class="max-w-4xl mx-auto">
+        <!-- CTA Card -->
+        <div class="bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-gray-200 dark:border-gray-800 p-8 md:p-12 text-center">
+          <div class="flex items-center justify-center mb-6">
+            <div class="flex items-center justify-center w-16 h-16 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+              <Icon name="tabler:rocket" class="w-8 h-8 text-orange-600" />
+            </div>
+            <div class="flex items-center justify-center w-16 h-16 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
+              <Icon name="tabler:code" class="w-8 h-8 text-orange-600" />
+            </div>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-gray-900 dark:text-white">
+            Let's build something incredible, together.
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+            My passion is to transform ideas into high-performance digital products. If you are looking for a developer with the precision of an engineer, let's talk.
+          </p>
+          <a
+            href="/en/contact#form"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-600 hover:bg-orange-700 text-white rounded-xl transition-colors duration-200 font-semibold text-lg shadow-md hover:shadow-lg transform hover:scale-105"
+          >
+            <Icon name="tabler:message-circle" class="w-5 h-5" />
+            Let's talk
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section ****************** -->
+  <footer class="bg-gray-900 dark:bg-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+      <div class="grid gap-8 md:gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Brand Column -->
+        <div class="lg:col-span-1">
+          <h3 class="text-2xl font-bold text-white mb-4">Jaime Villegas</h3>
+          <p class="text-gray-400 leading-relaxed mb-6">
+            Full Stack Developer specialized in creating innovative digital solutions with engineering precision.
+          </p>
+          <div class="flex space-x-4">
+            <a
+              href="https://linkedin.com/in/jaimevillegas"
+              target="_blank"
+              class="flex items-center justify-center w-10 h-10 bg-gray-800 hover:bg-orange-600 text-gray-400 hover:text-white rounded-lg transition-colors duration-200"
+            >
+              <Icon name="tabler:brand-linkedin" class="w-5 h-5" />
+            </a>
+            <a
+              href="https://github.com/jaimevillegas"
+              target="_blank"
+              class="flex items-center justify-center w-10 h-10 bg-gray-800 hover:bg-orange-600 text-gray-400 hover:text-white rounded-lg transition-colors duration-200"
+            >
+              <Icon name="tabler:brand-github" class="w-5 h-5" />
+            </a>
+            <a
+              href="https://fiverr.com/villegas296"
+              target="_blank"
+              class="flex items-center justify-center w-10 h-10 bg-gray-800 hover:bg-orange-600 text-gray-400 hover:text-white rounded-lg transition-colors duration-200"
+            >
+              <Icon name="tabler:brand-fiverr" class="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Column -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4 flex items-center">
+            <Icon name="tabler:navigation" class="w-5 h-5 text-orange-600 mr-2" />
+            Navigation
+          </h4>
+          <ul class="space-y-3">
+            <li>
+              <a href="/en" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+                <Icon name="tabler:home" class="w-4 h-4 mr-2" />
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="/en/projects" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+                <Icon name="tabler:briefcase" class="w-4 h-4 mr-2" />
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="/en/courses" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+                <Icon name="tabler:book" class="w-4 h-4 mr-2" />
+                Courses
+              </a>
+            </li>
+            <li>
+              <a href="/en/blog" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+                <Icon name="tabler:pencil" class="w-4 h-4 mr-2" />
+                Blog
+              </a>
+            </li>
+            <li>
+              <a href="/en/contact" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+                <Icon name="tabler:message" class="w-4 h-4 mr-2" />
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Services Column -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4 flex items-center">
+            <Icon name="tabler:settings" class="w-5 h-5 text-orange-600 mr-2" />
+            Services
+          </h4>
+          <ul class="space-y-3">
+            <li>
+              <span class="text-gray-400 flex items-center">
+                <Icon name="tabler:brand-react" class="w-4 h-4 mr-2 text-orange-600" />
+                Frontend Development
+              </span>
+            </li>
+            <li>
+              <span class="text-gray-400 flex items-center">
+                <Icon name="tabler:brand-nodejs" class="w-4 h-4 mr-2 text-orange-600" />
+                Backend Development
+              </span>
+            </li>
+            <li>
+              <span class="text-gray-400 flex items-center">
+                <Icon name="tabler:database" class="w-4 h-4 mr-2 text-orange-600" />
+                Database Design
+              </span>
+            </li>
+            <li>
+              <span class="text-gray-400 flex items-center">
+                <Icon name="tabler:3d-cube-sphere" class="w-4 h-4 mr-2 text-orange-600" />
+                CAD Modeling
+              </span>
+            </li>
+            <li>
+              <span class="text-gray-400 flex items-center">
+                <Icon name="tabler:robot" class="w-4 h-4 mr-2 text-orange-600" />
+                Automation
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4 flex items-center">
+            <Icon name="tabler:phone" class="w-5 h-5 text-orange-600 mr-2" />
+            Contact
+          </h4>
+          <ul class="space-y-3">
+            <li class="text-gray-400 flex items-start">
+              <Icon name="tabler:mail" class="w-4 h-4 mr-2 mt-1 text-orange-600 flex-shrink-0" />
+              <span class="break-all">jaimevillegas296@gmail.com</span>
+            </li>
+            <li class="text-gray-400 flex items-start">
+              <Icon name="tabler:map-pin" class="w-4 h-4 mr-2 mt-1 text-orange-600 flex-shrink-0" />
+              <span>Colombia</span>
+            </li>
+            <li class="text-gray-400 flex items-start">
+              <Icon name="tabler:clock" class="w-4 h-4 mr-2 mt-1 text-orange-600 flex-shrink-0" />
+              <span>Available for remote projects</span>
+            </li>
+            <li class="text-gray-400 flex items-start">
+              <Icon name="tabler:world" class="w-4 h-4 mr-2 mt-1 text-orange-600 flex-shrink-0" />
+              <span>International clients</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-gray-800 mt-12 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">
+            © 2025 Jaime Villegas. All rights reserved.
+          </p>
+          <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-2">
+              <Icon name="tabler:heart" class="w-4 h-4 text-red-500" />
+              <span class="text-gray-400 text-sm">Made with passion</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 </Layout>

@@ -14,6 +14,7 @@ import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
+import { Icon } from 'astro-icon/components';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
@@ -52,7 +53,7 @@ const metadata = {
     image={{ src: '~/assets/images/profile.jpg', alt: 'Jaime Villegas' }}
   >
     <Fragment slot="subtitle">
-      Fusiono mi background en ingeniería con el desarrollo web moderno para crear productos digitales de alto rendimiento. Diseño y construyo aplicaciones que no solo son funcionales, sino también lógicas y fáciles de mantener.
+      Fusiono mi background en <span class="text-orange-600 font-bold">ingeniería</span> con el <span class='text-orange-600 font-bold'>desarrollo web moderno</span> para crear productos digitales de alto rendimiento. Diseño y construyo aplicaciones que no solo son funcionales, sino también lógicas y fáciles de mantener.
     </Fragment>
   </Hero>
 
@@ -60,329 +61,870 @@ const metadata = {
   <section id="about" class="relative not-prose">
     <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-4xl font-bold tracking-tight dark:text-white sm:text-5xl mb-2">Acerca de mí</h2>
-        <p class="text-lg dark:text-slate-400 text-justify">
-          Como ingeniero, aprendí a construir cosas que funcionan. Como desarrollador, aprendí a construir cosas que la gente ama usar.
-          <br /><br />
-          Mi doble perfil me permite abordar cada proyecto desde dos ángulos: la solidez técnica de la ingeniería y la empatía del diseño centrado en el usuario. El resultado son aplicaciones web eficientes, escalables y con una experiencia de usuario impecable.
-        </p>
-        <br />
-        <p class="text-lg dark:text-slate-400">¿Interesado en colaborar? Contáctame aquí:</p>
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-4xl font-bold tracking-tight dark:text-white sm:text-5xl mb-8">Acerca de mí</h2>
+        <div class="text-lg dark:text-slate-400 text-left space-y-4">
+          <p>
+            Mi carrera comenzó en la <span class="text-orange-600 font-bold">ingeniería</span>, donde aprendí la disciplina de construir cosas que simplemente funcionan, de forma robusta y predecible. Esa base analítica es mi punto de partida.
+          </p>
+          <p>
+            Luego, como <span class="text-orange-600 font-bold">desarrollador</span>, descubrí mi pasión: construir cosas que la gente ame usar. Entendí que detrás de cada <em>div</em> hay una persona, y que la empatía por el usuario final es tan crucial como un algoritmo eficiente.
+          </p>
+          <p>
+            Esta dualidad es mi método de trabajo. Combino la <span class="text-orange-600 font-bold">solidez técnica</span> con un <span class="text-orange-600 font-bold">diseño centrado en el usuario</span> para no solo entregar un producto que funcione, sino una experiencia digital intuitiva y satisfactoria.
+          </p>
+          <p class="italic text-center pt-4">
+            ¿Quieres ver este enfoque en acción?
+          </p>
+        </div>
       </div>
-      <div class="mt-8 max-w-3xl mx-auto">
-        <ItemGrid
-          items={[
-            {
-              icon: 'tabler:brand-fiverr',
-              callToAction: {
-                target: '_blank',
-                text: 'Fiverr',
-                href: 'https://es.fiverr.com/villegas296',
-              },
-            },
-            {
-              icon: 'tabler:brand-github',
-              callToAction: {
-                target: '_blank',
-                text: 'GitHub',
-                href: 'https://github.com/jaimevillegas',
-              },
-            },
-            {
-              icon: 'tabler:brand-linkedin',
-              callToAction: {
-                target: '_blank',
-                text: 'LinkedIn',
-                href: 'https://www.linkedin.com/in/villegas0296/',
-              },
-            },
-          ]}
-          columns={3}
-          classes={{
-            container: `gap-y-4 md:gap-y-8`,
-            panel: 'max-w-none',
-            title: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
-            description: 'text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2',
-            icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-orange-600 dark:bg-orange-600 text-gray-50 p-1',
-            action: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
-          }}
-        />
+      <div class="mt-8 max-w-2xl mx-auto">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href="https://es.fiverr.com/villegas296"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3 px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-slate-700 hover:border-orange-600 dark:hover:border-orange-600 w-full sm:w-auto justify-center"
+          >
+            <div class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-600 text-white group-hover:bg-orange-700 transition-colors duration-300">
+              <Icon name="tabler:brand-fiverr" class="h-[18px] w-[18px]" />
+            </div>
+            <span class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">Fiverr</span>
+          </a>
+
+          <a
+            href="https://github.com/jaimevillegas"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3 px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-slate-700 hover:border-orange-600 dark:hover:border-orange-600 w-full sm:w-auto justify-center"
+          >
+            <div class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-600 text-white group-hover:bg-orange-700 transition-colors duration-300">
+              <Icon name="tabler:brand-github" class="h-[18px] w-[18px]" />
+            </div>
+            <span class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">GitHub</span>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/villegas0296/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3 px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-slate-700 hover:border-orange-600 dark:hover:border-orange-600 w-full sm:w-auto justify-center"
+          >
+            <div class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-600 text-white group-hover:bg-orange-700 transition-colors duration-300">
+              <Icon name="tabler:brand-linkedin" class="h-[18px] w-[18px]" />
+            </div>
+            <span class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">LinkedIn</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- BlogLatestPost Widget **************** -->
-  <BlogLatestPosts
-    id="blog"
-    title="Del Código al Engranaje"
-    linkText="Ver todas las publicaciones"
-    information={`Un espacio para analizar problemas, experimentar con tecnología y compartir guías prácticas sobre desarrollo, ingeniería y la magia que ocurre al combinarlos.`}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </BlogLatestPosts>
-
-    <WidgetWrapper id="portfolio" isDark={false} containerClass="max-w-7xl mx-auto">
-    <Headline
-      title="Portafolio"
-      subtitle="Una muestra de cómo la ingeniería y el desarrollo de software se unen para crear soluciones robustas y eficientes."
-      classes={{
-        container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
-        title: 'text-4xl md:text-5xl font-bold tracking-tighter mb-4 font-heading',
-        subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400',
-      }}
-    />
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 p-4 md:px-8">
-      
-      <!-- Card 1: Software -->
-      <div class="flex flex-col bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
-        <div class="relative">
-          <Image
-            src="~/assets/images/web-development.jpg"
-            alt="Web Development Projects"
-            class="w-full"
-            width={500}
-            height={281}
-            layout="responsive"
-            sizes="(max-width: 768px) 100vw, 432px"
-          />
-        </div>
-        <div class="p-6 flex-grow">
-          <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-            Soluciones de Software
-          </h3>
-          <p class="text-muted dark:text-slate-400">
-            Aplicaciones web full-stack con React y Tailwind CSS, visualmente atractivas y funcionales para resolver problemas reales.
-          </p>
-        </div>
-        <div class="p-6 pt-0">
-          <Button
-            variant="secondary"
-            target="_blank"
-            text="Ver Proyectos"
-            icon="tabler:chevron-right"
-            href="/es/projects#web"
-          />
-        </div>
+  <section class="relative not-prose">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <div class="max-w-2xl mx-auto text-center mb-8 md:mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight dark:text-white mb-4">Blog: Del Código al Engranaje</h2>
+        <p class="text-lg text-muted dark:text-slate-400">
+          Un espacio para analizar problemas, experimentar con tecnología y compartir guías prácticas sobre desarrollo e ingeniería.
+        </p>
       </div>
-
-      <!-- Card 2: Hardware -->
-      <div class="flex flex-col bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
-        <div class="relative">
-          <Image
-            src="~/assets/images/engineering.jpg"
-            alt="Proyectos de Ingeniería"
-            class="w-full"
-            width={500}
-            height={281}
-            layout="responsive"
-            sizes="(max-width: 768px) 100vw, 432px"
-          />
-        </div>
-        <div class="p-6 flex-grow">
-          <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-            Ingeniería y Diseño de Hardware
-          </h3>
-          <p class="text-muted dark:text-slate-400">
-            Diseño mecánico (CAD), electrónica y automatización. La precisión de la ingeniería aplicada para construir software sólido y bien estructurado.
-          </p>
-        </div>
-        <div class="p-6 pt-0">
-          <Button
-            variant="secondary"
-            target="_blank"
-            text="Ver Proyectos"
-            icon="tabler:chevron-right"
-            href="/es/projects#engineering"
-          />
-        </div>
+      <BlogLatestPosts
+        id="blog"
+        classes={{
+          container: 'max-w-6xl mx-auto',
+          title: 'sr-only',
+          subtitle: 'sr-only',
+          post: {
+            title: 'text-lg md:text-xl font-bold leading-tight dark:text-white hover:text-orange-600 dark:hover:text-orange-400 transition-colors duration-200',
+            excerpt: 'text-sm text-muted dark:text-slate-400 mt-2',
+            category: 'text-xs uppercase tracking-wide text-orange-600 dark:text-orange-600 font-medium',
+            readTime: 'text-xs text-muted dark:text-slate-500',
+          }
+        }}
+      />
+      <div class="text-center mt-8">
+        <a
+          href="/es/blog"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 text-orange-600 hover:text-orange-700 dark:text-orange-600 dark:hover:text-orange-300 transition-colors duration-200 font-medium"
+        >
+          Ver todas las publicaciones
+          <Icon name="tabler:chevron-right" class="h-4 w-4" />
+        </a>
       </div>
-
     </div>
-  </WidgetWrapper>
+  </section>
 
-  <!-- Steps Widget ****************** -->
-  <Steps
-    id="resume"
-    title="Work experience"
-    items={[
-  {
-    title:
-    'Ingeniero Freelance Profesional <br />  <span class="font-normal">Fiverr</span> <br /> <span class="text-sm font-normal"> 2022 - PRESENTE</span>',
-    description: 'Como profesional independiente, gestiono proyectos de ciclo completo para clientes internacionales, especializándome en desarrollo web y soluciones de ingeniería a medida. <br /> <span className="font-normal text-white">- Desarrollo Full-Stack:</span> He construido y desplegado aplicaciones web completas utilizando React, Node.js y bases de datos SQL/NoSQL, entregando productos robustos y escalables.<br /><span className="font-bold">- Diseño de componentes y UI:</span> He creado interfaces de usuario interactivas y sistemas de componentes reutilizables con Tailwind CSS, enfocándome en la usabilidad y la experiencia del usuario. <br /> - Soluciones Integrales: He integrado mis habilidades de software y hardware para proyectos únicos, incluyendo el diseño de PCBs y la simulación CAD, demostrando una capacidad única para resolver problemas en la intersección de ambos mundos.',
-    icon: 'tabler:briefcase',
-  },
-  {
-    title:
-      'Ingeniero de Software Frontend <br /> <span class="font-normal">Unydos Consulting S.A.S, COL</span> <br /> <span class="text-sm font-normal">2024</span>',
-                                                                                                                        description: "Lideré la modernización de una aplicación de software heredada, transformándola en una solución web escalable y de alto rendimiento con React. <br /> - Liderazgo Técnico: Dirigí la arquitectura frontend del proyecto, migrando la base de código a un sistema moderno basado en componentes que mejoró la mantenibilidad y la velocidad de desarrollo. <br /> - Gestión de Proyecto y Equipo: Traduje los requisitos del cliente en un backlog técnico accionable y coordiné al equipo de desarrollo, asegurando entregas de alta calidad alineadas con los objetivos del negocio. <br /> - Impacto y Resultados: La nueva aplicación ofreció una experiencia de usuario significativamente más fluida y responsiva, estableciendo una base técnica sólida para la implementación de futuras funcionalidades.",
-    icon: 'tabler:code',
-  },
-  {
-    title:
-    'Ingeniero CAD Mecánico & Ingeniero de Proyectos <br /> <span class="font-normal">Sector Industrial (Múltiples Empleadores)</span> <br /> <span class="text-sm font-normal">2016 - 2022</span>',
-    description: "Diseñé soluciones de ingeniería a medida para optimizar procesos industriales, trabajando directamente con clientes desde el concepto hasta la implementación. <br /> - Análisis y Especificaciones: Analicé requerimientos complejos de clientes y los traduje en especificaciones técnicas detalladas, una habilidad que ahora aplico para definir el alcance de proyectos de software. <br /> - Diseño de Sistemas Complejos: Utilicé herramientas CAD para modelar y diseñar sistemas mecánicos (tuberías, transportadores, etc.), desarrollando un enfoque metódico para la creación de sistemas lógicos y eficientes. <br /> - La base de mi Carrera en Software: Esta experiencia sentó las bases de mi capacidad para la resolución de problemas y el pensamiento estructurado, permitiéndome construir software bien diseñado y robusto.",
-    icon: 'tabler:settings',
-  }
-]}
-    classes={{ container: 'max-w-3xl' }}
-  />
+  <!-- Portfolio Section **************** -->
+  <section class="relative not-prose">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <div class="max-w-2xl mx-auto text-center mb-8 md:mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight dark:text-white mb-4">Portfolio</h2>
+        <p class="text-lg text-muted dark:text-slate-400">
+          Cómo la ingeniería y el desarrollo de software se unen para crear soluciones robustas.
+        </p>
+      </div>
 
-<Features3
-  title="Habilidades"
-  subtitle="La combinación de desarrollo de software y precisión de ingeniería que aplico para construir soluciones robustas y eficientes."
-  columns={3}
-  defaultIcon="tabler:point-filled"
-  items={[
-    // Categoría: Desarrollo de Software y Web
-    {
-      title: 'Desarrollo Frontend',
-      description: 'Construcción de interfaces de usuario interactivas y de alto rendimiento con React, JavaScript (ES6+), HTML5 y CSS3, creando experiencias de usuario memorables.',
-    },
-    {
-      title: 'Desarrollo Backend',
-      description: 'Creación de APIs RESTful robustas y servidores eficientes con Node.js y Express. Experiencia en la gestión de la lógica de negocio del lado del servidor.',
-    },
-    {
-      title: 'Bases de Datos',
-      description: 'Diseño y gestión de bases de datos relacionales (SQL - PostgreSQL) y no relacionales (NoSQL - MongoDB) para asegurar la persistencia y la integridad de los datos.',
-    },
-    {
-      title: 'Control de Versiones y Herramientas',
-      description: 'Dominio de Git y GitHub para el control de versiones y colaboración en equipo. Experiencia con herramientas de empaquetado como NPM/Yarn.',
-    },
-    {
-      title: 'Pruebas y Calidad de Código',
-      description: 'Implementación de pruebas unitarias y de integración para garantizar la fiabilidad del software. Foco en escribir código limpio, mantenible y escalable.',
-    },
-    // Categoría: Ingeniería y Hardware
-    {
-      title: 'Modelado y Simulación CAD',
-      description: 'Experiencia en modelado 3D y simulación de sistemas mecánicos con software CAD, desde el concepto hasta el análisis de ingeniería detallado.',
-    },
-    {
-      title: 'Diseño de PCB y Electrónica',
-      description: 'Diseño y simulación de circuitos electrónicos y PCBs para proyectos de hardware, asegurando la integración y el rendimiento óptimo del sistema.',
-    },
-    {
-      title: 'Sistemas Embebidos y Microcontroladores',
-      description: 'Programación de Arduino, ESP32 y otros microcontroladores para desarrollar soluciones de hardware eficientes para la automatización y la captura de datos.',
-    },
-    {
-      title: 'Robótica y Sistemas de Control',
-      description: 'Desarrollo de sistemas robóticos y algoritmos de control utilizando MATLAB y LabVIEW para la automatización de procesos y el análisis de datos.',
-    },
-    // Categoría: Habilidades Profesionales y Metodologías
-    {
-      title: 'Resolución de Problemas Complejos',
-      description: 'Capacidad analítica para descomponer desafíos complejos y desarrollar soluciones creativas que optimizan el rendimiento, los costos y la eficiencia.',
-    },
-    {
-      title: 'Gestión de Proyectos y Liderazgo',
-      description: 'Liderazgo de proyectos técnicos desde la concepción hasta el despliegue, coordinando equipos y asegurando la alineación con los objetivos del cliente.',
-    },
-    {
-      title: 'Metodologías Ágiles',
-      description: 'Experiencia trabajando con flujos de trabajo ágiles como Scrum y Kanban, participando en ceremonias de planificación, sprints y retrospectivas.',
-    },
-    {
-      title: 'Comunicación Técnica y de Cliente',
-      description: 'Habilidad para comunicar conceptos técnicos complejos de forma clara a audiencias diversas y para mantener una relación fluida y productiva con los clientes.',
-    },
-  ]}
-/>
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
 
-  <!-- Testimonials Widget *********** -->
-<Testimonials
-  id="testimonials"
-  title="Lo que dicen mis clientes"
-  subtitle="Resultados y colaboración que generan confianza."
-  testimonials={[
-    {
-      testimonial:
-        'Jaime es un desarrollador de software excepcional. Su atención al detalle y sus habilidades para resolver problemas son impresionantes, y entrega consistentemente un trabajo de alta calidad. Es dedicado, va más allá para asegurar el éxito del equipo y siempre está dispuesto a ayudar y compartir sus conocimientos.',
-      name: 'Shayan Ali Bakhsh',
-      job: 'Colega de Proyecto',
-      image: {
-        src: '~/assets/images/default-avatar.svg',
-        alt: 'Avatar de Shayan Ali Bakhsh',
-      },
-    },
-    {
-      testimonial:
-        'Recomiendo a Jaime como desarrollador Full Stack. Es extremadamente puntual, respetuoso y trabajador. Tiene un sólido conocimiento de lenguajes y frameworks, y se dedica a mejorar constantemente. Es un gran compañero de equipo y siempre está dispuesto a ayudar.',
-      name: 'Nicolas Andres Olaya',
-      job: 'Desarrollador Full Stack',
-      image: {
-        src: '~/assets/images/default-avatar.svg',
-        alt: 'Avatar de Nicolas Andres Olaya',
-      },
-    },
-    {
-      testimonial:
-        'James demuestra constantemente ser mi desarrollador de confianza por su meticulosa atención al detalle. No solo entrega el trabajo a tiempo, sino que lo hace con una elegancia que lo distingue. Su documentación exhaustiva garantiza que siempre estemos en sintonía.',
-      name: 'nyonjee',
-      job: 'Cliente Recurrente',
-      image: {
-        src: '~/assets/images/default-avatar.svg',
-        alt: 'Avatar de nyonjee',
-      },
-    },
-    {
-      testimonial:
-        '¡Trabajar con él fue genial! Súper rápido en sus respuestas, el presupuesto fue acertado y su documentación del código es como un mapa del tesoro. Abordó desafíos difíciles como un profesional y la comunicación fue excelente. ¡Totalmente recomendado!',
-      name: 'amirandap',
-      job: 'Cliente en Fiverr',
-      image: {
-        src: '~/assets/images/default-avatar.svg',
-        alt: 'Avatar de amirandap',
-      },
-    },
-    {
-      testimonial:
-        'Excelente trabajo, comunicación muy fluida y se cumplió con la implementación de todos los requerimientos, además de una gran atención a dudas y cambios.',
-      name: 'Andres Osorio',
-      job: 'Cliente Satisfecho',
-      image: {
-        src: '~/assets/images/default-avatar.svg',
-        alt: 'Avatar de Andres Osorio',
-      },
-    },
-    {
-      testimonial:
-        'Una persona muy agradable, buen trabajo y excelente comunicación. ¡Ya es la segunda vez que trabajamos juntos! Sabe lo que hace, es proactivo y no te hace perder el tiempo. Lo recomendaría y lo consideraría para proyectos futuros sin dudarlo.',
-      name: 'gregvdd',
-      job: 'Cliente en Fiverr',
-      image: {
-        src: '~/assets/images/default-avatar.svg',
-        alt: 'Avatar de gregvdd',
-      },
-    },
-    {
-      testimonial:
-        'Comunicación fluida con el equipo de backend y una gran proactividad durante todo el proyecto.',
-      name: 'Unydos S.A.S',
-      job: 'Equipo de Backend',
-      image: {
-        src: '~/assets/images/default-avatar.svg',
-        alt: 'Avatar de Unydos S.A.S',
-      },
-    },
-  ]}
-/>
-  <!-- CallToAction Widget *********** -->
-  <CallToAction
-      title="Construyamos algo increíble, juntos."
-      subtitle="Mi pasión es transformar ideas en productos digitales de alto rendimiento. Si buscas un desarrollador con la precisión de un ingeniero, hablemos."
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Hablemos',
-        href: '/es/contact#form',
-      },
-    ]}
-  />
+        <!-- Card 1: Software -->
+        <div class="flex flex-col bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden h-full">
+          <div class="relative">
+            <Image
+              src="~/assets/images/web-development.jpg"
+              alt="Web Development Projects"
+              class="w-full"
+              width={500}
+              height={281}
+              layout="responsive"
+              sizes="(max-width: 768px) 100vw, 432px"
+            />
+          </div>
+          <div class="p-6 flex-grow">
+            <h3 class="text-xl md:text-2xl font-bold tracking-tight dark:text-white mb-3">
+              Soluciones de Software
+            </h3>
+            <p class="text-muted dark:text-slate-400">
+              Aquí es donde las ideas se convierten en código. Construyo productos digitales funcionales y escalables. En esta sección, encontrarás aplicaciones web full-stack construidas con tecnologías como React y Tailwind CSS, diseñadas para ser visualmente atractivas mientras ofrecen funcionalidad robusta que resuelve problemas del mundo real.
+            </p>
+          </div>
+          <div class="p-6 pt-0">
+            <a
+              href="/es/projects#web"
+              target="_blank"
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-lg transition-colors duration-200 font-medium"
+            >
+              Ver Proyectos
+              <Icon name="tabler:chevron-right" class="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Hardware -->
+        <div class="flex flex-col bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden h-full">
+          <div class="relative">
+            <Image
+              src="~/assets/images/engineering.jpg"
+              alt="Proyectos de Ingeniería"
+              class="w-full"
+              width={500}
+              height={281}
+              layout="responsive"
+              sizes="(max-width: 768px) 100vw, 432px"
+            />
+          </div>
+          <div class="p-6 flex-grow">
+            <h3 class="text-xl md:text-2xl font-bold tracking-tight dark:text-white mb-3">
+              Ingeniería y Diseño de Hardware
+            </h3>
+            <p class="text-muted dark:text-slate-400">
+              La base de mi pensamiento lógico. Aquí muestro mi trabajo en diseño mecánico (CAD), electrónica y automatización, donde la precisión es clave para resolver desafíos industriales. Esta mentalidad de ingeniería es la que aplico hoy para construir software robusto y bien estructurado.
+            </p>
+          </div>
+          <div class="p-6 pt-0">
+            <a
+              href="/es/projects#engineering"
+              target="_blank"
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-lg transition-colors duration-200 font-medium"
+            >
+              Ver Proyectos
+              <Icon name="tabler:chevron-right" class="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Experience Section ****************** -->
+  <section class="relative not-prose">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <div class="max-w-2xl mx-auto text-center mb-8 md:mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+          Experiencia Profesional
+        </h2>
+        <p class="text-muted text-xl">
+          Un recorrido por mis roles y logros profesionales más destacados
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-8 md:space-y-12">
+          <!-- Position 1 -->
+          <div class="flex flex-col md:flex-row gap-6 md:gap-8">
+            <div class="flex-shrink-0 flex items-start justify-center">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
+                <Icon name="tabler:briefcase" class="w-6 h-6 text-orange-600" />
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="mb-4">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  Ingeniero Freelance Profesional
+                </h3>
+                <div class="flex flex-wrap items-center gap-2 text-gray-600 dark:text-gray-300 mb-2">
+                  <span class="font-medium">Fiverr</span>
+                  <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                  <span class="text-sm">2022 - PRESENTE</span>
+                </div>
+              </div>
+              <div class="prose prose-gray dark:prose-invert max-w-none">
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                  Como profesional independiente, gestiono proyectos de ciclo completo para clientes internacionales, especializándome en desarrollo web y soluciones de ingeniería a medida.
+                </p>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li><strong class="text-orange-600">Desarrollo Full-Stack:</strong> He construido y desplegado aplicaciones web completas utilizando React, Node.js y bases de datos SQL/NoSQL, entregando productos robustos y escalables.</li>
+                  <li><strong class="text-orange-600">Diseño de componentes y UI:</strong> He creado interfaces de usuario interactivas y sistemas de componentes reutilizables con Tailwind CSS, enfocándome en la usabilidad y la experiencia del usuario.</li>
+                  <li><strong class="text-orange-600">Soluciones Integrales:</strong> He integrado mis habilidades de software y hardware para proyectos únicos, incluyendo el diseño de PCBs y la simulación CAD.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Position 2 -->
+          <div class="flex flex-col md:flex-row gap-6 md:gap-8">
+            <div class="flex-shrink-0 flex items-start justify-center">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
+                <Icon name="tabler:code" class="w-6 h-6 text-orange-600" />
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="mb-4">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  Ingeniero de Software Frontend
+                </h3>
+                <div class="flex flex-wrap items-center gap-2 text-gray-600 dark:text-gray-300 mb-2">
+                  <span class="font-medium">Unydos Consulting S.A.S, COL</span>
+                  <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                  <span class="text-sm">2024</span>
+                </div>
+              </div>
+              <div class="prose prose-gray dark:prose-invert max-w-none">
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                  Lideré la modernización de una aplicación de software heredada, transformándola en una solución web escalable y de alto rendimiento con React.
+                </p>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li><strong class="text-orange-600">Liderazgo Técnico:</strong> Dirigí la arquitectura frontend del proyecto, migrando la base de código a un sistema moderno basado en componentes.</li>
+                  <li><strong class="text-orange-600">Gestión de Proyecto:</strong> Traduje los requisitos del cliente en un backlog técnico accionable y coordiné al equipo de desarrollo.</li>
+                  <li><strong class="text-orange-600">Impacto y Resultados:</strong> La nueva aplicación ofreció una experiencia de usuario significativamente más fluida y responsiva.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Position 3 -->
+          <div class="flex flex-col md:flex-row gap-6 md:gap-8">
+            <div class="flex-shrink-0 flex items-start justify-center">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
+                <Icon name="tabler:settings" class="w-6 h-6 text-orange-600" />
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="mb-4">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  Ingeniero CAD Mecánico & Ingeniero de Proyectos
+                </h3>
+                <div class="flex flex-wrap items-center gap-2 text-gray-600 dark:text-gray-300 mb-2">
+                  <span class="font-medium">Sector Industrial (Múltiples Empleadores)</span>
+                  <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                  <span class="text-sm">2016 - 2022</span>
+                </div>
+              </div>
+              <div class="prose prose-gray dark:prose-invert max-w-none">
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                  Diseñé soluciones de ingeniería a medida para optimizar procesos industriales, trabajando directamente con clientes desde el concepto hasta la implementación.
+                </p>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li><strong class="text-orange-600">Análisis y Especificaciones:</strong> Analicé requerimientos complejos de clientes y los traduje en especificaciones técnicas detalladas.</li>
+                  <li><strong class="text-orange-600">Diseño de Sistemas:</strong> Utilicé herramientas CAD para modelar y diseñar sistemas mecánicos complejos (tuberías, transportadores, etc.).</li>
+                  <li><strong class="text-orange-600">Base para Software:</strong> Esta experiencia sentó las bases de mi capacidad para la resolución de problemas y el pensamiento estructurado.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features3 Widget ************** -->
+
+  <!-- Skills Section ****************** -->
+  <section class="relative not-prose">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <div class="max-w-2xl mx-auto text-center mb-8 md:mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+          Habilidades
+        </h2>
+        <p class="text-muted text-xl">
+          La combinación de desarrollo de software y precisión de ingeniería que aplico para construir soluciones robustas y eficientes
+        </p>
+      </div>
+
+      <div class="max-w-6xl mx-auto">
+        <div class="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Desarrollo Frontend -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:brand-react" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Desarrollo Frontend</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Construcción de interfaces de usuario interactivas y de alto rendimiento con <strong class="text-orange-600">React</strong>, JavaScript (ES6+), HTML5 y CSS3, creando experiencias de usuario memorables.
+            </p>
+          </div>
+
+          <!-- Desarrollo Backend -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:brand-nodejs" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Desarrollo Backend</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Creación de APIs RESTful robustas y servidores eficientes con <strong class="text-orange-600">Node.js</strong> y Express. Experiencia en la gestión de la lógica de negocio del lado del servidor.
+            </p>
+          </div>
+
+          <!-- Bases de Datos -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:database" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Bases de Datos</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Diseño y gestión de bases de datos relacionales (<strong class="text-orange-600">SQL - PostgreSQL</strong>) y no relacionales (NoSQL - MongoDB) para asegurar la persistencia y la integridad de los datos.
+            </p>
+          </div>
+
+          <!-- Control de Versiones -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:brand-git" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Control de Versiones</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Dominio de <strong class="text-orange-600">Git y GitHub</strong> para el control de versiones y colaboración en equipo. Experiencia con herramientas de empaquetado como NPM/Yarn.
+            </p>
+          </div>
+
+          <!-- Pruebas y Calidad -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:test-pipe" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Pruebas y Calidad</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Implementación de pruebas unitarias y de integración para garantizar la fiabilidad del software. Foco en escribir código <strong class="text-orange-600">limpio, mantenible y escalable</strong>.
+            </p>
+          </div>
+
+          <!-- Modelado CAD -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:3d-cube-sphere" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Modelado CAD</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Experiencia en <strong class="text-orange-600">modelado 3D</strong> y simulación de sistemas mecánicos con software CAD, desde el concepto hasta el análisis de ingeniería detallado.
+            </p>
+          </div>
+
+          <!-- Diseño de PCB -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:cpu" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Diseño de PCB</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Diseño y simulación de <strong class="text-orange-600">circuitos electrónicos y PCBs</strong> para proyectos de hardware, asegurando la integración y el rendimiento óptimo del sistema.
+            </p>
+          </div>
+
+          <!-- Sistemas Embebidos -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:device-desktop" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Sistemas Embebidos</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Programación de <strong class="text-orange-600">Arduino, ESP32</strong> y otros microcontroladores para desarrollar soluciones de hardware eficientes para la automatización y la captura de datos.
+            </p>
+          </div>
+
+          <!-- Robótica -->
+          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+            <div class="flex items-center mb-4">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+                <Icon name="tabler:robot" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Robótica y Control</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Desarrollo de sistemas robóticos y algoritmos de control utilizando <strong class="text-orange-600">MATLAB y LabVIEW</strong> para la automatización de procesos y el análisis de datos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section ****************** -->
+  <section class="relative not-prose">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <div class="max-w-2xl mx-auto text-center mb-8 md:mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+          Lo que dicen mis clientes
+        </h2>
+        <p class="text-muted text-xl">
+          Resultados y colaboración que generan confianza
+        </p>
+      </div>
+
+      <div class="max-w-6xl mx-auto">
+        <div class="swiper-container testimonials-swiper !overflow-hidden relative">
+          <div class="swiper-wrapper">
+            <!-- Testimonial 1 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "Jaime es un desarrollador de software excepcional. Su atención al detalle y sus habilidades para resolver problemas son impresionantes, y entrega consistentemente un trabajo de alta calidad. Es dedicado, va más allá para asegurar el éxito del equipo."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">Shayan Ali Bakhsh</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Colega de Proyecto</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "Recomiendo a Jaime como desarrollador Full Stack. Es extremadamente puntual, respetuoso y trabajador. Tiene un sólido conocimiento de lenguajes y frameworks, y se dedica a mejorar constantemente."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">Nicolas Andres Olaya</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Desarrollador Full Stack</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "James demuestra constantemente ser mi desarrollador de confianza por su meticulosa atención al detalle. No solo entrega el trabajo a tiempo, sino que lo hace con una elegancia que lo distingue."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">nyonjee</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Cliente Recurrente</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "¡Trabajar con él fue genial! Súper rápido en sus respuestas, el presupuesto fue acertado y su documentación del código es como un mapa del tesoro. Abordó desafíos difíciles como un profesional."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">amirandap</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Cliente en Fiverr</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 5 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "Excelente trabajo, comunicación muy fluida y se cumplió con la implementación de todos los requerimientos, además de una gran atención a dudas y cambios."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">Andres Osorio</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Cliente Satisfecho</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 6 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "Una persona muy agradable, buen trabajo y excelente comunicación. ¡Ya es la segunda vez que trabajamos juntos! Sabe lo que hace, es proactivo y no te hace perder el tiempo."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">gregvdd</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Cliente en Fiverr</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 7 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "Comunicación fluida con el equipo de backend y una gran proactividad durante todo el proyecto."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">Unydos S.A.S</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Equipo de Backend</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation arrows -->
+          <div class="swiper-button-prev testimonials-prev !text-orange-600 !font-bold after:!text-xl"></div>
+          <div class="swiper-button-next testimonials-next !text-orange-600 !font-bold after:!text-xl"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import Swiper from 'swiper';
+    import { Navigation, Autoplay } from 'swiper/modules';
+    import 'swiper/css';
+    import 'swiper/css/navigation';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const testimonialsSwiper = new Swiper('.testimonials-swiper', {
+        modules: [Navigation, Autoplay],
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        slidesPerView: 1,
+        spaceBetween: 30,
+        navigation: {
+          nextEl: '.testimonials-next',
+          prevEl: '.testimonials-prev',
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+      });
+    });
+  </script>
+
+  <style>
+    .testimonials-swiper .swiper-button-next,
+    .testimonials-swiper .swiper-button-prev {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      margin-top: 0;
+      background: transparent;
+      color: #ea580c;
+      transition: all 0.3s ease;
+    }
+
+    .testimonials-swiper .swiper-button-prev {
+      left: 10px;
+    }
+
+    .testimonials-swiper .swiper-button-next {
+      right: 10px;
+    }
+
+    .testimonials-swiper .swiper-button-next:after,
+    .testimonials-swiper .swiper-button-prev:after {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .testimonials-swiper .swiper-button-next:hover,
+    .testimonials-swiper .swiper-button-prev:hover {
+      color: #c2410c;
+      transform: translateY(-50%) scale(1.2);
+    }
+
+    @media (max-width: 1024px) {
+      .testimonials-swiper .swiper-button-next,
+      .testimonials-swiper .swiper-button-prev {
+        display: none;
+      }
+    }
+  </style>
+  <!-- CTA Section ****************** -->
+  <section class="relative not-prose">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <div class="max-w-4xl mx-auto">
+        <!-- CTA Card -->
+        <div class="bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-gray-200 dark:border-gray-800 p-8 md:p-12 text-center">
+          <div class="flex items-center justify-center mb-6">
+            <div class="flex items-center justify-center w-16 h-16 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+              <Icon name="tabler:rocket" class="w-8 h-8 text-orange-600" />
+            </div>
+            <div class="flex items-center justify-center w-16 h-16 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
+              <Icon name="tabler:code" class="w-8 h-8 text-orange-600" />
+            </div>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-gray-900 dark:text-white">
+            Construyamos algo increíble, juntos.
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Mi pasión es transformar ideas en productos digitales de alto rendimiento. Si buscas un desarrollador con la precisión de un ingeniero, hablemos.
+          </p>
+          <a
+            href="/es/contact#form"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-600 hover:bg-orange-700 text-white rounded-xl transition-colors duration-200 font-semibold text-lg shadow-md hover:shadow-lg transform hover:scale-105"
+          >
+            <Icon name="tabler:message-circle" class="w-5 h-5" />
+            Hablemos
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section ****************** -->
+  <footer class="bg-gray-900 dark:bg-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+      <div class="grid gap-8 md:gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Brand Column -->
+        <div class="lg:col-span-1">
+          <h3 class="text-2xl font-bold text-white mb-4">Jaime Villegas</h3>
+          <p class="text-gray-400 leading-relaxed mb-6">
+            Desarrollador Full Stack especializado en crear soluciones digitales innovadoras con precisión de ingeniería.
+          </p>
+          <div class="flex space-x-4">
+            <a
+              href="https://linkedin.com/in/jaimevillegas"
+              target="_blank"
+              class="flex items-center justify-center w-10 h-10 bg-gray-800 hover:bg-orange-600 text-gray-400 hover:text-white rounded-lg transition-colors duration-200"
+            >
+              <Icon name="tabler:brand-linkedin" class="w-5 h-5" />
+            </a>
+            <a
+              href="https://github.com/jaimevillegas"
+              target="_blank"
+              class="flex items-center justify-center w-10 h-10 bg-gray-800 hover:bg-orange-600 text-gray-400 hover:text-white rounded-lg transition-colors duration-200"
+            >
+              <Icon name="tabler:brand-github" class="w-5 h-5" />
+            </a>
+            <a
+              href="https://fiverr.com/villegas296"
+              target="_blank"
+              class="flex items-center justify-center w-10 h-10 bg-gray-800 hover:bg-orange-600 text-gray-400 hover:text-white rounded-lg transition-colors duration-200"
+            >
+              <Icon name="tabler:brand-fiverr" class="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Column -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4 flex items-center">
+            <Icon name="tabler:navigation" class="w-5 h-5 text-orange-600 mr-2" />
+            Navegación
+          </h4>
+          <ul class="space-y-3">
+            <li>
+              <a href="/es" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+                <Icon name="tabler:home" class="w-4 h-4 mr-2" />
+                Inicio
+              </a>
+            </li>
+            <li>
+              <a href="/es/projects" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+                <Icon name="tabler:briefcase" class="w-4 h-4 mr-2" />
+                Proyectos
+              </a>
+            </li>
+            <li>
+              <a href="/es/courses" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+                <Icon name="tabler:book" class="w-4 h-4 mr-2" />
+                Cursos
+              </a>
+            </li>
+            <li>
+              <a href="/es/blog" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+                <Icon name="tabler:pencil" class="w-4 h-4 mr-2" />
+                Blog
+              </a>
+            </li>
+            <li>
+              <a href="/es/contact" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+                <Icon name="tabler:message" class="w-4 h-4 mr-2" />
+                Contacto
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Services Column -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4 flex items-center">
+            <Icon name="tabler:settings" class="w-5 h-5 text-orange-600 mr-2" />
+            Servicios
+          </h4>
+          <ul class="space-y-3">
+            <li>
+              <span class="text-gray-400 flex items-center">
+                <Icon name="tabler:brand-react" class="w-4 h-4 mr-2 text-orange-600" />
+                Desarrollo Frontend
+              </span>
+            </li>
+            <li>
+              <span class="text-gray-400 flex items-center">
+                <Icon name="tabler:brand-nodejs" class="w-4 h-4 mr-2 text-orange-600" />
+                Desarrollo Backend
+              </span>
+            </li>
+            <li>
+              <span class="text-gray-400 flex items-center">
+                <Icon name="tabler:database" class="w-4 h-4 mr-2 text-orange-600" />
+                Bases de Datos
+              </span>
+            </li>
+            <li>
+              <span class="text-gray-400 flex items-center">
+                <Icon name="tabler:3d-cube-sphere" class="w-4 h-4 mr-2 text-orange-600" />
+                Modelado CAD
+              </span>
+            </li>
+            <li>
+              <span class="text-gray-400 flex items-center">
+                <Icon name="tabler:robot" class="w-4 h-4 mr-2 text-orange-600" />
+                Automatización
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4 flex items-center">
+            <Icon name="tabler:phone" class="w-5 h-5 text-orange-600 mr-2" />
+            Contacto
+          </h4>
+          <ul class="space-y-3">
+            <li class="text-gray-400 flex items-start">
+              <Icon name="tabler:mail" class="w-4 h-4 mr-2 mt-1 text-orange-600 flex-shrink-0" />
+              <span class="break-all">jaimevillegas296@gmail.com</span>
+            </li>
+            <li class="text-gray-400 flex items-start">
+              <Icon name="tabler:map-pin" class="w-4 h-4 mr-2 mt-1 text-orange-600 flex-shrink-0" />
+              <span>Colombia</span>
+            </li>
+            <li class="text-gray-400 flex items-start">
+              <Icon name="tabler:clock" class="w-4 h-4 mr-2 mt-1 text-orange-600 flex-shrink-0" />
+              <span>Disponible para proyectos remotos</span>
+            </li>
+            <li class="text-gray-400 flex items-start">
+              <Icon name="tabler:world" class="w-4 h-4 mr-2 mt-1 text-orange-600 flex-shrink-0" />
+              <span>Clientes internacionales</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-gray-800 mt-12 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">
+            © 2025 Jaime Villegas. Todos los derechos reservados.
+          </p>
+          <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-2">
+              <Icon name="tabler:heart" class="w-4 h-4 text-red-500" />
+              <span class="text-gray-400 text-sm">Hecho con pasión</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 </Layout>
