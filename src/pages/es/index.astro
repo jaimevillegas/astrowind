@@ -14,6 +14,7 @@ import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
+import { Icon } from 'astro-icon/components';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
@@ -52,7 +53,7 @@ const metadata = {
     image={{ src: '~/assets/images/profile.jpg', alt: 'Jaime Villegas' }}
   >
     <Fragment slot="subtitle">
-      Fusiono mi background en ingeniería con el desarrollo web moderno para crear productos digitales de alto rendimiento. Diseño y construyo aplicaciones que no solo son funcionales, sino también lógicas y fáciles de mantener.
+      Fusiono mi background en <span class="text-orange-600 font-bold">ingeniería</span> con el <span class='text-orange-600 font-bold'>desarrollo web moderno</span> para crear productos digitales de alto rendimiento. Diseño y construyo aplicaciones que no solo son funcionales, sino también lógicas y fáciles de mantener.
     </Fragment>
   </Hero>
 
@@ -60,54 +61,61 @@ const metadata = {
   <section id="about" class="relative not-prose">
     <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-4xl font-bold tracking-tight dark:text-white sm:text-5xl mb-2">Acerca de mí</h2>
-        <p class="text-lg dark:text-slate-400 text-justify">
-          Como ingeniero, aprendí a construir cosas que funcionan. Como desarrollador, aprendí a construir cosas que la gente ama usar.
-          <br /><br />
-          Mi doble perfil me permite abordar cada proyecto desde dos ángulos: la solidez técnica de la ingeniería y la empatía del diseño centrado en el usuario. El resultado son aplicaciones web eficientes, escalables y con una experiencia de usuario impecable.
-        </p>
-        <br />
-        <p class="text-lg dark:text-slate-400">¿Interesado en colaborar? Contáctame aquí:</p>
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-4xl font-bold tracking-tight dark:text-white sm:text-5xl mb-8">Acerca de mí</h2>
+        <div class="text-lg dark:text-slate-400 text-left space-y-4">
+          <p>
+            Mi carrera comenzó en la <span class="text-orange-600 font-bold">ingeniería</span>, donde aprendí la disciplina de construir cosas que simplemente funcionan, de forma robusta y predecible. Esa base analítica es mi punto de partida.
+          </p>
+          <p>
+            Luego, como <span class="text-orange-600 font-bold">desarrollador</span>, descubrí mi pasión: construir cosas que la gente ame usar. Entendí que detrás de cada <em>div</em> hay una persona, y que la empatía por el usuario final es tan crucial como un algoritmo eficiente.
+          </p>
+          <p>
+            Esta dualidad es mi método de trabajo. Combino la <span class="text-orange-600 font-bold">solidez técnica</span> con un <span class="text-orange-600 font-bold">diseño centrado en el usuario</span> para no solo entregar un producto que funcione, sino una experiencia digital intuitiva y satisfactoria.
+          </p>
+          <p class="italic text-center pt-4">
+            ¿Quieres ver este enfoque en acción?
+          </p>
+        </div>
       </div>
-      <div class="mt-8 max-w-3xl mx-auto">
-        <ItemGrid
-          items={[
-            {
-              icon: 'tabler:brand-fiverr',
-              callToAction: {
-                target: '_blank',
-                text: 'Fiverr',
-                href: 'https://es.fiverr.com/villegas296',
-              },
-            },
-            {
-              icon: 'tabler:brand-github',
-              callToAction: {
-                target: '_blank',
-                text: 'GitHub',
-                href: 'https://github.com/jaimevillegas',
-              },
-            },
-            {
-              icon: 'tabler:brand-linkedin',
-              callToAction: {
-                target: '_blank',
-                text: 'LinkedIn',
-                href: 'https://www.linkedin.com/in/villegas0296/',
-              },
-            },
-          ]}
-          columns={3}
-          classes={{
-            container: `gap-y-4 md:gap-y-8`,
-            panel: 'max-w-none',
-            title: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
-            description: 'text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2',
-            icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-orange-600 dark:bg-orange-600 text-gray-50 p-1',
-            action: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
-          }}
-        />
+      <div class="mt-8 max-w-2xl mx-auto">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href="https://es.fiverr.com/villegas296"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3 px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-slate-700 hover:border-orange-600 dark:hover:border-orange-600 w-full sm:w-auto justify-center"
+          >
+            <div class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-600 text-white group-hover:bg-orange-700 transition-colors duration-300">
+              <Icon name="tabler:brand-fiverr" class="h-[18px] w-[18px]" />
+            </div>
+            <span class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">Fiverr</span>
+          </a>
+
+          <a
+            href="https://github.com/jaimevillegas"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3 px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-slate-700 hover:border-orange-600 dark:hover:border-orange-600 w-full sm:w-auto justify-center"
+          >
+            <div class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-600 text-white group-hover:bg-orange-700 transition-colors duration-300">
+              <Icon name="tabler:brand-github" class="h-[18px] w-[18px]" />
+            </div>
+            <span class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">GitHub</span>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/villegas0296/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3 px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-slate-700 hover:border-orange-600 dark:hover:border-orange-600 w-full sm:w-auto justify-center"
+          >
+            <div class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-600 text-white group-hover:bg-orange-700 transition-colors duration-300">
+              <Icon name="tabler:brand-linkedin" class="h-[18px] w-[18px]" />
+            </div>
+            <span class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">LinkedIn</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
