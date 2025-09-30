@@ -142,7 +142,7 @@ actions={[{ variant: 'primary', text: 'Get in Touch', href: getPermalink('/conta
           post: {
             title: 'text-lg md:text-xl font-bold leading-tight dark:text-white hover:text-orange-600 dark:hover:text-orange-400 transition-colors duration-200',
             excerpt: 'text-sm text-muted dark:text-slate-400 mt-2',
-            category: 'text-xs uppercase tracking-wide text-orange-600 dark:text-orange-400 font-medium',
+            category: 'text-xs uppercase tracking-wide text-orange-600 dark:text-orange-600 font-medium',
             readTime: 'text-xs text-muted dark:text-slate-500',
           }
         }}
@@ -150,7 +150,7 @@ actions={[{ variant: 'primary', text: 'Get in Touch', href: getPermalink('/conta
       <div class="text-center mt-8">
         <a
           href="/en/blog"
-          class="inline-flex items-center justify-center gap-2 px-6 py-3 text-orange-600 hover:text-orange-700 dark:text-orange-400 dark:hover:text-orange-300 transition-colors duration-200 font-medium"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 text-orange-600 hover:text-orange-700 dark:text-orange-600 dark:hover:text-orange-300 transition-colors duration-200 font-medium"
         >
           View all posts
           <Icon name="tabler:chevron-right" class="h-4 w-4" />
@@ -492,96 +492,443 @@ actions={[{ variant: 'primary', text: 'Get in Touch', href: getPermalink('/conta
     </div>
   </section>
 
-  <!-- Testimonials Widget *********** -->
-  <Testimonials
-    id="testimonials"
-title="What my clients say"
-    subtitle="Results and collaboration that build trust."
-testimonials={[
-    {
-      testimonial:
-        'Jaime is an exceptional software developer. His attention to detail and problem-solving skills are impressive, and he consistently delivers high-quality work. He is dedicated, goes above and beyond to ensure team success, and is always willing to help and share his knowledge.',
-      name: 'Shayan Ali Bakhsh',
-      job: 'Project Colleague',
-      image: {
-        src: '~/assets/images/default-avatar.svg',
-        alt: 'Avatar of Shayan Ali Bakhsh',
-      },
-    },
-    {
-      testimonial:
-        'I recommend Jaime as a Full Stack developer. He is extremely punctual, respectful, and hardworking. He has solid knowledge of languages and frameworks, and is dedicated to constantly improving. He is a great team player and is always willing to help.',
-      name: 'Nicolas Andres Olaya',
-      job: 'Full Stack Developer',
-      image: {
-        src: '~/assets/images/default-avatar.svg',
-        alt: 'Avatar of Nicolas Andres Olaya',
-      },
-    },
-    {
-      testimonial:
-        'James consistently proves to be my go-to developer for his meticulous attention to detail. He not only delivers work on time but does so with an elegance that sets him apart. His thorough documentation ensures we are always on the same page.',
-      name: 'nyonjee',
-      job: 'Returning Client',
-      image: {
-        src: '~/assets/images/default-avatar.svg',
-        alt: 'Avatar of nyonjee',
-      },
-    },
-    {
-      testimonial:
-        'Working with him was great! Super fast in his responses, the budget was accurate, and his code documentation is like a treasure map. He tackled difficult challenges like a professional and communication was excellent. Totally recommended!',
-      name: 'amirandap',
-      job: 'Fiverr Client',
-      image: {
-        src: '~/assets/images/default-avatar.svg',
-        alt: 'Avatar of amirandap',
-      },
-    },
-    {
-      testimonial:
-        'Excellent work, very smooth communication, and all requirements were implemented, plus great attention to questions and changes.',
-      name: 'Andres Osorio',
-      job: 'Satisfied Client',
-      image: {
-        src: '~/assets/images/default-avatar.svg',
-        alt: 'Avatar of Andres Osorio',
-      },
-    },
-    {
-      testimonial:
-        'A very nice person, good work, and excellent communication. This is already the second time we work together! He knows what he does, is proactive, and doesn\'t waste your time. I would recommend him and consider him for future projects without hesitation.',
-      name: 'gregvdd',
-      job: 'Fiverr Client',
-      image: {
-        src: '~/assets/images/default-avatar.svg',
-        alt: 'Avatar of gregvdd',
-      },
-    },
-    {
-      testimonial:
-        'Smooth communication with the backend team and great proactivity throughout the entire project.',
-      name: 'Unydos S.A.S',
-      job: 'Backend Team',
-      image: {
-        src: '~/assets/images/default-avatar.svg',
-        alt: 'Avatar of Unydos S.A.S',
-      },
-    },
-  ]}
-  />
+  <!-- Testimonials Section ****************** -->
+  <section class="relative not-prose">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <div class="max-w-2xl mx-auto text-center mb-8 md:mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+          What my clients say
+        </h2>
+        <p class="text-muted text-xl">
+          Results and collaboration that build trust
+        </p>
+      </div>
 
-  <!-- CallToAction Widget *********** -->
-  <CallToAction
-      title="Let's build something incredible, together."
-      subtitle="My passion is to transform ideas into high-performance digital products. If you are looking for a developer with the precision of an engineer, let's talk."
-    actions={[ 
-      {
-        variant: 'primary',
-        text: 'Let\'s talk',
-        href: '/en/contact#form',
-      },
-    ]}
-  />
+      <div class="max-w-6xl mx-auto">
+        <div class="swiper-container testimonials-swiper-en !overflow-hidden relative">
+          <div class="swiper-wrapper">
+            <!-- Testimonial 1 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "Jaime is an exceptional software developer. His attention to detail and problem-solving skills are impressive, and he consistently delivers high-quality work. He is dedicated and goes above and beyond to ensure team success."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">Shayan Ali Bakhsh</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Project Colleague</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "I recommend Jaime as a Full Stack developer. He is extremely punctual, respectful, and hardworking. He has solid knowledge of languages and frameworks, and is dedicated to constantly improving."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">Nicolas Andres Olaya</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Full Stack Developer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "James consistently proves to be my go-to developer for his meticulous attention to detail. He not only delivers work on time but does so with an elegance that sets him apart."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">nyonjee</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Returning Client</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "Working with him was great! Super fast in his responses, the budget was accurate, and his code documentation is like a treasure map. He tackled difficult challenges like a professional."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">amirandap</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Fiverr Client</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 5 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "Excellent work, very smooth communication, and all requirements were implemented, plus great attention to questions and changes."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">Andres Osorio</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Satisfied Client</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 6 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "A very nice person, good work, and excellent communication. This is already the second time we work together! He knows what he does, is proactive, and doesn't waste your time."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">gregvdd</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Fiverr Client</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 7 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "Smooth communication with the backend team and great proactivity throughout the entire project."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">Unydos S.A.S</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Backend Team</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation arrows -->
+          <div class="swiper-button-prev testimonials-prev-en !text-orange-600 !font-bold after:!text-xl"></div>
+          <div class="swiper-button-next testimonials-next-en !text-orange-600 !font-bold after:!text-xl"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import Swiper from 'swiper';
+    import { Navigation, Autoplay } from 'swiper/modules';
+    import 'swiper/css';
+    import 'swiper/css/navigation';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const testimonialsSwiperEn = new Swiper('.testimonials-swiper-en', {
+        modules: [Navigation, Autoplay],
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        slidesPerView: 1,
+        spaceBetween: 30,
+        navigation: {
+          nextEl: '.testimonials-next-en',
+          prevEl: '.testimonials-prev-en',
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+      });
+    });
+  </script>
+
+  <style>
+    .testimonials-swiper-en .swiper-button-next,
+    .testimonials-swiper-en .swiper-button-prev {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      margin-top: 0;
+      background: transparent;
+      color: #ea580c;
+      transition: all 0.3s ease;
+    }
+
+    .testimonials-swiper-en .swiper-button-prev {
+      left: 10px;
+    }
+
+    .testimonials-swiper-en .swiper-button-next {
+      right: 10px;
+    }
+
+    .testimonials-swiper-en .swiper-button-next:after,
+    .testimonials-swiper-en .swiper-button-prev:after {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .testimonials-swiper-en .swiper-button-next:hover,
+    .testimonials-swiper-en .swiper-button-prev:hover {
+      color: #c2410c;
+      transform: translateY(-50%) scale(1.2);
+    }
+
+    @media (max-width: 1024px) {
+      .testimonials-swiper-en .swiper-button-next,
+      .testimonials-swiper-en .swiper-button-prev {
+        display: none;
+      }
+    }
+  </style>
+
+  <!-- CTA Section ****************** -->
+  <section class="relative not-prose">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <div class="max-w-4xl mx-auto">
+        <!-- CTA Card -->
+        <div class="bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-gray-200 dark:border-gray-800 p-8 md:p-12 text-center">
+          <div class="flex items-center justify-center mb-6">
+            <div class="flex items-center justify-center w-16 h-16 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+              <Icon name="tabler:rocket" class="w-8 h-8 text-orange-600" />
+            </div>
+            <div class="flex items-center justify-center w-16 h-16 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
+              <Icon name="tabler:code" class="w-8 h-8 text-orange-600" />
+            </div>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-gray-900 dark:text-white">
+            Let's build something incredible, together.
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+            My passion is to transform ideas into high-performance digital products. If you are looking for a developer with the precision of an engineer, let's talk.
+          </p>
+          <a
+            href="/en/contact#form"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-orange-600 hover:bg-orange-700 text-white rounded-xl transition-colors duration-200 font-semibold text-lg shadow-md hover:shadow-lg transform hover:scale-105"
+          >
+            <Icon name="tabler:message-circle" class="w-5 h-5" />
+            Let's talk
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section ****************** -->
+  <footer class="bg-gray-900 dark:bg-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+      <div class="grid gap-8 md:gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Brand Column -->
+        <div class="lg:col-span-1">
+          <h3 class="text-2xl font-bold text-white mb-4">Jaime Villegas</h3>
+          <p class="text-gray-400 leading-relaxed mb-6">
+            Full Stack Developer specialized in creating innovative digital solutions with engineering precision.
+          </p>
+          <div class="flex space-x-4">
+            <a
+              href="https://linkedin.com/in/jaimevillegas"
+              target="_blank"
+              class="flex items-center justify-center w-10 h-10 bg-gray-800 hover:bg-orange-600 text-gray-400 hover:text-white rounded-lg transition-colors duration-200"
+            >
+              <Icon name="tabler:brand-linkedin" class="w-5 h-5" />
+            </a>
+            <a
+              href="https://github.com/jaimevillegas"
+              target="_blank"
+              class="flex items-center justify-center w-10 h-10 bg-gray-800 hover:bg-orange-600 text-gray-400 hover:text-white rounded-lg transition-colors duration-200"
+            >
+              <Icon name="tabler:brand-github" class="w-5 h-5" />
+            </a>
+            <a
+              href="https://fiverr.com/villegas296"
+              target="_blank"
+              class="flex items-center justify-center w-10 h-10 bg-gray-800 hover:bg-orange-600 text-gray-400 hover:text-white rounded-lg transition-colors duration-200"
+            >
+              <Icon name="tabler:brand-fiverr" class="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Column -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4 flex items-center">
+            <Icon name="tabler:navigation" class="w-5 h-5 text-orange-600 mr-2" />
+            Navigation
+          </h4>
+          <ul class="space-y-3">
+            <li>
+              <a href="/en" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+                <Icon name="tabler:home" class="w-4 h-4 mr-2" />
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="/en/projects" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+                <Icon name="tabler:briefcase" class="w-4 h-4 mr-2" />
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="/en/courses" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+                <Icon name="tabler:book" class="w-4 h-4 mr-2" />
+                Courses
+              </a>
+            </li>
+            <li>
+              <a href="/en/blog" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+                <Icon name="tabler:pencil" class="w-4 h-4 mr-2" />
+                Blog
+              </a>
+            </li>
+            <li>
+              <a href="/en/contact" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+                <Icon name="tabler:message" class="w-4 h-4 mr-2" />
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Services Column -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4 flex items-center">
+            <Icon name="tabler:settings" class="w-5 h-5 text-orange-600 mr-2" />
+            Services
+          </h4>
+          <ul class="space-y-3">
+            <li>
+              <span class="text-gray-400 flex items-center">
+                <Icon name="tabler:brand-react" class="w-4 h-4 mr-2 text-orange-600" />
+                Frontend Development
+              </span>
+            </li>
+            <li>
+              <span class="text-gray-400 flex items-center">
+                <Icon name="tabler:brand-nodejs" class="w-4 h-4 mr-2 text-orange-600" />
+                Backend Development
+              </span>
+            </li>
+            <li>
+              <span class="text-gray-400 flex items-center">
+                <Icon name="tabler:database" class="w-4 h-4 mr-2 text-orange-600" />
+                Database Design
+              </span>
+            </li>
+            <li>
+              <span class="text-gray-400 flex items-center">
+                <Icon name="tabler:3d-cube-sphere" class="w-4 h-4 mr-2 text-orange-600" />
+                CAD Modeling
+              </span>
+            </li>
+            <li>
+              <span class="text-gray-400 flex items-center">
+                <Icon name="tabler:robot" class="w-4 h-4 mr-2 text-orange-600" />
+                Automation
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4 flex items-center">
+            <Icon name="tabler:phone" class="w-5 h-5 text-orange-600 mr-2" />
+            Contact
+          </h4>
+          <ul class="space-y-3">
+            <li class="text-gray-400 flex items-start">
+              <Icon name="tabler:mail" class="w-4 h-4 mr-2 mt-1 text-orange-600 flex-shrink-0" />
+              <span class="break-all">jaimevillegas296@gmail.com</span>
+            </li>
+            <li class="text-gray-400 flex items-start">
+              <Icon name="tabler:map-pin" class="w-4 h-4 mr-2 mt-1 text-orange-600 flex-shrink-0" />
+              <span>Colombia</span>
+            </li>
+            <li class="text-gray-400 flex items-start">
+              <Icon name="tabler:clock" class="w-4 h-4 mr-2 mt-1 text-orange-600 flex-shrink-0" />
+              <span>Available for remote projects</span>
+            </li>
+            <li class="text-gray-400 flex items-start">
+              <Icon name="tabler:world" class="w-4 h-4 mr-2 mt-1 text-orange-600 flex-shrink-0" />
+              <span>International clients</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-gray-800 mt-12 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">
+            © 2025 Jaime Villegas. All rights reserved.
+          </p>
+          <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-2">
+              <Icon name="tabler:heart" class="w-4 h-4 text-red-500" />
+              <span class="text-gray-400 text-sm">Made with passion</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 </Layout>
