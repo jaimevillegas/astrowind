@@ -239,34 +239,121 @@ const metadata = {
     </div>
   </section>
 
-  <!-- Steps Widget ****************** -->
-  <Steps
-    id="resume"
-    title="Work experience"
-    items={[
-  {
-    title:
-    'Ingeniero Freelance Profesional <br />  <span class="font-normal">Fiverr</span> <br /> <span class="text-sm font-normal"> 2022 - PRESENTE</span>',
-    description: 'Como profesional independiente, gestiono proyectos de ciclo completo para clientes internacionales, especializándome en desarrollo web y soluciones de ingeniería a medida. <br /> <span className="font-normal text-white">- Desarrollo Full-Stack:</span> He construido y desplegado aplicaciones web completas utilizando React, Node.js y bases de datos SQL/NoSQL, entregando productos robustos y escalables.<br /><span className="font-bold">- Diseño de componentes y UI:</span> He creado interfaces de usuario interactivas y sistemas de componentes reutilizables con Tailwind CSS, enfocándome en la usabilidad y la experiencia del usuario. <br /> - Soluciones Integrales: He integrado mis habilidades de software y hardware para proyectos únicos, incluyendo el diseño de PCBs y la simulación CAD, demostrando una capacidad única para resolver problemas en la intersección de ambos mundos.',
-    icon: 'tabler:briefcase',
-  },
-  {
-    title:
-      'Ingeniero de Software Frontend <br /> <span class="font-normal">Unydos Consulting S.A.S, COL</span> <br /> <span class="text-sm font-normal">2024</span>',
-                                                                                                                        description: "Lideré la modernización de una aplicación de software heredada, transformándola en una solución web escalable y de alto rendimiento con React. <br /> - Liderazgo Técnico: Dirigí la arquitectura frontend del proyecto, migrando la base de código a un sistema moderno basado en componentes que mejoró la mantenibilidad y la velocidad de desarrollo. <br /> - Gestión de Proyecto y Equipo: Traduje los requisitos del cliente en un backlog técnico accionable y coordiné al equipo de desarrollo, asegurando entregas de alta calidad alineadas con los objetivos del negocio. <br /> - Impacto y Resultados: La nueva aplicación ofreció una experiencia de usuario significativamente más fluida y responsiva, estableciendo una base técnica sólida para la implementación de futuras funcionalidades.",
-    icon: 'tabler:code',
-  },
-  {
-    title:
-    'Ingeniero CAD Mecánico & Ingeniero de Proyectos <br /> <span class="font-normal">Sector Industrial (Múltiples Empleadores)</span> <br /> <span class="text-sm font-normal">2016 - 2022</span>',
-    description: "Diseñé soluciones de ingeniería a medida para optimizar procesos industriales, trabajando directamente con clientes desde el concepto hasta la implementación. <br /> - Análisis y Especificaciones: Analicé requerimientos complejos de clientes y los traduje en especificaciones técnicas detalladas, una habilidad que ahora aplico para definir el alcance de proyectos de software. <br /> - Diseño de Sistemas Complejos: Utilicé herramientas CAD para modelar y diseñar sistemas mecánicos (tuberías, transportadores, etc.), desarrollando un enfoque metódico para la creación de sistemas lógicos y eficientes. <br /> - La base de mi Carrera en Software: Esta experiencia sentó las bases de mi capacidad para la resolución de problemas y el pensamiento estructurado, permitiéndome construir software bien diseñado y robusto.",
-    icon: 'tabler:settings',
-  }
-]}
-    classes={{ container: 'max-w-3xl' }}
-  />
+  <!-- Work Experience Section ****************** -->
+  <section class="relative not-prose">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <div class="max-w-2xl mx-auto text-center mb-8 md:mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+          Experiencia Profesional
+        </h2>
+        <p class="text-muted text-xl">
+          Un recorrido por mis roles y logros profesionales más destacados
+        </p>
+      </div>
 
-<Features3
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-8 md:space-y-12">
+          <!-- Position 1 -->
+          <div class="flex flex-col md:flex-row gap-6 md:gap-8">
+            <div class="flex-shrink-0 flex items-start justify-center">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
+                <Icon name="tabler:briefcase" class="w-6 h-6 text-orange-600" />
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="mb-4">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  Ingeniero Freelance Profesional
+                </h3>
+                <div class="flex flex-wrap items-center gap-2 text-gray-600 dark:text-gray-300 mb-2">
+                  <span class="font-medium">Fiverr</span>
+                  <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                  <span class="text-sm">2022 - PRESENTE</span>
+                </div>
+              </div>
+              <div class="prose prose-gray dark:prose-invert max-w-none">
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                  Como profesional independiente, gestiono proyectos de ciclo completo para clientes internacionales, especializándome en desarrollo web y soluciones de ingeniería a medida.
+                </p>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li><strong class="text-orange-600">Desarrollo Full-Stack:</strong> He construido y desplegado aplicaciones web completas utilizando React, Node.js y bases de datos SQL/NoSQL, entregando productos robustos y escalables.</li>
+                  <li><strong class="text-orange-600">Diseño de componentes y UI:</strong> He creado interfaces de usuario interactivas y sistemas de componentes reutilizables con Tailwind CSS, enfocándome en la usabilidad y la experiencia del usuario.</li>
+                  <li><strong class="text-orange-600">Soluciones Integrales:</strong> He integrado mis habilidades de software y hardware para proyectos únicos, incluyendo el diseño de PCBs y la simulación CAD.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Position 2 -->
+          <div class="flex flex-col md:flex-row gap-6 md:gap-8">
+            <div class="flex-shrink-0 flex items-start justify-center">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
+                <Icon name="tabler:code" class="w-6 h-6 text-orange-600" />
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="mb-4">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  Ingeniero de Software Frontend
+                </h3>
+                <div class="flex flex-wrap items-center gap-2 text-gray-600 dark:text-gray-300 mb-2">
+                  <span class="font-medium">Unydos Consulting S.A.S, COL</span>
+                  <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                  <span class="text-sm">2024</span>
+                </div>
+              </div>
+              <div class="prose prose-gray dark:prose-invert max-w-none">
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                  Lideré la modernización de una aplicación de software heredada, transformándola en una solución web escalable y de alto rendimiento con React.
+                </p>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li><strong class="text-orange-600">Liderazgo Técnico:</strong> Dirigí la arquitectura frontend del proyecto, migrando la base de código a un sistema moderno basado en componentes.</li>
+                  <li><strong class="text-orange-600">Gestión de Proyecto:</strong> Traduje los requisitos del cliente en un backlog técnico accionable y coordiné al equipo de desarrollo.</li>
+                  <li><strong class="text-orange-600">Impacto y Resultados:</strong> La nueva aplicación ofreció una experiencia de usuario significativamente más fluida y responsiva.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Position 3 -->
+          <div class="flex flex-col md:flex-row gap-6 md:gap-8">
+            <div class="flex-shrink-0 flex items-start justify-center">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
+                <Icon name="tabler:settings" class="w-6 h-6 text-orange-600" />
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="mb-4">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  Ingeniero CAD Mecánico & Ingeniero de Proyectos
+                </h3>
+                <div class="flex flex-wrap items-center gap-2 text-gray-600 dark:text-gray-300 mb-2">
+                  <span class="font-medium">Sector Industrial (Múltiples Empleadores)</span>
+                  <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                  <span class="text-sm">2016 - 2022</span>
+                </div>
+              </div>
+              <div class="prose prose-gray dark:prose-invert max-w-none">
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                  Diseñé soluciones de ingeniería a medida para optimizar procesos industriales, trabajando directamente con clientes desde el concepto hasta la implementación.
+                </p>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li><strong class="text-orange-600">Análisis y Especificaciones:</strong> Analicé requerimientos complejos de clientes y los traduje en especificaciones técnicas detalladas.</li>
+                  <li><strong class="text-orange-600">Diseño de Sistemas:</strong> Utilicé herramientas CAD para modelar y diseñar sistemas mecánicos complejos (tuberías, transportadores, etc.).</li>
+                  <li><strong class="text-orange-600">Base para Software:</strong> Esta experiencia sentó las bases de mi capacidad para la resolución de problemas y el pensamiento estructurado.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
   title="Habilidades"
   subtitle="La combinación de desarrollo de software y precisión de ingeniería que aplico para construir soluciones robustas y eficientes."
   columns={3}

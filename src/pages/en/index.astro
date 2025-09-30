@@ -242,34 +242,121 @@ actions={[{ variant: 'primary', text: 'Get in Touch', href: getPermalink('/conta
     </div>
   </section>
 
-  <!-- Steps Widget ****************** -->
-  <Steps
-    id="resume"
-    title="Work experience"
-    items={[ 
-  {
-    title:
-    'Freelance Professional Engineer<br />  <span class="text-sm font-normal">2022 - PRESENT</span>',
-    description: 'As a freelancer, I manage full-cycle projects for international clients, specializing in web development and custom engineering solutions. <br /> <span class="font-bold">- Full-Stack Development:</span> I have built and deployed complete web applications using React, Node.js, and SQL/NoSQL databases, delivering robust and scalable products.<br /><span class="font-bold">- UI and Component Design:</span> I have created interactive user interfaces and reusable component systems with Tailwind CSS, focusing on usability and user experience. <br /> - Comprehensive Solutions: I have integrated my software and hardware skills for unique projects, including PCB design and CAD simulation, demonstrating a unique ability to solve problems at the intersection of both worlds.',
-    icon: 'tabler:briefcase',
-  },
-  {
-    title:
-      'Frontend Software Engineer <br /> <span class="font-normal">Unydos Consulting S.A.S, COL</span> <br /> <span class="text-sm font-normal">2024</span>',
-    description: "I led the modernization of a legacy software application, transforming it into a scalable, high-performance web solution with React. <br /> - Technical Leadership: I directed the project's frontend architecture, migrating the codebase to a modern component-based system that improved maintainability and development speed. <br /> - Project and Team Management: I translated client requirements into an actionable technical backlog and coordinated the development team, ensuring high-quality deliveries aligned with business goals. <br /> - Impact and Results: The new application offered a significantly smoother and more responsive user experience, establishing a solid technical foundation for implementing future features.",
-    icon: 'tabler:code',
-  },
-  {
-    title:
-    'Mechanical CAD Engineer & Project Engineer <br /> <span class="font-normal">Industrial Sector (Multiple Employers)</span> <br /> <span class="text-sm font-normal">2016 - 2022</span>',
-    description: "I designed custom engineering solutions to optimize industrial processes, working directly with clients from concept to implementation. <br /> - Analysis and Specifications: I analyzed complex client requirements and translated them into detailed technical specifications, a skill I now apply to define the scope of software projects. <br /> - Complex Systems Design: I used CAD tools to model and design mechanical systems (piping, conveyors, etc.), developing a methodical approach to creating logical and efficient systems. <br /> - The Foundation of my Software Career: This experience laid the groundwork for my problem-solving and structured thinking abilities, allowing me to build well-designed and robust software.",
-    icon: 'tabler:settings',
-  }
-]}
-    classes={{ container: 'max-w-3xl' }}
-  />
+  <!-- Work Experience Section ****************** -->
+  <section class="relative not-prose">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <div class="max-w-2xl mx-auto text-center mb-8 md:mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+          Work Experience
+        </h2>
+        <p class="text-muted text-xl">
+          A journey through my most notable professional roles and achievements
+        </p>
+      </div>
 
-<Features3
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-8 md:space-y-12">
+          <!-- Position 1 -->
+          <div class="flex flex-col md:flex-row gap-6 md:gap-8">
+            <div class="flex-shrink-0 flex items-start justify-center">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
+                <Icon name="tabler:briefcase" class="w-6 h-6 text-orange-600" />
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="mb-4">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  Freelance Professional Engineer
+                </h3>
+                <div class="flex flex-wrap items-center gap-2 text-gray-600 dark:text-gray-300 mb-2">
+                  <span class="font-medium">Fiverr</span>
+                  <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                  <span class="text-sm">2022 - PRESENT</span>
+                </div>
+              </div>
+              <div class="prose prose-gray dark:prose-invert max-w-none">
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                  As a freelancer, I manage full-cycle projects for international clients, specializing in web development and custom engineering solutions.
+                </p>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li><strong class="text-orange-600">Full-Stack Development:</strong> I have built and deployed complete web applications using React, Node.js, and SQL/NoSQL databases, delivering robust and scalable products.</li>
+                  <li><strong class="text-orange-600">UI and Component Design:</strong> I have created interactive user interfaces and reusable component systems with Tailwind CSS, focusing on usability and user experience.</li>
+                  <li><strong class="text-orange-600">Comprehensive Solutions:</strong> I have integrated my software and hardware skills for unique projects, including PCB design and CAD simulation.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Position 2 -->
+          <div class="flex flex-col md:flex-row gap-6 md:gap-8">
+            <div class="flex-shrink-0 flex items-start justify-center">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
+                <Icon name="tabler:code" class="w-6 h-6 text-orange-600" />
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="mb-4">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  Frontend Software Engineer
+                </h3>
+                <div class="flex flex-wrap items-center gap-2 text-gray-600 dark:text-gray-300 mb-2">
+                  <span class="font-medium">Unydos Consulting S.A.S, COL</span>
+                  <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                  <span class="text-sm">2024</span>
+                </div>
+              </div>
+              <div class="prose prose-gray dark:prose-invert max-w-none">
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                  I led the modernization of a legacy software application, transforming it into a scalable, high-performance web solution with React.
+                </p>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li><strong class="text-orange-600">Technical Leadership:</strong> I directed the project's frontend architecture, migrating the codebase to a modern component-based system that improved maintainability and development speed.</li>
+                  <li><strong class="text-orange-600">Project Management:</strong> I translated client requirements into an actionable technical backlog and coordinated the development team, ensuring high-quality deliveries aligned with business goals.</li>
+                  <li><strong class="text-orange-600">Impact and Results:</strong> The new application offered a significantly smoother and more responsive user experience, establishing a solid technical foundation for implementing future features.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Position 3 -->
+          <div class="flex flex-col md:flex-row gap-6 md:gap-8">
+            <div class="flex-shrink-0 flex items-start justify-center">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
+                <Icon name="tabler:settings" class="w-6 h-6 text-orange-600" />
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="mb-4">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  Mechanical CAD Engineer & Project Engineer
+                </h3>
+                <div class="flex flex-wrap items-center gap-2 text-gray-600 dark:text-gray-300 mb-2">
+                  <span class="font-medium">Industrial Sector (Multiple Employers)</span>
+                  <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                  <span class="text-sm">2016 - 2022</span>
+                </div>
+              </div>
+              <div class="prose prose-gray dark:prose-invert max-w-none">
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                  I designed custom engineering solutions to optimize industrial processes, working directly with clients from concept to implementation.
+                </p>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li><strong class="text-orange-600">Analysis and Specifications:</strong> I analyzed complex client requirements and translated them into detailed technical specifications, a skill I now apply to define the scope of software projects.</li>
+                  <li><strong class="text-orange-600">Complex Systems Design:</strong> I used CAD tools to model and design mechanical systems (piping, conveyors, etc.), developing a methodical approach to creating logical and efficient systems.</li>
+                  <li><strong class="text-orange-600">Foundation for Software:</strong> This experience laid the groundwork for my problem-solving and structured thinking abilities, allowing me to build well-designed and robust software.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
   title="Skills"
   subtitle="The combination of software development and engineering precision that I apply to build robust and efficient solutions."
   columns={3}
