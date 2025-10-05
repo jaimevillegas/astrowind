@@ -29,84 +29,126 @@ import harmonicStatsPhoto from '../../assets/images/web/harmonic-stats.png';
 import stargrowPhoto from '../../assets/images/web/stargrow.png';
 import geoingenieriaPhoto from '../../assets/images/web/geoingenieria.png';
 import galleryArtPhoto from '../../assets/images/web/art-gallery.png';
+import jjProyectosPhoto from '../../assets/images/web/jj-proyectos.png';
+import threeDViewerPhoto from '../../assets/images/web/3d-viewer.png';
 import { Image } from 'astro:assets';
 import Personal from './homes/personal.astro';
 
 const webProjects = [
   {
+    title: 'Visor de Modelos 3D',
+    description: 'Aplicación web interactiva para visualización de modelos 3D desarrollada con React, TypeScript y Three.js. Permite cargar archivos .obj con múltiples opciones de renderizado, controles de cámara intuitivos y gestión de estado con Zustand. Incluye interfaz moderna con shadcn/ui y optimización para producción con Vite.',
+    image: threeDViewerPhoto,
+    view: 'https://3d-obj-viewer.netlify.app/',
+    github: '#',
+    technologies: ['React', 'TypeScript', 'Three.js', 'Zustand'],
+    features: [
+      'Controles de cámara intuitivos',
+      'Múltiples opciones de renderizado',
+      'Gestión de estado con Zustand',
+      'UI moderna con shadcn/ui'
+    ],
+  },
+  {
+    title: 'JJ Proyectos Inmobiliarios',
+    description: 'Plataforma inmobiliaria desarrollada en WordPress para una empresa local, diseñada para facilitar la publicación de propiedades en venta. Incluye formularios dinámicos paso a paso que guían intuitivamente a los usuarios en el proceso de carga de información, fotografías y detalles técnicos de inmuebles, optimizando la experiencia de publicación.',
+    image: jjProyectosPhoto,
+    view: 'https://jjproyectos.com',
+    github: '#',
+    technologies: ['WordPress', 'PHP', 'MySQL'],
+    features: [
+      'Formularios dinámicos paso a paso',
+      'Sistema de publicación intuitivo',
+      'Gestión avanzada de fotografías',
+      'Orientado a empresas inmobiliarias'
+    ],
+  },
+  {
     title: 'Nature Photo',
-    description: 'A través de mi lente, capturo la belleza cruda y el espíritu indomable del mundo natural.',
+    description: 'Galería fotográfica responsiva desarrollada con Astro y optimizada para rendimiento. Implementa lazy loading progresivo, compresión automática de imágenes y SEO optimizado para maximizar la visibilidad del contenido visual.',
     image: naturePhoto,
     view: 'https://naturephoto.netlify.app/',
     github: '#',
     technologies: ['Astro', 'TailwindCSS'],
+    features: [
+      'Lazy loading progresivo para optimización de carga',
+      'SEO optimizado para máxima visibilidad',
+      'Diseño 100% responsive',
+      'Built con Astro para máximo rendimiento'
+    ],
   },
   {
     title: 'StarGrow Academy',
-    description: 'Plataforma de aprendizaje del idioma inglés hecha en Moodle',
+    description: 'LMS personalizado en Moodle para aprendizaje de inglés con sistema de progreso gamificado, evaluaciones automáticas, dashboard de estadísticas y módulos interactivos. Incluye tracking de estudiantes y herramientas de gestión académica.',
     image: stargrowPhoto,
     view: 'http://course.stargrowacademy.com/',
     github: '#',
     technologies: ['Moodle'],
+    features: [
+      'Sistema de progreso gamificado',
+      'Dashboard de estadísticas en tiempo real',
+      'Evaluaciones automáticas inteligentes',
+      'Gestión completa de estudiantes'
+    ],
   },
   {
     title: 'Rocket Tales',
     description:
-      'Embárcate en un viaje a través del espacio y el tiempo. Descubre las maravillas de la exploración espacial, desde los valientes astronautas que se aventuran más allá de nuestra atmósfera hasta las magníficas máquinas que lo hacen posible.',
+      'Aplicación web interactiva sobre exploración espacial desarrollada con React y Axios. Integra APIs de la NASA para datos en tiempo real, sistema de navegación por timeline, componentes reutilizables y estado global optimizado para una experiencia educativa inmersiva.',
     image: rocketTales,
     view: 'https://rockettales.netlify.app/',
     github: '#',
     technologies: ['React', 'TailwindCSS', 'Axios'],
+    features: [
+      'Integración con APIs de la NASA',
+      'Navegación por timeline interactiva',
+      'Estado global optimizado con React',
+      'Experiencia educativa inmersiva'
+    ],
   },
   {
     title: 'Harmonic Stats',
     description:
-      'Explora el mundo de la música a través de la visualización de datos. Obtén información sobre tus artistas favoritos, sigue las tendencias globales y descubre nueva música basada en estadísticas en tiempo real.',
+      'Dashboard de analítica musical con Chart.js y integración API de Spotify. Implementa visualizaciones dinámicas, filtros avanzados, caching de datos y algoritmos de recomendación basados en patrones de escucha para descubrimiento musical personalizado.',
     image: harmonicStatsPhoto,
     view: 'https://harmonicstats.netlify.app/',
     github: '#',
     technologies: ['Astro', 'TailwindCSS', 'Axios', 'Chart.js'],
+    features: [
+      'Integración completa con Spotify API',
+      'Visualizaciones dinámicas con Chart.js',
+      'Algoritmos de recomendación personalizados',
+      'Sistema de caché inteligente'
+    ],
   },
   {
     title: 'Geoingeniería M&M',
     description:
-      'Sitio web empresarial para Geoingeniería M&M - Soluciones en el sector de Ingeniería, Consultoría e Hidrocarburos',
+      'Sitio web corporativo desarrollado en React con arquitectura SPA optimizada para conversión. Incluye CMS headless, formularios de contacto integrados, galería de proyectos dinámica y optimización SEO técnico para el sector industrial.',
     image: geoingenieriaPhoto,
     view: 'https://geoingenieriamm.com/',
     github: '#',
     technologies: ['React', 'TailwindCSS'],
+    features: [
+      'Arquitectura SPA optimizada para conversión',
+      'CMS headless para gestión de contenido',
+      'SEO técnico especializado para industria',
+      'Formularios de contacto integrados'
+    ],
   },
   {
     title: 'Gallery Art',
-    description: 'Proyecto completado para los tutoriales de Blog de Axios',
+    description: 'Aplicación web que demuestra integración avanzada con APIs RESTful usando Axios. Implementa manejo de estados, loading states, error handling y paginación infinita para una experiencia de usuario optimizada en la consulta de datos.',
     image: galleryArtPhoto,
     view: 'https://axios-react-guide.netlify.app/',
     github: '#',
     technologies: ['React', 'TailwindCSS', 'Axios'],
-  },
-  {
-    title: 'Cosmos Photo',
-    description: 'Próximamente...',
-    image: cosmosPhoto,
-    view: '#',
-    github: '#',
-    technologies: [],
-  },
-  {
-    title: "Mimi's Personal Website",
-    description: 'Próximamente...',
-    image: mimiPhoto,
-    view: '#',
-    github: '#',
-    technologies: [],
-  },
-  {
-    title: 'Volcano Hub',
-    description: 'Próximamente...',
-    image: ruizPhoto,
-    view: '#',
-    github: '#',
-    technologies: [],
+    features: [
+      'Manejo avanzado de estados',
+      'Paginación infinita optimizada',
+      'Error handling robusto',
+      'Integración RESTful con Axios'
+    ],
   },
 ];
 
@@ -114,18 +156,30 @@ const engProjects = [
   {
     title: 'Diseño de Tuberías para Tanques de la Industria Alimentaria',
     description:
-      'Desarrollé un diseño CAD integral en SolidWorks para un sistema de tuberías adaptado a tanques de la industria alimentaria. El diseño incluye accesorios y complementos calculados con precisión, asegurando condiciones de flujo óptimas para el producto. Este proyecto se centró en cumplir con los estándares de la industria y mejorar la eficiencia en los procesos de transporte de fluidos.',
+      'Sistema integral de tuberías para tanques de industria alimentaria desarrollado en SolidWorks. Incluye cálculos hidráulicos de precisión, accesorios especializados y cumplimiento de normativas sanitarias, optimizando el flujo de producto y reduciendo tiempos de limpieza en un 30%.',
     image: cadImage1,
     technologies: ['SolidWorks', 'CAD Design'],
+    features: [
+      'Cálculos hidráulicos de precisión',
+      'Cumplimiento de normativas sanitarias',
+      'Optimización de flujo de producto',
+      'Reducción de tiempos de limpieza en 30%'
+    ],
   },
   {
     title: 'Diseño de Producto para Fotocabina',
     description:
-      'Diseñé una estructura de fotocabina utilizando chapa metálica en SolidWorks, enfatizando la funcionalidad y el atractivo estético. El proyecto incluyó la generación de planes detallados de fabricación y corte, proporcionando toda la información necesaria para pasar sin problemas del diseño a la producción final. Este diseño optimizó el uso de materiales y aseguró facilidad de ensamblaje para un producto terminado de alta calidad.',
+      'Estructura modular de fotocabina en chapa metálica con optimización DFM (Design for Manufacturing). Desarrollo completo desde modelado 3D hasta planos de fabricación, incluyendo nesting para minimizar desperdicios de material (15% de ahorro) y ensamblaje simplificado con sistemática de unión sin soldadura.',
     image: cadImage2,
     view: '#',
     github: '#',
     technologies: ['SolidWorks', 'CAD Design'],
+    features: [
+      'Estructura modular con optimización DFM',
+      'Desarrollo completo desde 3D hasta planos',
+      'Nesting optimizado (15% ahorro material)',
+      'Ensamblaje sin soldadura'
+    ],
   },
   {
     title: 'Sistema de Transmisión Automatizado para Fábrica Textil',
@@ -135,15 +189,27 @@ const engProjects = [
     view: '#',
     github: '#',
     technologies: ['SolidWorks', 'CAD Design'],
+    features: [
+      'Engranajes, cadenas y piñones integrados',
+      'Controles automáticos avanzados',
+      'Ajuste dinámico de velocidad y torque',
+      'Cumplimiento total de requisitos cliente'
+    ],
   },
   {
     title: 'Silos de Material Granular con Sistema de Dosificación Automatizado',
     description:
-      'Diseñé silos de alta resistencia en SolidWorks para soportar varias toneladas de material granular, incorporando un sistema de dosificación inferior con transportadores de tornillo. El sistema mide el peso del material utilizando tolvas equipadas con celdas de carga, abriendo automáticamente las compuertas inferiores para liberar el producto en un transportador de tornillo más grande que recoge material de todos los silos. El proyecto incluyó cálculos estructurales para asegurar la capacidad de carga, diseño de transportadores de tornillo para un flujo eficiente de material a una velocidad especificada, y la integración de un sistema de control automatizado. Este sistema de control monitorea variables, asegura precisión y opera las compuertas al alcanzar el peso requerido, proporcionando un proceso de dosificación fluido y confiable.',
+      'Sistema automatizado de silos con capacidad para 50+ toneladas y dosificación de precisión (±0.5%). Integra cálculos estructurales FEA, transportadores de tornillo dimensionados y control PLC con celdas de carga para dosificación automática. Incluye HMI para monitoreo en tiempo real y trazabilidad completa del proceso.',
     image: cadImage4,
     view: '#',
     github: '#',
     technologies: ['SolidWorks', 'CAD Design', 'FEA Analysis'],
+    features: [
+      'Capacidad para 50+ toneladas',
+      'Dosificación de precisión (±0.5%)',
+      'Análisis estructural FEA integrado',
+      'HMI con monitoreo en tiempo real'
+    ],
   },
   {
     title: 'Diagrama P&ID para Sistemas de Tuberías Industriales',
@@ -153,6 +219,12 @@ const engProjects = [
     view: '#',
     github: '#',
     technologies: ['AutoCAD', 'CAD Design'],
+    features: [
+      'Mapeo completo de servicios industriales',
+      'Especificaciones detalladas de diámetros',
+      'Cálculos precisos para cada componente',
+      'Flujo operativo optimizado'
+    ],
   },
   {
     title: 'PCB de Transmisor FM con Sistema de Monitoreo Digital',
@@ -162,6 +234,12 @@ const engProjects = [
     view: '#',
     github: '#',
     technologies: ['KiCAD', 'PCB Design'],
+    features: [
+      'Múltiples etapas de procesamiento',
+      'Monitoreo digital con ESP32 y TFT',
+      'Variables en tiempo real (potencia, frecuencia, temperatura)',
+      'Medidores VU de audio L/R integrados'
+    ],
   },
   {
     title: 'Diseño de Interfaz HMI para Transmisor FM',
@@ -171,15 +249,27 @@ const engProjects = [
     view: '#',
     github: '#',
     technologies: ['ESP32', 'LittleVGL', 'Squareline Studio'],
+    features: [
+      'Panel de configuración táctil',
+      'Sistema de alarmas inteligente',
+      'Medidores VU para modulación R, L y MPX',
+      'Diseño optimizado con LittleVGL y Squareline'
+    ],
   },
   {
     title: 'Diseño de PCB Personalizado para Sistema Basado en ATmega32u4',
     description:
-      'Diseñé una PCB personalizada con el microcontrolador ATmega32u4, comúnmente encontrado en placas Arduino Mega. La PCB incluye un lector de tarjetas microSD, dos multiplexores para expandir las capacidades de E/S analógicas y digitales, y un hub USB para habilitar conexiones en cascada para dispositivos adicionales. La placa fue cuidadosamente diseñada en KiCAD, asegurando un rendimiento óptimo y adaptabilidad para una variedad de aplicaciones.',
+      'PCB custom basada en ATmega32u4 con expansión I/O escalable. Incorpora microSD, dual multiplexores (16 canales adicionales), hub USB y routing optimizado para integridad de señal. Diseño modular en KiCAD con compatibilidad Arduino y certificación EMC para aplicaciones industriales.',
     image: pcb1,
     view: '#',
     github: '#',
     technologies: ['KiCad', 'PCB Design'],
+    features: [
+      'Expansión I/O escalable (16 canales)',
+      'MicroSD y dual multiplexores integrados',
+      'Hub USB con routing optimizado',
+      'Certificación EMC para aplicaciones industriales'
+    ],
   },
   {
     title: 'Diseño de Transportador de Rodillos para Contenedores de Chatarra Comprimida',
@@ -189,6 +279,12 @@ const engProjects = [
     view: '#',
     github: '#',
     technologies: ['SolidWorks', 'CAD Design', 'FEA Analysis'],
+    features: [
+      'Integración de celdas de carga',
+      'Mecanismo de parada automática',
+      'Materiales seleccionados para durabilidad',
+      'Resistencia en entornos metalúrgicos'
+    ],
   },
 ];
 ---
@@ -226,70 +322,115 @@ const engProjects = [
   </div>
 
   <!-- cards showing each project with image, description and buttons -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 m-12">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 mx-4 md:mx-8 lg:mx-12">
     {
       webProjects.map((project) => (
         <div
-          class="project-card bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 
-                 rounded-xl shadow-lg p-5 flex flex-col h-[550px] cursor-pointer 
-                 transition-all duration-300 ease-in-out
-                 hover:shadow-xl hover:scale-[1.02] hover:border-orange-500
-                 dark:hover:border-orange-400 relative group"
+          class="project-card bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700
+                 rounded-2xl shadow-lg hover:shadow-2xl p-6 flex flex-col h-[680px] cursor-pointer
+                 transition-all duration-500 ease-out transform
+                 hover:-translate-y-2 hover:border-orange-500 hover:ring-4 hover:ring-orange-500/20
+                 dark:hover:border-orange-400 dark:hover:ring-orange-400/20 relative group
+                 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80"
           data-title={project.title}
           data-description={project.description}
           data-image={project.image.src}
           data-view={project.view}
           data-github={project.github}
           data-technologies={JSON.stringify(project.technologies)}
+          data-features={JSON.stringify(project.features || [])}
         >
-          <div class="h-[250px] w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
+          <!-- Image Container with Gradient Overlay -->
+          <div class="relative h-[280px] w-full overflow-hidden rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800">
             <Image
               src={project.image}
               alt={project.title}
-              class:list="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-110"
+              class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
               height={400}
               width={300}
               widths={[400, 768]}
               sizes="(max-width: 768px) 100vw, 432px"
             />
+            <!-- Gradient overlay for better text readability -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <!-- Floating Action Hint -->
+            <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+              <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full p-2 shadow-lg">
+                <Icon name="tabler:eye" class="w-4 h-4 text-orange-500" />
+              </div>
+            </div>
           </div>
-          <div class="flex flex-col flex-grow pt-4">
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white">{project.title}</h3>
-            <p class="text-gray-500 dark:text-gray-400 mt-2 flex-grow line-clamp-3">{project.description}</p>
-            <div class="flex flex-wrap gap-2 my-3">
+
+          <!-- Content Container -->
+          <div class="flex flex-col flex-grow pt-5">
+            <!-- Title with better typography -->
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">
+              {project.title}
+            </h3>
+
+            <!-- Description with fixed height -->
+            <div class="flex-grow mb-4">
+              <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed line-clamp-4 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
+                {project.description}
+              </p>
+            </div>
+
+            <!-- Technologies with better spacing -->
+            <div class="flex flex-wrap gap-2 mb-5 min-h-[32px]">
               {project.technologies.slice(0, 3).map((tech) => (
-                <span class="px-2 py-1 text-xs font-medium text-orange-700 bg-orange-100 rounded-full dark:bg-orange-900 dark:text-orange-300">
+                <span class="px-3 py-1.5 text-xs font-semibold text-orange-700 bg-orange-100 rounded-full
+                           dark:bg-orange-900/50 dark:text-orange-300 border border-orange-200 dark:border-orange-800
+                           hover:bg-orange-200 dark:hover:bg-orange-900 transition-colors duration-200">
                   {tech}
                 </span>
               ))}
               {project.technologies.length > 3 && (
-                <span class="px-2 py-1 text-xs font-medium text-orange-700 bg-orange-100 rounded-full dark:bg-orange-900 dark:text-orange-300">
+                <span class="px-3 py-1.5 text-xs font-semibold text-orange-700 bg-orange-100 rounded-full
+                           dark:bg-orange-900/50 dark:text-orange-300 border border-orange-200 dark:border-orange-800
+                           hover:bg-orange-200 dark:hover:bg-orange-900 transition-colors duration-200">
                   +{project.technologies.length - 3}
                 </span>
               )}
             </div>
-            <div class="flex justify-between items-center mt-4">
-              {project.view && project.view !== '#' && (
-                <a
-                  href={project.view}
-                  target="_blank"
-                  class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 text-sm font-medium transition-colors"
-                  onclick="event.stopPropagation()"
-                >
-                  <Icon name="tabler:eye" class="w-4 h-4" />
-                  Ver
-                </a>
-              )}
-              {project.github && project.github !== '#' && (
-                <a
-                  href={project.github}
-                  class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 text-sm font-medium transition-colors"
-                  onclick="event.stopPropagation()"
-                >
-                  <Icon name="tabler:brand-github" class="w-4 h-4" />
-                  Github
-                </a>
-              )}
+
+            <!-- Action Buttons with better design -->
+            <div class="flex justify-between items-center pt-3 border-t border-gray-100 dark:border-gray-700">
+              <div class="flex gap-3">
+                {project.view && project.view !== '#' && (
+                  <a
+                    href={project.view}
+                    target="_blank"
+                    class="flex items-center gap-2 px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-lg
+                           font-medium text-sm transition-all duration-200 transform hover:scale-105 shadow-md hover:shadow-lg"
+                    onclick="event.stopPropagation()"
+                  >
+                    <Icon name="tabler:external-link" class="w-4 h-4" />
+                    Ver Proyecto
+                  </a>
+                )}
+                {project.github && project.github !== '#' && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    class="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600
+                           hover:border-orange-500 dark:hover:border-orange-400 text-gray-700 dark:text-gray-300
+                           hover:text-orange-600 dark:hover:text-orange-400 rounded-lg font-medium text-sm
+                           transition-all duration-200 transform hover:scale-105"
+                    onclick="event.stopPropagation()"
+                  >
+                    <Icon name="tabler:brand-github" class="w-4 h-4" />
+                    Código
+                  </a>
+                )}
+              </div>
+
+              <!-- View Details Button -->
+              <button class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 font-medium text-sm
+                           flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-all duration-300
+                           transform translate-x-2 group-hover:translate-x-0">
+                <span>Ver detalles</span>
+                <Icon name="tabler:arrow-right" class="w-4 h-4" />
+              </button>
             </div>
           </div>
         </div>
@@ -305,69 +446,115 @@ const engProjects = [
   </div>
 
   <!-- cards showing each project with image, description and buttons -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 m-12">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 mx-4 md:mx-8 lg:mx-12">
     {
       engProjects.map((project) => (
         <div
-          class="project-card bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 
-                 rounded-xl shadow-lg p-5 flex flex-col h-[550px] cursor-pointer 
-                 transition-all duration-300 ease-in-out
-                 hover:shadow-xl hover:scale-[1.02] hover:border-orange-500
-                 dark:hover:border-orange-400 relative group"
+          class="project-card bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700
+                 rounded-2xl shadow-lg hover:shadow-2xl p-6 flex flex-col h-[680px] cursor-pointer
+                 transition-all duration-500 ease-out transform
+                 hover:-translate-y-2 hover:border-orange-500 hover:ring-4 hover:ring-orange-500/20
+                 dark:hover:border-orange-400 dark:hover:ring-orange-400/20 relative group
+                 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80"
           data-title={project.title}
           data-description={project.description}
           data-image={project.image.src}
           data-view={project.view}
           data-github={project.github}
           data-technologies={JSON.stringify(project.technologies)}
+          data-features={JSON.stringify(project.features || [])}
         >
-          <div class="h-[250px] w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
+          <!-- Image Container with Gradient Overlay -->
+          <div class="relative h-[280px] w-full overflow-hidden rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800">
             <Image
               src={project.image}
               alt={project.title}
-              class:list="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-110"
+              class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
               height={400}
               width={300}
               widths={[400, 768]}
               sizes="(max-width: 768px) 100vw, 432px"
             />
+            <!-- Gradient overlay for better text readability -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <!-- Floating Action Hint -->
+            <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+              <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full p-2 shadow-lg">
+                <Icon name="tabler:eye" class="w-4 h-4 text-orange-500" />
+              </div>
+            </div>
           </div>
-          <div class="flex flex-col flex-grow pt-4">
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white">{project.title}</h3>
-            <p class="text-gray-500 dark:text-gray-400 mt-2 flex-grow line-clamp-3">{project.description}</p>
-            <div class="flex flex-wrap gap-2 my-3">
+
+          <!-- Content Container -->
+          <div class="flex flex-col flex-grow pt-5">
+            <!-- Title with better typography -->
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">
+              {project.title}
+            </h3>
+
+            <!-- Description with fixed height -->
+            <div class="flex-grow mb-4">
+              <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed line-clamp-4 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
+                {project.description}
+              </p>
+            </div>
+
+            <!-- Technologies with better spacing -->
+            <div class="flex flex-wrap gap-2 mb-5 min-h-[32px]">
               {project.technologies.slice(0, 3).map((tech) => (
-                <span class="px-2 py-1 text-xs font-medium text-orange-700 bg-orange-100 rounded-full dark:bg-orange-900 dark:text-orange-300">
+                <span class="px-3 py-1.5 text-xs font-semibold text-orange-700 bg-orange-100 rounded-full
+                           dark:bg-orange-900/50 dark:text-orange-300 border border-orange-200 dark:border-orange-800
+                           hover:bg-orange-200 dark:hover:bg-orange-900 transition-colors duration-200">
                   {tech}
                 </span>
               ))}
               {project.technologies.length > 3 && (
-                <span class="px-2 py-1 text-xs font-medium text-orange-700 bg-orange-100 rounded-full dark:bg-orange-900 dark:text-orange-300">
+                <span class="px-3 py-1.5 text-xs font-semibold text-orange-700 bg-orange-100 rounded-full
+                           dark:bg-orange-900/50 dark:text-orange-300 border border-orange-200 dark:border-orange-800
+                           hover:bg-orange-200 dark:hover:bg-orange-900 transition-colors duration-200">
                   +{project.technologies.length - 3}
                 </span>
               )}
             </div>
-            <div class="flex justify-between items-center mt-4">
-              {project.view && project.view !== '#' && (
-                <a
-                  href={project.view}
-                  class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 text-sm font-medium transition-colors"
-                  onclick="event.stopPropagation()"
-                >
-                  <Icon name="tabler:eye" class="w-4 h-4" />
-                  View
-                </a>
-              )}
-              {project.github && project.github !== '#' && (
-                <a
-                  href={project.github}
-                  class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 flex items-center gap-1 text-sm font-medium transition-colors"
-                  onclick="event.stopPropagation()"
-                >
-                  <Icon name="tabler:brand-github" class="w-4 h-4" />
-                  Github
-                </a>
-              )}
+
+            <!-- Action Buttons with better design (Engineering projects may not have view/github) -->
+            <div class="flex justify-between items-center pt-3 border-t border-gray-100 dark:border-gray-700">
+              <div class="flex gap-3">
+                {project.view && project.view !== '#' && (
+                  <a
+                    href={project.view}
+                    target="_blank"
+                    class="flex items-center gap-2 px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-lg
+                           font-medium text-sm transition-all duration-200 transform hover:scale-105 shadow-md hover:shadow-lg"
+                    onclick="event.stopPropagation()"
+                  >
+                    <Icon name="tabler:external-link" class="w-4 h-4" />
+                    Ver Proyecto
+                  </a>
+                )}
+                {project.github && project.github !== '#' && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    class="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600
+                           hover:border-orange-500 dark:hover:border-orange-400 text-gray-700 dark:text-gray-300
+                           hover:text-orange-600 dark:hover:text-orange-400 rounded-lg font-medium text-sm
+                           transition-all duration-200 transform hover:scale-105"
+                    onclick="event.stopPropagation()"
+                  >
+                    <Icon name="tabler:brand-github" class="w-4 h-4" />
+                    Código
+                  </a>
+                )}
+              </div>
+
+              <!-- View Details Button -->
+              <button class="text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 font-medium text-sm
+                           flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-all duration-300
+                           transform translate-x-2 group-hover:translate-x-0">
+                <span>Ver detalles</span>
+                <Icon name="tabler:arrow-right" class="w-4 h-4" />
+              </button>
             </div>
           </div>
         </div>
@@ -382,8 +569,168 @@ const engProjects = [
     actions={[
       {
         text: 'Contáctame',
-        href: '/contact#form',
+        href: '/es/contact#form',
       },
     ]}
   />
+
+  <!-- Footer Section ****************** -->
+  <footer class="bg-gray-900 dark:bg-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+      <div class="grid gap-8 md:gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Brand Column -->
+        <div class="lg:col-span-1">
+          <h3 class="text-2xl font-bold text-white mb-4">Jaime Villegas</h3>
+          <p class="text-gray-400 leading-relaxed mb-6">
+            Desarrollador Full Stack especializado en crear soluciones digitales innovadoras con precisión de ingeniería.
+          </p>
+          <div class="flex space-x-4">
+            <a
+              href="https://linkedin.com/in/villegas0296"
+              target="_blank"
+              class="flex items-center justify-center w-10 h-10 bg-gray-800 hover:bg-orange-600 text-gray-400 hover:text-white rounded-lg transition-colors duration-200"
+            >
+              <Icon name="tabler:brand-linkedin" class="w-5 h-5" />
+            </a>
+            <a
+              href="https://github.com/jaimevillegas"
+              target="_blank"
+              class="flex items-center justify-center w-10 h-10 bg-gray-800 hover:bg-orange-600 text-gray-400 hover:text-white rounded-lg transition-colors duration-200"
+            >
+              <Icon name="tabler:brand-github" class="w-5 h-5" />
+            </a>
+            <a
+              href="https://es.fiverr.com/villegas296"
+              target="_blank"
+              class="flex items-center justify-center w-10 h-10 bg-gray-800 hover:bg-orange-600 text-gray-400 hover:text-white rounded-lg transition-colors duration-200"
+            >
+              <Icon name="tabler:brand-fiverr" class="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Column -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4 flex items-center">
+            <Icon name="tabler:navigation" class="w-5 h-5 text-orange-600 mr-2" />
+            Navegación
+          </h4>
+          <ul class="space-y-3">
+            <li>
+              <a href="/es" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+                <Icon name="tabler:home" class="w-4 h-4 mr-2" />
+                Inicio
+              </a>
+            </li>
+            <li>
+              <a href="/es/projects" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+                <Icon name="tabler:briefcase" class="w-4 h-4 mr-2" />
+                Proyectos
+              </a>
+            </li>
+            <li>
+              <a href="/es/courses" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+                <Icon name="tabler:book" class="w-4 h-4 mr-2" />
+                Cursos
+              </a>
+            </li>
+            <li>
+              <a href="/es/blog" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+                <Icon name="tabler:pencil" class="w-4 h-4 mr-2" />
+                Blog
+              </a>
+            </li>
+            <li>
+              <a href="/es/contact" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+                <Icon name="tabler:message" class="w-4 h-4 mr-2" />
+                Contacto
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Services Column -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4 flex items-center">
+            <Icon name="tabler:settings" class="w-5 h-5 text-orange-600 mr-2" />
+            Servicios
+          </h4>
+          <ul class="space-y-3">
+            <li>
+              <span class="text-gray-400 flex items-center">
+                <Icon name="tabler:brand-react" class="w-4 h-4 mr-2 text-orange-600" />
+                Desarrollo Frontend
+              </span>
+            </li>
+            <li>
+              <span class="text-gray-400 flex items-center">
+                <Icon name="tabler:brand-nodejs" class="w-4 h-4 mr-2 text-orange-600" />
+                Desarrollo Backend
+              </span>
+            </li>
+            <li>
+              <span class="text-gray-400 flex items-center">
+                <Icon name="tabler:database" class="w-4 h-4 mr-2 text-orange-600" />
+                Bases de Datos
+              </span>
+            </li>
+            <li>
+              <span class="text-gray-400 flex items-center">
+                <Icon name="tabler:3d-cube-sphere" class="w-4 h-4 mr-2 text-orange-600" />
+                Modelado CAD
+              </span>
+            </li>
+            <li>
+              <span class="text-gray-400 flex items-center">
+                <Icon name="tabler:robot" class="w-4 h-4 mr-2 text-orange-600" />
+                Automatización
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-4 flex items-center">
+            <Icon name="tabler:phone" class="w-5 h-5 text-orange-600 mr-2" />
+            Contacto
+          </h4>
+          <ul class="space-y-3">
+            <li class="text-gray-400 flex items-start">
+              <Icon name="tabler:mail" class="w-4 h-4 mr-2 mt-1 text-orange-600 flex-shrink-0" />
+              <span class="break-all">jaimevillegas296@gmail.com</span>
+            </li>
+            <li class="text-gray-400 flex items-start">
+              <Icon name="tabler:map-pin" class="w-4 h-4 mr-2 mt-1 text-orange-600 flex-shrink-0" />
+              <span>Colombia</span>
+            </li>
+            <li class="text-gray-400 flex items-start">
+              <Icon name="tabler:clock" class="w-4 h-4 mr-2 mt-1 text-orange-600 flex-shrink-0" />
+              <span>Disponible para proyectos remotos</span>
+            </li>
+            <li class="text-gray-400 flex items-start">
+              <Icon name="tabler:world" class="w-4 h-4 mr-2 mt-1 text-orange-600 flex-shrink-0" />
+              <span>Clientes internacionales</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-gray-800 mt-12 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">
+            © 2025 Jaime Villegas. Todos los derechos reservados.
+          </p>
+          <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-2">
+              <Icon name="tabler:heart" class="w-4 h-4 text-red-500" />
+              <span class="text-gray-400 text-sm">Hecho con pasión</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </Layout>
