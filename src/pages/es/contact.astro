@@ -1,8 +1,10 @@
 ---
-import Layout from '~/layouts/PageLayoutEsp.astro';
+import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import Header from '~/components/widgets/Header.astro';
+import FooterCustom from '~/components/FooterCustom.astro';
 
 const metadata = {
   title: 'Contacto',
@@ -10,6 +12,26 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+  <Fragment slot="announcement"></Fragment>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Inicio', href: '/es' },
+        { text: 'Proyectos', href: '/es/projects' },
+        { text: 'Cursos', href: '/es/courses' },
+        { text: 'Blog', href: '/es/blog' },
+        { text: 'Github', href: 'https://github.com/jaimevillegas' },
+      ]}
+      actions={[
+        {
+          text: 'Contáctame',
+          href: '/es/contact#form',
+        },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
   <!-- HeroText Widget ******************* -->
   <HeroText tagline="Contacto" title="Vamos a conectarnos!" />
 
@@ -43,4 +65,5 @@ const metadata = {
     button="Enviar"
   />
 
+  <FooterCustom lang="es" />
 </Layout>
