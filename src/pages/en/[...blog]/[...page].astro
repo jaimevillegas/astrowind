@@ -1,10 +1,12 @@
 ---
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
 
-import Layout from '~/layouts/PageLayoutEsp.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
 import BlogList from '~/components/blog/List.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
+import FooterCustom from '~/components/FooterCustom.astro';
 // import PostTags from "~/components/blog/Tags.astro";
 
 import { blogListRobots, getStaticPathsBlogList } from '~/utils/blog';
@@ -37,9 +39,28 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <Fragment slot="announcement"></Fragment>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Home', href: '/en' },
+        { text: 'Projects', href: '/en/projects' },
+        { text: 'Courses', href: '/en/courses' },
+        { text: 'Blog', href: '/en/blog' },
+        { text: 'Github', href: 'https://github.com/jaimevillegas' },
+      ]}
+      actions={[
+        {
+          text: 'Get in Touch',
+          href: '/en/contact#form',
+        },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
   <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
     <Headline
-      subtitle="Últimos artículos"
+      subtitle="Latest articles"
     >
       Blog
     </Headline>
@@ -50,4 +71,5 @@ const metadata = {
       <PostTags tags={allTags}  title="Search by Tags:" />
     -->
   </section>
+  <FooterCustom lang="en" />
 </Layout>

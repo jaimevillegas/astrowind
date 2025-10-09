@@ -31,6 +31,7 @@ import geoingenieriaPhoto from '../../assets/images/web/geoingenieria.png';
 import galleryArtPhoto from '../../assets/images/web/art-gallery.png';
 import jjProyectosPhoto from '../../assets/images/web/jj-proyectos.png';
 import threeDViewerPhoto from '../../assets/images/web/3d-viewer.png';
+import dashboardPhoto from '../../assets/images/web/dashboard.png';
 import { Image } from 'astro:assets';
 import Personal from './homes/personal.astro';
 
@@ -47,6 +48,20 @@ const webProjects = [
       'Múltiples opciones de renderizado',
       'Gestión de estado con Zustand',
       'UI moderna con shadcn/ui'
+    ],
+  },
+  {
+    title: 'Dashboard de Analítica Corporativa',
+    description: 'Dashboard empresarial moderno con visualización de datos en tiempo real para venta y alquiler de computadores corporativos. Desarrollado con Next.js 14 y TypeScript, integra Google Sheets API, actualización automática cada 5 segundos, gráficos interactivos con Recharts, modo claro/oscuro y exportación a CSV. Incluye sistema de caché en memoria y diseño completamente responsive.',
+    image: dashboardPhoto,
+    view: 'https://gs-dashboard-app.netlify.app/',
+    github: '#',
+    technologies: ['Next.js', 'TypeScript', 'Google Sheets API', 'Recharts'],
+    features: [
+      'Visualización de métricas en tiempo real',
+      'Actualización automática cada 5 segundos',
+      'Gráficos interactivos y analítica',
+      'Modo claro/oscuro con diseño responsive'
     ],
   },
   {

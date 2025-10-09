@@ -49,7 +49,7 @@ const metadata = {
     id="hero"
     title="Jaime Villegas"
 tagline="Hello! I'm"
-actions={[{ variant: 'primary', text: 'Get in Touch', href: getPermalink('/contact#form') }]}
+    actions={[{ variant: 'primary', text: 'Get in Touch', href: getPermalink('/en/contact#form') }]}
     image={{ src: '~/assets/images/profile.jpg', alt: 'Jaime Villegas' }}
   >
     <Fragment slot="subtitle">
@@ -66,7 +66,7 @@ actions={[{ variant: 'primary', text: 'Get in Touch', href: getPermalink('/conta
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
       <div class="max-w-2xl mx-auto text-center">
         <h2 class="text-4xl font-bold tracking-tight dark:text-white sm:text-5xl mb-8">About me</h2>
-        <div class="text-lg dark:text-slate-400 text-left space-y-4">
+        <div class="text-lg dark:text-slate-300 text-center space-y-4">
           <p>
             My career began in <span class="text-orange-600 font-bold">engineering</span>, where I learned the discipline of building things that simply work—robustly and predictably. That analytical foundation is my starting point.
           </p>
@@ -126,8 +126,8 @@ actions={[{ variant: 'primary', text: 'Get in Touch', href: getPermalink('/conta
   <!-- BlogLatestPost Widget **************** -->
   <section class="relative not-prose">
     <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
-      <div class="max-w-2xl mx-auto text-center mb-8 md:mb-12">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-6 md:py-8">
+      <div class="max-w-2xl mx-auto text-center mb-0 md:mb-0">
         <h2 class="text-4xl md:text-5xl font-bold tracking-tight dark:text-white mb-4">Blog: From Code to Cogs</h2>
         <p class="text-lg text-muted dark:text-slate-400">
           A space for analyzing problems, experimenting with technology, and sharing practical guides on development and engineering.
@@ -147,7 +147,7 @@ actions={[{ variant: 'primary', text: 'Get in Touch', href: getPermalink('/conta
           }
         }}
       />
-      <div class="text-center mt-8">
+      <div class="text-center mt-4">
         <a
           href="/en/blog"
           class="inline-flex items-center justify-center gap-2 px-6 py-3 text-orange-600 hover:text-orange-700 dark:text-orange-600 dark:hover:text-orange-300 transition-colors duration-200 font-medium"
@@ -176,7 +176,7 @@ actions={[{ variant: 'primary', text: 'Get in Touch', href: getPermalink('/conta
         <div class="flex flex-col bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden h-full">
           <div class="relative">
             <Image
-              src="~/assets/images/web-development.jpg"
+              src="~/assets/images/web-development.png"
               alt="Web Development Projects"
               class="w-full"
               width={500}
@@ -209,7 +209,7 @@ actions={[{ variant: 'primary', text: 'Get in Touch', href: getPermalink('/conta
         <div class="flex flex-col bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden h-full">
           <div class="relative">
             <Image
-              src="~/assets/images/engineering.jpg"
+              src="~/assets/images/engineering.png"
               alt="Engineering Projects"
               class="w-full"
               width={500}
