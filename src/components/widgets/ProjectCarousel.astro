@@ -1,0 +1,165 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+
+export interface Project {
+  title: string;
+  description: string;
+  image: ImageMetadata;
+  view?: string;
+  github?: string;
+  technologies: string[];
+  category: string;
+}
+
+export interface Props {
+  projects: Project[];
+}
+
+const { projects } = Astro.props;
+---
+
+<section class="relative not-prose h-[70vh] md:h-[80vh] mx-4 md:mx-8 lg:mx-12 mt-16 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-lg overflow-hidden">
+  <div class="swiper-container project-carousel h-full w-full">
+    <div class="swiper-wrapper">
+      {
+        projects.map((project) => (
+          <div class="swiper-slide">
+            <div class="h-full w-full relative grid md:grid-cols-2">
+              <div class="absolute inset-0 bg-black opacity-50"></div>
+              <div class="h-full w-full overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  class="w-full h-full object-cover"
+                  widths={[400, 768, 1024, 2048]}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <div class="relative flex flex-col justify-center p-8 md:p-12 lg:p-16 text-white">
+                <p class="text-orange-400 uppercase tracking-wider font-medium mb-2">{project.category}</p>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">{project.title}</h2>
+                <p class="text-base md:text-lg text-gray-300 line-clamp-3 mb-6">{project.description}</p>
+                <div class="flex flex-wrap gap-2 mb-8">
+                  {project.technologies.slice(0, 4).map((tech) => (
+                    <span class="px-3 py-1 text-sm font-semibold bg-white/10 backdrop-blur-sm rounded-full">{tech}</span>
+                  ))}
+                </div>
+                <div class="flex gap-4">
+                  {project.view && project.view !== '#' && (
+                    <a
+                      href={project.view}
+                      target="_blank"
+                      class="flex items-center gap-2 px-6 py-3 bg-orange-600 hover:bg-orange-700 rounded-lg font-semibold transition-colors duration-300"
+                    >
+                      <Icon name="tabler:external-link" class="w-5 h-5" />
+                      Ver Proyecto
+                    </a>
+                  )}
+
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <!-- Navigation arrows -->
+    <div class="swiper-button-prev project-carousel-prev !text-white after:!text-2xl"></div>
+    <div class="swiper-button-next project-carousel-next !text-white after:!text-2xl"></div>
+    <!-- Pagination -->
+    <div class="swiper-pagination project-carousel-pagination"></div>
+  </div>
+</section>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
+  import 'swiper/css/effect-fade';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const projectCarousel = new Swiper('.project-carousel', {
+      modules: [Navigation, Pagination, Autoplay, EffectFade],
+      loop: true,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      autoplay: {
+        delay: 7000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.project-carousel-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '"></span>';
+        },
+      },
+      navigation: {
+        nextEl: '.project-carousel-next',
+        prevEl: '.project-carousel-prev',
+      },
+    });
+  });
+</script>
+
+<style>
+  .project-carousel .swiper-button-prev,
+  .project-carousel .swiper-button-next {
+    transition: all 0.3s ease;
+    transform: translateY(-50%);
+  }
+  .project-carousel .swiper-button-prev {
+    left: 20px;
+  }
+  .project-carousel .swiper-button-next {
+    right: 20px;
+  }
+  .project-carousel:hover .swiper-button-prev,
+  .project-carousel:hover .swiper-button-next {
+    opacity: 1;
+  }
+  .project-carousel .swiper-button-prev:hover,
+  .project-carousel .swiper-button-next:hover {
+    transform: translateY(-50%) scale(1.2);
+    color: #fb923c; /* orange-400 */
+  }
+
+  .project-carousel .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+
+  .project-carousel .swiper-pagination-bullet-active {
+    width: 32px;
+    border-radius: 8px;
+    background-color: #ea580c; /* orange-600 */
+  }
+
+  @media (max-width: 768px) {
+    .project-carousel .grid {
+      grid-template-columns: 1fr;
+    }
+    .project-carousel .relative.flex {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      padding: 1.5rem;
+    }
+    .project-carousel .h-\[70vh\] {
+        height: 80vh;
+    }
+    .project-carousel .text-3xl {
+        font-size: 2.25rem; /* 36px */
+    }
+  }
+</style>

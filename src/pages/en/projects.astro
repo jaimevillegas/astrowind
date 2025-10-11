@@ -34,6 +34,43 @@ import threeDViewerPhoto from '../../assets/images/web/3d-viewer.png';
 import dashboardPhoto from '../../assets/images/web/dashboard.png';
 import { Image } from 'astro:assets';
 import Personal from './homes/personal.astro';
+import ProjectCarousel from '~/components/widgets/ProjectCarousel.astro';
+
+const highlightProjects = [
+  {
+    title: '3D Model Viewer',
+    description: 'Interactive web application for 3D model visualization built with React, TypeScript, and Three.js. Allows loading .obj files with multiple rendering options, intuitive camera controls, and state management with Zustand. Features modern UI with shadcn/ui components and production optimization with Vite.',
+    image: threeDViewerPhoto,
+    view: 'https://3d-obj-viewer.netlify.app/',
+    technologies: ['React', 'TypeScript', 'Three.js', 'Zustand'],
+    category: 'Web Development',
+  },
+  {
+    title: 'Corporate Analytics Dashboard',
+    description: 'Modern business dashboard with real-time data visualization for corporate computer sales and rentals. Built with Next.js 14 and TypeScript, featuring Google Sheets API integration, auto-refresh every 5 seconds, interactive charts with Recharts, dark/light mode, and CSV export. Includes in-memory caching system and fully responsive design.',
+    image: dashboardPhoto,
+    view: 'https://gs-dashboard-app.netlify.app/',
+    technologies: ['Next.js', 'TypeScript', 'Google Sheets API', 'Recharts'],
+    category: 'Web Development',
+  },
+  {
+    title: 'Custom PCB Design for ATmega32u4-Based System',
+    description:
+      'Custom PCB based on ATmega32u4 with scalable I/O expansion. Incorporates microSD, dual multiplexers (16 additional channels), USB hub, and optimized routing for signal integrity. Modular KiCAD design with Arduino compatibility and EMC certification for industrial applications.',
+    image: pcb1,
+    technologies: ['KiCad', 'PCB Design', 'ATmega32u4'],
+    category: 'Engineering',
+  },
+  {
+    title: 'Product Design for Photo Booth',
+    description:
+      'Modular photo booth structure in sheet metal with DFM (Design for Manufacturing) optimization. Complete development from 3D modeling to fabrication blueprints, including nesting for material waste minimization (15% savings) and simplified assembly with weld-free joining system.',
+    image: cadImage2,
+    view: 'https://3d-obj-viewer.netlify.app/?model=7.glb',
+    technologies: ['SolidWorks', 'CAD Design', 'DFM'],
+    category: 'Engineering',
+  },
+];
 
 const webProjects = [
   {
@@ -325,7 +362,7 @@ const engProjects = [
       showToggleTheme
     />
   </Fragment>
-  <h1 class="text-6xl font-bold text-center mt-0">Projects</h1>
+  <ProjectCarousel projects={highlightProjects} />
 
   <div class="w-full mt-16 overflow-hidden" id="web">
     <div class="inset-0 flex flex-col items-center justify-center text-white">
