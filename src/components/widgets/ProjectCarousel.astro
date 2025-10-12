@@ -75,19 +75,16 @@ const { projects } = Astro.props;
   </div>
 </section>
 
-<script>
-  import Swiper from 'swiper';
-  import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
-  import 'swiper/css';
-  import 'swiper/css/navigation';
-  import 'swiper/css/pagination';
-  import 'swiper/css/effect-fade';
+<!-- Load Swiper from CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  // Debug logging
-  console.log('[ProjectCarousel] Script loaded');
+<script is:inline>
+  console.log('[ProjectCarousel] Script loaded - INLINE VERSION');
+  console.log('[ProjectCarousel] Swiper available:', typeof Swiper !== 'undefined');
   console.log('[ProjectCarousel] DOM readyState:', document.readyState);
 
-  const initSwiper = () => {
+  function initProjectCarousel() {
     console.log('[ProjectCarousel] Initializing Swiper...');
 
     const element = document.querySelector('.project-carousel');
@@ -98,9 +95,13 @@ const { projects } = Astro.props;
       return;
     }
 
+    if (typeof Swiper === 'undefined') {
+      console.error('[ProjectCarousel] ERROR: Swiper is not loaded!');
+      return;
+    }
+
     try {
       const projectCarousel = new Swiper('.project-carousel', {
-        modules: [Navigation, Pagination, Autoplay, EffectFade],
         loop: true,
         effect: 'fade',
         fadeEffect: {
@@ -123,38 +124,41 @@ const { projects } = Astro.props;
           nextEl: '.project-carousel-next',
           prevEl: '.project-carousel-prev',
         },
-        // Touch settings for better mobile experience
         touchRatio: 1,
         touchAngle: 45,
         grabCursor: true,
-        // Better resistance for smoother swiping
         resistance: true,
         resistanceRatio: 0.85,
-        // Faster transition for mobile
         speed: 600,
-        // Accessibility
-        a11y: {
-          prevSlideMessage: 'Previous project',
-          nextSlideMessage: 'Next project',
-          firstSlideMessage: 'This is the first project',
-          lastSlideMessage: 'This is the last project',
-        },
       });
 
       console.log('[ProjectCarousel] Swiper initialized successfully:', projectCarousel);
     } catch (error) {
       console.error('[ProjectCarousel] ERROR initializing Swiper:', error);
     }
-  };
+  }
 
-  // Try multiple initialization strategies
+  // Initialize when DOM is ready
   if (document.readyState === 'loading') {
     console.log('[ProjectCarousel] Waiting for DOMContentLoaded...');
-    document.addEventListener('DOMContentLoaded', initSwiper);
+    document.addEventListener('DOMContentLoaded', initProjectCarousel);
   } else {
     console.log('[ProjectCarousel] DOM already loaded, initializing immediately');
-    initSwiper();
+    initProjectCarousel();
   }
+
+  // Also try after window load as a fallback
+  window.addEventListener('load', function() {
+    console.log('[ProjectCarousel] Window loaded event fired');
+    // Check if Swiper was already initialized
+    const swiperInstance = document.querySelector('.project-carousel')?.swiper;
+    if (!swiperInstance) {
+      console.log('[ProjectCarousel] Swiper not initialized yet, trying now...');
+      initProjectCarousel();
+    } else {
+      console.log('[ProjectCarousel] Swiper already initialized');
+    }
+  });
 </script>
 
 <style>
