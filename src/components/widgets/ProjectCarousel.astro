@@ -83,46 +83,48 @@ const { projects } = Astro.props;
   import 'swiper/css/pagination';
   import 'swiper/css/effect-fade';
 
-  const projectCarousel = new Swiper('.project-carousel', {
-    modules: [Navigation, Pagination, Autoplay, EffectFade],
-    loop: true,
-    effect: 'fade',
-    fadeEffect: {
-      crossFade: true
-    },
-    autoplay: {
-      delay: 7000,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-    },
-    pagination: {
-      el: '.project-carousel-pagination',
-      clickable: true,
-      dynamicBullets: false,
-      renderBullet: function (index, className) {
-        return '<span class="' + className + '"></span>';
+  document.addEventListener('DOMContentLoaded', function () {
+    const projectCarousel = new Swiper('.project-carousel', {
+      modules: [Navigation, Pagination, Autoplay, EffectFade],
+      loop: true,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
       },
-    },
-    navigation: {
-      nextEl: '.project-carousel-next',
-      prevEl: '.project-carousel-prev',
-    },
-    // Touch settings for better mobile experience
-    touchRatio: 1,
-    touchAngle: 45,
-    grabCursor: true,
-    // Better resistance for smoother swiping
-    resistance: true,
-    resistanceRatio: 0.85,
-    // Faster transition for mobile
-    speed: 600,
-    // Accessibility
-    a11y: {
-      prevSlideMessage: 'Previous project',
-      nextSlideMessage: 'Next project',
-      firstSlideMessage: 'This is the first project',
-      lastSlideMessage: 'This is the last project',
-    },
+      autoplay: {
+        delay: 7000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      pagination: {
+        el: '.project-carousel-pagination',
+        clickable: true,
+        dynamicBullets: false,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '"></span>';
+        },
+      },
+      navigation: {
+        nextEl: '.project-carousel-next',
+        prevEl: '.project-carousel-prev',
+      },
+      // Touch settings for better mobile experience
+      touchRatio: 1,
+      touchAngle: 45,
+      grabCursor: true,
+      // Better resistance for smoother swiping
+      resistance: true,
+      resistanceRatio: 0.85,
+      // Faster transition for mobile
+      speed: 600,
+      // Accessibility
+      a11y: {
+        prevSlideMessage: 'Previous project',
+        nextSlideMessage: 'Next project',
+        firstSlideMessage: 'This is the first project',
+        lastSlideMessage: 'This is the last project',
+      },
+    });
   });
 </script>
 
