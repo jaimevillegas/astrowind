@@ -83,49 +83,78 @@ const { projects } = Astro.props;
   import 'swiper/css/pagination';
   import 'swiper/css/effect-fade';
 
-  // Scripts with type="module" are deferred by default and execute after DOM is ready
-  // No need for DOMContentLoaded wrapper
-  const projectCarousel = new Swiper('.project-carousel', {
-    modules: [Navigation, Pagination, Autoplay, EffectFade],
-    loop: true,
-    effect: 'fade',
-    fadeEffect: {
-      crossFade: true
-    },
-    autoplay: {
-      delay: 7000,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-    },
-    pagination: {
-      el: '.project-carousel-pagination',
-      clickable: true,
-      dynamicBullets: false,
-      renderBullet: function (index, className) {
-        return '<span class="' + className + '"></span>';
-      },
-    },
-    navigation: {
-      nextEl: '.project-carousel-next',
-      prevEl: '.project-carousel-prev',
-    },
-    // Touch settings for better mobile experience
-    touchRatio: 1,
-    touchAngle: 45,
-    grabCursor: true,
-    // Better resistance for smoother swiping
-    resistance: true,
-    resistanceRatio: 0.85,
-    // Faster transition for mobile
-    speed: 600,
-    // Accessibility
-    a11y: {
-      prevSlideMessage: 'Previous project',
-      nextSlideMessage: 'Next project',
-      firstSlideMessage: 'This is the first project',
-      lastSlideMessage: 'This is the last project',
-    },
-  });
+  // Debug logging
+  console.log('[ProjectCarousel] Script loaded');
+  console.log('[ProjectCarousel] DOM readyState:', document.readyState);
+
+  const initSwiper = () => {
+    console.log('[ProjectCarousel] Initializing Swiper...');
+
+    const element = document.querySelector('.project-carousel');
+    console.log('[ProjectCarousel] Element found:', element);
+
+    if (!element) {
+      console.error('[ProjectCarousel] ERROR: .project-carousel element not found!');
+      return;
+    }
+
+    try {
+      const projectCarousel = new Swiper('.project-carousel', {
+        modules: [Navigation, Pagination, Autoplay, EffectFade],
+        loop: true,
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        },
+        autoplay: {
+          delay: 7000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+        pagination: {
+          el: '.project-carousel-pagination',
+          clickable: true,
+          dynamicBullets: false,
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '"></span>';
+          },
+        },
+        navigation: {
+          nextEl: '.project-carousel-next',
+          prevEl: '.project-carousel-prev',
+        },
+        // Touch settings for better mobile experience
+        touchRatio: 1,
+        touchAngle: 45,
+        grabCursor: true,
+        // Better resistance for smoother swiping
+        resistance: true,
+        resistanceRatio: 0.85,
+        // Faster transition for mobile
+        speed: 600,
+        // Accessibility
+        a11y: {
+          prevSlideMessage: 'Previous project',
+          nextSlideMessage: 'Next project',
+          firstSlideMessage: 'This is the first project',
+          lastSlideMessage: 'This is the last project',
+        },
+      });
+
+      console.log('[ProjectCarousel] Swiper initialized successfully:', projectCarousel);
+    } catch (error) {
+      console.error('[ProjectCarousel] ERROR initializing Swiper:', error);
+    }
+  };
+
+  // Try multiple initialization strategies
+  if (document.readyState === 'loading') {
+    console.log('[ProjectCarousel] Waiting for DOMContentLoaded...');
+    document.addEventListener('DOMContentLoaded', initSwiper);
+  } else {
+    console.log('[ProjectCarousel] DOM already loaded, initializing immediately');
+    initSwiper();
+  }
 </script>
 
 <style>
