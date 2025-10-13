@@ -80,24 +80,48 @@ const { projects } = Astro.props;
 <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script is:inline>
-  console.log('[ProjectCarousel] Script loaded - INLINE VERSION');
-  console.log('[ProjectCarousel] Swiper available:', typeof Swiper !== 'undefined');
-  console.log('[ProjectCarousel] DOM readyState:', document.readyState);
+  // Retry counter to prevent infinite loops
+  window.projectCarouselRetryCount = 0;
+  window.maxProjectCarouselRetries = 10;
 
-  function initProjectCarousel() {
-    console.log('[ProjectCarousel] Initializing Swiper...');
+  // Define the function globally so it persists across navigations
+  window.initProjectCarousel = function(resetRetryCount = false) {
+    // Quick check: only continue if we're on a projects page
+    const isProjectsPage = window.location.pathname.includes('/projects');
+
+    if (!isProjectsPage) {
+      // Silently skip initialization if not on projects page
+      return;
+    }
+
+    if (resetRetryCount) {
+      window.projectCarouselRetryCount = 0;
+    }
+
 
     const element = document.querySelector('.project-carousel');
-    console.log('[ProjectCarousel] Element found:', element);
 
     if (!element) {
-      console.error('[ProjectCarousel] ERROR: .project-carousel element not found!');
+      // Retry logic for projects page only
+      if (window.projectCarouselRetryCount < window.maxProjectCarouselRetries) {
+        window.projectCarouselRetryCount++;
+        setTimeout(function() { window.initProjectCarousel(false); }, 100);
+      } else {
+        window.projectCarouselRetryCount = 0; // Reset for next navigation
+      }
       return;
     }
 
     if (typeof Swiper === 'undefined') {
-      console.error('[ProjectCarousel] ERROR: Swiper is not loaded!');
       return;
+    }
+
+    // Reset retry counter on success
+    window.projectCarouselRetryCount = 0;
+
+    // Destroy existing Swiper instance if it exists
+    if (element.swiper) {
+      element.swiper.destroy(true, true);
     }
 
     try {
@@ -132,33 +156,43 @@ const { projects } = Astro.props;
         speed: 600,
       });
 
-      console.log('[ProjectCarousel] Swiper initialized successfully:', projectCarousel);
     } catch (error) {
-      console.error('[ProjectCarousel] ERROR initializing Swiper:', error);
     }
-  }
+  };
 
-  // Initialize when DOM is ready
-  if (document.readyState === 'loading') {
-    console.log('[ProjectCarousel] Waiting for DOMContentLoaded...');
-    document.addEventListener('DOMContentLoaded', initProjectCarousel);
-  } else {
-    console.log('[ProjectCarousel] DOM already loaded, initializing immediately');
-    initProjectCarousel();
-  }
+  // Register event listeners only once
+  if (!window.projectCarouselListenersRegistered) {
 
-  // Also try after window load as a fallback
-  window.addEventListener('load', function() {
-    console.log('[ProjectCarousel] Window loaded event fired');
-    // Check if Swiper was already initialized
-    const swiperInstance = document.querySelector('.project-carousel')?.swiper;
-    if (!swiperInstance) {
-      console.log('[ProjectCarousel] Swiper not initialized yet, trying now...');
-      initProjectCarousel();
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', window.initProjectCarousel);
     } else {
-      console.log('[ProjectCarousel] Swiper already initialized');
+      window.initProjectCarousel();
     }
-  });
+
+    // Listen for Astro View Transitions after swap (content replaced but not yet visible)
+    document.addEventListener('astro:after-swap', function() {
+      // Reset retry count for new navigation
+      setTimeout(function() { window.initProjectCarousel(true); }, 50);
+    });
+
+    // Listen for Astro View Transitions page load event (after animations complete)
+    document.addEventListener('astro:page-load', function() {
+      window.initProjectCarousel(true);
+    });
+
+    // Fallback for window load
+    window.addEventListener('load', function() {
+      const element = document.querySelector('.project-carousel');
+      if (element && !element.swiper) {
+        window.initProjectCarousel();
+      }
+    });
+
+    window.projectCarouselListenersRegistered = true;
+  } else {
+    window.initProjectCarousel();
+  }
 </script>
 
 <style>

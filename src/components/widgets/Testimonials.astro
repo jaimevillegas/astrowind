@@ -19,7 +19,7 @@ const {
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} />
 
-  <div class="swiper-container !overflow-hidden relative md:px-12">
+  <div class="testimonials-swiper swiper-container !overflow-hidden relative md:px-12">
     <div class="swiper-wrapper">
       {
         testimonials &&
@@ -54,37 +54,123 @@ const {
       }
     </div>
     <!-- Add Navigation -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev testimonials-prev"></div>
+    <div class="swiper-button-next testimonials-next"></div>
   </div>
 </WidgetWrapper>
 
-<script>
-  import Swiper from 'swiper';
-  import { Navigation } from 'swiper/modules';
-  import 'swiper/css';
-  import 'swiper/css/navigation';
+<!-- Load Swiper from CDN if not already loaded -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  const swiper = new Swiper('.swiper-container', {
-    modules: [Navigation],
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 30,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      1024: {
-        slidesPerView: 3,
+<script is:inline>
+  // Retry counter to prevent infinite loops
+  window.testimonialsRetryCount = 0;
+  window.maxTestimonialsRetries = 10;
+
+  // Define the function globally so it persists across navigations
+  window.initTestimonialsSwiper = function(resetRetryCount = false) {
+    // Testimonials are typically on home/index pages - check first
+    const isHomePage = window.location.pathname === '/en' || window.location.pathname === '/en/' ||
+                       window.location.pathname === '/es' || window.location.pathname === '/es/' ||
+                       window.location.pathname === '/' || window.location.pathname === '';
+
+    if (!isHomePage) {
+      // Silently skip initialization if not on home page
+      return;
+    }
+
+    if (resetRetryCount) {
+      window.testimonialsRetryCount = 0;
+    }
+
+
+    const element = document.querySelector('.testimonials-swiper');
+
+    if (element) {
+    }
+
+    if (!element) {
+      // Retry logic for home page only
+      if (window.testimonialsRetryCount < window.maxTestimonialsRetries) {
+        window.testimonialsRetryCount++;
+        setTimeout(function() { window.initTestimonialsSwiper(false); }, 100);
+      } else {
+        window.testimonialsRetryCount = 0; // Reset for next navigation
+      }
+      return;
+    }
+
+    if (typeof Swiper === 'undefined') {
+      return;
+    }
+
+    // Reset retry counter on success
+    window.testimonialsRetryCount = 0;
+
+    // Destroy existing Swiper instance if it exists
+    if (element.swiper) {
+      element.swiper.destroy(true, true);
+    }
+
+    try {
+      const testimonialsSwiper = new Swiper('.testimonials-swiper', {
+        loop: true,
+        slidesPerView: 1,
         spaceBetween: 30,
-      },
-    },
-  });
+        navigation: {
+          nextEl: '.testimonials-next',
+          prevEl: '.testimonials-prev',
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+      });
+
+    } catch (error) {
+    }
+  };
+
+  // Register event listeners only once
+  if (!window.testimonialsListenersRegistered) {
+
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', window.initTestimonialsSwiper);
+    } else {
+      window.initTestimonialsSwiper();
+    }
+
+    // Listen for Astro View Transitions after swap (content replaced but not yet visible)
+    document.addEventListener('astro:after-swap', function() {
+      // Reset retry count for new navigation
+      setTimeout(function() { window.initTestimonialsSwiper(true); }, 50);
+    });
+
+    // Listen for Astro View Transitions page load event (after animations complete)
+    document.addEventListener('astro:page-load', function() {
+      window.initTestimonialsSwiper(true);
+    });
+
+    // Fallback for window load
+    window.addEventListener('load', function() {
+      const element = document.querySelector('.testimonials-swiper');
+      if (element && !element.swiper) {
+        window.initTestimonialsSwiper();
+      }
+    });
+
+    window.testimonialsListenersRegistered = true;
+  } else {
+    window.initTestimonialsSwiper();
+  }
 </script>
 
 <style>
