@@ -20,6 +20,7 @@ import mech1 from '../../assets/images/cad/mech1.png';
 import pll_squareline from '../../assets/images/cad/pll_squareline.png';
 import pcb1 from '../../assets/images/cad/pcb1.png';
 
+import auraVisualsPhoto from '../../assets/images/web/aura-visuals.png';
 import rocketTales from '../../assets/images/web/rocket-tales.png';
 import naturePhoto from '../../assets/images/web/nature-photo.png';
 import cosmosPhoto from '../../assets/images/web/cosmos-photo.png';
@@ -38,8 +39,16 @@ import ProjectCarousel from '~/components/widgets/ProjectCarousel.astro';
 
 const highlightProjects = [
   {
+    title: 'Aura Visuals',
+    description: 'Real-time audio visualization featuring 19 unique 2D visualizers with Canvas API. Dynamic visualizations with customizable color palettes and retro-themed controls.',
+    image: auraVisualsPhoto,
+    view: 'https://aura-visuals.netlify.app/',
+    technologies: ['Next.js', 'TypeScript', 'Canvas 2D API', 'Zustand'],
+    category: 'Web Development',
+  },
+  {
     title: '3D Model Viewer',
-    description: 'Interactive web application for 3D model visualization built with React, TypeScript, and Three.js. Allows loading .obj files with multiple rendering options, intuitive camera controls, and state management with Zustand. Features modern UI with shadcn/ui components and production optimization with Vite.',
+    description: 'Interactive 3D model visualization with Three.js. Load .obj files with multiple rendering modes, intuitive controls, and modern UI with shadcn components.',
     image: threeDViewerPhoto,
     view: 'https://3d-obj-viewer.netlify.app/',
     technologies: ['React', 'TypeScript', 'Three.js', 'Zustand'],
@@ -47,16 +56,15 @@ const highlightProjects = [
   },
   {
     title: 'Corporate Analytics Dashboard',
-    description: 'Modern business dashboard with real-time data visualization for corporate computer sales and rentals. Built with Next.js 14 and TypeScript, featuring Google Sheets API integration, auto-refresh every 5 seconds, interactive charts with Recharts, dark/light mode, and CSV export. Includes in-memory caching system and fully responsive design.',
+    description: 'Real-time business dashboard with Google Sheets API integration. Auto-refresh every 5 seconds, interactive charts, dark/light mode, and CSV export capabilities.',
     image: dashboardPhoto,
     view: 'https://gs-dashboard-app.netlify.app/',
     technologies: ['Next.js', 'TypeScript', 'Google Sheets API', 'Recharts'],
     category: 'Web Development',
   },
   {
-    title: 'Custom PCB Design for ATmega32u4-Based System',
-    description:
-      'Custom PCB based on ATmega32u4 with scalable I/O expansion. Incorporates microSD, dual multiplexers (16 additional channels), USB hub, and optimized routing for signal integrity. Modular KiCAD design with Arduino compatibility and EMC certification for industrial applications.',
+    title: 'Custom PCB Design',
+    description: 'Custom PCB with scalable I/O expansion, microSD, dual multiplexers, and USB hub. Arduino-compatible design with EMC certification for industrial use.',
     image: pcb1,
     view: 'https://3d-obj-viewer.netlify.app/?model=19.glb',
     technologies: ['KiCad', 'PCB Design', 'ATmega32u4'],
@@ -64,8 +72,7 @@ const highlightProjects = [
   },
   {
     title: 'Product Design for Photo Booth',
-    description:
-      'Modular photo booth structure in sheet metal with DFM (Design for Manufacturing) optimization. Complete development from 3D modeling to fabrication blueprints, including nesting for material waste minimization (15% savings) and simplified assembly with weld-free joining system.',
+    description: 'Modular sheet metal photo booth with DFM optimization. Complete development from 3D modeling to fabrication with 15% material savings and weld-free assembly.',
     image: cadImage2,
     view: 'https://3d-obj-viewer.netlify.app/?model=7.glb',
     technologies: ['SolidWorks', 'CAD Design', 'DFM'],
@@ -74,6 +81,20 @@ const highlightProjects = [
 ];
 
 const webProjects = [
+  {
+    title: 'Aura Visuals',
+    description: 'Real-time audio visualization web app featuring 19 unique 2D visualizers that respond to music. Built with Next.js 15 and Canvas 2D API, it analyzes audio frequency data to render dynamic, customizable visualizations with multiple color palettes and configurable parameters. Includes retro-themed UI with analog controls.',
+    image: auraVisualsPhoto,
+    view: 'https://aura-visuals.netlify.app/',
+    github: '#',
+    technologies: ['Next.js', 'TypeScript', 'Canvas 2D API', 'Zustand'],
+    features: [
+      '19 unique 2D visualizers',
+      'Real-time audio frequency analysis',
+      'Multiple color palettes',
+      'Retro-themed UI with analog controls'
+    ],
+  },
   {
     title: '3D Model Viewer',
     description: 'Interactive web application for 3D model visualization built with React, TypeScript, and Three.js. Allows loading .obj files with multiple rendering options, intuitive camera controls, and state management with Zustand. Features modern UI with shadcn/ui components and production optimization with Vite.',
@@ -380,7 +401,7 @@ const engProjects = [
       webProjects.map((project) => (
         <div
           class="project-card bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700
-                 rounded-2xl shadow-lg hover:shadow-2xl p-6 flex flex-col h-[680px] cursor-pointer
+                 rounded-2xl shadow-lg hover:shadow-2xl p-6 flex flex-col cursor-pointer
                  transition-all duration-500 ease-out transform
                  hover:-translate-y-2 hover:border-orange-500 hover:ring-4 hover:ring-orange-500/20
                  dark:hover:border-orange-400 dark:hover:ring-orange-400/20 relative group
@@ -422,7 +443,7 @@ const engProjects = [
             </h3>
 
             <!-- Description with fixed height -->
-            <div class="flex-grow mb-4">
+            <div class="mb-4">
               <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed line-clamp-4 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
                 {project.description}
               </p>
@@ -504,7 +525,7 @@ const engProjects = [
       engProjects.map((project) => (
         <div
           class="project-card bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700
-                 rounded-2xl shadow-lg hover:shadow-2xl p-6 flex flex-col h-[680px] cursor-pointer
+                 rounded-2xl shadow-lg hover:shadow-2xl p-6 flex flex-col cursor-pointer
                  transition-all duration-500 ease-out transform
                  hover:-translate-y-2 hover:border-orange-500 hover:ring-4 hover:ring-orange-500/20
                  dark:hover:border-orange-400 dark:hover:ring-orange-400/20 relative group
@@ -546,7 +567,7 @@ const engProjects = [
             </h3>
 
             <!-- Description with fixed height -->
-            <div class="flex-grow mb-4">
+            <div class="mb-4">
               <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed line-clamp-4 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
                 {project.description}
               </p>
