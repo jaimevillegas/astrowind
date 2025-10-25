@@ -17,6 +17,8 @@ import Headline from '~/components/ui/Headline.astro';
 import { Icon } from 'astro-icon/components';
 import { getPermalink } from '~/utils/permalinks';
 
+import auraVisualsPhoto from '../../assets/images/web/aura-visuals.png';
+
 const metadata = {
   title: 'Jaime Villegas - Personal Web',
 };
@@ -48,15 +50,17 @@ const metadata = {
   <Hero
     id="hero"
     title="Jaime Villegas"
-tagline="Hello! I'm"
+    tagline="Hello! I'm"
     actions={[{ variant: 'primary', text: 'Get in Touch', href: getPermalink('/en/contact#form') }]}
     image={{ src: '~/assets/images/profile.jpg', alt: 'Jaime Villegas' }}
   >
     <Fragment slot="subtitle">
-     I merge my <span class="text-orange-600 font-bold">engineering</span> background with<span
+      I merge my <span class="text-orange-600 font-bold">engineering</span> background with<span
         class="text-orange-600 font-bold"
-        > modern web development
-    </span> to create high-performance digital products. I design and build applications that are not only functional but also logical and maintainable.
+      >
+        modern web development
+      </span> to create high-performance digital products. I design and build applications that are not only functional but
+      also logical and maintainable.
     </Fragment>
   </Hero>
 
@@ -68,17 +72,22 @@ tagline="Hello! I'm"
         <h2 class="text-4xl font-bold tracking-tight dark:text-white sm:text-5xl mb-8">About me</h2>
         <div class="text-lg dark:text-slate-300 text-center space-y-4">
           <p>
-            My career began in <span class="text-orange-600 font-bold">engineering</span>, where I learned the discipline of building things that simply work—robustly and predictably. That analytical foundation is my starting point.
+            My career began in <span class="text-orange-600 font-bold">engineering</span>, where I learned the
+            discipline of building things that simply work—robustly and predictably. That analytical foundation is my
+            starting point.
           </p>
           <p>
-            Later, as a <span class="text-orange-600 font-bold">developer</span>, I discovered my passion: building things that people love to use. I understood that behind every <em>div</em> there's a person, and that empathy for the end user is as crucial as an efficient algorithm.
+            Later, as a <span class="text-orange-600 font-bold">developer</span>, I discovered my passion: building
+            things that people love to use. I understood that behind every <em>div</em> there's a person, and that empathy
+            for the end user is as crucial as an efficient algorithm.
           </p>
           <p>
-            This duality is my working method. I combine <span class="text-orange-600 font-bold">technical soundness</span> with <span class="text-orange-600 font-bold">user-centered design</span> to not only deliver a product that works, but an intuitive and satisfying digital experience.
+            This duality is my working method. I combine <span class="text-orange-600 font-bold"
+              >technical soundness</span
+            > with <span class="text-orange-600 font-bold">user-centered design</span> to not only deliver a product that
+            works, but an intuitive and satisfying digital experience.
           </p>
-          <p class="italic text-center pt-4">
-            Want to see this approach in action?
-          </p>
+          <p class="italic text-center pt-4">Want to see this approach in action?</p>
         </div>
       </div>
       <div class="mt-8 max-w-2xl mx-auto">
@@ -89,10 +98,15 @@ tagline="Hello! I'm"
             rel="noopener noreferrer"
             class="group flex items-center gap-3 px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-slate-700 hover:border-orange-600 dark:hover:border-orange-600 w-full sm:w-auto justify-center"
           >
-            <div class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-600 text-white group-hover:bg-orange-700 transition-colors duration-300">
+            <div
+              class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-600 text-white group-hover:bg-orange-700 transition-colors duration-300"
+            >
               <Icon name="tabler:brand-fiverr" class="h-[18px] w-[18px]" />
             </div>
-            <span class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">Fiverr</span>
+            <span
+              class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300"
+              >Fiverr</span
+            >
           </a>
 
           <a
@@ -101,10 +115,15 @@ tagline="Hello! I'm"
             rel="noopener noreferrer"
             class="group flex items-center gap-3 px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-slate-700 hover:border-orange-600 dark:hover:border-orange-600 w-full sm:w-auto justify-center"
           >
-            <div class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-600 text-white group-hover:bg-orange-700 transition-colors duration-300">
+            <div
+              class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-600 text-white group-hover:bg-orange-700 transition-colors duration-300"
+            >
               <Icon name="tabler:brand-github" class="h-[18px] w-[18px]" />
             </div>
-            <span class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">GitHub</span>
+            <span
+              class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300"
+              >GitHub</span
+            >
           </a>
 
           <a
@@ -113,10 +132,15 @@ tagline="Hello! I'm"
             rel="noopener noreferrer"
             class="group flex items-center gap-3 px-6 py-3 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-slate-700 hover:border-orange-600 dark:hover:border-orange-600 w-full sm:w-auto justify-center"
           >
-            <div class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-600 text-white group-hover:bg-orange-700 transition-colors duration-300">
+            <div
+              class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-600 text-white group-hover:bg-orange-700 transition-colors duration-300"
+            >
               <Icon name="tabler:brand-linkedin" class="h-3.5 w-3.5" />
             </div>
-            <span class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">LinkedIn</span>
+            <span
+              class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300"
+              >LinkedIn</span
+            >
           </a>
         </div>
       </div>
@@ -171,12 +195,11 @@ tagline="Hello! I'm"
       </div>
 
       <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-
         <!-- Card 1: Software -->
         <div class="flex flex-col bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden h-full">
           <div class="relative">
             <Image
-              src="~/assets/images/web-development.png"
+              src="~/assets/images/web/aura-visuals.png"
               alt="Web Development Projects"
               class="w-full"
               width={500}
@@ -186,11 +209,11 @@ tagline="Hello! I'm"
             />
           </div>
           <div class="p-6 flex-grow">
-            <h3 class="text-xl md:text-2xl font-bold tracking-tight dark:text-white mb-3">
-              Software Solutions
-            </h3>
+            <h3 class="text-xl md:text-2xl font-bold tracking-tight dark:text-white mb-3">Software Solutions</h3>
             <p class="text-muted dark:text-slate-400">
-              This is where ideas become code. I build functional and scalable digital products. In this section, you'll find full-stack web applications built with technologies like React and Tailwind CSS, crafted to be visually appealing while offering robust functionality that solves real-world problems.
+              This is where ideas become code. I build functional and scalable digital products. In this section, you'll
+              find full-stack web applications built with technologies like React and Tailwind CSS, crafted to be
+              visually appealing while offering robust functionality that solves real-world problems.
             </p>
           </div>
           <div class="p-6 pt-0">
@@ -223,7 +246,9 @@ tagline="Hello! I'm"
               Engineering & Hardware Design
             </h3>
             <p class="text-muted dark:text-slate-400">
-              The foundation of my logical thinking. Here I showcase my work in mechanical design (CAD), electronics, and automation, where precision is key to solving industrial challenges. This engineering mindset is what I apply today to build robust and well-structured software.
+              The foundation of my logical thinking. Here I showcase my work in mechanical design (CAD), electronics,
+              and automation, where precision is key to solving industrial challenges. This engineering mindset is what
+              I apply today to build robust and well-structured software.
             </p>
           </div>
           <div class="p-6 pt-0">
@@ -237,7 +262,6 @@ tagline="Hello! I'm"
             </a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -250,9 +274,7 @@ tagline="Hello! I'm"
         <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
           Work Experience
         </h2>
-        <p class="text-muted text-xl">
-          A journey through my most notable professional roles and achievements
-        </p>
+        <p class="text-muted text-xl">A journey through my most notable professional roles and achievements</p>
       </div>
 
       <div class="max-w-4xl mx-auto">
@@ -277,12 +299,22 @@ tagline="Hello! I'm"
               </div>
               <div class="prose prose-gray dark:prose-invert max-w-none">
                 <p class="text-gray-700 dark:text-gray-300 mb-4">
-                  As a freelancer, I manage full-cycle projects for international clients, specializing in web development and custom engineering solutions.
+                  As a freelancer, I manage full-cycle projects for international clients, specializing in web
+                  development and custom engineering solutions.
                 </p>
                 <ul class="space-y-2 text-gray-600 dark:text-gray-400">
-                  <li><strong class="text-orange-600">Full-Stack Development:</strong> I have built and deployed complete web applications using React, Node.js, and SQL/NoSQL databases, delivering robust and scalable products.</li>
-                  <li><strong class="text-orange-600">UI and Component Design:</strong> I have created interactive user interfaces and reusable component systems with Tailwind CSS, focusing on usability and user experience.</li>
-                  <li><strong class="text-orange-600">Comprehensive Solutions:</strong> I have integrated my software and hardware skills for unique projects, including PCB design and CAD simulation.</li>
+                  <li>
+                    <strong class="text-orange-600">Full-Stack Development:</strong> I have built and deployed complete web
+                    applications using React, Node.js, and SQL/NoSQL databases, delivering robust and scalable products.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">UI and Component Design:</strong> I have created interactive user interfaces
+                    and reusable component systems with Tailwind CSS, focusing on usability and user experience.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Comprehensive Solutions:</strong> I have integrated my software and hardware
+                    skills for unique projects, including PCB design and CAD simulation.
+                  </li>
                 </ul>
               </div>
             </div>
@@ -308,12 +340,25 @@ tagline="Hello! I'm"
               </div>
               <div class="prose prose-gray dark:prose-invert max-w-none">
                 <p class="text-gray-700 dark:text-gray-300 mb-4">
-                  I led the modernization of a legacy software application, transforming it into a scalable, high-performance web solution with React.
+                  I led the modernization of a legacy software application, transforming it into a scalable,
+                  high-performance web solution with React.
                 </p>
                 <ul class="space-y-2 text-gray-600 dark:text-gray-400">
-                  <li><strong class="text-orange-600">Technical Leadership:</strong> I directed the project's frontend architecture, migrating the codebase to a modern component-based system that improved maintainability and development speed.</li>
-                  <li><strong class="text-orange-600">Project Management:</strong> I translated client requirements into an actionable technical backlog and coordinated the development team, ensuring high-quality deliveries aligned with business goals.</li>
-                  <li><strong class="text-orange-600">Impact and Results:</strong> The new application offered a significantly smoother and more responsive user experience, establishing a solid technical foundation for implementing future features.</li>
+                  <li>
+                    <strong class="text-orange-600">Technical Leadership:</strong> I directed the project's frontend architecture,
+                    migrating the codebase to a modern component-based system that improved maintainability and development
+                    speed.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Project Management:</strong> I translated client requirements into an
+                    actionable technical backlog and coordinated the development team, ensuring high-quality deliveries aligned
+                    with business goals.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Impact and Results:</strong> The new application offered a significantly
+                    smoother and more responsive user experience, establishing a solid technical foundation for implementing
+                    future features.
+                  </li>
                 </ul>
               </div>
             </div>
@@ -339,12 +384,25 @@ tagline="Hello! I'm"
               </div>
               <div class="prose prose-gray dark:prose-invert max-w-none">
                 <p class="text-gray-700 dark:text-gray-300 mb-4">
-                  I designed custom engineering solutions to optimize industrial processes, working directly with clients from concept to implementation.
+                  I designed custom engineering solutions to optimize industrial processes, working directly with
+                  clients from concept to implementation.
                 </p>
                 <ul class="space-y-2 text-gray-600 dark:text-gray-400">
-                  <li><strong class="text-orange-600">Analysis and Specifications:</strong> I analyzed complex client requirements and translated them into detailed technical specifications, a skill I now apply to define the scope of software projects.</li>
-                  <li><strong class="text-orange-600">Complex Systems Design:</strong> I used CAD tools to model and design mechanical systems (piping, conveyors, etc.), developing a methodical approach to creating logical and efficient systems.</li>
-                  <li><strong class="text-orange-600">Foundation for Software:</strong> This experience laid the groundwork for my problem-solving and structured thinking abilities, allowing me to build well-designed and robust software.</li>
+                  <li>
+                    <strong class="text-orange-600">Analysis and Specifications:</strong> I analyzed complex client requirements
+                    and translated them into detailed technical specifications, a skill I now apply to define the scope of
+                    software projects.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Complex Systems Design:</strong> I used CAD tools to model and design
+                    mechanical systems (piping, conveyors, etc.), developing a methodical approach to creating logical and
+                    efficient systems.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Foundation for Software:</strong> This experience laid the groundwork
+                    for my problem-solving and structured thinking abilities, allowing me to build well-designed and robust
+                    software.
+                  </li>
                 </ul>
               </div>
             </div>
@@ -361,130 +419,177 @@ tagline="Hello! I'm"
     <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
       <div class="max-w-2xl mx-auto text-center mb-8 md:mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
-          Skills
-        </h2>
+        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">Skills</h2>
         <p class="text-muted text-xl">
-          The combination of software development and engineering precision that I apply to build robust and efficient solutions
+          The combination of software development and engineering precision that I apply to build robust and efficient
+          solutions
         </p>
       </div>
 
       <div class="max-w-6xl mx-auto">
         <div class="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <!-- Frontend Development -->
-          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200"
+          >
             <div class="flex items-center mb-4">
-              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4"
+              >
                 <Icon name="tabler:brand-react" class="w-6 h-6 text-orange-600" />
               </div>
               <h3 class="text-xl font-bold text-gray-900 dark:text-white">Frontend Development</h3>
             </div>
             <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Building interactive and high-performance user interfaces with <strong class="text-orange-600">React</strong>, JavaScript (ES6+), HTML5, and CSS3, creating memorable user experiences.
+              Building interactive and high-performance user interfaces with <strong class="text-orange-600"
+                >React</strong
+              >, JavaScript (ES6+), HTML5, and CSS3, creating memorable user experiences.
             </p>
           </div>
 
           <!-- Backend Development -->
-          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200"
+          >
             <div class="flex items-center mb-4">
-              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4"
+              >
                 <Icon name="tabler:brand-nodejs" class="w-6 h-6 text-orange-600" />
               </div>
               <h3 class="text-xl font-bold text-gray-900 dark:text-white">Backend Development</h3>
             </div>
             <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Creating robust RESTful APIs and efficient servers with <strong class="text-orange-600">Node.js</strong> and Express. Experience in managing server-side business logic.
+              Creating robust RESTful APIs and efficient servers with <strong class="text-orange-600">Node.js</strong> and
+              Express. Experience in managing server-side business logic.
             </p>
           </div>
 
           <!-- Databases -->
-          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200"
+          >
             <div class="flex items-center mb-4">
-              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4"
+              >
                 <Icon name="tabler:database" class="w-6 h-6 text-orange-600" />
               </div>
               <h3 class="text-xl font-bold text-gray-900 dark:text-white">Databases</h3>
             </div>
             <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Design and management of relational (<strong class="text-orange-600">SQL - PostgreSQL</strong>) and non-relational (NoSQL - MongoDB) databases to ensure data persistence and integrity.
+              Design and management of relational (<strong class="text-orange-600">SQL - PostgreSQL</strong>) and
+              non-relational (NoSQL - MongoDB) databases to ensure data persistence and integrity.
             </p>
           </div>
 
           <!-- Version Control -->
-          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200"
+          >
             <div class="flex items-center mb-4">
-              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4"
+              >
                 <Icon name="tabler:brand-git" class="w-6 h-6 text-orange-600" />
               </div>
               <h3 class="text-xl font-bold text-gray-900 dark:text-white">Version Control</h3>
             </div>
             <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Mastery of <strong class="text-orange-600">Git and GitHub</strong> for version control and team collaboration. Experience with packaging tools like NPM/Yarn.
+              Mastery of <strong class="text-orange-600">Git and GitHub</strong> for version control and team collaboration.
+              Experience with packaging tools like NPM/Yarn.
             </p>
           </div>
 
           <!-- Testing and Quality -->
-          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200"
+          >
             <div class="flex items-center mb-4">
-              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4"
+              >
                 <Icon name="tabler:test-pipe" class="w-6 h-6 text-orange-600" />
               </div>
               <h3 class="text-xl font-bold text-gray-900 dark:text-white">Testing and Quality</h3>
             </div>
             <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Implementation of unit and integration tests to ensure software reliability. Focus on writing <strong class="text-orange-600">clean, maintainable, and scalable</strong> code.
+              Implementation of unit and integration tests to ensure software reliability. Focus on writing <strong
+                class="text-orange-600">clean, maintainable, and scalable</strong
+              > code.
             </p>
           </div>
 
           <!-- CAD Modeling -->
-          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200"
+          >
             <div class="flex items-center mb-4">
-              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4"
+              >
                 <Icon name="tabler:3d-cube-sphere" class="w-6 h-6 text-orange-600" />
               </div>
               <h3 class="text-xl font-bold text-gray-900 dark:text-white">CAD Modeling</h3>
             </div>
             <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Experience in <strong class="text-orange-600">3D modeling</strong> and simulation of mechanical systems with CAD software, from concept to detailed engineering analysis.
+              Experience in <strong class="text-orange-600">3D modeling</strong> and simulation of mechanical systems with
+              CAD software, from concept to detailed engineering analysis.
             </p>
           </div>
 
           <!-- PCB Design -->
-          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200"
+          >
             <div class="flex items-center mb-4">
-              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4"
+              >
                 <Icon name="tabler:cpu" class="w-6 h-6 text-orange-600" />
               </div>
               <h3 class="text-xl font-bold text-gray-900 dark:text-white">PCB Design</h3>
             </div>
             <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Design and simulation of <strong class="text-orange-600">electronic circuits and PCBs</strong> for hardware projects, ensuring system integration and optimal performance.
+              Design and simulation of <strong class="text-orange-600">electronic circuits and PCBs</strong> for hardware
+              projects, ensuring system integration and optimal performance.
             </p>
           </div>
 
           <!-- Embedded Systems -->
-          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200"
+          >
             <div class="flex items-center mb-4">
-              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4"
+              >
                 <Icon name="tabler:device-desktop" class="w-6 h-6 text-orange-600" />
               </div>
               <h3 class="text-xl font-bold text-gray-900 dark:text-white">Embedded Systems</h3>
             </div>
             <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Programming of <strong class="text-orange-600">Arduino, ESP32</strong>, and other microcontrollers to develop efficient hardware solutions for automation and data acquisition.
+              Programming of <strong class="text-orange-600">Arduino, ESP32</strong>, and other microcontrollers to
+              develop efficient hardware solutions for automation and data acquisition.
             </p>
           </div>
 
           <!-- Robotics -->
-          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200"
+          >
             <div class="flex items-center mb-4">
-              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4"
+              >
                 <Icon name="tabler:robot" class="w-6 h-6 text-orange-600" />
               </div>
               <h3 class="text-xl font-bold text-gray-900 dark:text-white">Robotics and Control</h3>
             </div>
             <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Development of robotic systems and control algorithms using <strong class="text-orange-600">MATLAB and LabVIEW</strong> for process automation and data analysis.
+              Development of robotic systems and control algorithms using <strong class="text-orange-600"
+                >MATLAB and LabVIEW</strong
+              > for process automation and data analysis.
             </p>
           </div>
         </div>
@@ -500,9 +605,7 @@ tagline="Hello! I'm"
         <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
           What my clients say
         </h2>
-        <p class="text-muted text-xl">
-          Results and collaboration that build trust
-        </p>
+        <p class="text-muted text-xl">Results and collaboration that build trust</p>
       </div>
 
       <div class="max-w-6xl mx-auto">
@@ -510,15 +613,21 @@ tagline="Hello! I'm"
           <div class="swiper-wrapper">
             <!-- Testimonial 1 -->
             <div class="swiper-slide !h-auto">
-              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+              <div
+                class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full"
+              >
                 <div class="flex items-start mb-4">
                   <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
                   <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
-                    "Jaime is an exceptional software developer. His attention to detail and problem-solving skills are impressive, and he consistently delivers high-quality work. He is dedicated and goes above and beyond to ensure team success."
+                    "Jaime is an exceptional software developer. His attention to detail and problem-solving skills are
+                    impressive, and he consistently delivers high-quality work. He is dedicated and goes above and
+                    beyond to ensure team success."
                   </p>
                 </div>
                 <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
-                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                  <div
+                    class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0"
+                  >
                     <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
                   </div>
                   <div>
@@ -531,15 +640,20 @@ tagline="Hello! I'm"
 
             <!-- Testimonial 2 -->
             <div class="swiper-slide !h-auto">
-              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+              <div
+                class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full"
+              >
                 <div class="flex items-start mb-4">
                   <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
                   <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
-                    "I recommend Jaime as a Full Stack developer. He is extremely punctual, respectful, and hardworking. He has solid knowledge of languages and frameworks, and is dedicated to constantly improving."
+                    "I recommend Jaime as a Full Stack developer. He is extremely punctual, respectful, and hardworking.
+                    He has solid knowledge of languages and frameworks, and is dedicated to constantly improving."
                   </p>
                 </div>
                 <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
-                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                  <div
+                    class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0"
+                  >
                     <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
                   </div>
                   <div>
@@ -552,15 +666,20 @@ tagline="Hello! I'm"
 
             <!-- Testimonial 3 -->
             <div class="swiper-slide !h-auto">
-              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+              <div
+                class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full"
+              >
                 <div class="flex items-start mb-4">
                   <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
                   <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
-                    "James consistently proves to be my go-to developer for his meticulous attention to detail. He not only delivers work on time but does so with an elegance that sets him apart."
+                    "James consistently proves to be my go-to developer for his meticulous attention to detail. He not
+                    only delivers work on time but does so with an elegance that sets him apart."
                   </p>
                 </div>
                 <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
-                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                  <div
+                    class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0"
+                  >
                     <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
                   </div>
                   <div>
@@ -573,15 +692,20 @@ tagline="Hello! I'm"
 
             <!-- Testimonial 4 -->
             <div class="swiper-slide !h-auto">
-              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+              <div
+                class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full"
+              >
                 <div class="flex items-start mb-4">
                   <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
                   <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
-                    "Working with him was great! Super fast in his responses, the budget was accurate, and his code documentation is like a treasure map. He tackled difficult challenges like a professional."
+                    "Working with him was great! Super fast in his responses, the budget was accurate, and his code
+                    documentation is like a treasure map. He tackled difficult challenges like a professional."
                   </p>
                 </div>
                 <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
-                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                  <div
+                    class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0"
+                  >
                     <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
                   </div>
                   <div>
@@ -594,15 +718,20 @@ tagline="Hello! I'm"
 
             <!-- Testimonial 5 -->
             <div class="swiper-slide !h-auto">
-              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+              <div
+                class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full"
+              >
                 <div class="flex items-start mb-4">
                   <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
                   <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
-                    "Excellent work, very smooth communication, and all requirements were implemented, plus great attention to questions and changes."
+                    "Excellent work, very smooth communication, and all requirements were implemented, plus great
+                    attention to questions and changes."
                   </p>
                 </div>
                 <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
-                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                  <div
+                    class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0"
+                  >
                     <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
                   </div>
                   <div>
@@ -615,15 +744,20 @@ tagline="Hello! I'm"
 
             <!-- Testimonial 6 -->
             <div class="swiper-slide !h-auto">
-              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+              <div
+                class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full"
+              >
                 <div class="flex items-start mb-4">
                   <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
                   <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
-                    "A very nice person, good work, and excellent communication. This is already the second time we work together! He knows what he does, is proactive, and doesn't waste your time."
+                    "A very nice person, good work, and excellent communication. This is already the second time we work
+                    together! He knows what he does, is proactive, and doesn't waste your time."
                   </p>
                 </div>
                 <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
-                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                  <div
+                    class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0"
+                  >
                     <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
                   </div>
                   <div>
@@ -636,7 +770,9 @@ tagline="Hello! I'm"
 
             <!-- Testimonial 7 -->
             <div class="swiper-slide !h-auto">
-              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+              <div
+                class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full"
+              >
                 <div class="flex items-start mb-4">
                   <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
                   <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
@@ -644,7 +780,9 @@ tagline="Hello! I'm"
                   </p>
                 </div>
                 <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
-                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                  <div
+                    class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0"
+                  >
                     <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
                   </div>
                   <div>
@@ -670,7 +808,7 @@ tagline="Hello! I'm"
     import 'swiper/css';
     import 'swiper/css/navigation';
 
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const testimonialsSwiperEn = new Swiper('.testimonials-swiper-en', {
         modules: [Navigation, Autoplay],
         loop: true,
@@ -745,7 +883,9 @@ tagline="Hello! I'm"
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
       <div class="max-w-4xl mx-auto">
         <!-- CTA Card -->
-        <div class="bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-gray-200 dark:border-gray-800 p-8 md:p-12 text-center">
+        <div
+          class="bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-gray-200 dark:border-gray-800 p-8 md:p-12 text-center"
+        >
           <div class="flex items-center justify-center mb-6">
             <div class="flex items-center justify-center w-16 h-16 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
               <Icon name="tabler:rocket" class="w-8 h-8 text-orange-600" />
@@ -754,11 +894,14 @@ tagline="Hello! I'm"
               <Icon name="tabler:code" class="w-8 h-8 text-orange-600" />
             </div>
           </div>
-          <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-gray-900 dark:text-white">
+          <h2
+            class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-gray-900 dark:text-white"
+          >
             Let's build something incredible, together.
           </h2>
           <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-            My passion is to transform ideas into high-performance digital products. If you are looking for a developer with the precision of an engineer, let's talk.
+            My passion is to transform ideas into high-performance digital products. If you are looking for a developer
+            with the precision of an engineer, let's talk.
           </p>
           <a
             href="/en/contact#form"
@@ -815,31 +958,46 @@ tagline="Hello! I'm"
           </h4>
           <ul class="space-y-3">
             <li>
-              <a href="/en" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+              <a
+                href="/en"
+                class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center"
+              >
                 <Icon name="tabler:home" class="w-4 h-4 mr-2" />
                 Home
               </a>
             </li>
             <li>
-              <a href="/en/projects" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+              <a
+                href="/en/projects"
+                class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center"
+              >
                 <Icon name="tabler:briefcase" class="w-4 h-4 mr-2" />
                 Projects
               </a>
             </li>
             <li>
-              <a href="/en/courses" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+              <a
+                href="/en/courses"
+                class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center"
+              >
                 <Icon name="tabler:book" class="w-4 h-4 mr-2" />
                 Courses
               </a>
             </li>
             <li>
-              <a href="/en/blog" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+              <a
+                href="/en/blog"
+                class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center"
+              >
                 <Icon name="tabler:pencil" class="w-4 h-4 mr-2" />
                 Blog
               </a>
             </li>
             <li>
-              <a href="/en/contact" class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
+              <a
+                href="/en/contact"
+                class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center"
+              >
                 <Icon name="tabler:message" class="w-4 h-4 mr-2" />
                 Contact
               </a>
@@ -917,9 +1075,7 @@ tagline="Hello! I'm"
       <!-- Bottom Bar -->
       <div class="border-t border-gray-800 mt-12 pt-8">
         <div class="flex flex-col md:flex-row justify-between items-center">
-          <p class="text-gray-400 text-sm mb-4 md:mb-0">
-            © 2025 Jaime Villegas. All rights reserved.
-          </p>
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Jaime Villegas. All rights reserved.</p>
           <div class="flex items-center space-x-6">
             <div class="flex items-center space-x-2">
               <Icon name="tabler:heart" class="w-4 h-4 text-red-500" />
@@ -930,5 +1086,4 @@ tagline="Hello! I'm"
       </div>
     </div>
   </footer>
-
 </Layout>
