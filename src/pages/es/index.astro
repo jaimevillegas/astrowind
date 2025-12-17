@@ -48,12 +48,16 @@ const metadata = {
   <Hero
     id="hero"
     title="Jaime Villegas"
-    tagline="Hola! Yo soy"
+    tagline="Full-Stack Developer | React & Next.js | Integración AI/ML | 20K+ Estudiantes"
     actions={[{ variant: 'primary', text: 'Ver Proyectos', href: getPermalink('/es/projects') }]}
     image={{ src: '~/assets/images/profile.jpg', alt: 'Jaime Villegas' }}
   >
     <Fragment slot="subtitle">
-      Fusiono mi background en <span class="text-orange-600 font-bold">ingeniería</span> con el <span class='text-orange-600 font-bold'>desarrollo web moderno</span> para crear productos digitales de alto rendimiento. Diseño y construyo aplicaciones que no solo son funcionales, sino también lógicas y fáciles de mantener.
+      Uno la <span class="text-orange-600 font-bold">precisión de la ingeniería</span>,
+      la <span class="text-orange-600 font-bold">innovación en AI/ML</span> y el
+      <span class="text-orange-600 font-bold">desarrollo web moderno</span> para crear productos digitales
+      inteligentes y de alto rendimiento. Desde entrenar modelos de IA hasta construir aplicaciones escalables,
+      entrego soluciones robustas, mantenibles y preparadas para el futuro.
     </Fragment>
   </Hero>
 
@@ -65,17 +69,28 @@ const metadata = {
         <h2 class="text-4xl font-bold font-heading tracking-tight dark:text-white sm:text-5xl mb-8">Acerca de mí</h2>
         <div class="text-lg dark:text-slate-300 text-center space-y-4">
           <p>
-            Mi carrera comenzó en la <span class="text-orange-600 font-bold">ingeniería</span>, donde aprendí la disciplina de construir cosas que simplemente funcionan, de forma robusta y predecible. Esa base analítica es mi punto de partida.
+            Mi carrera comenzó en la <span class="text-orange-600 font-bold">ingeniería mecatrónica</span>, donde aprendí
+            la disciplina de construir sistemas que simplemente funcionan—de forma robusta y predecible. Esa base
+            analítica es mi punto de partida.
           </p>
           <p>
-            Luego, como <span class="text-orange-600 font-bold">desarrollador</span>, descubrí mi pasión: construir cosas que la gente ame usar. Entendí que detrás de cada <em>div</em> hay una persona, y que la empatía por el usuario final es tan crucial como un algoritmo eficiente.
+            Como <span class="text-orange-600 font-bold">desarrollador full-stack</span>, descubrí mi pasión por
+            construir productos digitales que la gente ame usar. Entendí que detrás de cada interfaz hay una persona,
+            y que la empatía por el usuario final es tan crucial como el código limpio.
           </p>
           <p>
-            Esta dualidad es mi método de trabajo. Combino la <span class="text-orange-600 font-bold">solidez técnica</span> con un <span class="text-orange-600 font-bold">diseño centrado en el usuario</span> para no solo entregar un producto que funcione, sino una experiencia digital intuitiva y satisfactoria.
+            Ahora, como <span class="text-orange-600 font-bold">especialista en AI/ML</span>, estoy a la vanguardia
+            del entrenamiento de modelos de IA de nueva generación, habiendo evaluado <strong>168,000+ líneas de
+            código generado por IA</strong> y completado <strong>560+ tareas de entrenamiento</strong> con un 90%
+            de aprobación.
           </p>
-          <p class="italic text-center pt-4">
-            ¿Quieres ver este enfoque en acción?
+          <p>
+            Esta tríada—<span class="text-orange-600 font-bold">rigor de ingeniería</span>,
+            <span class="text-orange-600 font-bold">desarrollo centrado en el usuario</span> y
+            <span class="text-orange-600 font-bold">experiencia en IA</span>—es mi método único. Entrego soluciones
+            técnicamente sólidas, intuitivas de usar y potenciadas por tecnología de vanguardia.
           </p>
+          <p class="italic text-center pt-4">¿Quieres ver este enfoque en acción?</p>
         </div>
       </div>
       <div class="mt-8 max-w-2xl mx-auto">
@@ -247,14 +262,57 @@ const metadata = {
         <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
           Experiencia Profesional
         </h2>
-        <p class="text-muted text-xl">
-          Un recorrido por mis roles y logros profesionales más destacados
-        </p>
+        <p class="text-muted text-xl">Un recorrido por mis roles y logros profesionales más destacados</p>
       </div>
 
       <div class="max-w-4xl mx-auto">
         <div class="space-y-8 md:space-y-12">
-          <!-- Position 1 -->
+          <!-- Position 1: Outlier AI (NUEVO) -->
+          <div class="flex flex-col md:flex-row gap-6 md:gap-8">
+            <div class="flex-shrink-0 flex items-start justify-center">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
+                <Icon name="tabler:brain" class="w-6 h-6 text-orange-600" />
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="mb-4">
+                <h3 class="text-xl md:text-2xl font-bold font-heading text-gray-900 dark:text-white mb-2">
+                  Especialista en Entrenamiento ML - Generación de Código
+                </h3>
+                <div class="flex flex-wrap items-center gap-2 text-gray-600 dark:text-gray-300 mb-2">
+                  <span class="font-medium">Outlier AI</span>
+                  <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                  <span class="text-sm">Dic 2024 - Jul 2025</span>
+                </div>
+              </div>
+              <div class="prose prose-gray dark:prose-invert max-w-none">
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                  Entrenando modelos de IA de próxima generación mediante evaluación experta de código y técnicas RLHF
+                  (Reinforcement Learning from Human Feedback), asegurando outputs de alta calidad para sistemas de
+                  generación de código.
+                </p>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li>
+                    <strong class="text-orange-600">Evaluación de Código:</strong> Revisé y evalué
+                    <strong>168,000+ líneas de código generado por IA</strong> en Python, JavaScript, TypeScript, React
+                    y C, asegurando precisión y mejores prácticas.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Alto Rendimiento:</strong> Logré
+                    <strong>90% de tasa de aprobación</strong> en <strong>560+ tareas de entrenamiento</strong>,
+                    demostrando calidad consistente y atención al detalle.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Experiencia en RLHF:</strong> Apliqué técnicas de reinforcement
+                    learning from human feedback para mejorar los outputs de modelos de IA y la calidad de generación
+                    de código.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Position 2: Freelance Full-Stack Developer -->
           <div class="flex flex-col md:flex-row gap-6 md:gap-8">
             <div class="flex-shrink-0 flex items-start justify-center">
               <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
@@ -264,28 +322,42 @@ const metadata = {
             <div class="flex-grow">
               <div class="mb-4">
                 <h3 class="text-xl md:text-2xl font-bold font-heading text-gray-900 dark:text-white mb-2">
-                  Ingeniero Freelance Profesional
+                  Desarrollador Full-Stack Freelance
                 </h3>
                 <div class="flex flex-wrap items-center gap-2 text-gray-600 dark:text-gray-300 mb-2">
-                  <span class="font-medium">Fiverr</span>
+                  <span class="font-medium">Fiverr & Clientes Directos</span>
                   <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
-                  <span class="text-sm">2022 - PRESENTE</span>
+                  <span class="text-sm">Jun 2022 - PRESENTE</span>
                 </div>
               </div>
               <div class="prose prose-gray dark:prose-invert max-w-none">
                 <p class="text-gray-700 dark:text-gray-300 mb-4">
-                  Como profesional independiente, gestiono proyectos de ciclo completo para clientes internacionales, especializándome en desarrollo web y soluciones de ingeniería a medida.
+                  Gestionando proyectos de ciclo completo para clientes internacionales, entregando
+                  <strong>50+ aplicaciones web</strong> para <strong>30+ clientes</strong> con una
+                  <strong>tasa de retención del 60%</strong>.
                 </p>
                 <ul class="space-y-2 text-gray-600 dark:text-gray-400">
-                  <li><strong class="text-orange-600">Desarrollo Full-Stack:</strong> He construido y desplegado aplicaciones web completas utilizando React, Node.js y bases de datos SQL/NoSQL, entregando productos robustos y escalables.</li>
-                  <li><strong class="text-orange-600">Diseño de componentes y UI:</strong> He creado interfaces de usuario interactivas y sistemas de componentes reutilizables con Tailwind CSS, enfocándome en la usabilidad y la experiencia del usuario.</li>
-                  <li><strong class="text-orange-600">Soluciones Integrales:</strong> He integrado mis habilidades de software y hardware para proyectos únicos, incluyendo el diseño de PCBs y la simulación CAD.</li>
+                  <li>
+                    <strong class="text-orange-600">Desarrollo Full-Stack:</strong> Construí y desplegué aplicaciones
+                    web completas usando React, Next.js, Node.js y bases de datos SQL/NoSQL, entregando productos
+                    robustos y escalables.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Soluciones IoT:</strong> Desarrollé dashboard industrial IoT que
+                    logró <strong>40% de reducción en tiempo de inspección</strong> con
+                    <strong>95%+ de uptime en microcontroladores</strong>.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Proyectos Creativos:</strong> Construí visualizador de audio
+                    logrando <strong>60fps</strong> de rendimiento con <strong>10 visualizaciones únicas</strong>
+                    usando Three.js y React Three Fiber.
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <!-- Position 2 -->
+          <!-- Position 3: Frontend Software Engineer -->
           <div class="flex flex-col md:flex-row gap-6 md:gap-8">
             <div class="flex-shrink-0 flex items-start justify-center">
               <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
@@ -298,25 +370,78 @@ const metadata = {
                   Ingeniero de Software Frontend
                 </h3>
                 <div class="flex flex-wrap items-center gap-2 text-gray-600 dark:text-gray-300 mb-2">
-                  <span class="font-medium">Unydos Consulting S.A.S, COL</span>
+                  <span class="font-medium">Unydos Consulting S.A.S</span>
                   <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
-                  <span class="text-sm">2024</span>
+                  <span class="text-sm">Abr 2024 - Nov 2024</span>
                 </div>
               </div>
               <div class="prose prose-gray dark:prose-invert max-w-none">
                 <p class="text-gray-700 dark:text-gray-300 mb-4">
-                  Lideré la modernización de una aplicación de software heredada, transformándola en una solución web escalable y de alto rendimiento con React.
+                  Lideré la modernización de una aplicación heredada, migrando <strong>25+ pantallas</strong> a una
+                  solución React escalable y de alto rendimiento.
                 </p>
                 <ul class="space-y-2 text-gray-600 dark:text-gray-400">
-                  <li><strong class="text-orange-600">Liderazgo Técnico:</strong> Dirigí la arquitectura frontend del proyecto, migrando la base de código a un sistema moderno basado en componentes.</li>
-                  <li><strong class="text-orange-600">Gestión de Proyecto:</strong> Traduje los requisitos del cliente en un backlog técnico accionable y coordiné al equipo de desarrollo.</li>
-                  <li><strong class="text-orange-600">Impacto y Resultados:</strong> La nueva aplicación ofreció una experiencia de usuario significativamente más fluida y responsiva.</li>
+                  <li>
+                    <strong class="text-orange-600">Optimización de Rendimiento:</strong> Logré
+                    <strong>50% de reducción en tiempo de carga</strong> (4.2s a 2.1s) y
+                    <strong>45% de mejora en Core Web Vitals</strong>.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Librería de Componentes:</strong> Construí sistema de componentes
+                    reutilizables ahora <strong>adoptado en 3 productos</strong>, acelerando el desarrollo en
+                    <strong>30%</strong>.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Impacto en Equipo:</strong> Mejoré la tasa de completitud de
+                    sprints de <strong>60% a 85%</strong> y reduje la densidad de bugs en <strong>35%</strong>.
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <!-- Position 3 -->
+          <!-- Position 4: Udemy Instructor (NUEVO) -->
+          <div class="flex flex-col md:flex-row gap-6 md:gap-8">
+            <div class="flex-shrink-0 flex items-start justify-center">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
+                <Icon name="tabler:school" class="w-6 h-6 text-orange-600" />
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="mb-4">
+                <h3 class="text-xl md:text-2xl font-bold font-heading text-gray-900 dark:text-white mb-2">
+                  Instructor de Cursos Online
+                </h3>
+                <div class="flex flex-wrap items-center gap-2 text-gray-600 dark:text-gray-300 mb-2">
+                  <span class="font-medium">Udemy</span>
+                  <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                  <span class="text-sm">Ene 2020 - PRESENTE</span>
+                </div>
+              </div>
+              <div class="prose prose-gray dark:prose-invert max-w-none">
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                  Creando cursos completos sobre software de ingeniería y programación, alcanzando una audiencia global
+                  de desarrolladores e ingenieros aspirantes.
+                </p>
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li>
+                    <strong class="text-orange-600">Alcance Global:</strong> Enseñé a
+                    <strong>20,000+ estudiantes</strong> con <strong>485,000+ horas de aprendizaje</strong> impartidas.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Contenido de Calidad:</strong> Mantuve
+                    <strong>4.5+ de calificación promedio</strong> en cursos con <strong>1,000+ reseñas</strong>.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Portafolio de Cursos:</strong> Especializado en cursos de
+                    SOLIDWORKS, MATLAB y fundamentos de programación para estudiantes de ingeniería.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Position 5: Mechanical CAD Engineer -->
           <div class="flex flex-col md:flex-row gap-6 md:gap-8">
             <div class="flex-shrink-0 flex items-start justify-center">
               <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
@@ -336,12 +461,22 @@ const metadata = {
               </div>
               <div class="prose prose-gray dark:prose-invert max-w-none">
                 <p class="text-gray-700 dark:text-gray-300 mb-4">
-                  Diseñé soluciones de ingeniería a medida para optimizar procesos industriales, trabajando directamente con clientes desde el concepto hasta la implementación.
+                  Diseñé soluciones de ingeniería a medida para optimizar procesos industriales, desde el concepto hasta
+                  la implementación.
                 </p>
                 <ul class="space-y-2 text-gray-600 dark:text-gray-400">
-                  <li><strong class="text-orange-600">Análisis y Especificaciones:</strong> Analicé requerimientos complejos de clientes y los traduje en especificaciones técnicas detalladas.</li>
-                  <li><strong class="text-orange-600">Diseño de Sistemas:</strong> Utilicé herramientas CAD para modelar y diseñar sistemas mecánicos complejos (tuberías, transportadores, etc.).</li>
-                  <li><strong class="text-orange-600">Base para Software:</strong> Esta experiencia sentó las bases de mi capacidad para la resolución de problemas y el pensamiento estructurado.</li>
+                  <li>
+                    <strong class="text-orange-600">Experiencia en CAD:</strong> Certificado SOLIDWORKS Expert (CSWE)
+                    con certificaciones adicionales en Simulation Professional.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Sistemas Complejos:</strong> Diseñé sistemas mecánicos (tuberías,
+                    transportadores, equipos industriales) usando modelado 3D avanzado y simulación FEA.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Base para Software:</strong> Esta experiencia construyó mi enfoque
+                    de resolución de problemas y pensamiento estructurado ahora aplicado a la arquitectura de software.
+                  </li>
                 </ul>
               </div>
             </div>
@@ -358,131 +493,377 @@ const metadata = {
     <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
       <div class="max-w-2xl mx-auto text-center mb-8 md:mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
-          Habilidades
-        </h2>
+        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">Habilidades</h2>
         <p class="text-muted text-xl">
-          La combinación de desarrollo de software y precisión de ingeniería que aplico para construir soluciones robustas y eficientes
+          Una combinación única de experiencia en AI/ML, desarrollo full-stack y precisión de ingeniería
         </p>
       </div>
 
       <div class="max-w-6xl mx-auto">
         <div class="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- Desarrollo Frontend -->
-          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+          <!-- AI/ML & Data (NUEVO - DESTACADO) -->
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:border-orange-500 dark:hover:border-orange-600 hover:shadow-md transition-all duration-200"
+          >
             <div class="flex items-center mb-4">
-              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4"
+              >
+                <Icon name="tabler:brain" class="w-6 h-6 text-orange-600" />
+              </div>
+              <h3 class="text-xl font-bold font-heading text-gray-900 dark:text-white">AI/ML & Data</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              <strong class="text-orange-600">Entrenamiento de LLMs</strong>, técnicas RLHF y Prompt Engineering.
+              Experiencia evaluando 168K+ líneas de código generado por IA y entrenando modelos de nueva generación.
+            </p>
+          </div>
+
+          <!-- Desarrollo Frontend -->
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:border-orange-500 dark:hover:border-orange-600 hover:shadow-md transition-all duration-200"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4"
+              >
                 <Icon name="tabler:brand-react" class="w-6 h-6 text-orange-600" />
               </div>
               <h3 class="text-xl font-bold font-heading text-gray-900 dark:text-white">Desarrollo Frontend</h3>
             </div>
             <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Construcción de interfaces de usuario interactivas y de alto rendimiento con <strong class="text-orange-600">React</strong>, JavaScript (ES6+), HTML5 y CSS3, creando experiencias de usuario memorables.
+              Construyendo UIs de alto rendimiento con <strong class="text-orange-600">React</strong>,
+              <strong class="text-orange-600">Next.js</strong>, TypeScript y Tailwind CSS. Gestión de estado con
+              <strong class="text-orange-600">Zustand</strong>.
             </p>
           </div>
 
           <!-- Desarrollo Backend -->
-          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:border-orange-500 dark:hover:border-orange-600 hover:shadow-md transition-all duration-200"
+          >
             <div class="flex items-center mb-4">
-              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4"
+              >
                 <Icon name="tabler:brand-nodejs" class="w-6 h-6 text-orange-600" />
               </div>
               <h3 class="text-xl font-bold font-heading text-gray-900 dark:text-white">Desarrollo Backend</h3>
             </div>
             <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Creación de APIs RESTful robustas y servidores eficientes con <strong class="text-orange-600">Node.js</strong> y Express. Experiencia en la gestión de la lógica de negocio del lado del servidor.
+              Creando APIs robustas con <strong class="text-orange-600">Node.js</strong>, Express y
+              <strong class="text-orange-600">Supabase</strong>. Diseño de bases de datos con
+              <strong class="text-orange-600">PostgreSQL</strong> y MongoDB.
             </p>
           </div>
 
-          <!-- Bases de Datos -->
-          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+          <!-- 3D & Graphics (NUEVO) -->
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:border-orange-500 dark:hover:border-orange-600 hover:shadow-md transition-all duration-200"
+          >
             <div class="flex items-center mb-4">
-              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
-                <Icon name="tabler:database" class="w-6 h-6 text-orange-600" />
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4"
+              >
+                <Icon name="tabler:3d-cube-sphere" class="w-6 h-6 text-orange-600" />
               </div>
-              <h3 class="text-xl font-bold font-heading text-gray-900 dark:text-white">Bases de Datos</h3>
+              <h3 class="text-xl font-bold font-heading text-gray-900 dark:text-white">3D & Gráficos</h3>
             </div>
             <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Diseño y gestión de bases de datos relacionales (<strong class="text-orange-600">SQL - PostgreSQL</strong>) y no relacionales (NoSQL - MongoDB) para asegurar la persistencia y la integridad de los datos.
+              Creando experiencias inmersivas con <strong class="text-orange-600">Three.js</strong> y
+              <strong class="text-orange-600">React Three Fiber</strong>. Visualizadores de audio, aplicaciones web 3D
+              y gráficos interactivos.
             </p>
           </div>
 
           <!-- Control de Versiones -->
-          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:border-orange-500 dark:hover:border-orange-600 hover:shadow-md transition-all duration-200"
+          >
             <div class="flex items-center mb-4">
-              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4"
+              >
                 <Icon name="tabler:brand-git" class="w-6 h-6 text-orange-600" />
               </div>
               <h3 class="text-xl font-bold font-heading text-gray-900 dark:text-white">Control de Versiones</h3>
             </div>
             <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Dominio de <strong class="text-orange-600">Git y GitHub</strong> para el control de versiones y colaboración en equipo. Experiencia con herramientas de empaquetado como NPM/Yarn.
+              Experto en flujos de trabajo de <strong class="text-orange-600">Git y GitHub</strong>, pipelines CI/CD y
+              desarrollo colaborativo. Gestión de paquetes con NPM/Yarn.
             </p>
           </div>
 
           <!-- Pruebas y Calidad -->
-          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:border-orange-500 dark:hover:border-orange-600 hover:shadow-md transition-all duration-200"
+          >
             <div class="flex items-center mb-4">
-              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4"
+              >
                 <Icon name="tabler:test-pipe" class="w-6 h-6 text-orange-600" />
               </div>
               <h3 class="text-xl font-bold font-heading text-gray-900 dark:text-white">Pruebas y Calidad</h3>
             </div>
             <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Implementación de pruebas unitarias y de integración para garantizar la fiabilidad del software. Foco en escribir código <strong class="text-orange-600">limpio, mantenible y escalable</strong>.
+              Pruebas unitarias y de integración para asegurar la fiabilidad del software. Foco en arquitectura de
+              código <strong class="text-orange-600">limpio, mantenible y escalable</strong>.
             </p>
           </div>
 
-          <!-- Modelado CAD -->
-          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+          <!-- CAD e Ingeniería -->
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:border-orange-500 dark:hover:border-orange-600 hover:shadow-md transition-all duration-200"
+          >
             <div class="flex items-center mb-4">
-              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
-                <Icon name="tabler:3d-cube-sphere" class="w-6 h-6 text-orange-600" />
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4"
+              >
+                <Icon name="tabler:tools" class="w-6 h-6 text-orange-600" />
               </div>
-              <h3 class="text-xl font-bold font-heading text-gray-900 dark:text-white">Modelado CAD</h3>
+              <h3 class="text-xl font-bold font-heading text-gray-900 dark:text-white">CAD e Ingeniería</h3>
             </div>
             <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Experiencia en <strong class="text-orange-600">modelado 3D</strong> y simulación de sistemas mecánicos con software CAD, desde el concepto hasta el análisis de ingeniería detallado.
+              Certificado <strong class="text-orange-600">SOLIDWORKS Expert (CSWE)</strong>. Modelado 3D, simulación
+              FEA y diseño de sistemas mecánicos para aplicaciones industriales.
             </p>
           </div>
 
-          <!-- Diseño de PCB -->
-          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+          <!-- IoT y Embebidos -->
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:border-orange-500 dark:hover:border-orange-600 hover:shadow-md transition-all duration-200"
+          >
             <div class="flex items-center mb-4">
-              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4"
+              >
                 <Icon name="tabler:cpu" class="w-6 h-6 text-orange-600" />
               </div>
-              <h3 class="text-xl font-bold font-heading text-gray-900 dark:text-white">Diseño de PCB</h3>
+              <h3 class="text-xl font-bold font-heading text-gray-900 dark:text-white">IoT y Embebidos</h3>
             </div>
             <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Diseño y simulación de <strong class="text-orange-600">circuitos electrónicos y PCBs</strong> para proyectos de hardware, asegurando la integración y el rendimiento óptimo del sistema.
+              Programación de <strong class="text-orange-600">Arduino, ESP32</strong> y microcontroladores con
+              <strong>95%+ de uptime</strong>. Dashboards IoT y soluciones de automatización industrial.
             </p>
           </div>
 
-          <!-- Sistemas Embebidos -->
-          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
+          <!-- Lenguajes -->
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:border-orange-500 dark:hover:border-orange-600 hover:shadow-md transition-all duration-200"
+          >
             <div class="flex items-center mb-4">
-              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
-                <Icon name="tabler:device-desktop" class="w-6 h-6 text-orange-600" />
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4"
+              >
+                <Icon name="tabler:code" class="w-6 h-6 text-orange-600" />
               </div>
-              <h3 class="text-xl font-bold font-heading text-gray-900 dark:text-white">Sistemas Embebidos</h3>
+              <h3 class="text-xl font-bold font-heading text-gray-900 dark:text-white">Lenguajes</h3>
             </div>
             <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Programación de <strong class="text-orange-600">Arduino, ESP32</strong> y otros microcontroladores para desarrollar soluciones de hardware eficientes para la automatización y la captura de datos.
+              <strong class="text-orange-600">JavaScript/TypeScript</strong>, Python, C, SQL. Frameworks: React,
+              Next.js, Node.js, Express, Astro.
             </p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <!-- Robótica -->
-          <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200">
-            <div class="flex items-center mb-4">
-              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4">
-                <Icon name="tabler:robot" class="w-6 h-6 text-orange-600" />
+  <!-- Certifications Section ****************** -->
+  <section class="relative not-prose">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <div class="max-w-2xl mx-auto text-center mb-8 md:mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+          Certificaciones
+        </h2>
+        <p class="text-muted text-xl">
+          Credenciales profesionales que validan experiencia en AI/ML, desarrollo de software e ingeniería
+        </p>
+      </div>
+
+      <div class="max-w-6xl mx-auto">
+        <!-- AI/ML Certifications -->
+        <div class="mb-8">
+          <h3 class="text-xl font-bold text-orange-600 mb-4 flex items-center">
+            <Icon name="tabler:brain" class="w-5 h-5 mr-2" />
+            AI & Machine Learning
+          </h3>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div
+              class="flex items-center p-4 bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-orange-500 dark:hover:border-orange-600 transition-all duration-200"
+            >
+              <Icon name="tabler:certificate" class="w-8 h-8 text-orange-600 mr-3 flex-shrink-0" />
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">Introduction to Machine Learning</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Kaggle</p>
               </div>
-              <h3 class="text-xl font-bold font-heading text-gray-900 dark:text-white">Robótica y Control</h3>
             </div>
-            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Desarrollo de sistemas robóticos y algoritmos de control utilizando <strong class="text-orange-600">MATLAB y LabVIEW</strong> para la automatización de procesos y el análisis de datos.
-            </p>
+            <div
+              class="flex items-center p-4 bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-orange-500 dark:hover:border-orange-600 transition-all duration-200"
+            >
+              <Icon name="tabler:certificate" class="w-8 h-8 text-orange-600 mr-3 flex-shrink-0" />
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">Neural Networks and Deep Learning</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Coursera - DeepLearning.AI</p>
+              </div>
+            </div>
+            <div
+              class="flex items-center p-4 bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-orange-500 dark:hover:border-orange-600 transition-all duration-200"
+            >
+              <Icon name="tabler:certificate" class="w-8 h-8 text-orange-600 mr-3 flex-shrink-0" />
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">Improving Deep Neural Networks</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Coursera - DeepLearning.AI</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Software Development Certifications -->
+        <div class="mb-8">
+          <h3 class="text-xl font-bold text-orange-600 mb-4 flex items-center">
+            <Icon name="tabler:code" class="w-5 h-5 mr-2" />
+            Desarrollo de Software
+          </h3>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div
+              class="flex items-center p-4 bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-orange-500 dark:hover:border-orange-600 transition-all duration-200"
+            >
+              <Icon name="tabler:certificate" class="w-8 h-8 text-orange-600 mr-3 flex-shrink-0" />
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">Microverse Software Development Program</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Microverse</p>
+              </div>
+            </div>
+            <div
+              class="flex items-center p-4 bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-orange-500 dark:hover:border-orange-600 transition-all duration-200"
+            >
+              <Icon name="tabler:certificate" class="w-8 h-8 text-orange-600 mr-3 flex-shrink-0" />
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">React: State Management</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">LinkedIn Learning</p>
+              </div>
+            </div>
+            <div
+              class="flex items-center p-4 bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-orange-500 dark:hover:border-orange-600 transition-all duration-200"
+            >
+              <Icon name="tabler:certificate" class="w-8 h-8 text-orange-600 mr-3 flex-shrink-0" />
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">React.js Code Challenges</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">LinkedIn Learning</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Engineering Certifications -->
+        <div>
+          <h3 class="text-xl font-bold text-orange-600 mb-4 flex items-center">
+            <Icon name="tabler:settings" class="w-5 h-5 mr-2" />
+            Ingeniería y CAD
+          </h3>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div
+              class="flex items-center p-4 bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-orange-500 dark:hover:border-orange-600 transition-all duration-200"
+            >
+              <Icon name="tabler:award" class="w-8 h-8 text-orange-600 mr-3 flex-shrink-0" />
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">SOLIDWORKS Design Expert (CSWE)</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Dassault Systemes</p>
+              </div>
+            </div>
+            <div
+              class="flex items-center p-4 bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-orange-500 dark:hover:border-orange-600 transition-all duration-200"
+            >
+              <Icon name="tabler:certificate" class="w-8 h-8 text-orange-600 mr-3 flex-shrink-0" />
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">SOLIDWORKS Simulation Professional</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Dassault Systemes</p>
+              </div>
+            </div>
+            <div
+              class="flex items-center p-4 bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-orange-500 dark:hover:border-orange-600 transition-all duration-200"
+            >
+              <Icon name="tabler:certificate" class="w-8 h-8 text-orange-600 mr-3 flex-shrink-0" />
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">Tech Support Advanced Specialist</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Dassault Systemes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section ****************** -->
+  <section class="relative not-prose">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <div class="max-w-2xl mx-auto text-center mb-8 md:mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">Educación</h2>
+        <p class="text-muted text-xl">Formación académica en ingeniería y tecnología</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="grid gap-6 md:grid-cols-3">
+          <!-- Ingeniería Mecatrónica -->
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:border-orange-500 dark:hover:border-orange-600 hover:shadow-md transition-all duration-200"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4"
+              >
+                <Icon name="tabler:school" class="w-6 h-6 text-orange-600" />
+              </div>
+              <div>
+                <span class="text-sm text-orange-600 font-medium">2014 - 2020</span>
+              </div>
+            </div>
+            <h3 class="text-lg font-bold font-heading text-gray-900 dark:text-white mb-2">Ingeniería Mecatrónica</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Título Profesional</p>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">Universidad de Caldas</p>
+          </div>
+
+          <!-- Tecnología en Electrónica -->
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:border-orange-500 dark:hover:border-orange-600 hover:shadow-md transition-all duration-200"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4"
+              >
+                <Icon name="tabler:cpu" class="w-6 h-6 text-orange-600" />
+              </div>
+              <div>
+                <span class="text-sm text-orange-600 font-medium">2013 - 2016</span>
+              </div>
+            </div>
+            <h3 class="text-lg font-bold font-heading text-gray-900 dark:text-white mb-2">Tecnología en Electrónica</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Título Tecnológico</p>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">Universidad de Caldas</p>
+          </div>
+
+          <!-- Diseño de Sistemas Mecánicos -->
+          <div
+            class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:border-orange-500 dark:hover:border-orange-600 hover:shadow-md transition-all duration-200"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl mr-4"
+              >
+                <Icon name="tabler:settings" class="w-6 h-6 text-orange-600" />
+              </div>
+              <div>
+                <span class="text-sm text-orange-600 font-medium">2014 - 2016</span>
+              </div>
+            </div>
+            <h3 class="text-lg font-bold font-heading text-gray-900 dark:text-white mb-2">Diseño de Sistemas Mecánicos</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Título Tecnológico</p>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">SENA</p>
           </div>
         </div>
       </div>
@@ -776,7 +1157,7 @@ const metadata = {
         <div class="lg:col-span-1">
           <h3 class="text-2xl font-bold font-heading text-white mb-4">Jaime Villegas</h3>
           <p class="text-gray-400 leading-relaxed mb-6">
-            Desarrollador Full Stack especializado en crear soluciones digitales innovadoras con precisión de ingeniería.
+            Desarrollador Full-Stack & Especialista en AI/ML creando soluciones digitales inteligentes con precisión de ingeniería.
           </p>
           <div class="flex space-x-4">
             <a
@@ -852,6 +1233,12 @@ const metadata = {
           <ul class="space-y-3">
             <li>
               <span class="text-gray-400 flex items-center">
+                <Icon name="tabler:brain" class="w-4 h-4 mr-2 text-orange-600" />
+                Integración AI/ML
+              </span>
+            </li>
+            <li>
+              <span class="text-gray-400 flex items-center">
                 <Icon name="tabler:brand-react" class="w-4 h-4 mr-2 text-orange-600" />
                 Desarrollo Frontend
               </span>
@@ -872,12 +1259,6 @@ const metadata = {
               <span class="text-gray-400 flex items-center">
                 <Icon name="tabler:3d-cube-sphere" class="w-4 h-4 mr-2 text-orange-600" />
                 Modelado CAD
-              </span>
-            </li>
-            <li>
-              <span class="text-gray-400 flex items-center">
-                <Icon name="tabler:robot" class="w-4 h-4 mr-2 text-orange-600" />
-                Automatización
               </span>
             </li>
           </ul>
