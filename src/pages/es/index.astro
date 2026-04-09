@@ -48,16 +48,15 @@ const metadata = {
   <Hero
     id="hero"
     title="Jaime Villegas"
-    tagline="Full-Stack Developer | React & Next.js | Integración AI/ML | 20K+ Estudiantes"
+    tagline="Full-Stack Developer · React & Next.js · TypeScript | 50+ Proyectos en Producción | Disponible Remoto"
     actions={[{ variant: 'primary', text: 'Ver Proyectos', href: getPermalink('/es/projects') }]}
     image={{ src: '~/assets/images/profile.jpg', alt: 'Jaime Villegas' }}
   >
     <Fragment slot="subtitle">
-      Uno la <span class="text-orange-600 font-bold">precisión de la ingeniería</span>,
-      la <span class="text-orange-600 font-bold">innovación en AI/ML</span> y el
-      <span class="text-orange-600 font-bold">desarrollo web moderno</span> para crear productos digitales
-      inteligentes y de alto rendimiento. Desde entrenar modelos de IA hasta construir aplicaciones escalables,
-      entrego soluciones robustas, mantenibles y preparadas para el futuro.
+      Construyo aplicaciones web de alto rendimiento con <span class="text-orange-600 font-bold">React</span> y <span class="text-orange-600 font-bold">Next.js</span> — desde interfaces
+      SaaS complejas hasta dashboards en tiempo real y visualizaciones 3D. Mi formación en <span class="text-orange-600 font-bold">Ingeniería
+      Mecatrónica</span> y <span class="text-orange-600 font-bold">entrenamiento de LLMs</span> me da una perspectiva end-to-end que
+      pocos desarrolladores tienen.
     </Fragment>
   </Hero>
 
@@ -267,7 +266,95 @@ const metadata = {
 
       <div class="max-w-4xl mx-auto">
         <div class="space-y-8 md:space-y-12">
-          <!-- Position 1: Outlier AI (NUEVO) -->
+          <!-- Position 1: TripleTen -->
+          <div class="flex flex-col md:flex-row gap-6 md:gap-8">
+            <div class="flex-shrink-0 flex items-start justify-center">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
+                <Icon name="tabler:school" class="w-6 h-6 text-orange-600" />
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="mb-4">
+                <h3 class="text-xl md:text-2xl font-bold font-heading text-gray-900 dark:text-white mb-2">
+                  Instructor de Ingeniería de Software con IA
+                </h3>
+                <div class="flex flex-wrap items-center gap-2 text-gray-600 dark:text-gray-300 mb-2">
+                  <span class="font-medium">TripleTen</span>
+                  <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                  <span class="text-sm">Feb 2026 – Abr 2026</span>
+                  <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                  <span class="text-sm">Remoto · Contrato</span>
+                </div>
+              </div>
+              <div class="prose prose-gray dark:prose-invert max-w-none">
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li>
+                    <strong class="text-orange-600">Coaching 1:1:</strong> Realicé 8 sesiones individuales de coaching 1:1 de 30 minutos por día (4 días/semana),
+                    totalizando más de <strong>320 sesiones</strong> — cubriendo React, JavaScript, Node.js y debugging full-stack.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Revisión de Proyectos:</strong> Revisé ~8 proyectos de estudiantes diariamente con retroalimentación escrita
+                    estructurada sobre calidad de código y arquitectura — <strong>~400 revisiones</strong> en total.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Group Office Hours:</strong> Facilité Group Office Hours semanales de 2 horas para resolución de dudas en vivo.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Soporte Asincrónico:</strong> Resolví bloqueos técnicos en foros asincrónicos: errores de npm/webpack, flujos de
+                    GitHub, integración de APIs y gestión de estado en React.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Position 2: Frontend Lead (Freelance) -->
+          <div class="flex flex-col md:flex-row gap-6 md:gap-8">
+            <div class="flex-shrink-0 flex items-start justify-center">
+              <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
+                <Icon name="tabler:layout-dashboard" class="w-6 h-6 text-orange-600" />
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="mb-4">
+                <h3 class="text-xl md:text-2xl font-bold font-heading text-gray-900 dark:text-white mb-2">
+                  Frontend Lead Developer
+                </h3>
+                <div class="flex flex-wrap items-center gap-2 text-gray-600 dark:text-gray-300 mb-2">
+                  <span class="font-medium">Cliente Freelance</span>
+                  <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                  <span class="text-sm">Sep 2025 – Nov 2025</span>
+                  <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+                  <span class="text-sm">Remoto</span>
+                </div>
+              </div>
+              <div class="prose prose-gray dark:prose-invert max-w-none">
+                <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                  <li>
+                    <strong class="text-orange-600">Plataforma de Automatización IA:</strong> Lideré el desarrollo frontend de una plataforma de automatización de flujos de trabajo
+                    con IA usando Next.js, React Flow, Tailwind CSS y Storybook.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Interfaz Canvas:</strong> Diseñé una interfaz tipo canvas con navegación panning/zoom, módulos drag-and-drop e
+                    interconexión nodo a nodo para construir pipelines de datos personalizados.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Capa de Dashboard:</strong> Construí una capa de dashboard componible con biblioteca de widgets en runtime
+                    (gráficos, tablas, KPIs), paneles redimensionables/colapsables y cambio de tema completo.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Chat con IA:</strong> Integré un chat con agente de IA para consultas en lenguaje natural dentro de la plataforma.
+                  </li>
+                  <li>
+                    <strong class="text-orange-600">Entrega:</strong> Entregué el sistema de diseño completo, biblioteca de componentes y MVP del canvas en un
+                    <strong>engagement de 10 semanas</strong>.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Position 3: Outlier AI (NUEVO) -->
           <div class="flex flex-col md:flex-row gap-6 md:gap-8">
             <div class="flex-shrink-0 flex items-start justify-center">
               <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-xl">
@@ -1011,6 +1098,27 @@ const metadata = {
                 </div>
               </div>
             </div>
+
+            <!-- Testimonial 8 -->
+            <div class="swiper-slide !h-auto">
+              <div class="flex flex-col p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow duration-200 h-full">
+                <div class="flex items-start mb-4">
+                  <Icon name="tabler:quote" class="w-8 h-8 text-orange-600 mr-3 mt-1 flex-shrink-0" />
+                  <p class="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                    "Trabajar con Jaime fue genuinamente excepcional. Superó mis expectativas en todos los aspectos. Su trabajo fue extremadamente profesional, el resultado final fue incluso mejor de lo que había imaginado. Siempre estuvo un paso adelante con una comunicación clara, proactiva y atención al detalle. No podría estar más satisfecho con la experiencia y el resultado. Totalmente recomendado."
+                  </p>
+                </div>
+                <div class="flex items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div class="flex items-center justify-center w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-full mr-4 flex-shrink-0">
+                    <Icon name="tabler:user" class="w-6 h-6 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white">jalvarmon</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Cliente de Fiverr</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Navigation arrows -->
@@ -1274,7 +1382,7 @@ const metadata = {
       <div class="border-t border-gray-800 mt-12 pt-8">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <p class="text-gray-400 text-sm mb-4 md:mb-0">
-            © 2025 Jaime Villegas. Todos los derechos reservados.
+            © 2026 Jaime Villegas. Todos los derechos reservados.
           </p>
           <div class="flex items-center space-x-6">
             <div class="flex items-center space-x-2">
