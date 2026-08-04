@@ -80,6 +80,10 @@ Icons are used via the `Icon` component from `astro-icon/components`.
 
 Contact forms use EmailJS (`@emailjs/browser`) for client-side email submission. Configuration in `src/components/ui/Form.astro`.
 
+### Blog Comments
+
+Blog posts use Disqus (not Giscus) for comments, via `src/components/blog/Comments.astro`. The shortname is set in `src/config/disqus.ts`; language is passed as a prop (`en`/`es`) from `SinglePost.astro` and `SinglePostEsp.astro`. See `DISQUS_SETUP.md` for account setup.
+
 ### External Images
 
 Remote images from `cdn.pixabay.com` are allowed (configured in `astro.config.ts`). Add other domains to `image.domains` as needed.

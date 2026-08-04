@@ -14,7 +14,6 @@ const translations = {
     home: 'Home',
     projects: 'Projects',
     courses: 'Courses',
-    blog: 'Blog',
     contact: 'Contact',
     services: 'Services',
     frontendDev: 'Frontend Development',
@@ -34,7 +33,6 @@ const translations = {
     home: 'Inicio',
     projects: 'Proyectos',
     courses: 'Cursos',
-    blog: 'Blog',
     contact: 'Contacto',
     services: 'Servicios',
     frontendDev: 'Desarrollo Frontend',
@@ -112,12 +110,6 @@ const basePath = lang === 'en' ? '/en' : '/es';
             <a href={`${basePath}/courses`} class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
               <Icon name="tabler:book" class="w-4 h-4 mr-2" />
               {t.courses}
-            </a>
-          </li>
-          <li>
-            <a href={`${basePath}/blog`} class="text-gray-400 hover:text-orange-600 transition-colors duration-200 flex items-center">
-              <Icon name="tabler:pencil" class="w-4 h-4 mr-2" />
-              {t.blog}
             </a>
           </li>
           <li>
