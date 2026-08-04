@@ -11,10 +11,6 @@ export const headerData = {
       href: '/projects'
     },
     {
-      text: 'Blog',
-      href: '/blog',
-    },
-    {
       text: 'Github',
       href: 'https://github.com/jaimevillegas',
       target: '_blank',
@@ -29,7 +25,6 @@ export const footerData = {
       links: [
         { text: 'Home', href: '/' },
         { text: 'Projects', href: '/projects' },
-        { text: 'Blog', href: '/blog' },
         { text: 'Contact', href: '/contact' },
       ],
     },
